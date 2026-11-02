@@ -147,7 +147,7 @@ TRENDIT_TEST_DIAGNOSTICS_ID=t0-v2-reproduce-diagnostics npm run test:e2e
 
 진단을 생성하지 않는 기본 검사 모드는 `TRENDIT_TEST_RUN_ID=t0-v2-reproduce npm run test:e2e -- --grep-invert 'REAL diagnostic'`입니다. 전체 진단을 실제로 읽는 2개 사례를 제외하고 미설정 상태 처리까지 확인합니다.
 
-GitHub Actions는 백엔드·CPU 재현·프론트 품질·핵심 브라우저 관문을 수행합니다. 현재 마감 상태: **로컬 검증 완료·main 반영 준비**. 원격 완료 결과는 해당 코드 커밋과 연결해 [최신 마감 기록](docs/experiments/CLOSURE_RESULTS_20261102.md)에 보존합니다. 5시드 전체 진단과 서비스 배포는 별도 범위입니다.
+GitHub Actions는 백엔드·CPU 재현·프론트 품질·핵심 브라우저 관문을 수행합니다. 현재 마감 상태: **main 반영·원격 검사 완료**. 원격 완료 결과는 해당 코드 커밋과 연결해 [최신 마감 기록](docs/experiments/CLOSURE_RESULTS_20261102.md)에 보존합니다. 5시드 전체 진단과 서비스 배포는 별도 범위입니다.
 
 ## 기존 결과와 남은 한계
 

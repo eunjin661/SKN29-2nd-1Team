@@ -1,12 +1,25 @@
 {
-  "recorded_at_kst": "2026-11-02T15:08:52.906044+09:00",
-  "status": "로컬 검증 완료·main 반영 준비",
+  "recorded_at_kst": "2026-11-02T15:18:09.748023+09:00",
+  "status": "main 반영·원격 검사 완료",
   "publication_state": {
-    "phase": "PREPARED",
-    "ci": "PENDING_PUSH",
+    "phase": "PUBLISHED",
+    "ci": "SUCCESS",
     "base_sha": "7b9dbcda11f884d24fa2f38b8146435cf452fb12",
-    "code_head": null,
-    "workflow_runs": []
+    "code_head": "2508262524e84abe8d1e06b5143850d99d436489",
+    "workflow_runs": [
+      {
+        "id": 41398191146,
+        "name": "Backend and browser regression",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/eunjin661/SKN29-2nd-1Team/actions/runs/41398191146",
+        "head_sha": "2508262524e84abe8d1e06b5143850d99d436489"
+      }
+    ],
+    "captured_files_staged_byte_for_byte": 25,
+    "remote_backend_passed": 122,
+    "remote_core_browser_passed": 47,
+    "ci_scope": "App code tested at code_head. The following completion record changes documentation only."
   },
   "base_commit": "7b9dbcda11f884d24fa2f38b8146435cf452fb12",
   "local_backend": {
@@ -84,10 +97,14 @@
     "before-api.json": "67345ec13c914ecf7e6ea461842d6e4a443a3237909000f7f38bb0a5f27ac6c4",
     "browser-results.json": "49a20a1dc85d296420d02efb574ec28c71cf94dcfe16cac7038ebdf6cefd2c6a",
     "browser.log": "45b20074562300b16e8f882c1cdb58e037a811e9de9451cef92641222e007d86",
-    "final-source-manifest.json": "33a90890dc81275ce34b8c5b1a71ff835787fd8ab21b49d824955397612cc90a",
+    "ci-backend.log": "79a0b1eb5a7ebb4608ed9455d79225394d00cfb8d9f05c5d52a953cb452a97e2",
+    "ci-jobs-final.json": "7693551a05e50773e2f00c3bd985e550cd237dbf67f858319d9563ae16006473",
+    "final-source-manifest.json": "8a5f5d9c465163a87656c9c08b65bf18f566973f4ea0392403a5ca052dae996a",
     "frontend-quality.log": "947639ae24d28b72cea647b742463dd14c6c2352c7fdb2622b6e9589f02a25c7",
     "preflight.json": "da73a246570d53112515cb15cb2f653820ef3a77151fa814538f9811bbf014c3",
     "protocol.json": "726ad170355bea8692efa81dc548cc67d33c6ea31adc41b30f68730632fb7dfd",
+    "push.log": "42a6ca5cb1a3f76a0e38ac991952d2b16c0cb0a006ca7640c477af76d3e7e4c6",
+    "remote-final.json": "e34776fcebe23d58ee94690e864e423c48bfe522bb113e4790fb8d299bcb4bc0",
     "retired-api.log": "f61d94463485aad19362d2c0e488e644349382cebd5d8ec5f17515115e8c1f9e",
     "route-comparison.json": "dead2de7ff45a4de2e9edf567f7be280acde69911ed5ea9f6bab0dd880f856d9",
     "verification-commands.json": "df293140cac89f596ae642e08467c3893124dd6c340a31f82490ecbb7b4b2b41"

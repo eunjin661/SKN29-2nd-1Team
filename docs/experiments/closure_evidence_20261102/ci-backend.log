@@ -1,0 +1,964 @@
+﻿2026-11-02T06:09:51.2550261Z Current runner version: '2.338.2'
+2026-11-02T06:09:51.2575373Z ##[group]Runner Image Provisioner
+2026-11-02T06:09:51.2576525Z Hosted Compute Agent
+2026-11-02T06:09:51.2577131Z Version: 20261021.618
+2026-11-02T06:09:51.2577914Z Commit: 21505ad2541d5be6135ed84fc33697146cf75b8e
+2026-11-02T06:09:51.2578664Z Build Date: 2026-10-21T00:45:21Z
+2026-11-02T06:09:51.2579426Z Worker ID: {db959fca-ff72-4df8-9579-97a547d97ec2}
+2026-11-02T06:09:51.2580166Z Region: westus
+2026-11-02T06:09:51.2580721Z Cloud: Azure
+2026-11-02T06:09:51.2581718Z ##[endgroup]
+2026-11-02T06:09:51.2583680Z ##[group]Operating System
+2026-11-02T06:09:51.2584382Z Ubuntu
+2026-11-02T06:09:51.2585025Z 24.04.5
+2026-11-02T06:09:51.2585558Z LTS
+2026-11-02T06:09:51.2586174Z ##[endgroup]
+2026-11-02T06:09:51.2586741Z ##[group]Runner Image
+2026-11-02T06:09:51.2587364Z Image: ubuntu-24.04
+2026-11-02T06:09:51.2587990Z Version: 20261025.353.1
+2026-11-02T06:09:51.2589229Z Included Software: https://github.com/actions/runner-images/blob/ubuntu24/20261025.353/images/ubuntu/Ubuntu2404-Readme.md
+2026-11-02T06:09:51.2590872Z Image Release: https://github.com/actions/runner-images/releases/tag/ubuntu24%2F20261025.353
+2026-11-02T06:09:51.2591874Z ##[endgroup]
+2026-11-02T06:09:51.2593352Z ##[group]GITHUB_TOKEN Permissions
+2026-11-02T06:09:51.2595274Z Contents: read
+2026-11-02T06:09:51.2596057Z Metadata: read
+2026-11-02T06:09:51.2596678Z ##[endgroup]
+2026-11-02T06:09:51.2598805Z Secret source: Actions
+2026-11-02T06:09:51.2599819Z Cache mode: write
+2026-11-02T06:09:51.2600567Z Prepare workflow directory
+2026-11-02T06:09:51.3077975Z Prepare all required actions
+2026-11-02T06:09:51.3127204Z Getting action download info
+2026-11-02T06:09:51.6485421Z Download action repository 'actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1' (SHA:3d3c42e5aac5ba805825da76410c181273ba90b1)
+2026-11-02T06:09:51.8860669Z Download action repository 'actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0' (SHA:6d4fd22b20465ccc0f7354476588e8df7c9ca0e0)
+2026-11-02T06:09:52.2881771Z Download action repository 'actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1' (SHA:949feb2413d6458794dcd2491c4babbbce0c15c1)
+2026-11-02T06:09:52.4858780Z Complete job name: regression
+2026-11-02T06:09:52.5761978Z ##[group]Run actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+2026-11-02T06:09:52.5763266Z with:
+2026-11-02T06:09:52.5763729Z   persist-credentials: false
+2026-11-02T06:09:52.5764270Z   repository: eunjin661/SKN29-2nd-1Team
+2026-11-02T06:09:52.5768676Z   token: ***
+2026-11-02T06:09:52.5769108Z   ssh-strict: true
+2026-11-02T06:09:52.5769552Z   ssh-user: git
+2026-11-02T06:09:52.5769968Z   clean: true
+2026-11-02T06:09:52.5770398Z   sparse-checkout-cone-mode: true
+2026-11-02T06:09:52.5770922Z   fetch-depth: 1
+2026-11-02T06:09:52.5771342Z   fetch-tags: false
+2026-11-02T06:09:52.5771777Z   show-progress: true
+2026-11-02T06:09:52.5772216Z   lfs: false
+2026-11-02T06:09:52.5772616Z   submodules: false
+2026-11-02T06:09:52.5773202Z   set-safe-directory: true
+2026-11-02T06:09:52.5773702Z   allow-unsafe-pr-checkout: false
+2026-11-02T06:09:52.5774480Z env:
+2026-11-02T06:09:52.5774888Z   PYTHONPATH: backend
+2026-11-02T06:09:52.5775338Z   OMP_NUM_THREADS: 4
+2026-11-02T06:09:52.5775819Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:09:52.5776286Z   MKL_NUM_THREADS: 4
+2026-11-02T06:09:52.5776725Z   DB_HOST: 127.0.0.1
+2026-11-02T06:09:52.5777150Z   DB_PORT: 1
+2026-11-02T06:09:52.5777547Z   DB_USER: offline
+2026-11-02T06:09:52.5777987Z   DB_PASSWORD: offline
+2026-11-02T06:09:52.5778426Z   DB_NAME: offline
+2026-11-02T06:09:52.5778864Z   DB_DATABASE: offline
+2026-11-02T06:09:52.5779299Z   YOUTUBE_API_KEY: 
+2026-11-02T06:09:52.5779723Z ##[endgroup]
+2026-11-02T06:09:52.8757480Z Syncing repository: eunjin661/SKN29-2nd-1Team
+2026-11-02T06:09:52.8759940Z ##[group]Getting Git version info
+2026-11-02T06:09:52.8761401Z Working directory is '/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team'
+2026-11-02T06:09:52.8763501Z [command]/usr/bin/git version
+2026-11-02T06:09:52.8868054Z git version 2.56.0
+2026-11-02T06:09:52.8891155Z ##[endgroup]
+2026-11-02T06:09:52.8901885Z Temporarily overriding HOME='/home/runner/work/_temp/4801ddd0-0d5e-44d8-b989-8765de87e661' before making global git config changes
+2026-11-02T06:09:52.8904885Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-02T06:09:52.8908583Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team
+2026-11-02T06:09:52.8958669Z Deleting the contents of '/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team'
+2026-11-02T06:09:52.8962561Z ##[group]Determining repository object format
+2026-11-02T06:09:52.8964853Z ##[endgroup]
+2026-11-02T06:09:52.8966430Z ##[group]Initializing the repository
+2026-11-02T06:09:52.8968870Z [command]/usr/bin/git init /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team
+2026-11-02T06:09:52.9078452Z hint: Using 'master' as the name for the initial branch. This default branch name
+2026-11-02T06:09:52.9079921Z hint: will change to "main" in Git 3.0. To configure the initial branch name
+2026-11-02T06:09:52.9081189Z hint: to use in all of your new repositories, which will suppress this warning,
+2026-11-02T06:09:52.9082144Z hint: call:
+2026-11-02T06:09:52.9082662Z hint:
+2026-11-02T06:09:52.9083952Z hint: 	git config --global init.defaultBranch <name>
+2026-11-02T06:09:52.9085095Z hint:
+2026-11-02T06:09:52.9085963Z hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+2026-11-02T06:09:52.9087257Z hint: 'development'. The just-created branch can be renamed via this command:
+2026-11-02T06:09:52.9088306Z hint:
+2026-11-02T06:09:52.9088804Z hint: 	git branch -m <name>
+2026-11-02T06:09:52.9089362Z hint:
+2026-11-02T06:09:52.9090458Z hint: Disable this message with "git config set advice.defaultBranchName false"
+2026-11-02T06:09:52.9095717Z Initialized empty Git repository in /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.git/
+2026-11-02T06:09:52.9108116Z [command]/usr/bin/git remote add origin https://github.com/eunjin661/SKN29-2nd-1Team
+2026-11-02T06:09:52.9156526Z ##[endgroup]
+2026-11-02T06:09:52.9158107Z ##[group]Disabling automatic garbage collection
+2026-11-02T06:09:52.9161525Z [command]/usr/bin/git config --local gc.auto 0
+2026-11-02T06:09:52.9199120Z ##[endgroup]
+2026-11-02T06:09:52.9201084Z ##[group]Setting up auth
+2026-11-02T06:09:52.9202329Z Removing SSH command configuration
+2026-11-02T06:09:52.9204257Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-02T06:09:52.9243319Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-02T06:09:52.9641078Z Removing HTTP extra header
+2026-11-02T06:09:52.9648120Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-02T06:09:52.9708345Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-02T06:09:52.9959428Z Removing includeIf entries pointing to credentials config files
+2026-11-02T06:09:52.9965349Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-02T06:09:53.0011804Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-02T06:09:53.0254728Z [command]/usr/bin/git config --file /home/runner/work/_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config http.https://github.com/.extraheader AUTHORIZATION: basic ***
+2026-11-02T06:09:53.0305784Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.git.path /home/runner/work/_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config
+2026-11-02T06:09:53.0348396Z [command]/usr/bin/git config --local includeIf.gitdir:/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.git/worktrees/*.path /home/runner/work/_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config
+2026-11-02T06:09:53.0393683Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git.path /github/runner_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config
+2026-11-02T06:09:53.0436711Z [command]/usr/bin/git config --local includeIf.gitdir:/github/workspace/.git/worktrees/*.path /github/runner_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config
+2026-11-02T06:09:53.0478458Z ##[endgroup]
+2026-11-02T06:09:53.0479282Z ##[group]Fetching the repository
+2026-11-02T06:09:53.0484775Z [command]/usr/bin/git -c protocol.version=2 fetch --no-tags --prune --no-recurse-submodules --depth=1 origin +2508262524e84abe8d1e06b5143850d99d436489:refs/remotes/origin/main
+2026-11-02T06:09:55.1294440Z From https://github.com/eunjin661/SKN29-2nd-1Team
+2026-11-02T06:09:55.1297043Z  * [new ref]         2508262524e84abe8d1e06b5143850d99d436489 -> origin/main
+2026-11-02T06:09:55.1304732Z [command]/usr/bin/git branch --list --remote origin/main
+2026-11-02T06:09:55.1344139Z   origin/main
+2026-11-02T06:09:55.1352423Z [command]/usr/bin/git rev-parse refs/remotes/origin/main
+2026-11-02T06:09:55.1388285Z 2508262524e84abe8d1e06b5143850d99d436489
+2026-11-02T06:09:55.1392667Z ##[endgroup]
+2026-11-02T06:09:55.1393751Z ##[group]Determining the checkout info
+2026-11-02T06:09:55.1394588Z ##[endgroup]
+2026-11-02T06:09:55.1400767Z [command]/usr/bin/git sparse-checkout disable
+2026-11-02T06:09:55.1463900Z [command]/usr/bin/git config --local --unset-all extensions.worktreeConfig
+2026-11-02T06:09:55.1506454Z ##[group]Checking out the ref
+2026-11-02T06:09:55.1510760Z [command]/usr/bin/git checkout --progress --force -B main refs/remotes/origin/main
+2026-11-02T06:09:55.4552697Z Switched to a new branch 'main'
+2026-11-02T06:09:55.4557268Z branch 'main' set up to track 'origin/main'.
+2026-11-02T06:09:55.4583398Z ##[endgroup]
+2026-11-02T06:09:55.4644522Z [command]/usr/bin/git log -1 --format=%H
+2026-11-02T06:09:55.4682101Z 2508262524e84abe8d1e06b5143850d99d436489
+2026-11-02T06:09:55.4696149Z ##[group]Removing auth
+2026-11-02T06:09:55.4696654Z Removing SSH command configuration
+2026-11-02T06:09:55.4697543Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-02T06:09:55.4744104Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-02T06:09:55.4987942Z Removing HTTP extra header
+2026-11-02T06:09:55.4992022Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-02T06:09:55.5037250Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-02T06:09:55.5278956Z Removing includeIf entries pointing to credentials config files
+2026-11-02T06:09:55.5282724Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-02T06:09:55.5326773Z includeif.gitdir:/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.git.path
+2026-11-02T06:09:55.5327808Z includeif.gitdir:/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.git/worktrees/*.path
+2026-11-02T06:09:55.5328371Z includeif.gitdir:/github/workspace/.git.path
+2026-11-02T06:09:55.5328784Z includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-02T06:09:55.5337632Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.git.path
+2026-11-02T06:09:55.5380671Z /home/runner/work/_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config
+2026-11-02T06:09:55.5392029Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.git.path \/home\/runner\/work\/_temp\/git\-credentials\-6b7e3c8c\-0fbc\-4161\-8ffd\-71342f049e68\.config
+2026-11-02T06:09:55.5444949Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.git/worktrees/*.path
+2026-11-02T06:09:55.5480091Z /home/runner/work/_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config
+2026-11-02T06:09:55.5489904Z [command]/usr/bin/git config --local --unset includeif.gitdir:/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.git/worktrees/*.path \/home\/runner\/work\/_temp\/git\-credentials\-6b7e3c8c\-0fbc\-4161\-8ffd\-71342f049e68\.config
+2026-11-02T06:09:55.5538615Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git.path
+2026-11-02T06:09:55.5575705Z /github/runner_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config
+2026-11-02T06:09:55.5585483Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git.path \/github\/runner_temp\/git\-credentials\-6b7e3c8c\-0fbc\-4161\-8ffd\-71342f049e68\.config
+2026-11-02T06:09:55.5631528Z [command]/usr/bin/git config --local --get-all includeif.gitdir:/github/workspace/.git/worktrees/*.path
+2026-11-02T06:09:55.5665920Z /github/runner_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config
+2026-11-02T06:09:55.5678503Z [command]/usr/bin/git config --local --unset includeif.gitdir:/github/workspace/.git/worktrees/*.path \/github\/runner_temp\/git\-credentials\-6b7e3c8c\-0fbc\-4161\-8ffd\-71342f049e68\.config
+2026-11-02T06:09:55.5724229Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-02T06:09:55.5974982Z Removing credentials config '/home/runner/work/_temp/git-credentials-6b7e3c8c-0fbc-4161-8ffd-71342f049e68.config'
+2026-11-02T06:09:55.5987056Z ##[endgroup]
+2026-11-02T06:09:55.6252076Z ##[group]Run actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0
+2026-11-02T06:09:55.6252504Z with:
+2026-11-02T06:09:55.6252712Z   python-version: 3.10.21
+2026-11-02T06:09:55.6253293Z   check-latest: false
+2026-11-02T06:09:55.6255735Z   token: ***
+2026-11-02T06:09:55.6256088Z   mirror: https://raw.githubusercontent.com/actions/python-versions/main
+2026-11-02T06:09:55.6256488Z   update-environment: true
+2026-11-02T06:09:55.6256726Z   allow-prereleases: false
+2026-11-02T06:09:55.6256951Z   freethreaded: false
+2026-11-02T06:09:55.6257164Z env:
+2026-11-02T06:09:55.6257349Z   PYTHONPATH: backend
+2026-11-02T06:09:55.6257556Z   OMP_NUM_THREADS: 4
+2026-11-02T06:09:55.6257763Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:09:55.6257986Z   MKL_NUM_THREADS: 4
+2026-11-02T06:09:55.6258184Z   DB_HOST: 127.0.0.1
+2026-11-02T06:09:55.6258378Z   DB_PORT: 1
+2026-11-02T06:09:55.6258564Z   DB_USER: offline
+2026-11-02T06:09:55.6258789Z   DB_PASSWORD: offline
+2026-11-02T06:09:55.6259036Z   DB_NAME: offline
+2026-11-02T06:09:55.6259233Z   DB_DATABASE: offline
+2026-11-02T06:09:55.6259437Z   YOUTUBE_API_KEY: 
+2026-11-02T06:09:55.6259633Z ##[endgroup]
+2026-11-02T06:09:55.7497313Z ##[group]Installed versions
+2026-11-02T06:09:55.7518590Z Version 3.10.21 was not found in the local cache
+2026-11-02T06:09:56.4225649Z Version 3.10.21 is available for downloading
+2026-11-02T06:09:56.4227011Z Download from "https://github.com/actions/python-versions/releases/download/3.10.21-31661269155/python-3.10.21-linux-24.04-x64.tar.gz"
+2026-11-02T06:09:57.1785472Z Extract downloaded archive
+2026-11-02T06:09:57.1932315Z [command]/usr/bin/tar xz --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/e95354aa-dc8e-4060-87c1-9e7ea081bfa4 -f /home/runner/work/_temp/8634af0b-877d-4b46-94b8-0f1baabca094
+2026-11-02T06:09:58.4988203Z Execute installation script
+2026-11-02T06:09:58.5101369Z Check if Python hostedtoolcache folder exist...
+2026-11-02T06:09:58.5101960Z Create Python 3.10.21 folder
+2026-11-02T06:09:58.5114809Z Copy Python binaries to hostedtoolcache folder
+2026-11-02T06:09:58.9706236Z Create additional symlinks (Required for the UsePythonVersion Azure Pipelines task and the setup-python GitHub Action)
+2026-11-02T06:09:58.9748038Z Upgrading pip...
+2026-11-02T06:10:00.9153509Z Collecting pip
+2026-11-02T06:10:01.0120920Z Downloading pip-26.2.2-py3-none-any.whl (1.8 MB)
+2026-11-02T06:10:01.1414680Z ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 1.8/1.8 MB 14.3 MB/s eta 0:00:00
+2026-11-02T06:10:01.1415192Z 
+2026-11-02T06:10:01.2019411Z Installing collected packages: pip
+2026-11-02T06:10:01.2021365Z Attempting uninstall: pip
+2026-11-02T06:10:01.2029261Z Found existing installation: pip 23.0.1
+2026-11-02T06:10:01.3756583Z Uninstalling pip-23.0.1:
+2026-11-02T06:10:01.3829887Z Successfully uninstalled pip-23.0.1
+2026-11-02T06:10:02.2155030Z Successfully installed pip-26.2.2
+2026-11-02T06:10:02.2685843Z Create complete file
+2026-11-02T06:10:02.2726109Z Successfully set up CPython (3.10.21)
+2026-11-02T06:10:02.2727453Z ##[endgroup]
+2026-11-02T06:10:02.2944411Z ##[group]Run actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1
+2026-11-02T06:10:02.2944813Z with:
+2026-11-02T06:10:02.2945011Z   node-version: 24.20.0
+2026-11-02T06:10:02.2945234Z   cache: npm
+2026-11-02T06:10:02.2945485Z   cache-dependency-path: frontend/package-lock.json
+2026-11-02T06:10:02.2945824Z   check-latest: false
+2026-11-02T06:10:02.2948282Z   token: ***
+2026-11-02T06:10:02.2948503Z   package-manager-cache: true
+2026-11-02T06:10:02.2948742Z env:
+2026-11-02T06:10:02.2948941Z   PYTHONPATH: backend
+2026-11-02T06:10:02.2949157Z   OMP_NUM_THREADS: 4
+2026-11-02T06:10:02.2949383Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:10:02.2949609Z   MKL_NUM_THREADS: 4
+2026-11-02T06:10:02.2949812Z   DB_HOST: 127.0.0.1
+2026-11-02T06:10:02.2950009Z   DB_PORT: 1
+2026-11-02T06:10:02.2950197Z   DB_USER: offline
+2026-11-02T06:10:02.2950399Z   DB_PASSWORD: offline
+2026-11-02T06:10:02.2950605Z   DB_NAME: offline
+2026-11-02T06:10:02.2950802Z   DB_DATABASE: offline
+2026-11-02T06:10:02.2951051Z   YOUTUBE_API_KEY: 
+2026-11-02T06:10:02.2951326Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:02.2951784Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:10:02.2952346Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:02.2952905Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:02.2953341Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:02.2953822Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:10:02.2954146Z ##[endgroup]
+2026-11-02T06:10:02.4271884Z Attempting to download 24.20.0...
+2026-11-02T06:10:03.0593250Z Acquiring 24.20.0 - x64 from https://github.com/actions/node-versions/releases/download/24.20.0-33034074684/node-24.20.0-linux-x64.tar.gz
+2026-11-02T06:10:03.6420146Z Extracting ...
+2026-11-02T06:10:03.6567144Z [command]/usr/bin/tar xz --strip 1 --warning=no-unknown-keyword --overwrite -C /home/runner/work/_temp/041f2846-0fff-4add-a8fc-e62e4d92c558 -f /home/runner/work/_temp/5ada6a2f-7570-4c8c-9b1a-451e64396a8b
+2026-11-02T06:10:04.9335022Z Adding to the cache ...
+2026-11-02T06:10:06.7232262Z ##[group]Environment details
+2026-11-02T06:10:06.9779019Z node: v24.20.0
+2026-11-02T06:10:06.9779524Z npm: 11.19.0
+2026-11-02T06:10:06.9779889Z yarn: 1.22.22
+2026-11-02T06:10:06.9780545Z ##[endgroup]
+2026-11-02T06:10:06.9803820Z [command]/opt/hostedtoolcache/node/24.20.0/x64/bin/npm config get cache
+2026-11-02T06:10:07.0809709Z /home/runner/.npm
+2026-11-02T06:10:07.3416602Z Cache hit for: node-cache-Linux-x64-npm-d448412bd53f8a76ad48af0b32463d1d87afbf212e3d4fe80b71f169d0d38a6b
+2026-11-02T06:10:08.6225165Z Received 31255712 of 35450016 (88.2%), 29.8 MBs/sec
+2026-11-02T06:10:08.6580031Z Received 35450016 of 35450016 (100.0%), 32.6 MBs/sec
+2026-11-02T06:10:08.6580867Z Cache Size: ~34 MB (35450016 B)
+2026-11-02T06:10:08.6617845Z [command]/usr/bin/tar -xf /home/runner/work/_temp/312fe5e1-7a6c-4336-89f7-3adc1ae55ed8/cache.tzst -P -C /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team --use-compress-program unzstd
+2026-11-02T06:10:08.7566395Z Cache restored successfully
+2026-11-02T06:10:08.7591255Z Cache restored from key: node-cache-Linux-x64-npm-d448412bd53f8a76ad48af0b32463d1d87afbf212e3d4fe80b71f169d0d38a6b
+2026-11-02T06:10:08.7824982Z ##[group]Run python -m pip install uv==0.12.10
+2026-11-02T06:10:08.7825593Z [36;1mpython -m pip install uv==0.12.10[0m
+2026-11-02T06:10:08.7850239Z shell: /usr/bin/bash -e {0}
+2026-11-02T06:10:08.7850509Z env:
+2026-11-02T06:10:08.7850709Z   PYTHONPATH: backend
+2026-11-02T06:10:08.7850936Z   OMP_NUM_THREADS: 4
+2026-11-02T06:10:08.7851153Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:10:08.7851393Z   MKL_NUM_THREADS: 4
+2026-11-02T06:10:08.7851600Z   DB_HOST: 127.0.0.1
+2026-11-02T06:10:08.7851796Z   DB_PORT: 1
+2026-11-02T06:10:08.7851985Z   DB_USER: offline
+2026-11-02T06:10:08.7852195Z   DB_PASSWORD: offline
+2026-11-02T06:10:08.7852406Z   DB_NAME: offline
+2026-11-02T06:10:08.7852601Z   DB_DATABASE: offline
+2026-11-02T06:10:08.7853158Z   YOUTUBE_API_KEY: 
+2026-11-02T06:10:08.7853456Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:08.7853914Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:10:08.7854399Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:08.7854828Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:08.7855231Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:08.7855633Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:10:08.7855968Z ##[endgroup]
+2026-11-02T06:10:09.7741474Z Collecting uv==0.12.10
+2026-11-02T06:10:09.9739872Z   Downloading uv-0.12.10-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl.metadata (11 kB)
+2026-11-02T06:10:10.0320519Z Downloading uv-0.12.10-py3-none-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (20.0 MB)
+2026-11-02T06:10:10.4813283Z    ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ 20.0/20.0 MB 61.9 MB/s  0:00:00
+2026-11-02T06:10:10.5283384Z Installing collected packages: uv
+2026-11-02T06:10:10.7368320Z Successfully installed uv-0.12.10
+2026-11-02T06:10:10.7942117Z ##[group]Run uv venv --python 3.10 .venv
+2026-11-02T06:10:10.7942517Z [36;1muv venv --python 3.10 .venv[0m
+2026-11-02T06:10:10.7964994Z shell: /usr/bin/bash -e {0}
+2026-11-02T06:10:10.7965270Z env:
+2026-11-02T06:10:10.7965470Z   PYTHONPATH: backend
+2026-11-02T06:10:10.7965707Z   OMP_NUM_THREADS: 4
+2026-11-02T06:10:10.7965928Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:10:10.7966153Z   MKL_NUM_THREADS: 4
+2026-11-02T06:10:10.7966355Z   DB_HOST: 127.0.0.1
+2026-11-02T06:10:10.7966560Z   DB_PORT: 1
+2026-11-02T06:10:10.7966750Z   DB_USER: offline
+2026-11-02T06:10:10.7966954Z   DB_PASSWORD: offline
+2026-11-02T06:10:10.7967163Z   DB_NAME: offline
+2026-11-02T06:10:10.7967358Z   DB_DATABASE: offline
+2026-11-02T06:10:10.7967575Z   YOUTUBE_API_KEY: 
+2026-11-02T06:10:10.7967856Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:10.7968311Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:10:10.7968815Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:10.7969230Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:10.7969635Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:10.7970052Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:10:10.7970384Z ##[endgroup]
+2026-11-02T06:10:10.8911718Z Using CPython 3.10.21 interpreter at: /opt/hostedtoolcache/Python/3.10.21/x64/bin/python3.10
+2026-11-02T06:10:10.8912353Z Creating virtual environment at: .venv
+2026-11-02T06:10:10.8918011Z Activate with: .venv/bin/activate
+2026-11-02T06:10:10.8965018Z ##[group]Run uv pip sync --python .venv/bin/python backend/requirements-cpu.lock --index-strategy unsafe-best-match
+2026-11-02T06:10:10.8965917Z [36;1muv pip sync --python .venv/bin/python backend/requirements-cpu.lock --index-strategy unsafe-best-match[0m
+2026-11-02T06:10:10.8987697Z shell: /usr/bin/bash -e {0}
+2026-11-02T06:10:10.8987943Z env:
+2026-11-02T06:10:10.8988143Z   PYTHONPATH: backend
+2026-11-02T06:10:10.8988369Z   OMP_NUM_THREADS: 4
+2026-11-02T06:10:10.8988587Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:10:10.8988807Z   MKL_NUM_THREADS: 4
+2026-11-02T06:10:10.8989014Z   DB_HOST: 127.0.0.1
+2026-11-02T06:10:10.8989374Z   DB_PORT: 1
+2026-11-02T06:10:10.8989561Z   DB_USER: offline
+2026-11-02T06:10:10.8989759Z   DB_PASSWORD: offline
+2026-11-02T06:10:10.8989963Z   DB_NAME: offline
+2026-11-02T06:10:10.8990161Z   DB_DATABASE: offline
+2026-11-02T06:10:10.8990370Z   YOUTUBE_API_KEY: 
+2026-11-02T06:10:10.8990640Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:10.8991110Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:10:10.8991541Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:10.8991920Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:10.8992305Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:10.8992685Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:10:10.8993341Z ##[endgroup]
+2026-11-02T06:10:11.5881031Z Resolved 64 packages in 593ms
+2026-11-02T06:10:11.6267475Z Downloading nvidia-nccl-cu12 (326.3MiB)
+2026-11-02T06:10:11.6404004Z Downloading torch (187.1MiB)
+2026-11-02T06:10:11.6559079Z Downloading scipy (35.9MiB)
+2026-11-02T06:10:11.6567866Z Downloading pandas (12.2MiB)
+2026-11-02T06:10:11.6570500Z Downloading networkx (1.6MiB)
+2026-11-02T06:10:11.6573155Z Downloading scikit-learn (9.2MiB)
+2026-11-02T06:10:11.6589434Z Downloading kiwisolver (1.6MiB)
+2026-11-02T06:10:11.6593228Z Downloading numpy (16.0MiB)
+2026-11-02T06:10:11.6600007Z Downloading pygments (1.2MiB)
+2026-11-02T06:10:11.6602500Z Downloading sqlalchemy (3.2MiB)
+2026-11-02T06:10:11.6606806Z Downloading pip (1.7MiB)
+2026-11-02T06:10:11.6611029Z Downloading fonttools (5.0MiB)
+2026-11-02T06:10:11.6615178Z Downloading pillow (6.6MiB)
+2026-11-02T06:10:11.6627988Z Downloading mysql-connector-python (20.7MiB)
+2026-11-02T06:10:11.6634403Z Downloading sympy (6.0MiB)
+2026-11-02T06:10:11.6637785Z Downloading matplotlib (8.4MiB)
+2026-11-02T06:10:11.6641276Z Downloading xgboost (125.6MiB)
+2026-11-02T06:10:11.6646035Z Downloading lightgbm (3.3MiB)
+2026-11-02T06:10:11.6648677Z Downloading pyarrow (47.7MiB)
+2026-11-02T06:10:11.6652339Z Downloading pydantic-core (2.1MiB)
+2026-11-02T06:10:11.9316963Z  Downloaded pygments
+2026-11-02T06:10:11.9762419Z  Downloaded pip
+2026-11-02T06:10:11.9816205Z  Downloaded networkx
+2026-11-02T06:10:11.9816972Z  Downloaded kiwisolver
+2026-11-02T06:10:12.0384822Z  Downloaded pydantic-core
+2026-11-02T06:10:12.1089217Z  Downloaded sqlalchemy
+2026-11-02T06:10:12.1157851Z  Downloaded lightgbm
+2026-11-02T06:10:12.2341330Z  Downloaded fonttools
+2026-11-02T06:10:12.3054276Z  Downloaded sympy
+2026-11-02T06:10:12.3334351Z  Downloaded pillow
+2026-11-02T06:10:12.4392032Z  Downloaded matplotlib
+2026-11-02T06:10:12.4494526Z  Downloaded scikit-learn
+2026-11-02T06:10:12.5820035Z  Downloaded pandas
+2026-11-02T06:10:12.6560624Z  Downloaded numpy
+2026-11-02T06:10:12.7624748Z  Downloaded mysql-connector-python
+2026-11-02T06:10:13.0283410Z  Downloaded scipy
+2026-11-02T06:10:13.2364056Z  Downloaded pyarrow
+2026-11-02T06:10:14.0349889Z  Downloaded xgboost
+2026-11-02T06:10:14.6907190Z  Downloaded torch
+2026-11-02T06:10:15.7334849Z  Downloaded nvidia-nccl-cu12
+2026-11-02T06:10:15.7520967Z Prepared 64 packages in 4.16s
+2026-11-02T06:10:16.3995482Z Installed 64 packages in 647ms
+2026-11-02T06:10:16.3996512Z  + annotated-doc==0.0.5
+2026-11-02T06:10:16.3997586Z  + annotated-types==0.8.0
+2026-11-02T06:10:16.3998356Z  + anyio==4.15.1
+2026-11-02T06:10:16.3999398Z  + certifi==2026.10.19
+2026-11-02T06:10:16.4000132Z  + click==8.5.0
+2026-11-02T06:10:16.4000822Z  + cloudpickle==3.1.2
+2026-11-02T06:10:16.4001529Z  + contourpy==1.3.2
+2026-11-02T06:10:16.4002191Z  + cycler==0.12.1
+2026-11-02T06:10:16.4003070Z  + exceptiongroup==1.3.1
+2026-11-02T06:10:16.4003662Z  + fastapi==0.159.1
+2026-11-02T06:10:16.4004176Z  + filelock==3.32.3
+2026-11-02T06:10:16.4004722Z  + fonttools==4.65.0
+2026-11-02T06:10:16.4005252Z  + fsspec==2026.7.0
+2026-11-02T06:10:16.4005760Z  + greenlet==3.5.6
+2026-11-02T06:10:16.4006276Z  + h11==0.16.0
+2026-11-02T06:10:16.4007018Z  + httpcore==1.0.9
+2026-11-02T06:10:16.4007737Z  + httpx==0.28.1
+2026-11-02T06:10:16.4008092Z  + idna==3.20
+2026-11-02T06:10:16.4008440Z  + iniconfig==2.3.1
+2026-11-02T06:10:16.4008799Z  + jinja2==3.1.6
+2026-11-02T06:10:16.4009146Z  + joblib==1.6.0
+2026-11-02T06:10:16.4009504Z  + kiwisolver==1.5.1
+2026-11-02T06:10:16.4009901Z  + lightgbm==4.7.0
+2026-11-02T06:10:16.4010268Z  + markupsafe==3.0.3
+2026-11-02T06:10:16.4010659Z  + matplotlib==3.10.9
+2026-11-02T06:10:16.4011045Z  + mpmath==1.3.0
+2026-11-02T06:10:16.4011474Z  + mysql-connector-python==9.7.0
+2026-11-02T06:10:16.4011925Z  + narwhals==2.25.0
+2026-11-02T06:10:16.4012295Z  + networkx==3.4.2
+2026-11-02T06:10:16.4012647Z  + numpy==2.2.6
+2026-11-02T06:10:16.4013290Z  + nvidia-nccl-cu12==2.31.2
+2026-11-02T06:10:16.4013720Z  + opentelemetry-api==1.45.1
+2026-11-02T06:10:16.4014146Z  + packaging==26.3
+2026-11-02T06:10:16.4014497Z  + pandas==2.3.3
+2026-11-02T06:10:16.4014839Z  + pillow==12.3.0
+2026-11-02T06:10:16.4015189Z  + pip==26.2.1
+2026-11-02T06:10:16.4015526Z  + pluggy==1.7.0
+2026-11-02T06:10:16.4015878Z  + pyarrow==25.0.1
+2026-11-02T06:10:16.4016232Z  + pydantic==2.14.1
+2026-11-02T06:10:16.4016597Z  + pydantic-core==2.50.1
+2026-11-02T06:10:16.4016990Z  + pygments==2.21.0
+2026-11-02T06:10:16.4017369Z  + pyparsing==3.3.3
+2026-11-02T06:10:16.4017718Z  + pytest==8.4.2
+2026-11-02T06:10:16.4018125Z  + python-dateutil==2.9.0.post0
+2026-11-02T06:10:16.4018576Z  + python-dotenv==1.2.4
+2026-11-02T06:10:16.4018985Z  + pytorch-tabnet==4.1.0
+2026-11-02T06:10:16.4019377Z  + pytz==2026.3.post1
+2026-11-02T06:10:16.4019756Z  + scikit-learn==1.7.2
+2026-11-02T06:10:16.4020136Z  + scipy==1.15.3
+2026-11-02T06:10:16.4020462Z  + setuptools==84.0.0
+2026-11-02T06:10:16.4020790Z  + six==1.17.0
+2026-11-02T06:10:16.4021127Z  + sqlalchemy==2.0.55
+2026-11-02T06:10:16.4021482Z  + starlette==1.7.0
+2026-11-02T06:10:16.4021863Z  + sympy==1.14.0
+2026-11-02T06:10:16.4022336Z  + threadpoolctl==3.6.0
+2026-11-02T06:10:16.4023047Z  + tomli==2.5.0
+2026-11-02T06:10:16.4023470Z  + torch==2.14.1+cpu
+2026-11-02T06:10:16.4023919Z  + tqdm==4.70.1
+2026-11-02T06:10:16.4024468Z  + typing-extensions==4.16.0
+2026-11-02T06:10:16.4024907Z  + typing-inspection==0.4.4
+2026-11-02T06:10:16.4025350Z  + tzdata==2026.3
+2026-11-02T06:10:16.4025695Z  + uvicorn==0.54.0
+2026-11-02T06:10:16.4026024Z  + wheel==0.48.0
+2026-11-02T06:10:16.4026337Z  + xgboost==3.2.0
+2026-11-02T06:10:16.4494627Z ##[group]Run .venv/bin/python -B -m pytest -q
+2026-11-02T06:10:16.4495042Z [36;1m.venv/bin/python -B -m pytest -q[0m
+2026-11-02T06:10:16.4517098Z shell: /usr/bin/bash -e {0}
+2026-11-02T06:10:16.4517371Z env:
+2026-11-02T06:10:16.4517596Z   PYTHONPATH: backend
+2026-11-02T06:10:16.4517830Z   OMP_NUM_THREADS: 4
+2026-11-02T06:10:16.4518059Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:10:16.4518299Z   MKL_NUM_THREADS: 4
+2026-11-02T06:10:16.4518522Z   DB_HOST: 127.0.0.1
+2026-11-02T06:10:16.4518731Z   DB_PORT: 1
+2026-11-02T06:10:16.4518930Z   DB_USER: offline
+2026-11-02T06:10:16.4519145Z   DB_PASSWORD: offline
+2026-11-02T06:10:16.4519364Z   DB_NAME: offline
+2026-11-02T06:10:16.4519606Z   DB_DATABASE: offline
+2026-11-02T06:10:16.4519831Z   YOUTUBE_API_KEY: 
+2026-11-02T06:10:16.4520121Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:16.4520592Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:10:16.4521089Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:16.4521511Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:16.4521921Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:16.4522333Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:10:16.4522689Z ##[endgroup]
+2026-11-02T06:10:22.8658744Z ........................................................................ [ 59%]
+2026-11-02T06:10:31.5330863Z ..................................................                       [100%]
+2026-11-02T06:10:31.5331977Z =============================== warnings summary ===============================
+2026-11-02T06:10:31.5333718Z .venv/lib/python3.10/site-packages/fastapi/testclient.py:1
+2026-11-02T06:10:31.5335352Z   /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+2026-11-02T06:10:31.5337020Z     from starlette.testclient import TestClient as TestClient  # noqa
+2026-11-02T06:10:31.5337458Z 
+2026-11-02T06:10:31.5337886Z -- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+2026-11-02T06:10:31.5338534Z 122 passed, 1 warning in 9.94s
+2026-11-02T06:10:32.6550217Z ##[group]Run .venv/bin/python -B -m ml.train_weighted_ensemble --include-deep --include-tabnet --run-id t0-v2-ci
+2026-11-02T06:10:32.6551128Z [36;1m.venv/bin/python -B -m ml.train_weighted_ensemble --include-deep --include-tabnet --run-id t0-v2-ci[0m
+2026-11-02T06:10:32.6574470Z shell: /usr/bin/bash -e {0}
+2026-11-02T06:10:32.6574764Z env:
+2026-11-02T06:10:32.6574992Z   PYTHONPATH: backend
+2026-11-02T06:10:32.6575280Z   OMP_NUM_THREADS: 4
+2026-11-02T06:10:32.6575516Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:10:32.6575757Z   MKL_NUM_THREADS: 4
+2026-11-02T06:10:32.6575968Z   DB_HOST: 127.0.0.1
+2026-11-02T06:10:32.6576184Z   DB_PORT: 1
+2026-11-02T06:10:32.6576375Z   DB_USER: offline
+2026-11-02T06:10:32.6576580Z   DB_PASSWORD: offline
+2026-11-02T06:10:32.6576790Z   DB_NAME: offline
+2026-11-02T06:10:32.6576999Z   DB_DATABASE: offline
+2026-11-02T06:10:32.6577226Z   YOUTUBE_API_KEY: 
+2026-11-02T06:10:32.6577522Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:32.6578059Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:10:32.6578525Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:32.6578934Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:32.6579335Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:10:32.6579739Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:10:32.6580094Z ##[endgroup]
+2026-11-02T06:10:39.6733958Z {"run_id": "t0-v2-ci", "splits": {"train": {"candidate_rows": 24378, "unresolved_label_rows_removed": 184, "seen_video_rows_removed": 0, "rows": 24194, "unique_videos": 12871, "T0_min": "2022-07-01 09:00:00", "T0_max": "2024-07-12 03:00:00", "positive_rate": 0.3646358601306109}, "validation": {"candidate_rows": 5230, "unresolved_label_rows_removed": 196, "seen_video_rows_removed": 54, "rows": 4980, "unique_videos": 2404, "T0_min": "2024-07-12 09:00:00", "T0_max": "2025-01-11 03:00:00", "positive_rate": 0.3821285140562249}, "test": {"candidate_rows": 5225, "unresolved_label_rows_removed": 200, "seen_video_rows_removed": 39, "rows": 4986, "unique_videos": 2311, "T0_min": "2025-01-11 21:00:00", "T0_max": "2025-06-30 15:00:00", "positive_rate": 0.33995186522262333}}}
+2026-11-02T06:10:39.7328806Z dummy: validation_auc=0.5000 (0.03s)
+2026-11-02T06:10:39.8134450Z logistic: validation_auc=0.6204 (0.08s)
+2026-11-02T06:10:40.1634105Z xgboost: validation_auc=0.8207 (0.35s)
+2026-11-02T06:10:40.5564371Z lightgbm: validation_auc=0.8231 (0.39s)
+2026-11-02T06:11:07.4586752Z /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/sklearn/neural_network/_multilayer_perceptron.py:781: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (250) reached and the optimization hasn't converged yet.
+2026-11-02T06:11:07.4604151Z   warnings.warn(
+2026-11-02T06:11:07.4726164Z sklearn_mlp: validation_auc=0.7960 (26.91s)
+2026-11-02T06:11:12.2893867Z embedding_mlp epoch=1 validation_auc=0.7639
+2026-11-02T06:11:20.6704244Z embedding_mlp epoch=10 validation_auc=0.8131
+2026-11-02T06:11:29.7154118Z embedding_mlp epoch=20 validation_auc=0.8137
+2026-11-02T06:11:38.8953956Z embedding_mlp epoch=30 validation_auc=0.8190
+2026-11-02T06:11:48.1003707Z embedding_mlp epoch=40 validation_auc=0.8202
+2026-11-02T06:11:57.0484033Z embedding_mlp epoch=50 validation_auc=0.8194
+2026-11-02T06:11:57.0947352Z /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pytorch_tabnet/abstract_model.py:82: UserWarning: Device used : cpu
+2026-11-02T06:11:57.0949447Z   warnings.warn(f"Device used : {self.device}")
+2026-11-02T06:13:23.8027149Z /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+2026-11-02T06:13:23.8028312Z   warnings.warn(wrn_msg)
+2026-11-02T06:13:27.3977688Z epoch 0  | loss: 0.63755 | validation_auc: 0.71133 |  0:00:03s
+2026-11-02T06:13:27.3978839Z epoch 10 | loss: 0.53243 | validation_auc: 0.79004 |  0:00:32s
+2026-11-02T06:13:27.3979557Z epoch 20 | loss: 0.52172 | validation_auc: 0.78585 |  0:01:02s
+2026-11-02T06:13:27.3979927Z 
+2026-11-02T06:13:27.3980445Z Early stopping occurred at epoch 28 with best_epoch = 13 and best_validation_auc = 0.80832
+2026-11-02T06:13:27.3981679Z Successfully saved model at /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/backend/artifacts/t0-v2-ci/tabnet.zip
+2026-11-02T06:13:27.3982484Z {
+2026-11-02T06:13:27.3983343Z   "output": "/home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team/backend/artifacts/t0-v2-ci",
+2026-11-02T06:13:27.3984064Z   "selected_model": "embedding_mlp",
+2026-11-02T06:13:27.3984450Z   "test": {
+2026-11-02T06:13:27.3984767Z     "auc": 0.8127646777794808,
+2026-11-02T06:13:27.3985157Z     "pr_auc": 0.629739649779992,
+2026-11-02T06:13:27.3985523Z     "f1": 0.6652777777777777,
+2026-11-02T06:13:27.3985919Z     "accuracy": 0.7099879663056559,
+2026-11-02T06:13:27.3986332Z     "precision": 0.5474285714285714,
+2026-11-02T06:13:27.3986755Z     "recall": 0.8477876106194691,
+2026-11-02T06:13:27.3987173Z     "confusion_matrix_tn_fp_fn_tp": [
+2026-11-02T06:13:27.3987664Z       2103,
+2026-11-02T06:13:27.3987936Z       1188,
+2026-11-02T06:13:27.3988201Z       258,
+2026-11-02T06:13:27.3988464Z       1437
+2026-11-02T06:13:27.3988724Z     ]
+2026-11-02T06:13:27.3988980Z   },
+2026-11-02T06:13:27.3989264Z   "elapsed_seconds": 167.906
+2026-11-02T06:13:27.3989610Z }
+2026-11-02T06:13:28.3332133Z ##[group]Run npm ci --ignore-scripts
+2026-11-02T06:13:28.3333041Z [36;1mnpm ci --ignore-scripts[0m
+2026-11-02T06:13:28.3357668Z shell: /usr/bin/bash -e {0}
+2026-11-02T06:13:28.3357947Z env:
+2026-11-02T06:13:28.3358155Z   PYTHONPATH: backend
+2026-11-02T06:13:28.3358396Z   OMP_NUM_THREADS: 4
+2026-11-02T06:13:28.3358612Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:13:28.3358841Z   MKL_NUM_THREADS: 4
+2026-11-02T06:13:28.3359041Z   DB_HOST: 127.0.0.1
+2026-11-02T06:13:28.3359243Z   DB_PORT: 1
+2026-11-02T06:13:28.3359434Z   DB_USER: offline
+2026-11-02T06:13:28.3359651Z   DB_PASSWORD: offline
+2026-11-02T06:13:28.3359865Z   DB_NAME: offline
+2026-11-02T06:13:28.3360058Z   DB_DATABASE: offline
+2026-11-02T06:13:28.3360261Z   YOUTUBE_API_KEY: 
+2026-11-02T06:13:28.3360541Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:28.3360997Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:13:28.3361468Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:28.3361861Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:28.3362249Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:28.3362645Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:13:28.3363732Z ##[endgroup]
+2026-11-02T06:13:31.9908937Z 
+2026-11-02T06:13:31.9909744Z added 192 packages, and audited 193 packages in 4s
+2026-11-02T06:13:31.9910275Z 
+2026-11-02T06:13:31.9913453Z 34 packages are looking for funding
+2026-11-02T06:13:31.9913925Z   run `npm fund` for details
+2026-11-02T06:13:31.9922093Z 
+2026-11-02T06:13:31.9922355Z found 0 vulnerabilities
+2026-11-02T06:13:32.0632022Z ##[group]Run npm run check
+2026-11-02T06:13:32.0632532Z [36;1mnpm run check[0m
+2026-11-02T06:13:32.0655472Z shell: /usr/bin/bash -e {0}
+2026-11-02T06:13:32.0655750Z env:
+2026-11-02T06:13:32.0655954Z   PYTHONPATH: backend
+2026-11-02T06:13:32.0656193Z   OMP_NUM_THREADS: 4
+2026-11-02T06:13:32.0656415Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:13:32.0656901Z   MKL_NUM_THREADS: 4
+2026-11-02T06:13:32.0657107Z   DB_HOST: 127.0.0.1
+2026-11-02T06:13:32.0657314Z   DB_PORT: 1
+2026-11-02T06:13:32.0657511Z   DB_USER: offline
+2026-11-02T06:13:32.0657716Z   DB_PASSWORD: offline
+2026-11-02T06:13:32.0657924Z   DB_NAME: offline
+2026-11-02T06:13:32.0658118Z   DB_DATABASE: offline
+2026-11-02T06:13:32.0658335Z   YOUTUBE_API_KEY: 
+2026-11-02T06:13:32.0658621Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:32.0659079Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:13:32.0659559Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:32.0659950Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:32.0660337Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:32.0660734Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:13:32.0661065Z ##[endgroup]
+2026-11-02T06:13:32.1743321Z 
+2026-11-02T06:13:32.1744661Z > frontend@0.0.0 check
+2026-11-02T06:13:32.1745580Z > npm run lint && npm audit --audit-level=low && npm run build
+2026-11-02T06:13:32.1746109Z 
+2026-11-02T06:13:32.2831666Z 
+2026-11-02T06:13:32.2832256Z > frontend@0.0.0 lint
+2026-11-02T06:13:32.2833046Z > eslint . --max-warnings 0
+2026-11-02T06:13:32.2833343Z 
+2026-11-02T06:13:37.0107735Z found 0 vulnerabilities
+2026-11-02T06:13:37.1224231Z 
+2026-11-02T06:13:37.1224863Z > frontend@0.0.0 build
+2026-11-02T06:13:37.1225292Z > vite build
+2026-11-02T06:13:37.1225476Z 
+2026-11-02T06:13:37.4939110Z [36mvite v8.3.5 [32mbuilding client environment for production...[36m[39m
+2026-11-02T06:13:37.5058038Z transforming...
+2026-11-02T06:13:40.1721625Z ✓ 493 modules transformed.
+2026-11-02T06:13:40.2414089Z rendering chunks...
+2026-11-02T06:13:40.3434091Z computing gzip size...
+2026-11-02T06:13:40.3489130Z dist/index.html                                 1.40 kB │ gzip:   0.57 kB
+2026-11-02T06:13:40.3490322Z dist/assets/LandingPage-CqYMAIDB.css            3.44 kB │ gzip:   1.10 kB
+2026-11-02T06:13:40.3501045Z dist/assets/PredictionPage-C5b2jiej.css         5.21 kB │ gzip:   1.45 kB
+2026-11-02T06:13:40.3502748Z dist/assets/SustainPage-BZ0t0TnG.css            6.27 kB │ gzip:   1.69 kB
+2026-11-02T06:13:40.3504641Z dist/assets/DashboardPage-D4S_-LhO.css          8.87 kB │ gzip:   2.29 kB
+2026-11-02T06:13:40.3506176Z dist/assets/TrendingPage-U4UwJG80.css          10.04 kB │ gzip:   2.60 kB
+2026-11-02T06:13:40.3507739Z dist/assets/CampaignPlannerPage-CqY43FQ9.css   10.43 kB │ gzip:   2.48 kB
+2026-11-02T06:13:40.3508986Z dist/assets/VideoPage-Co-AYs-N.css             33.93 kB │ gzip:   6.51 kB
+2026-11-02T06:13:40.3510226Z dist/assets/index-BG33n0zK.css                 84.90 kB │ gzip:  16.23 kB
+2026-11-02T06:13:40.3511436Z dist/assets/EmptyState-Bmwhh500.js              0.91 kB │ gzip:   0.62 kB
+2026-11-02T06:13:40.3512720Z dist/assets/useJsonResource-o8IxWOt-.js         0.99 kB │ gzip:   0.61 kB
+2026-11-02T06:13:40.3514219Z dist/assets/ErrorState-5j_5805Z.js              1.10 kB │ gzip:   0.75 kB
+2026-11-02T06:13:40.3515462Z dist/assets/useEDA-BQ7RWOFH.js                  2.36 kB │ gzip:   1.07 kB
+2026-11-02T06:13:40.3516705Z dist/assets/useVerifiedResource-DS-hPSN4.js     3.27 kB │ gzip:   1.65 kB
+2026-11-02T06:13:40.3517916Z dist/assets/LandingPage-BEtKfdQz.js             8.15 kB │ gzip:   3.41 kB
+2026-11-02T06:13:40.3519172Z dist/assets/CampaignPlannerPage-oYrtzavs.js     9.23 kB │ gzip:   3.73 kB
+2026-11-02T06:13:40.3520445Z dist/assets/SustainPage-DAPndjl4.js             9.41 kB │ gzip:   3.88 kB
+2026-11-02T06:13:40.3521669Z dist/assets/fetchJson-V05KuJzJ.js               9.68 kB │ gzip:   3.82 kB
+2026-11-02T06:13:40.3523808Z dist/assets/DashboardPage-Dgr-Kavg.js          15.73 kB │ gzip:   5.93 kB
+2026-11-02T06:13:40.3525114Z dist/assets/VideoPage-BaOl4sBy.js              24.61 kB │ gzip:   9.49 kB
+2026-11-02T06:13:40.3526375Z dist/assets/TrendingPage-DSI11OYS.js           60.22 kB │ gzip:  17.08 kB
+2026-11-02T06:13:40.3527608Z dist/assets/index-Bn2zTkHS.js                 359.95 kB │ gzip: 116.95 kB
+2026-11-02T06:13:40.3528522Z 
+2026-11-02T06:13:40.3555093Z [32m✓ built in 2.86s[39m
+2026-11-02T06:13:40.4360312Z ##[group]Run npx playwright install --with-deps chromium
+2026-11-02T06:13:40.4360779Z [36;1mnpx playwright install --with-deps chromium[0m
+2026-11-02T06:13:40.4382324Z shell: /usr/bin/bash -e {0}
+2026-11-02T06:13:40.4382597Z env:
+2026-11-02T06:13:40.4383068Z   PYTHONPATH: backend
+2026-11-02T06:13:40.4383333Z   OMP_NUM_THREADS: 4
+2026-11-02T06:13:40.4383558Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:13:40.4383788Z   MKL_NUM_THREADS: 4
+2026-11-02T06:13:40.4383995Z   DB_HOST: 127.0.0.1
+2026-11-02T06:13:40.4384202Z   DB_PORT: 1
+2026-11-02T06:13:40.4384393Z   DB_USER: offline
+2026-11-02T06:13:40.4384602Z   DB_PASSWORD: offline
+2026-11-02T06:13:40.4384811Z   DB_NAME: offline
+2026-11-02T06:13:40.4385011Z   DB_DATABASE: offline
+2026-11-02T06:13:40.4385226Z   YOUTUBE_API_KEY: 
+2026-11-02T06:13:40.4385502Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:40.4385969Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:13:40.4386475Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:40.4386873Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:40.4387261Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:13:40.4387654Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:13:40.4387980Z ##[endgroup]
+2026-11-02T06:13:41.3419054Z Installing dependencies...
+2026-11-02T06:13:41.3526148Z Switching to root user to install dependencies...
+2026-11-02T06:13:41.4786416Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-11-02T06:13:41.5056166Z Get:6 https://packages.microsoft.com/ubuntu/24.04/prod noble InRelease [3600 B]
+2026-11-02T06:13:41.5244426Z Hit:2 http://azure.archive.ubuntu.com/ubuntu noble InRelease
+2026-11-02T06:13:41.5274409Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+2026-11-02T06:13:41.5304413Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+2026-11-02T06:13:41.5306268Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+2026-11-02T06:13:41.6122028Z Get:7 https://packages.microsoft.com/ubuntu/24.04/prod noble/main arm64 Packages [617 kB]
+2026-11-02T06:13:41.6336087Z Get:8 https://packages.microsoft.com/ubuntu/24.04/prod noble/main amd64 Packages [682 kB]
+2026-11-02T06:13:41.7695069Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [1408 kB]
+2026-11-02T06:13:41.7734448Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble-updates/main Translation-en [311 kB]
+2026-11-02T06:13:41.7754258Z Get:11 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1707 kB]
+2026-11-02T06:13:41.7854422Z Get:12 http://azure.archive.ubuntu.com/ubuntu noble-updates/universe Translation-en [343 kB]
+2026-11-02T06:13:41.7874532Z Get:13 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [1813 kB]
+2026-11-02T06:13:41.7977619Z Get:14 http://azure.archive.ubuntu.com/ubuntu noble-updates/restricted Translation-en [412 kB]
+2026-11-02T06:13:41.7985387Z Get:15 http://azure.archive.ubuntu.com/ubuntu noble-updates/multiverse Translation-en [14.3 kB]
+2026-11-02T06:13:41.8971686Z Get:16 http://azure.archive.ubuntu.com/ubuntu noble-security/main amd64 Packages [1146 kB]
+2026-11-02T06:13:41.9032512Z Get:17 http://azure.archive.ubuntu.com/ubuntu noble-security/main Translation-en [231 kB]
+2026-11-02T06:13:41.9051542Z Get:18 http://azure.archive.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1223 kB]
+2026-11-02T06:13:41.9581562Z Get:19 http://azure.archive.ubuntu.com/ubuntu noble-security/universe Translation-en [246 kB]
+2026-11-02T06:13:45.6158037Z Fetched 10.5 MB in 1s (8790 kB/s)
+2026-11-02T06:13:46.8660197Z Reading package lists...
+2026-11-02T06:13:46.8994216Z Reading package lists...
+2026-11-02T06:13:47.1879948Z Building dependency tree...
+2026-11-02T06:13:47.1888379Z Reading state information...
+2026-11-02T06:13:47.5025532Z libasound2t64 is already the newest version (1.2.11-1ubuntu0.3).
+2026-11-02T06:13:47.5026342Z libasound2t64 set to manually installed.
+2026-11-02T06:13:47.5027068Z libatk-bridge2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-11-02T06:13:47.5027788Z libatk-bridge2.0-0t64 set to manually installed.
+2026-11-02T06:13:47.5028486Z libatk1.0-0t64 is already the newest version (2.52.0-1build1).
+2026-11-02T06:13:47.5029113Z libatk1.0-0t64 set to manually installed.
+2026-11-02T06:13:47.5029775Z libatspi2.0-0t64 is already the newest version (2.52.0-1build1).
+2026-11-02T06:13:47.5030413Z libatspi2.0-0t64 set to manually installed.
+2026-11-02T06:13:47.5031027Z libcairo2 is already the newest version (1.18.0-3build1).
+2026-11-02T06:13:47.5031674Z libcairo2 set to manually installed.
+2026-11-02T06:13:47.5032294Z libcups2t64 is already the newest version (2.4.7-1.2ubuntu7.14).
+2026-11-02T06:13:47.5033223Z libcups2t64 set to manually installed.
+2026-11-02T06:13:47.5033978Z libdbus-1-3 is already the newest version (1.14.10-4ubuntu4.1).
+2026-11-02T06:13:47.5034566Z libdbus-1-3 set to manually installed.
+2026-11-02T06:13:47.5035181Z libdrm2 is already the newest version (2.4.125-1ubuntu0.1~24.04.2).
+2026-11-02T06:13:47.5035768Z libdrm2 set to manually installed.
+2026-11-02T06:13:47.5036353Z libgbm1 is already the newest version (25.2.8-0ubuntu0.24.04.4).
+2026-11-02T06:13:47.5036914Z libgbm1 set to manually installed.
+2026-11-02T06:13:47.5037520Z libglib2.0-0t64 is already the newest version (2.80.0-6ubuntu3.10).
+2026-11-02T06:13:47.5038318Z libglib2.0-0t64 set to manually installed.
+2026-11-02T06:13:47.5039283Z libnspr4 is already the newest version (2:4.35-1.1build1).
+2026-11-02T06:13:47.5039921Z libnspr4 set to manually installed.
+2026-11-02T06:13:47.5040477Z libnss3 is already the newest version (2:3.98-1ubuntu0.3).
+2026-11-02T06:13:47.5041015Z libnss3 set to manually installed.
+2026-11-02T06:13:47.5041828Z libpango-1.0-0 is already the newest version (1.52.1+ds-1build1).
+2026-11-02T06:13:47.5042368Z libpango-1.0-0 set to manually installed.
+2026-11-02T06:13:47.5043060Z libx11-6 is already the newest version (2:1.8.7-1ubuntu0.1).
+2026-11-02T06:13:47.5043520Z libx11-6 set to manually installed.
+2026-11-02T06:13:47.5043994Z libxcb1 is already the newest version (1.15-1ubuntu2).
+2026-11-02T06:13:47.5044362Z libxcb1 set to manually installed.
+2026-11-02T06:13:47.5044778Z libxcomposite1 is already the newest version (1:0.4.5-1build3).
+2026-11-02T06:13:47.5045213Z libxcomposite1 set to manually installed.
+2026-11-02T06:13:47.5045642Z libxdamage1 is already the newest version (1:1.1.6-1build1).
+2026-11-02T06:13:47.5046044Z libxdamage1 set to manually installed.
+2026-11-02T06:13:47.5046536Z libxext6 is already the newest version (2:1.3.4-1build2).
+2026-11-02T06:13:47.5046914Z libxext6 set to manually installed.
+2026-11-02T06:13:47.5047308Z libxfixes3 is already the newest version (1:6.0.0-2build1).
+2026-11-02T06:13:47.5047706Z libxfixes3 set to manually installed.
+2026-11-02T06:13:47.5048116Z libxkbcommon0 is already the newest version (1.6.0-1build1).
+2026-11-02T06:13:47.5048526Z libxkbcommon0 set to manually installed.
+2026-11-02T06:13:47.5048940Z libxrandr2 is already the newest version (2:1.5.2-2build1).
+2026-11-02T06:13:47.5049321Z libxrandr2 set to manually installed.
+2026-11-02T06:13:47.5049715Z xvfb is already the newest version (2:21.1.12-1ubuntu1.9).
+2026-11-02T06:13:47.5050257Z fonts-noto-color-emoji is already the newest version (2.047-0ubuntu0.24.04.1).
+2026-11-02T06:13:47.5050937Z libfontconfig1 is already the newest version (2.15.0-1.1ubuntu2).
+2026-11-02T06:13:47.5051369Z libfontconfig1 set to manually installed.
+2026-11-02T06:13:47.5051837Z libfreetype6 is already the newest version (2.13.2+dfsg-1ubuntu0.2).
+2026-11-02T06:13:47.5052269Z libfreetype6 set to manually installed.
+2026-11-02T06:13:47.5052685Z fonts-liberation is already the newest version (1:2.1.5-3).
+2026-11-02T06:13:47.5053360Z fonts-liberation set to manually installed.
+2026-11-02T06:13:47.5054036Z The following additional packages will be installed:
+2026-11-02T06:13:47.5054765Z   xfonts-encodings xfonts-utils
+2026-11-02T06:13:47.5055121Z Recommended packages:
+2026-11-02T06:13:47.5055414Z   fonts-ipafont-mincho fonts-tlwg-loma
+2026-11-02T06:13:47.5295409Z The following NEW packages will be installed:
+2026-11-02T06:13:47.5296576Z   fonts-freefont-ttf fonts-ipafont-gothic fonts-tlwg-loma-otf fonts-unifont
+2026-11-02T06:13:47.5308502Z   fonts-wqy-zenhei xfonts-cyrillic xfonts-encodings xfonts-scalable
+2026-11-02T06:13:47.5309222Z   xfonts-utils
+2026-11-02T06:13:47.5612039Z 0 upgraded, 9 newly installed, 0 to remove and 6 not upgraded.
+2026-11-02T06:13:47.5612556Z Need to get 21.1 MB of archives.
+2026-11-02T06:13:47.5613420Z After this operation, 79.5 MB of additional disk space will be used.
+2026-11-02T06:13:47.5614042Z Get:1 file:/etc/apt/apt-mirrors.txt Mirrorlist [144 B]
+2026-11-02T06:13:47.6415563Z Get:2 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-ipafont-gothic all 00303-21ubuntu1 [3513 kB]
+2026-11-02T06:13:50.5805422Z Get:3 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 fonts-freefont-ttf all 20211204+svn4273-2 [5641 kB]
+2026-11-02T06:13:54.9061697Z Get:4 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-tlwg-loma-otf all 1:0.7.3-1 [107 kB]
+2026-11-02T06:13:54.9865549Z Get:5 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-unifont all 1:15.1.01-1build1 [2993 kB]
+2026-11-02T06:13:57.2833898Z Get:6 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 fonts-wqy-zenhei all 0.9.45-8 [7472 kB]
+2026-11-02T06:14:03.2588454Z Get:7 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-encodings all 1:1.0.5-0ubuntu2 [578 kB]
+2026-11-02T06:14:03.6989920Z Get:8 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-utils amd64 1:7.7+6build3 [94.4 kB]
+2026-11-02T06:14:03.7769296Z Get:9 http://azure.archive.ubuntu.com/ubuntu noble/universe amd64 xfonts-cyrillic all 1:1.0.5+nmu1 [384 kB]
+2026-11-02T06:14:04.0899674Z Get:10 http://azure.archive.ubuntu.com/ubuntu noble/main amd64 xfonts-scalable all 1:1.0.3-1.3 [304 kB]
+2026-11-02T06:14:04.6030569Z Fetched 21.1 MB in 17s (1260 kB/s)
+2026-11-02T06:14:04.6341361Z Selecting previously unselected package fonts-ipafont-gothic.
+2026-11-02T06:14:04.6651992Z (Reading database ... 
+2026-11-02T06:14:04.6652600Z (Reading database ... 5%
+2026-11-02T06:14:04.6653540Z (Reading database ... 10%
+2026-11-02T06:14:04.6654168Z (Reading database ... 15%
+2026-11-02T06:14:04.6654836Z (Reading database ... 20%
+2026-11-02T06:14:04.6655273Z (Reading database ... 25%
+2026-11-02T06:14:04.6655636Z (Reading database ... 30%
+2026-11-02T06:14:04.6655998Z (Reading database ... 35%
+2026-11-02T06:14:04.6656346Z (Reading database ... 40%
+2026-11-02T06:14:04.6656696Z (Reading database ... 45%
+2026-11-02T06:14:04.6657044Z (Reading database ... 50%
+2026-11-02T06:14:04.6698949Z (Reading database ... 55%
+2026-11-02T06:14:04.7233474Z (Reading database ... 60%
+2026-11-02T06:14:04.8116994Z (Reading database ... 65%
+2026-11-02T06:14:05.0058363Z (Reading database ... 70%
+2026-11-02T06:14:05.1979385Z (Reading database ... 75%
+2026-11-02T06:14:05.3056279Z (Reading database ... 80%
+2026-11-02T06:14:05.3683121Z (Reading database ... 85%
+2026-11-02T06:14:05.4545795Z (Reading database ... 90%
+2026-11-02T06:14:05.5550011Z (Reading database ... 95%
+2026-11-02T06:14:05.5550661Z (Reading database ... 100%
+2026-11-02T06:14:05.5551616Z (Reading database ... 215504 files and directories currently installed.)
+2026-11-02T06:14:05.5602311Z Preparing to unpack .../0-fonts-ipafont-gothic_00303-21ubuntu1_all.deb ...
+2026-11-02T06:14:05.5718792Z Unpacking fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-11-02T06:14:05.8322157Z Selecting previously unselected package fonts-freefont-ttf.
+2026-11-02T06:14:05.8477843Z Preparing to unpack .../1-fonts-freefont-ttf_20211204+svn4273-2_all.deb ...
+2026-11-02T06:14:05.8485745Z Unpacking fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-11-02T06:14:05.9556144Z Selecting previously unselected package fonts-tlwg-loma-otf.
+2026-11-02T06:14:05.9707831Z Preparing to unpack .../2-fonts-tlwg-loma-otf_1%3a0.7.3-1_all.deb ...
+2026-11-02T06:14:05.9715740Z Unpacking fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-11-02T06:14:06.0032148Z Selecting previously unselected package fonts-unifont.
+2026-11-02T06:14:06.0188137Z Preparing to unpack .../3-fonts-unifont_1%3a15.1.01-1build1_all.deb ...
+2026-11-02T06:14:06.0197147Z Unpacking fonts-unifont (1:15.1.01-1build1) ...
+2026-11-02T06:14:06.1414153Z Selecting previously unselected package fonts-wqy-zenhei.
+2026-11-02T06:14:06.1572998Z Preparing to unpack .../4-fonts-wqy-zenhei_0.9.45-8_all.deb ...
+2026-11-02T06:14:06.1708280Z Unpacking fonts-wqy-zenhei (0.9.45-8) ...
+2026-11-02T06:14:06.6674257Z Selecting previously unselected package xfonts-encodings.
+2026-11-02T06:14:06.6831054Z Preparing to unpack .../5-xfonts-encodings_1%3a1.0.5-0ubuntu2_all.deb ...
+2026-11-02T06:14:06.6837636Z Unpacking xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-11-02T06:14:06.7247259Z Selecting previously unselected package xfonts-utils.
+2026-11-02T06:14:06.7402370Z Preparing to unpack .../6-xfonts-utils_1%3a7.7+6build3_amd64.deb ...
+2026-11-02T06:14:06.7410284Z Unpacking xfonts-utils (1:7.7+6build3) ...
+2026-11-02T06:14:06.7845236Z Selecting previously unselected package xfonts-cyrillic.
+2026-11-02T06:14:06.8002563Z Preparing to unpack .../7-xfonts-cyrillic_1%3a1.0.5+nmu1_all.deb ...
+2026-11-02T06:14:06.8010663Z Unpacking xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-11-02T06:14:06.8415333Z Selecting previously unselected package xfonts-scalable.
+2026-11-02T06:14:06.8575576Z Preparing to unpack .../8-xfonts-scalable_1%3a1.0.3-1.3_all.deb ...
+2026-11-02T06:14:06.8590795Z Unpacking xfonts-scalable (1:1.0.3-1.3) ...
+2026-11-02T06:14:06.9098590Z Setting up fonts-wqy-zenhei (0.9.45-8) ...
+2026-11-02T06:14:06.9232267Z Setting up fonts-freefont-ttf (20211204+svn4273-2) ...
+2026-11-02T06:14:06.9250762Z Setting up fonts-tlwg-loma-otf (1:0.7.3-1) ...
+2026-11-02T06:14:06.9269767Z Setting up xfonts-encodings (1:1.0.5-0ubuntu2) ...
+2026-11-02T06:14:06.9289110Z Setting up fonts-ipafont-gothic (00303-21ubuntu1) ...
+2026-11-02T06:14:06.9362406Z update-alternatives: using /usr/share/fonts/opentype/ipafont-gothic/ipag.ttf to provide /usr/share/fonts/truetype/fonts-japanese-gothic.ttf (fonts-japanese-gothic.ttf) in auto mode
+2026-11-02T06:14:06.9380522Z Setting up fonts-unifont (1:15.1.01-1build1) ...
+2026-11-02T06:14:06.9404382Z Setting up xfonts-utils (1:7.7+6build3) ...
+2026-11-02T06:14:06.9451848Z Setting up xfonts-cyrillic (1:1.0.5+nmu1) ...
+2026-11-02T06:14:06.9783706Z Setting up xfonts-scalable (1:1.0.3-1.3) ...
+2026-11-02T06:14:07.0093210Z Processing triggers for man-db (2.12.0-4build2) ...
+2026-11-02T06:14:07.0117520Z Not building database; man-db/auto-update is not 'true'.
+2026-11-02T06:14:07.0131992Z Processing triggers for fontconfig (2.15.0-1.1ubuntu2) ...
+2026-11-02T06:14:07.8309886Z 
+2026-11-02T06:14:07.8311157Z Running kernel seems to be up-to-date.
+2026-11-02T06:14:07.8311638Z 
+2026-11-02T06:14:07.8312030Z No services need to be restarted.
+2026-11-02T06:14:07.8312508Z 
+2026-11-02T06:14:07.8313257Z No containers need to be restarted.
+2026-11-02T06:14:07.8313744Z 
+2026-11-02T06:14:07.8314220Z No user sessions are running outdated binaries.
+2026-11-02T06:14:07.8314797Z 
+2026-11-02T06:14:07.8315651Z No VM guests are running outdated hypervisor (qemu) binaries on this host.
+2026-11-02T06:14:08.8904031Z Downloading Chrome for Testing 156.0.8078.4 (playwright chromium v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-linux64.zip
+2026-11-02T06:14:09.3420497Z |                                                                                |   0% of 191.1 MiB
+2026-11-02T06:14:09.5217835Z |■■■■■■■■                                                                        |  10% of 191.1 MiB
+2026-11-02T06:14:09.6248792Z |■■■■■■■■■■■■■■■■                                                                |  20% of 191.1 MiB
+2026-11-02T06:14:09.7438163Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 191.1 MiB
+2026-11-02T06:14:09.8500287Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 191.1 MiB
+2026-11-02T06:14:09.9592231Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 191.1 MiB
+2026-11-02T06:14:10.0872294Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 191.1 MiB
+2026-11-02T06:14:10.1939387Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 191.1 MiB
+2026-11-02T06:14:10.3415950Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 191.1 MiB
+2026-11-02T06:14:10.4286774Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 191.1 MiB
+2026-11-02T06:14:10.5606443Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 191.1 MiB
+2026-11-02T06:14:13.7414990Z Chrome for Testing 156.0.8078.4 (playwright chromium v1248) downloaded to /home/runner/.cache/ms-playwright/chromium-1248
+2026-11-02T06:14:13.7421391Z Downloading FFmpeg (playwright ffmpeg v1013) from https://cdn.playwright.dev/dbazure/download/playwright/builds/ffmpeg/1013/ffmpeg-linux.zip
+2026-11-02T06:14:14.1573508Z |                                                                                |   0% of 2.2 MiB
+2026-11-02T06:14:14.1760879Z |■■■■■■■■                                                                        |  10% of 2.2 MiB
+2026-11-02T06:14:14.1830425Z |■■■■■■■■■■■■■■■■                                                                |  20% of 2.2 MiB
+2026-11-02T06:14:14.1884718Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 2.2 MiB
+2026-11-02T06:14:14.1905982Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 2.2 MiB
+2026-11-02T06:14:14.1928713Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 2.2 MiB
+2026-11-02T06:14:14.1967824Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 2.2 MiB
+2026-11-02T06:14:14.1989890Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 2.2 MiB
+2026-11-02T06:14:14.2012227Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 2.2 MiB
+2026-11-02T06:14:14.2024937Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 2.2 MiB
+2026-11-02T06:14:14.2033807Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 2.2 MiB
+2026-11-02T06:14:14.2634788Z FFmpeg (playwright ffmpeg v1013) downloaded to /home/runner/.cache/ms-playwright/ffmpeg-1013
+2026-11-02T06:14:14.2638909Z Downloading Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) from https://cdn.playwright.dev/builds/cft/156.0.8078.4/linux64/chrome-headless-shell-linux64.zip
+2026-11-02T06:14:14.9463831Z |                                                                                |   0% of 120 MiB
+2026-11-02T06:14:15.0639336Z |■■■■■■■■                                                                        |  10% of 120 MiB
+2026-11-02T06:14:15.1389812Z |■■■■■■■■■■■■■■■■                                                                |  20% of 120 MiB
+2026-11-02T06:14:15.2044374Z |■■■■■■■■■■■■■■■■■■■■■■■■                                                        |  30% of 120 MiB
+2026-11-02T06:14:15.2842387Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                                |  40% of 120 MiB
+2026-11-02T06:14:15.3294412Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                        |  50% of 120 MiB
+2026-11-02T06:14:15.3858240Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                                |  60% of 120 MiB
+2026-11-02T06:14:15.4570738Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                        |  70% of 120 MiB
+2026-11-02T06:14:15.5133139Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■                |  80% of 120 MiB
+2026-11-02T06:14:15.5547276Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■        |  90% of 120 MiB
+2026-11-02T06:14:15.6199328Z |■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■■| 100% of 120 MiB
+2026-11-02T06:14:17.9109896Z Chrome Headless Shell 156.0.8078.4 (playwright chromium-headless-shell v1248) downloaded to /home/runner/.cache/ms-playwright/chromium_headless_shell-1248
+2026-11-02T06:14:17.9559006Z ##[group]Run npm run test:e2e -- --grep-invert 'REAL diagnostic'
+2026-11-02T06:14:17.9559508Z [36;1mnpm run test:e2e -- --grep-invert 'REAL diagnostic'[0m
+2026-11-02T06:14:17.9580648Z shell: /usr/bin/bash -e {0}
+2026-11-02T06:14:17.9580917Z env:
+2026-11-02T06:14:17.9581116Z   PYTHONPATH: backend
+2026-11-02T06:14:17.9581345Z   OMP_NUM_THREADS: 4
+2026-11-02T06:14:17.9581577Z   OPENBLAS_NUM_THREADS: 4
+2026-11-02T06:14:17.9581812Z   MKL_NUM_THREADS: 4
+2026-11-02T06:14:17.9582054Z   DB_HOST: 127.0.0.1
+2026-11-02T06:14:17.9582259Z   DB_PORT: 1
+2026-11-02T06:14:17.9582452Z   DB_USER: offline
+2026-11-02T06:14:17.9582655Z   DB_PASSWORD: offline
+2026-11-02T06:14:17.9583234Z   DB_NAME: offline
+2026-11-02T06:14:17.9583455Z   DB_DATABASE: offline
+2026-11-02T06:14:17.9583675Z   YOUTUBE_API_KEY: 
+2026-11-02T06:14:17.9583961Z   pythonLocation: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:14:17.9584429Z   PKG_CONFIG_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib/pkgconfig
+2026-11-02T06:14:17.9584917Z   Python_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:14:17.9585315Z   Python2_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:14:17.9585724Z   Python3_ROOT_DIR: /opt/hostedtoolcache/Python/3.10.21/x64
+2026-11-02T06:14:17.9586146Z   LD_LIBRARY_PATH: /opt/hostedtoolcache/Python/3.10.21/x64/lib
+2026-11-02T06:14:17.9586506Z   TRENDIT_TEST_RUN_ID: t0-v2-ci
+2026-11-02T06:14:17.9586765Z   TRENDIT_TEST_DIAGNOSTICS_ID: 
+2026-11-02T06:14:17.9587119Z   TRENDIT_BROWSER_REPORT: ../backend/artifacts/browser-ci-results.json
+2026-11-02T06:14:17.9587731Z ##[endgroup]
+2026-11-02T06:14:18.0646497Z 
+2026-11-02T06:14:18.0647111Z > frontend@0.0.0 test:e2e
+2026-11-02T06:14:18.0647863Z > playwright test --grep-invert REAL diagnostic
+2026-11-02T06:14:18.0648314Z 
+2026-11-02T06:14:23.1756800Z [WebServer] INFO:     Started server process [3678]
+2026-11-02T06:14:23.1761386Z [WebServer] INFO:     Waiting for application startup.
+2026-11-02T06:14:23.3587312Z [WebServer] INFO:     Application startup complete.
+2026-11-02T06:14:23.3588297Z [WebServer] INFO:     Uvicorn running on http://127.0.0.1:18000 (Press CTRL+C to quit)
+2026-11-02T06:14:24.7910741Z 
+2026-11-02T06:14:24.7911658Z Running 47 tests using 1 worker
+2026-11-02T06:14:24.7912119Z 
+2026-11-02T06:14:28.9734118Z   ✓   1 [chromium] › tests/e2e/analysis-contract.spec.js:6:1 › REAL observations: source, every population and TDI exclusions reconcile (3.3s)
+2026-11-02T06:14:30.0219983Z   ✓   2 [chromium] › tests/e2e/analysis-contract.spec.js:29:1 › INJECTED population mismatch: a successful HTTP response cannot fabricate a graph (1.0s)
+2026-11-02T06:14:31.2238775Z   ✓   3 [chromium] › tests/e2e/analysis-contract.spec.js:39:1 › Unavailable TDI preserves observed aggregates and never inserts legacy distribution (1.2s)
+2026-11-02T06:14:33.1513941Z   ✓   4 [chromium] › tests/e2e/analysis-contract.spec.js:49:1 › REAL dashboard filters both year and category without proportional estimates (1.9s)
+2026-11-02T06:14:39.5474629Z   ✓   5 [chromium] › tests/e2e/analysis-contract.spec.js:60:1 › Updated analysis routes show observations or input contracts without legacy model claims (6.4s)
+2026-11-02T06:14:42.6271828Z   ✓   6 [chromium] › tests/e2e/campaign-scenario.spec.js:11:1 › REAL scenario: starts empty, sample fills only, explicit arithmetic and CSV match assumptions (3.1s)
+2026-11-02T06:14:44.5562451Z   ✓   7 [chromium] › tests/e2e/campaign-scenario.spec.js:36:1 › REAL zero conversions: zero is kept and CPA is unavailable (1.9s)
+2026-11-02T06:14:46.5426908Z   ✓   8 [chromium] › tests/e2e/campaign-scenario.spec.js:44:1 › Scenario validation blocks blank, zero CPM, out-of-range rates and incomplete allocation (2.0s)
+2026-11-02T06:14:48.4163366Z   ✓   9 [chromium] › tests/e2e/campaign-scenario.spec.js:62:1 › INJECTED scenario failure: no invented result, retry reaches real arithmetic (1.9s)
+2026-11-02T06:14:50.2793563Z   ✓  10 [chromium] › tests/e2e/campaign-scenario.spec.js:73:1 › Scenario delayed request: duplicate submit is blocked and input editing cancels old result (1.9s)
+2026-11-02T06:14:51.8917201Z   ✓  11 [chromium] › tests/e2e/campaign-scenario.spec.js:90:1 › Campaign mobile: user assumptions are readable without document overflow or ROI forecast cards (1.6s)
+2026-11-02T06:14:53.8722578Z   ✓  12 [chromium] › tests/e2e/campaign-scenario.spec.js:99:1 › Campaign dark mode keeps typed assumption inputs readable (2.0s)
+2026-11-02T06:14:55.5561857Z   ✓  13 [chromium] › tests/e2e/home-contract.spec.js:3:1 › REAL home: observed source and verified classifier replace LIVE demo and unsupported 24h or regression claims (1.6s)
+2026-11-02T06:14:57.2378415Z   ✓  14 [chromium] › tests/e2e/home-contract.spec.js:14:1 › Home observation failure is explicit and does not fill old snapshot statistics; retry recovers (1.7s)
+2026-11-02T06:14:58.4095955Z   ✓  15 [chromium] › tests/e2e/model-diagnostics.spec.js:24:1 › Diagnostic unavailable: primary evaluation remains usable and no interval is invented (1.1s)
+2026-11-02T06:15:01.3971952Z   ✓  16 [chromium] › tests/e2e/quality-regression.spec.js:35:1 › CountUp: decimals, negatives, units and ranges keep their values after live prop changes (2.9s)
+2026-11-02T06:15:02.4659499Z   ✓  17 [chromium] › tests/e2e/quality-regression.spec.js:45:1 › CountUp: duration updates, zero duration and reduced motion finish without stale animation (1.1s)
+2026-11-02T06:15:05.3345304Z   ✓  18 [chromium] › tests/e2e/quality-regression.spec.js:60:1 › Mobile navigation: route changes, Back/Forward, Escape and resize close the menu; theme persists (2.9s)
+2026-11-02T06:15:06.5594054Z   ✓  19 [chromium] › tests/e2e/quality-regression.spec.js:83:1 › Dashboard: timeout and retry load new data; late old data never replaces the retry (1.2s)
+2026-11-02T06:15:08.0377526Z   ✓  20 [chromium] › tests/e2e/quality-regression.spec.js:101:1 › Dashboard: unmount aborts the active request instead of updating the previous page (1.5s)
+2026-11-02T06:15:11.8180704Z   ✓  21 [chromium] › tests/e2e/quality-regression.spec.js:116:1 › EDA: failed response and retry update summary; navigating away aborts a pending retry (3.8s)
+2026-11-02T06:15:13.3967242Z   ✓  22 [chromium] › tests/e2e/quality-regression.spec.js:141:1 › Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text (1.6s)
+2026-11-02T06:15:15.7671123Z   ✓  23 [chromium] › tests/e2e/quality-regression.spec.js:163:1 › Video feed: category change cancels old refresh and its late response cannot replace current selection (2.4s)
+2026-11-02T06:15:18.3391334Z   ✓  24 [chromium] › tests/e2e/quality-regression.spec.js:191:1 › Video feed: one in-flight refresh, automatic refresh resumes afterwards, stable selection stays selected (2.6s)
+2026-11-02T06:15:23.9454259Z   ✓  25 [chromium] › tests/e2e/quality-regression.spec.js:217:1 › Video feed: cached observations stay labelled on network failure and refresh recovers (5.6s)
+2026-11-02T06:15:25.9401653Z   ✓  26 [chromium] › tests/e2e/quality-regression.spec.js:240:3 › Video feed: expired cache is ignored without a crash or fabricated videos (2.0s)
+2026-11-02T06:15:27.9576949Z   ✓  27 [chromium] › tests/e2e/quality-regression.spec.js:240:3 › Video feed: malformed cache is ignored without a crash or fabricated videos (2.0s)
+2026-11-02T06:15:30.2772138Z   ✓  28 [chromium] › tests/e2e/quality-regression.spec.js:261:1 › Video feed: legacy single-category endpoint works when bulk is unavailable; empty feed is not endless loading (2.3s)
+2026-11-02T06:15:31.0215676Z   ✓  29 [chromium] › tests/e2e/quality-regression.spec.js:275:1 › API health: offline banner makes no unsupported claim that every page has stored results (730ms)
+2026-11-02T06:15:42.9755452Z   ✓  30 [chromium] › tests/e2e/quality-regression.spec.js:283:1 › Modified legacy screens: all public routes render without uncaught browser errors (11.9s)
+2026-11-02T06:15:44.5666159Z   ✓  31 [chromium] › tests/e2e/quality-regression.spec.js:306:1 › REAL observed API: sustain shows actual event durations and no legacy predictions or fabricated model metrics (1.6s)
+2026-11-02T06:15:46.1027941Z   ✓  32 [chromium] › tests/e2e/quality-regression.spec.js:322:1 › Sustain unavailable: no example videos or fallback metrics, retry recovers with observations (1.5s)
+2026-11-02T06:15:47.1348502Z   ✓  33 [chromium] › tests/e2e/quality-regression.spec.js:334:1 › Sustain rejects a legacy fabricated response instead of filling missing observed fields (1.0s)
+2026-11-02T06:15:52.7735986Z   ✓  34 [chromium] › tests/e2e/verified-t0.spec.js:21:1 › REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot (5.6s)
+2026-11-02T06:15:55.0684867Z   ✓  35 [chromium] › tests/e2e/verified-t0.spec.js:49:1 › REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts (2.3s)
+2026-11-02T06:15:57.0731017Z   ✓  36 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED 503: no result, explicit error, retry reaches real API (2.0s)
+2026-11-02T06:15:58.6793607Z   ✓  37 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED network: no result, explicit error, retry reaches real API (1.6s)
+2026-11-02T06:16:00.3155514Z   ✓  38 [chromium] › tests/e2e/verified-t0.spec.js:86:1 › INJECTED timeout: aborts after 12 seconds, no result, retry succeeds (1.6s)
+2026-11-02T06:16:02.3573829Z   ✓  39 [chromium] › tests/e2e/verified-t0.spec.js:102:1 › INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input (2.0s)
+2026-11-02T06:16:03.8768742Z   ✓  40 [chromium] › tests/e2e/verified-t0.spec.js:125:1 › INJECTED invalid response and 422: no fabricated result and field error shown (1.5s)
+2026-11-02T06:16:06.3465938Z   ✓  41 [chromium] › tests/e2e/verified-t0.spec.js:138:1 › REAL API: evaluation and interpretation match the report, with no legacy score fallback (2.5s)
+2026-11-02T06:16:07.8061276Z   ✓  42 [chromium] › tests/e2e/verified-t0.spec.js:157:1 › INJECTED evaluation unavailable: no fallback numbers; retry recovers (1.4s)
+2026-11-02T06:16:09.6537095Z   ✓  43 [chromium] › tests/e2e/verified-t0.spec.js:169:1 › INJECTED status unavailable: categories never default; reload and retry recover (1.8s)
+2026-11-02T06:16:12.7433457Z   ✓  44 [chromium] › tests/e2e/verified-t0.spec.js:180:1 › REAL API mobile: submit, readable result, no page overflow, refresh starts empty (3.1s)
+2026-11-02T06:16:14.1558406Z   ✓  45 [chromium] › tests/e2e/verified-t0.spec.js:202:1 › INJECTED live feed: only observed stats, no bulk or verified inference from current counters (1.4s)
+2026-11-02T06:16:17.4051204Z   ✓  46 [chromium] › tests/e2e/verified-t0.spec.js:216:1 › REAL API: home, analysis overview and dashboard use the same evaluated run (3.2s)
+2026-11-02T06:16:19.9945196Z   ✓  47 [chromium] › tests/e2e/verified-t0.spec.js:226:1 › INJECTED report failure: home, overview and dashboard never display fallback scores (2.6s)
+2026-11-02T06:16:20.2315055Z [WebServer] INFO:     Shutting down
+2026-11-02T06:16:20.3320238Z [WebServer] INFO:     Waiting for application shutdown.
+2026-11-02T06:16:20.3321393Z [WebServer] INFO:     Application shutdown complete.
+2026-11-02T06:16:20.3322439Z [WebServer] INFO:     Finished server process [3678]
+2026-11-02T06:16:20.3694963Z 
+2026-11-02T06:16:20.3699999Z   47 passed (2.0m)
+2026-11-02T06:16:20.4070482Z Post job cleanup.
+2026-11-02T06:16:20.5288600Z Cache hit occurred on the primary key node-cache-Linux-x64-npm-d448412bd53f8a76ad48af0b32463d1d87afbf212e3d4fe80b71f169d0d38a6b, not saving cache.
+2026-11-02T06:16:20.5420006Z Post job cleanup.
+2026-11-02T06:16:20.7307598Z Post job cleanup.
+2026-11-02T06:16:20.8237358Z [command]/usr/bin/git version
+2026-11-02T06:16:20.8319773Z git version 2.56.0
+2026-11-02T06:16:20.8360012Z Temporarily overriding HOME='/home/runner/work/_temp/e6f2d28d-4a7f-4a5f-a91c-1b17d65fa4c8' before making global git config changes
+2026-11-02T06:16:20.8361527Z Adding repository directory to the temporary git global config as a safe directory
+2026-11-02T06:16:20.8367014Z [command]/usr/bin/git config --global --add safe.directory /home/runner/work/SKN29-2nd-1Team/SKN29-2nd-1Team
+2026-11-02T06:16:20.8408368Z Removing SSH command configuration
+2026-11-02T06:16:20.8416422Z [command]/usr/bin/git config --local --name-only --get-regexp core\.sshCommand
+2026-11-02T06:16:20.8459261Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'core\.sshCommand' && git config --local --unset-all 'core.sshCommand' || :"
+2026-11-02T06:16:20.8744646Z Removing HTTP extra header
+2026-11-02T06:16:20.8752003Z [command]/usr/bin/git config --local --name-only --get-regexp http\.https\:\/\/github\.com\/\.extraheader
+2026-11-02T06:16:20.8797624Z [command]/usr/bin/git submodule foreach --recursive sh -c "git config --local --name-only --get-regexp 'http\.https\:\/\/github\.com\/\.extraheader' && git config --local --unset-all 'http.https://github.com/.extraheader' || :"
+2026-11-02T06:16:20.9081961Z Removing includeIf entries pointing to credentials config files
+2026-11-02T06:16:20.9091067Z [command]/usr/bin/git config --local --name-only --get-regexp ^includeIf\.gitdir:
+2026-11-02T06:16:20.9139508Z [command]/usr/bin/git submodule foreach --recursive git config --local --show-origin --name-only --get-regexp remote.origin.url
+2026-11-02T06:16:20.9535567Z Cleaning up orphan processes
+
