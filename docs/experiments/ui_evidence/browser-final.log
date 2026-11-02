@@ -1,0 +1,31 @@
+
+> frontend@0.0.0 test:e2e
+> playwright test
+
+[WebServer] INFO:     Started server process [30331]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:18000 (Press CTRL+C to quit)
+
+Running 14 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/verified-t0.spec.js:21:1 › REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot (4.4s)
+  ✓   2 [chromium] › tests/e2e/verified-t0.spec.js:49:1 › REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts (1.5s)
+  ✓   3 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED 503: no result, explicit error, retry reaches real API (1.0s)
+  ✓   4 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED network: no result, explicit error, retry reaches real API (1.1s)
+  ✓   5 [chromium] › tests/e2e/verified-t0.spec.js:86:1 › INJECTED timeout: aborts after 12 seconds, no result, retry succeeds (1.0s)
+  ✓   6 [chromium] › tests/e2e/verified-t0.spec.js:102:1 › INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input (1.1s)
+  ✓   7 [chromium] › tests/e2e/verified-t0.spec.js:125:1 › INJECTED invalid response and 422: no fabricated result and field error shown (992ms)
+  ✓   8 [chromium] › tests/e2e/verified-t0.spec.js:138:1 › REAL API: evaluation and interpretation match the report, with no legacy score fallback (1.1s)
+  ✓   9 [chromium] › tests/e2e/verified-t0.spec.js:157:1 › INJECTED evaluation unavailable: no fallback numbers; retry recovers (921ms)
+  ✓  10 [chromium] › tests/e2e/verified-t0.spec.js:169:1 › INJECTED status unavailable: categories never default; reload and retry recover (894ms)
+  ✓  11 [chromium] › tests/e2e/verified-t0.spec.js:180:1 › REAL API mobile: submit, readable result, no page overflow, refresh starts empty (1.9s)
+  ✓  12 [chromium] › tests/e2e/verified-t0.spec.js:202:1 › INJECTED live feed: only observed stats, no bulk or verified inference from current counters (641ms)
+  ✓  13 [chromium] › tests/e2e/verified-t0.spec.js:216:1 › REAL API: home, analysis overview and dashboard use the same evaluated run (1.0s)
+  ✓  14 [chromium] › tests/e2e/verified-t0.spec.js:226:1 › INJECTED report failure: home, overview and dashboard never display fallback scores (1.3s)
+[WebServer] INFO:     Shutting down
+[WebServer] INFO:     Waiting for application shutdown.
+[WebServer] INFO:     Application shutdown complete.
+[WebServer] INFO:     Finished server process [30331]
+
+  14 passed (21.1s)

@@ -1,0 +1,211 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_SCOPE",
+  "recorded_at_utc": "2026-10-22T12:15:40.481299+00:00",
+  "run_id": "t0-v2-cpu-20261022-audit",
+  "branch": "improve/trendit-reproducibility",
+  "base_commit": "f06c8175c0a2a6d611e21c9e72a9e0ca9e789a1c",
+  "publication": "Local uncommitted work; no GitHub push or deployment in this task",
+  "protocol": "t0-v2-purged-unseen-video",
+  "dataset_sha256": "cb9a13ea1c4d60ffe72046c6c23f9aed3ca846a2409ef5038b2a872eda8d164e",
+  "selected_model": "embedding_mlp",
+  "selected_threshold": 0.44,
+  "comparison_same_v2_data_and_splits": {
+    "baseline_model": "logistic",
+    "candidate_model": "embedding_mlp",
+    "baseline_test": {
+      "auc": 0.6246781917968824,
+      "pr_auc": 0.43648394394537765,
+      "f1": 0.5443169968717414,
+      "accuracy": 0.4741275571600481,
+      "precision": 0.3858093126385809,
+      "recall": 0.9238938053097345,
+      "confusion_matrix_tn_fp_fn_tp": [
+        798,
+        2493,
+        129,
+        1566
+      ]
+    },
+    "candidate_test": {
+      "auc": 0.8127646777794808,
+      "pr_auc": 0.629739649779992,
+      "f1": 0.6652777777777777,
+      "accuracy": 0.7099879663056559,
+      "precision": 0.5474285714285714,
+      "recall": 0.8477876106194691,
+      "confusion_matrix_tn_fp_fn_tp": [
+        2103,
+        1188,
+        258,
+        1437
+      ]
+    },
+    "test_auc_absolute_difference": 0.18808648598259836,
+    "test_f1_absolute_difference": 0.12096078090603635,
+    "threshold_policy": "Each model uses its validation-F1-selected threshold; no Test-based selection",
+    "not_comparable_to_legacy_scores": true,
+    "no_statistical_superiority_claim": true
+  },
+  "tests": {
+    "backend_existing_environment": {
+      "passed": 50,
+      "warnings": 1
+    },
+    "backend_lockfile_fresh_environment": {
+      "passed": 50,
+      "warnings": 1
+    },
+    "browser": {
+      "passed": 14,
+      "failed": 0,
+      "flaky": 0,
+      "engine": "Chromium",
+      "desktop": [
+        1280,
+        720
+      ],
+      "mobile_viewport": [
+        390,
+        844
+      ],
+      "retry_configuration": 0,
+      "timeout_test": "12-second virtual-clock advancement; not a latency benchmark",
+      "cases": [
+        {
+          "title": "REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot",
+          "status": "expected"
+        },
+        {
+          "title": "REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED 503: no result, explicit error, retry reaches real API",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED network: no result, explicit error, retry reaches real API",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED timeout: aborts after 12 seconds, no result, retry succeeds",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED invalid response and 422: no fabricated result and field error shown",
+          "status": "expected"
+        },
+        {
+          "title": "REAL API: evaluation and interpretation match the report, with no legacy score fallback",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED evaluation unavailable: no fallback numbers; retry recovers",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED status unavailable: categories never default; reload and retry recover",
+          "status": "expected"
+        },
+        {
+          "title": "REAL API mobile: submit, readable result, no page overflow, refresh starts empty",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED live feed: only observed stats, no bulk or verified inference from current counters",
+          "status": "expected"
+        },
+        {
+          "title": "REAL API: home, analysis overview and dashboard use the same evaluated run",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED report failure: home, overview and dashboard never display fallback scores",
+          "status": "expected"
+        }
+      ]
+    }
+  },
+  "build_and_scoped_lint": {
+    "backend-tests-final": {
+      "exit_code": 0,
+      "seconds": 4.709
+    },
+    "build-final": {
+      "exit_code": 0,
+      "seconds": 3.116
+    },
+    "lint-verified": {
+      "exit_code": 0,
+      "seconds": 1.003
+    },
+    "browser-final": {
+      "exit_code": 0,
+      "seconds": 21.657
+    }
+  },
+  "repository_wide_lint": {
+    "baseline_errors": 52,
+    "baseline_warnings": 3,
+    "current_errors": 35,
+    "current_warnings": 1,
+    "status": "NOT_PASSED; legacy findings remain"
+  },
+  "dependency_audit_unresolved": {
+    "info": 0,
+    "low": 1,
+    "moderate": 1,
+    "high": 8,
+    "critical": 0,
+    "total": 10
+  },
+  "ml_sources_match_training_report": {
+    "backend/ml/__init__.py": true,
+    "backend/ml/artifact_contract.py": true,
+    "backend/ml/data_contract.py": true,
+    "backend/ml/inference.py": true,
+    "backend/ml/torch_models.py": true,
+    "backend/ml/train_lstm_predictor.py": true,
+    "backend/ml/train_weighted_ensemble.py": true,
+    "backend/ml/train_xgb_models.py": true
+  },
+  "tracked_pyc_files_removed_from_index": 42,
+  "scope_limits": [
+    "Single-seed temporal holdout; no confidence interval or multi-seed stability",
+    "No new live-T0 collection, duration/24h model validation or business uplift measurement",
+    "No full legacy-demo or external MySQL/YouTube service QA",
+    "Mobile viewport on Chromium; not a physical iOS/Safari device test",
+    "Full-page screenshots expand fixed-height body capture bounds without changing product widths/data"
+  ],
+  "source_manifest": "ui_evidence/final-source-manifest.json",
+  "evidence_sha256": {
+    "audit-current.json": "ac13890022fd2577983a5095d82261f4d038fd0c0a4df44f966b1d76338831a2",
+    "backend-tests-final.log": "27d4da74a05f11dc7029c1e3fb770345244d6f587e9c4907d568921c85418dc3",
+    "baseline-additional-pages.json": "63de59beebdc602be2348f2ec8d9d413f60d53c9c1768bd00d622ab975f3042d",
+    "baseline-build.log": "9dfd05dcdd36d73b041fa69ce6242a2439ff20b6536b727fc327c1147da6b5ce",
+    "baseline-checks.json": "b4111df514b5b01c45786d07b023f43f1178e00ad404e35a1beecdc7d427eb47",
+    "baseline-lint.log": "61d6096f4364d8df361d81298ce2b3f53a454caa23853c499094d3a24a5e1eb9",
+    "baseline-source-manifest.json": "c1fbdaf69028018c3fe7deb014546b625d82e0c7679b0122d774046da59dc4c5",
+    "browser-final.log": "27947070e746817a0274164053e680d575414ecf606e38bd75dc6ef4a7c99989",
+    "browser-first-run.log": "50159b19a09c3788c20e815802caeffee871101a837d1d1026228262f043f733",
+    "browser-mobile-viewport-fixture-failure.log": "11ef0d451339283b6fd3d2a30d2173475b1395dfdb85812ce0c346a32694d8db",
+    "browser-results.json": "6fd5bb5a2287f78fb60203742c793c883b4f18d14c31d85cbd4f29e541fd6129",
+    "browser-second-run.log": "4751ca94754c77c83b6697c4c03d28c8fde2a6bdabd9883730c2cf6de7e387ad",
+    "build-final.log": "d0677403775ea7ebac1e9818cdeaff2f386534d7acca8b334cc3251b018822d7",
+    "evaluation-desktop.png": "81ba05f566e1a57d8d2ce914f25499cf8df723a0d774ef7f21b1aa8368ca8d9e",
+    "evaluation-mobile.png": "e2f58c45a2ce68de130760d38c2bdd802411c84c2ae8a5992708ed9aa5ca96e6",
+    "final-checks.json": "9140be1dde675a473f6b78cde835cec656242addc6817fe80d935f4b15df11ea",
+    "final-source-manifest.json": "40d6653cccb72ebc68355d660c4af967a57905b3df8c67459e879a0afe57600a",
+    "fresh-environment-tests.log": "9b49b0f3953ae51f4c69fbe5ad32dbd1d3a46470ebd0b8b2d48a8f472352eaf2",
+    "lint-final.json": "97f626736d8cf02229f0389646acb83c2ec159560c03326233827a51ae34553f",
+    "lint-verified.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "prediction-desktop.png": "aa5e22f1626a85be6f94747057e8c75f81ae53a7aea9aea7c38e13ea7512cfc7",
+    "prediction-mobile.png": "d861ef46639fdca86c05644532fffe2379872a2e6a09322dfb4422c77e4ae41c",
+    "real-api-response.json": "cb9d8cdfe9a3e4147655c6c389746e90bfe5cc75fb0c3360586e27ca271cb078",
+    "real-evaluation.json": "a3aacd3b8ca391a02ac2236eb86139ad97189cb974047f69b77308bf5464e130"
+  }
+}

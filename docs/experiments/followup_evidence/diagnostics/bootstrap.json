@@ -1,0 +1,83 @@
+{
+  "method": "paired video_id cluster percentile bootstrap",
+  "seed": 20261023,
+  "attempted": 2000,
+  "valid": 2000,
+  "skipped_single_class": 0,
+  "confidence": 0.95,
+  "events": 4986,
+  "videos": 2311,
+  "thresholds_fixed_before_resampling": {
+    "logistic": 0.27,
+    "embedding_mlp": 0.44
+  },
+  "intervals": {
+    "logistic": {
+      "auc": {
+        "lower": 0.6089672622840958,
+        "upper": 0.6389316836111051
+      },
+      "pr_auc": {
+        "lower": 0.41597933220301897,
+        "upper": 0.4586057784821067
+      },
+      "f1": {
+        "lower": 0.530282104650081,
+        "upper": 0.5587115993722168
+      },
+      "precision": {
+        "lower": 0.3727496011298734,
+        "upper": 0.3995062213315076
+      },
+      "recall": {
+        "lower": 0.9111219380415095,
+        "upper": 0.9367683196857154
+      }
+    },
+    "embedding_mlp": {
+      "auc": {
+        "lower": 0.8007499773094197,
+        "upper": 0.8237028205270813
+      },
+      "pr_auc": {
+        "lower": 0.6047868982763354,
+        "upper": 0.6543324020965254
+      },
+      "f1": {
+        "lower": 0.6499140616041543,
+        "upper": 0.6802072406688894
+      },
+      "precision": {
+        "lower": 0.5289300584630516,
+        "upper": 0.5653670056468191
+      },
+      "recall": {
+        "lower": 0.8305363837932284,
+        "upper": 0.86609514549839
+      }
+    },
+    "embedding_minus_logistic": {
+      "auc": {
+        "lower": 0.17295249931766254,
+        "upper": 0.20409432323165386
+      },
+      "pr_auc": {
+        "lower": 0.17021039971475785,
+        "upper": 0.2160049286150009
+      },
+      "f1": {
+        "lower": 0.10751145330065676,
+        "upper": 0.13385308451560363
+      },
+      "precision": {
+        "lower": 0.14887535307700525,
+        "upper": 0.17373135837961556
+      },
+      "recall": {
+        "lower": -0.09688926812640718,
+        "upper": -0.05473704893205004
+      }
+    }
+  },
+  "limits": "Conditional uncertainty of this observed holdout; not future-period uncertainty or cross-seed confidence intervals"
+}

@@ -1,0 +1,22 @@
+{
+  "npm-ci": {
+    "exit_code": 0
+  },
+  "quality": {
+    "exit_code": 0
+  },
+  "audit-final": {
+    "exit_code": 0
+  },
+  "dependency-tree": {
+    "exit_code": 0
+  },
+  "lint-file-coverage": {
+    "exit_code": 0,
+    "files": 113,
+    "same_as_20261023": true
+  },
+  "browser": {
+    "exit_code": 0
+  }
+}

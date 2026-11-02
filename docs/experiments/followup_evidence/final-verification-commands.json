@@ -1,0 +1,22 @@
+{
+  "final-quality": {
+    "exit_code": 0,
+    "seconds": 5.016
+  },
+  "isolated-quality-final": {
+    "exit_code": 0,
+    "seconds": 4.962
+  },
+  "isolated-browser-final": {
+    "exit_code": 0,
+    "seconds": 95.855
+  },
+  "final-backend": {
+    "exit_code": 0,
+    "seconds": 5.629
+  },
+  "final-browser": {
+    "exit_code": 0,
+    "seconds": 98.01
+  }
+}

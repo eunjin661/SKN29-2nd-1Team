@@ -1,0 +1,442 @@
+{
+  "schema": "observed-analysis-v1",
+  "source": "historical_observed_events",
+  "analysis_scope": "historical_observations_only",
+  "provenance": {
+    "dataset": "video_trending_events_analysis.parquet",
+    "sha256": "cb9a13ea1c4d60ffe72046c6c23f9aed3ca846a2409ef5038b2a872eda8d164e",
+    "period_start": "2022-07-01 09:00:00",
+    "period_end": "2025-07-01 03:00:00",
+    "timezone": "Asia/Seoul"
+  },
+  "population": {
+    "events": 34964,
+    "unique_videos": 17884,
+    "categories": 5,
+    "missing_video_ids": 0,
+    "missing_category": 0
+  },
+  "duration": {
+    "n": 34964,
+    "excluded": 0,
+    "unit": "hours",
+    "min": 6.0,
+    "q25": 30.0,
+    "median": 108.0,
+    "mean": 144.1161766388285,
+    "q75": 240.0,
+    "max": 768.0
+  },
+  "category_summary": [
+    {
+      "category": "Education",
+      "events": 593,
+      "duration_n": 593,
+      "duration_excluded": 0,
+      "min": 6.0,
+      "q25": 30.0,
+      "median": 192.0,
+      "mean": 175.07251264755482,
+      "q75": 288.0,
+      "max": 702.0
+    },
+    {
+      "category": "Entertainment",
+      "events": 19646,
+      "duration_n": 19646,
+      "duration_excluded": 0,
+      "min": 6.0,
+      "q25": 24.0,
+      "median": 96.0,
+      "mean": 134.4756184465031,
+      "q75": 222.0,
+      "max": 738.0
+    },
+    {
+      "category": "Lifestyle",
+      "events": 8497,
+      "duration_n": 8497,
+      "duration_excluded": 0,
+      "min": 6.0,
+      "q25": 42.0,
+      "median": 192.0,
+      "mean": 185.72531481699423,
+      "q75": 300.0,
+      "max": 768.0
+    },
+    {
+      "category": "Music",
+      "events": 5241,
+      "duration_n": 5241,
+      "duration_excluded": 0,
+      "min": 6.0,
+      "q25": 24.0,
+      "median": 78.0,
+      "mean": 117.46078992558672,
+      "q75": 198.0,
+      "max": 666.0
+    },
+    {
+      "category": "News",
+      "events": 987,
+      "duration_n": 987,
+      "duration_excluded": 0,
+      "min": 6.0,
+      "q25": 18.0,
+      "median": 66.0,
+      "mean": 100.74164133738601,
+      "q75": 180.0,
+      "max": 522.0
+    }
+  ],
+  "annual": {
+    "n": 34964,
+    "excluded": 0,
+    "rows": [
+      {
+        "year": 2022,
+        "events": 6330,
+        "categories": [
+          {
+            "category": "Education",
+            "events": 146,
+            "percent": 2.306477093206951
+          },
+          {
+            "category": "Entertainment",
+            "events": 3671,
+            "percent": 57.993680884676145
+          },
+          {
+            "category": "Lifestyle",
+            "events": 1339,
+            "percent": 21.153238546603475
+          },
+          {
+            "category": "Music",
+            "events": 953,
+            "percent": 15.055292259083727
+          },
+          {
+            "category": "News",
+            "events": 221,
+            "percent": 3.4913112164296995
+          }
+        ]
+      },
+      {
+        "year": 2023,
+        "events": 12521,
+        "categories": [
+          {
+            "category": "Education",
+            "events": 246,
+            "percent": 1.9646993051673187
+          },
+          {
+            "category": "Entertainment",
+            "events": 6903,
+            "percent": 55.13137928280489
+          },
+          {
+            "category": "Lifestyle",
+            "events": 2785,
+            "percent": 22.242632377605624
+          },
+          {
+            "category": "Music",
+            "events": 2033,
+            "percent": 16.236722306525035
+          },
+          {
+            "category": "News",
+            "events": 554,
+            "percent": 4.424566727897132
+          }
+        ]
+      },
+      {
+        "year": 2024,
+        "events": 10649,
+        "categories": [
+          {
+            "category": "Education",
+            "events": 139,
+            "percent": 1.3052868813973142
+          },
+          {
+            "category": "Entertainment",
+            "events": 6199,
+            "percent": 58.21203868907878
+          },
+          {
+            "category": "Lifestyle",
+            "events": 2702,
+            "percent": 25.37327448586722
+          },
+          {
+            "category": "Music",
+            "events": 1447,
+            "percent": 13.588130340877077
+          },
+          {
+            "category": "News",
+            "events": 162,
+            "percent": 1.5212696027796038
+          }
+        ]
+      },
+      {
+        "year": 2025,
+        "events": 5464,
+        "categories": [
+          {
+            "category": "Education",
+            "events": 62,
+            "percent": 1.1346998535871158
+          },
+          {
+            "category": "Entertainment",
+            "events": 2873,
+            "percent": 52.5805270863836
+          },
+          {
+            "category": "Lifestyle",
+            "events": 1671,
+            "percent": 30.58199121522694
+          },
+          {
+            "category": "Music",
+            "events": 808,
+            "percent": 14.787701317715959
+          },
+          {
+            "category": "News",
+            "events": 50,
+            "percent": 0.9150805270863837
+          }
+        ]
+      }
+    ]
+  },
+  "weekday": {
+    "n": 34964,
+    "excluded": 0,
+    "basis": "publication_time",
+    "rows": [
+      {
+        "day": "월",
+        "events": 4710
+      },
+      {
+        "day": "화",
+        "events": 4896
+      },
+      {
+        "day": "수",
+        "events": 5284
+      },
+      {
+        "day": "목",
+        "events": 5078
+      },
+      {
+        "day": "금",
+        "events": 5949
+      },
+      {
+        "day": "토",
+        "events": 4419
+      },
+      {
+        "day": "일",
+        "events": 4628
+      }
+    ]
+  },
+  "rank": {
+    "n": 34964,
+    "excluded": 0,
+    "median": 34.0,
+    "histogram": [
+      {
+        "label": "1–20",
+        "count": 12256
+      },
+      {
+        "label": "21–40",
+        "count": 6122
+      },
+      {
+        "label": "41–60",
+        "count": 8504
+      },
+      {
+        "label": "61–80",
+        "count": 3314
+      },
+      {
+        "label": "81–100",
+        "count": 341
+      },
+      {
+        "label": "101–120",
+        "count": 203
+      },
+      {
+        "label": "121–140",
+        "count": 204
+      },
+      {
+        "label": "141–160",
+        "count": 215
+      },
+      {
+        "label": "161–180",
+        "count": 234
+      },
+      {
+        "label": "181–200",
+        "count": 3571
+      }
+    ]
+  },
+  "observed_24h": {
+    "observed": 27234,
+    "not_observed": 7730,
+    "missing": 0
+  },
+  "tdi": {
+    "status": "ready",
+    "run_id": "t0-v2-cpu-20261022-audit",
+    "protocol": "t0-v2-purged-unseen-video",
+    "population": 34160,
+    "excluded": 804,
+    "exclusions": {
+      "invalid_publication_time": 131,
+      "unresolved_label": 580,
+      "seen_video": 93
+    },
+    "positive": 12420,
+    "positive_rate": 0.3635831381733021,
+    "threshold": 0.4,
+    "histogram": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "count": 10449
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "count": 4678
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.30000000000000004,
+        "count": 3405
+      },
+      {
+        "lower": 0.30000000000000004,
+        "upper": 0.4,
+        "count": 3208
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "count": 3083
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6000000000000001,
+        "count": 2663
+      },
+      {
+        "lower": 0.6000000000000001,
+        "upper": 0.7000000000000001,
+        "count": 2039
+      },
+      {
+        "lower": 0.7000000000000001,
+        "upper": 0.8,
+        "count": 1688
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "count": 1068
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "count": 1879
+      }
+    ],
+    "splits": {
+      "train": {
+        "candidate_rows": 24378,
+        "unresolved_label_rows_removed": 184,
+        "seen_video_rows_removed": 0,
+        "rows": 24194,
+        "unique_videos": 12871,
+        "T0_min": "2022-07-01 09:00:00",
+        "T0_max": "2024-07-12 03:00:00",
+        "positive_rate": 0.3646358601306109
+      },
+      "validation": {
+        "candidate_rows": 5230,
+        "unresolved_label_rows_removed": 196,
+        "seen_video_rows_removed": 54,
+        "rows": 4980,
+        "unique_videos": 2404,
+        "T0_min": "2024-07-12 09:00:00",
+        "T0_max": "2025-01-11 03:00:00",
+        "positive_rate": 0.3821285140562249
+      },
+      "test": {
+        "candidate_rows": 5225,
+        "unresolved_label_rows_removed": 200,
+        "seen_video_rows_removed": 39,
+        "rows": 4986,
+        "unique_videos": 2311,
+        "T0_min": "2025-01-11 21:00:00",
+        "T0_max": "2025-06-30 15:00:00",
+        "positive_rate": 0.33995186522262333
+      }
+    },
+    "reference": {
+      "name": "tdi_v2",
+      "threshold": 0.4,
+      "category_q95_train_only": {
+        "Education": 369.2999999999997,
+        "Entertainment": 342.0,
+        "Lifestyle": 396.0,
+        "Music": 288.0,
+        "News": 258.0
+      },
+      "unseen_category_q95": 354.0
+    },
+    "scope": "Accepted train, validation and test events; train-only TDI reference; not prediction scores"
+  },
+  "features": {
+    "numeric": [
+      "entry_rank_log",
+      "T0_view_log",
+      "T0_engagement_ratio_log",
+      "latency_to_trend_log",
+      "pretrend_view_velocity_log",
+      "weekday_sin",
+      "weekday_cos",
+      "hour_sin",
+      "hour_cos"
+    ],
+    "categorical": [
+      "category_group"
+    ],
+    "importance_status": "not_computed"
+  },
+  "unavailable": {
+    "cluster_test": "Original assignments and reproducible cluster test are not available",
+    "causal_ad_effect": "No measured advertising outcomes"
+  }
+}

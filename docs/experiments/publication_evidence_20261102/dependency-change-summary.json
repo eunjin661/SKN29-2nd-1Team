@@ -1,0 +1,40 @@
+{
+  "lock_changes": [
+    {
+      "path": "node_modules/@eslint/config-array/node_modules/minimatch",
+      "before": null,
+      "after": "11.0.1",
+      "dev": true
+    },
+    {
+      "path": "node_modules/@isaacs/nonrecursive-glob-match",
+      "before": null,
+      "after": "1.0.3",
+      "dev": true
+    },
+    {
+      "path": "node_modules/eslint/node_modules/minimatch",
+      "before": null,
+      "after": "11.0.1",
+      "dev": true
+    },
+    {
+      "path": "node_modules/minimatch",
+      "before": "10.2.5",
+      "after": null,
+      "dev": true
+    },
+    {
+      "path": "node_modules/zod",
+      "before": "4.3.6",
+      "after": "4.6.7",
+      "dev": true
+    }
+  ],
+  "source_changed_since_20261023": [
+    "frontend/package-lock.json",
+    "frontend/package.json"
+  ],
+  "runtime_dependency_ranges_unchanged": true,
+  "dev_dependency_ranges_unchanged": true
+}

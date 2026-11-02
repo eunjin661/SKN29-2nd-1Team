@@ -1,0 +1,259 @@
+
+> frontend@0.0.0 test:e2e
+> playwright test
+
+[WebServer] INFO:     Started server process [45025]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:18000 (Press CTRL+C to quit)
+
+Running 29 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/quality-regression.spec.js:33:1 › CountUp: decimals, negatives, units and ranges keep their values after live prop changes (4.9s)
+  ✓   2 [chromium] › tests/e2e/quality-regression.spec.js:43:1 › CountUp: duration updates, zero duration and reduced motion finish without stale animation (750ms)
+  ✓   3 [chromium] › tests/e2e/quality-regression.spec.js:58:1 › Mobile navigation: route changes, Back/Forward, Escape and resize close the menu; theme persists (3.0s)
+  ✓   4 [chromium] › tests/e2e/quality-regression.spec.js:81:1 › Dashboard: timeout and retry load new data; late old data never replaces the retry (863ms)
+  ✓   5 [chromium] › tests/e2e/quality-regression.spec.js:99:1 › Dashboard: unmount aborts the active request instead of updating the previous page (906ms)
+  ✓   6 [chromium] › tests/e2e/quality-regression.spec.js:114:1 › EDA: failed response and retry update summary; navigating away aborts a pending retry (4.7s)
+  ✓   7 [chromium] › tests/e2e/quality-regression.spec.js:137:1 › Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text (1.2s)
+  ✘   8 [chromium] › tests/e2e/quality-regression.spec.js:156:1 › Video feed: category change cancels old refresh and its late response cannot replace current selection (1.2s)
+  ✓   9 [chromium] › tests/e2e/quality-regression.spec.js:184:1 › Video feed: one in-flight refresh, automatic refresh resumes afterwards, stable selection stays selected (2.2s)
+  ✓  10 [chromium] › tests/e2e/quality-regression.spec.js:210:1 › Video feed: cached observations stay labelled on network failure and refresh recovers (2.8s)
+  ✓  11 [chromium] › tests/e2e/quality-regression.spec.js:228:3 › Video feed: expired cache is ignored without a crash or fabricated videos (1.4s)
+  ✓  12 [chromium] › tests/e2e/quality-regression.spec.js:228:3 › Video feed: malformed cache is ignored without a crash or fabricated videos (1.3s)
+  ✓  13 [chromium] › tests/e2e/quality-regression.spec.js:249:1 › Video feed: legacy single-category endpoint works when bulk is unavailable; empty feed is not endless loading (2.1s)
+  ✓  14 [chromium] › tests/e2e/quality-regression.spec.js:263:1 › API health: offline banner makes no unsupported claim that every page has stored results (706ms)
+[WebServer] ERROR:    Exception in ASGI application
+[WebServer] Traceback (most recent call last):
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/../backend/api/routes/sustain.py", line 440, in sustain_summary
+[WebServer]     df = get_df().copy()
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/../backend/api/services/data_loader.py", line 56, in get_df
+[WebServer]     raise HTTPException(
+[WebServer] fastapi.exceptions.HTTPException: 503: 데이터 파일 없음: /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/backend/data/video_trending_events_analysis.parquet (backend/data/ 에 video_trending_events_analysis.parquet 필요)
+[WebServer] 
+[WebServer] During handling of the above exception, another exception occurred:
+[WebServer] 
+[WebServer] Traceback (most recent call last):
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+[WebServer]     result = await app(  # type: ignore[func-returns-value]
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+[WebServer]     return await self.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/applications.py", line 1194, in __call__
+[WebServer]     await super().__call__(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/applications.py", line 96, in __call__
+[WebServer]     await self.middleware_stack(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+[WebServer]     raise exc
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+[WebServer]     await self.app(scope, receive, _send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+[WebServer]     await self.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 91, in __call__
+[WebServer]     await self.simple_response(scope, receive, send, request_headers=headers)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 149, in simple_response
+[WebServer]     await self.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+[WebServer]     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[WebServer]     raise exc
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[WebServer]     await app(scope, receive, sender)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+[WebServer]     await self.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/routing.py", line 676, in __call__
+[WebServer]     await self.middleware_stack(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 2813, in app
+[WebServer]     await route.handle(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 1841, in handle
+[WebServer]     await self.original_router.handle(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 2896, in handle
+[WebServer]     await included_router._handle_selected(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 1867, in _handle_selected
+[WebServer]     await original_route.handle(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 1330, in handle
+[WebServer]     await effective_context.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 167, in app
+[WebServer]     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[WebServer]     raise exc
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[WebServer]     await app(scope, receive, sender)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 153, in app
+[WebServer]     response = await f(request)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 746, in app
+[WebServer]     raw_response = await run_endpoint_function(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 375, in run_endpoint_function
+[WebServer]     return await run_in_threadpool(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+[WebServer]     return await anyio.to_thread.run_sync(func)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/anyio/to_thread.py", line 65, in run_sync
+[WebServer]     return await get_async_backend().run_sync_in_worker_thread(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+[WebServer]     return await future
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+[WebServer]     result = context.run(func, *args)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/telemetry/_api.py", line 244, in _run_sync_endpoint
+[WebServer]     return function(**arguments)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/../backend/api/routes/sustain.py", line 512, in sustain_summary
+[WebServer]     fallback = _fallback_from_youtube(max_results=24)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/../backend/api/routes/sustain.py", line 377, in _fallback_from_youtube
+[WebServer]     grouped = cat_df.groupby("category", dropna=False).agg(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/groupby/generic.py", line 1432, in aggregate
+[WebServer]     result = op.agg()
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 190, in agg
+[WebServer]     return self.agg_dict_like()
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 423, in agg_dict_like
+[WebServer]     return self.agg_or_apply_dict_like(op_name="agg")
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1603, in agg_or_apply_dict_like
+[WebServer]     result_index, result_data = self.compute_dict_like(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 462, in compute_dict_like
+[WebServer]     func = self.normalize_dictlike_arg(op_name, selected_obj, func)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 663, in normalize_dictlike_arg
+[WebServer]     raise KeyError(f"Column(s) {list(cols)} do not exist")
+[WebServer] KeyError: "Column(s) ['duration_h'] do not exist"
+[WebServer] ERROR:    Exception in ASGI application
+[WebServer] Traceback (most recent call last):
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/../backend/api/routes/sustain.py", line 440, in sustain_summary
+[WebServer]     df = get_df().copy()
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/../backend/api/services/data_loader.py", line 56, in get_df
+[WebServer]     raise HTTPException(
+[WebServer] fastapi.exceptions.HTTPException: 503: 데이터 파일 없음: /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/backend/data/video_trending_events_analysis.parquet (backend/data/ 에 video_trending_events_analysis.parquet 필요)
+[WebServer] 
+[WebServer] During handling of the above exception, another exception occurred:
+[WebServer] 
+[WebServer] Traceback (most recent call last):
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/uvicorn/protocols/http/h11_impl.py", line 411, in run_asgi
+[WebServer]     result = await app(  # type: ignore[func-returns-value]
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/uvicorn/middleware/proxy_headers.py", line 63, in __call__
+[WebServer]     return await self.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/applications.py", line 1194, in __call__
+[WebServer]     await super().__call__(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/applications.py", line 96, in __call__
+[WebServer]     await self.middleware_stack(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 186, in __call__
+[WebServer]     raise exc
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/errors.py", line 164, in __call__
+[WebServer]     await self.app(scope, receive, _send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/telemetry/_asgi.py", line 151, in __call__
+[WebServer]     await self.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 91, in __call__
+[WebServer]     await self.simple_response(scope, receive, send, request_headers=headers)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/cors.py", line 149, in simple_response
+[WebServer]     await self.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/middleware/exceptions.py", line 63, in __call__
+[WebServer]     await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[WebServer]     raise exc
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[WebServer]     await app(scope, receive, sender)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/middleware/asyncexitstack.py", line 18, in __call__
+[WebServer]     await self.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/routing.py", line 676, in __call__
+[WebServer]     await self.middleware_stack(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 2813, in app
+[WebServer]     await route.handle(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 1841, in handle
+[WebServer]     await self.original_router.handle(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 2896, in handle
+[WebServer]     await included_router._handle_selected(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 1867, in _handle_selected
+[WebServer]     await original_route.handle(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 1330, in handle
+[WebServer]     await effective_context.app(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 167, in app
+[WebServer]     await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 53, in wrapped_app
+[WebServer]     raise exc
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/_exception_handler.py", line 42, in wrapped_app
+[WebServer]     await app(scope, receive, sender)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 153, in app
+[WebServer]     response = await f(request)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 746, in app
+[WebServer]     raw_response = await run_endpoint_function(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/routing.py", line 375, in run_endpoint_function
+[WebServer]     return await run_in_threadpool(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/starlette/concurrency.py", line 34, in run_in_threadpool
+[WebServer]     return await anyio.to_thread.run_sync(func)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/anyio/to_thread.py", line 65, in run_sync
+[WebServer]     return await get_async_backend().run_sync_in_worker_thread(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 2706, in run_sync_in_worker_thread
+[WebServer]     return await future
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/anyio/_backends/_asyncio.py", line 1100, in run
+[WebServer]     result = context.run(func, *args)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/fastapi/telemetry/_api.py", line 244, in _run_sync_endpoint
+[WebServer]     return function(**arguments)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/../backend/api/routes/sustain.py", line 512, in sustain_summary
+[WebServer]     fallback = _fallback_from_youtube(max_results=24)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/../backend/api/routes/sustain.py", line 377, in _fallback_from_youtube
+[WebServer]     grouped = cat_df.groupby("category", dropna=False).agg(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/groupby/generic.py", line 1432, in aggregate
+[WebServer]     result = op.agg()
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 190, in agg
+[WebServer]     return self.agg_dict_like()
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 423, in agg_dict_like
+[WebServer]     return self.agg_or_apply_dict_like(op_name="agg")
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1603, in agg_or_apply_dict_like
+[WebServer]     result_index, result_data = self.compute_dict_like(
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 462, in compute_dict_like
+[WebServer]     func = self.normalize_dictlike_arg(op_name, selected_obj, func)
+[WebServer]   File "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/.venv/lib/python3.10/site-packages/pandas/core/apply.py", line 663, in normalize_dictlike_arg
+[WebServer]     raise KeyError(f"Column(s) {list(cols)} do not exist")
+[WebServer] KeyError: "Column(s) ['duration_h'] do not exist"
+  ✓  15 [chromium] › tests/e2e/quality-regression.spec.js:271:1 › Modified legacy screens: all public routes render without uncaught browser errors (7.8s)
+  ✓  16 [chromium] › tests/e2e/verified-t0.spec.js:21:1 › REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot (3.1s)
+  ✓  17 [chromium] › tests/e2e/verified-t0.spec.js:49:1 › REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts (1.6s)
+  ✓  18 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED 503: no result, explicit error, retry reaches real API (1.2s)
+  ✓  19 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED network: no result, explicit error, retry reaches real API (1.2s)
+  ✓  20 [chromium] › tests/e2e/verified-t0.spec.js:86:1 › INJECTED timeout: aborts after 12 seconds, no result, retry succeeds (1.1s)
+  ✓  21 [chromium] › tests/e2e/verified-t0.spec.js:102:1 › INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input (1.2s)
+  ✓  22 [chromium] › tests/e2e/verified-t0.spec.js:125:1 › INJECTED invalid response and 422: no fabricated result and field error shown (1.1s)
+  ✓  23 [chromium] › tests/e2e/verified-t0.spec.js:138:1 › REAL API: evaluation and interpretation match the report, with no legacy score fallback (1.6s)
+  ✓  24 [chromium] › tests/e2e/verified-t0.spec.js:157:1 › INJECTED evaluation unavailable: no fallback numbers; retry recovers (1.1s)
+  ✓  25 [chromium] › tests/e2e/verified-t0.spec.js:169:1 › INJECTED status unavailable: categories never default; reload and retry recover (1.0s)
+  ✓  26 [chromium] › tests/e2e/verified-t0.spec.js:180:1 › REAL API mobile: submit, readable result, no page overflow, refresh starts empty (2.3s)
+  ✓  27 [chromium] › tests/e2e/verified-t0.spec.js:202:1 › INJECTED live feed: only observed stats, no bulk or verified inference from current counters (922ms)
+  ✓  28 [chromium] › tests/e2e/verified-t0.spec.js:216:1 › REAL API: home, analysis overview and dashboard use the same evaluated run (1.4s)
+  ✓  29 [chromium] › tests/e2e/verified-t0.spec.js:226:1 › INJECTED report failure: home, overview and dashboard never display fallback scores (1.8s)
+[WebServer] INFO:     Shutting down
+[WebServer] INFO:     Waiting for application shutdown.
+[WebServer] INFO:     Application shutdown complete.
+[WebServer] INFO:     Finished server process [45025]
+
+
+  1) [chromium] › tests/e2e/quality-regression.spec.js:156:1 › Video feed: category change cancels old refresh and its late response cannot replace current selection 
+
+    Error: locator.click: Error: strict mode violation: getByRole('button', { name: /뮤직/ }) resolved to 3 elements:
+        1) <button class="" type="button">…</button> aka getByRole('button', { name: '🎧 뮤직' })
+        2) <button type="button" class="nf-card ">…</button> aka getByRole('button', { name: '뮤직 관측 영상 Music 뮤직 관측 영상 회귀 테스트 조회수' })
+        3) <button type="button" class="bar-item">…</button> aka getByRole('button', { name: '뮤직 관측 영상 Music 10.0만' })
+
+    Call log:
+      - waiting for getByRole('button', { name: /뮤직/ })
+
+
+      173 |   await expect.poll(() => Boolean(oldRequest)).toBeTruthy()
+      174 |   mode = 'new'
+    > 175 |   await page.getByRole('button', { name: /뮤직/, exact: false }).click()
+          |                                                                ^
+      176 |   await expect(page.locator('.selected-meta h2')).toHaveText('새 뮤직 관측')
+      177 |   await expect.poll(() => failed.includes(oldRequest)).toBeTruthy()
+      178 |   held.forEach(resolve => resolve())
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/quality-regression.spec.js:175:64
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/quality-regression-Video-f-836be-t-replace-current-selection-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/quality-regression-Video-f-836be-t-replace-current-selection-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/quality-regression-Video-f-836be-t-replace-current-selection-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/quality-regression-Video-f-836be-t-replace-current-selection-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [chromium] › tests/e2e/quality-regression.spec.js:156:1 › Video feed: category change cancels old refresh and its late response cannot replace current selection 
+  28 passed (1.1m)

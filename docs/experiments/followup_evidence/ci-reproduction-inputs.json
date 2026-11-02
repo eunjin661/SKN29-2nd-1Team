@@ -1,0 +1,41 @@
+[
+  {
+    "command": [
+      "git",
+      "ls-remote",
+      "--tags",
+      "https://github.com/actions/setup-python.git",
+      "refs/tags/v6",
+      "refs/tags/v7"
+    ],
+    "exit_code": 0,
+    "output": "ece7cb06caefa5fff74198d8649806c4678c61a1\trefs/tags/v6\n6d4fd22b20465ccc0f7354476588e8df7c9ca0e0\trefs/tags/v7"
+  },
+  {
+    "command": [
+      "/home/eunjin/.local/bin/uv",
+      "--version"
+    ],
+    "exit_code": 0,
+    "output": "uv 0.12.10 (x86_64-unknown-linux-gnu)"
+  },
+  {
+    "command": [
+      "git",
+      "ls-files",
+      "backend/data"
+    ],
+    "exit_code": 0,
+    "output": "backend/data/video_trending_events_24h_model.parquet\nbackend/data/video_trending_events_T0_model.parquet\nbackend/data/video_trending_events_analysis.parquet\nbackend/data/view_growth_KR.parquet"
+  },
+  {
+    "command": [
+      "git",
+      "cat-file",
+      "-s",
+      "HEAD:backend/data/video_trending_events_analysis.parquet"
+    ],
+    "exit_code": 0,
+    "output": "8403767"
+  }
+]

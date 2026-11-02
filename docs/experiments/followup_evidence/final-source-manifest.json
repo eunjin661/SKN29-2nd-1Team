@@ -1,0 +1,934 @@
+{
+  ".github/workflows/backend-browser.yml": {
+    "sha256": "0e9b7efb7a83ecf2cbdc679cac9e95d13784b3f8b52934ef0ee6ef5a1b2172a7",
+    "bytes": 2347
+  },
+  ".github/workflows/frontend-quality.yml": {
+    "sha256": "5e98a72885a25d14e9a4b60c95a2d942fc8c2376bfb17d222ced5948e153c0ad",
+    "bytes": 783
+  },
+  ".gitignore": {
+    "sha256": "1ca18fb159b2e786a0da965bfdc35991a15e209d6aba60f867e39e060af15018",
+    "bytes": 213
+  },
+  ".vscode/launch.json": {
+    "sha256": "974b1ecc6bc2d251987f598d68a7898bc311d9d9ff3c28bf8b5586884e9a7827",
+    "bytes": 451
+  },
+  ".vscode/settings.json": {
+    "sha256": "e03676670ae49f6670a389ce428412c14f62acaa0aec592f65d2a363981af1c0",
+    "bytes": 257
+  },
+  "README.md": {
+    "sha256": "0107e76bc692313acc10c47eddf61f1c62543c717e0966d68104bedc20f9f80e",
+    "bytes": 12738
+  },
+  "backend/.env.example": {
+    "sha256": "6b11cc8a840bf5edc246c1356700cfe2fc84e641093922dddd3a1ced62a96e32",
+    "bytes": 429
+  },
+  "backend/api/__init__.py": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "backend/api/main.py": {
+    "sha256": "a848c926c2d838653c523b5b3268d9daec18d71949fbcac03f8ea18049f865d2",
+    "bytes": 3327
+  },
+  "backend/api/routes/__init__.py": {
+    "sha256": "0b8bc16d4d983aeb3c99c1f40722250a8d625129f0c71e1a9851e565d553196e",
+    "bytes": 17
+  },
+  "backend/api/routes/analysis_common.py": {
+    "sha256": "2e8c0d3510ed141cc2f8102b7d29025b0730a46ff24099fdbf093052c09a04cf",
+    "bytes": 6849
+  },
+  "backend/api/routes/campaign.py": {
+    "sha256": "ac19e56c615177f8727016125b43dcfeb5003c535a6af550861a38e13a9efe60",
+    "bytes": 3987
+  },
+  "backend/api/routes/dashboard.py": {
+    "sha256": "2a5bbed6478074b25680384799627890425cc0787d63effab350de8aac3c7da5",
+    "bytes": 3420
+  },
+  "backend/api/routes/diagnostics.py": {
+    "sha256": "a0d4530a469eaf1ccb7e9a3bf0ea4fce4ba06cf072a9d764285c5a49500da8d1",
+    "bytes": 5831
+  },
+  "backend/api/routes/eda.py": {
+    "sha256": "f68e7e4e1e9c270fbb37ff4e40e1d455e56bf1ea86df68f0b6bdcddb9ec800c9",
+    "bytes": 214
+  },
+  "backend/api/routes/feature.py": {
+    "sha256": "d7a7676b565e1ed2e629a6e41565c40ce82b0775506609506ce217d780f5b9ae",
+    "bytes": 422
+  },
+  "backend/api/routes/insight.py": {
+    "sha256": "c8cdb2e8dddce8a8195e256002477baece7475818557b4c680170fd6416e5f76",
+    "bytes": 226
+  },
+  "backend/api/routes/model.py": {
+    "sha256": "f9acedaa2bbbcd82f080fd0cc97dd113cff90c481f6d8ec672ff2c07b7ba17df",
+    "bytes": 6575
+  },
+  "backend/api/routes/predict.py": {
+    "sha256": "93bb2f1ead45e6da1ebab48eb1b2b94c99951e68abd7455e409acfa6b1c6c5e7",
+    "bytes": 25751
+  },
+  "backend/api/routes/predict_lstm.py": {
+    "sha256": "9e4aa8ae61193e11f4377d94725f491f96e5ace3e54949837945a352198be3c1",
+    "bytes": 3840
+  },
+  "backend/api/routes/problem.py": {
+    "sha256": "7e994a8e80257a6f5374a309e6f868ef80be8d1684f4399e678564b60d694a84",
+    "bytes": 226
+  },
+  "backend/api/routes/services/data_loader.py": {
+    "sha256": "12c42c1856350c9621b98afebe8cb26ec43a8807ea7f8a9d5f5d13a84b62dc4c",
+    "bytes": 2473
+  },
+  "backend/api/routes/strategy.py": {
+    "sha256": "7c88dd6808e0a4c761ca960d10c8475e292c9dafa32d8fcabf7189b3c812d48d",
+    "bytes": 498
+  },
+  "backend/api/routes/sustain.py": {
+    "sha256": "51c189610259b5a3dc486cd7cf08e3b4a28ea9be730fb0c3705462f13b4d2f25",
+    "bytes": 5301
+  },
+  "backend/api/routes/t0_verified.py": {
+    "sha256": "b0f958cdf6629e668d11772599b44b0defa49118ef911b14d5e1b681bec28023",
+    "bytes": 7039
+  },
+  "backend/api/routes/video.py": {
+    "sha256": "1703dfe5db4aec642818a6c37738f5ec143a6f6c43fa6823413ae71dc5735eb5",
+    "bytes": 1372
+  },
+  "backend/api/routes/youtube.py": {
+    "sha256": "0cc43d07cec85404d0ab7d0ce1b6ce2b9c52701c98521f1f6861603e169337a6",
+    "bytes": 13456
+  },
+  "backend/api/services/__init__.py": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  },
+  "backend/api/services/data_loader.py": {
+    "sha256": "2e09f6e15ad57b87ef8be017728df65c5e07cda8b6c470a05f9f3d0000848eac",
+    "bytes": 2345
+  },
+  "backend/api/services/observed_analysis.py": {
+    "sha256": "04b3e1f5bbce1ce643881cb5ef83e105c08184e8e288551495552ef16726beb8",
+    "bytes": 8610
+  },
+  "backend/api/services/utils.py": {
+    "sha256": "ec54810d94567c6e63f8af4d63ac852cc1fd015e30cd98872ddd99e0e52f97aa",
+    "bytes": 327
+  },
+  "backend/examples/t0_request.json": {
+    "sha256": "09c17b947d681fa6e89429ca138597951c47c214b7cfc8ed801a3b06979298a4",
+    "bytes": 186
+  },
+  "backend/ml/__init__.py": {
+    "sha256": "8e4324e0fa16282b98a51dc4f6ebbc018ec24734413cf3a6793b5eca7d163080",
+    "bytes": 52
+  },
+  "backend/ml/artifact_contract.py": {
+    "sha256": "d37e13a057d457f4f85576dd2540949623f984711ad9a9de5879d8e16c34b6be",
+    "bytes": 4161
+  },
+  "backend/ml/data_contract.py": {
+    "sha256": "820f2a7bb9a8de4833d0929a653fae44cd46c5c7b1e97921361739915b721df5",
+    "bytes": 9775
+  },
+  "backend/ml/diagnostics.py": {
+    "sha256": "77f8427f177919231e34a6b01a9b1e6b14f0c3065a1c842211e7807b815cb790",
+    "bytes": 13232
+  },
+  "backend/ml/inference.py": {
+    "sha256": "ac4fc3b252aaaa26e066c285278a90e80034b713692d923df0c792f55689da76",
+    "bytes": 3106
+  },
+  "backend/ml/lstm/train_lstm_trend.py": {
+    "sha256": "e0a1618db23c9d0e1020c6cf5acff4517b7ea0e5cef6feb376368ce254a0cb8f",
+    "bytes": 5574
+  },
+  "backend/ml/torch_models.py": {
+    "sha256": "2e403ddd7f5ed340b4518f3fe6f911fb76fb01e106a9e3c2df82b9fc7f9c4789",
+    "bytes": 4764
+  },
+  "backend/ml/train_lstm_predictor.py": {
+    "sha256": "6f59f9fa1b16aa5a2e6d2b1ff686ca5d01ca519e693076d014c6586c47629cfc",
+    "bytes": 4796
+  },
+  "backend/ml/train_weighted_ensemble.py": {
+    "sha256": "7bed9c4984e2511f5a4bad546ff0c9125de74c86b87bba9affbc549ad446ce3d",
+    "bytes": 12235
+  },
+  "backend/ml/train_xgb_models.py": {
+    "sha256": "1c1056d4664a85a54f6f098b446b509ab99f93f88fa063007f91327565bf5911",
+    "bytes": 8318
+  },
+  "backend/requirements-cpu.lock": {
+    "sha256": "8b3b32486f264b0868633d084866b1e5a0f7b7a842f96e9e50acac1140b744df",
+    "bytes": 1232
+  },
+  "backend/requirements_ensemble.txt": {
+    "sha256": "44477c30e89f202ecf659d84974754b261096cd60f754a80419726e429ecb71a",
+    "bytes": 180
+  },
+  "backend/tests/conftest.py": {
+    "sha256": "2ad9e71e5ae5d2a41454320a3d620886e6262163791947ab49074e9434275fd3",
+    "bytes": 854
+  },
+  "backend/tests/test_analysis_aggregates.py": {
+    "sha256": "b298a060e522ba8d0560c9c0e88683bba0539aa3f6a3b20b50f0c15911672e2a",
+    "bytes": 7181
+  },
+  "backend/tests/test_campaign_scenario.py": {
+    "sha256": "c463bad8c120671f0ebb38ef9532642c4d2b01c7db4e77d2ec0c632e8b04ae76",
+    "bytes": 3438
+  },
+  "backend/tests/test_diagnostics_api.py": {
+    "sha256": "b03c751a2d3bff8dc9da39f22ce7a9d62a8d88942fcfd17b294ecfc3f5ffcaed",
+    "bytes": 3453
+  },
+  "backend/tests/test_model_diagnostics.py": {
+    "sha256": "eb3381bd0cb6c88ec64273ad3d8df53ae2e75bb9ac2bb9a64755a582e743abde",
+    "bytes": 2015
+  },
+  "backend/tests/test_observed_analysis.py": {
+    "sha256": "b514748f6e0f88a73756eba237f58484763b4b6037ee4eb7716e30ecc4c25a69",
+    "bytes": 4177
+  },
+  "backend/tests/test_t0_experiment.py": {
+    "sha256": "cfd0567772870927ff9acaff7c35002ae5cff4b8f147962cefc689c5778b3145",
+    "bytes": 6521
+  },
+  "backend/tests/test_verified_api.py": {
+    "sha256": "f58e917a70f9aafdf577dc648e15450fb51ab416395591bf72329c42dab17263",
+    "bytes": 8667
+  },
+  "frontend/.gitignore": {
+    "sha256": "87ac65a32e71cdbaf3daabe54a63709e7ead2966abf8f5080e3a2aa9d24bb7e0",
+    "bytes": 320
+  },
+  "frontend/eslint.config.js": {
+    "sha256": "0197d9a843aaae267303c4d1ab1a43afad1afacc7646cdf6cf94a5af6b815fb8",
+    "bytes": 568
+  },
+  "frontend/index.html": {
+    "sha256": "18627c3eed404569e8d2a77b12bf107b14b0d95b0341307db1cd2fa10340d7e6",
+    "bytes": 1224
+  },
+  "frontend/package-lock.json": {
+    "sha256": "37a31495086bacbe658c1c865e49c2c6243dbd7a8b50ca5b621b90b06e389509",
+    "bytes": 104501
+  },
+  "frontend/package.json": {
+    "sha256": "9b00b34a3032c6feb2d602de42512e819b67a6a79247ebdba93c57ddc6fc53ab",
+    "bytes": 1000
+  },
+  "frontend/playwright.config.js": {
+    "sha256": "d4f070d339dacb56897af0faeaf9b16eb70403a7af0a7f8d56ecb5a878db7f4b",
+    "bytes": 1591
+  },
+  "frontend/public/apple-touch-icon.png": {
+    "sha256": "b9e3f8592c2a91e21e4ea08a27ca75c5c3b1c557cee1b929b6c4186cf1316f81",
+    "bytes": 1423
+  },
+  "frontend/public/favicon-144x144.png": {
+    "sha256": "2ad0a3e4e502052a569ba68f429c62592d49ebf2cf09860f24468e4db1390b5e",
+    "bytes": 1129
+  },
+  "frontend/public/favicon-152x152.png": {
+    "sha256": "31624462265b0e29a00bc30270e2a2ab807af902c23769c9abbc8a184100c92c",
+    "bytes": 1181
+  },
+  "frontend/public/favicon-16x16.png": {
+    "sha256": "2c8fe109e5fbad86a5c4f29f80a40d775550bacf2646c32eb4b0b67b83a7a019",
+    "bytes": 162
+  },
+  "frontend/public/favicon-180x180.png": {
+    "sha256": "b9e3f8592c2a91e21e4ea08a27ca75c5c3b1c557cee1b929b6c4186cf1316f81",
+    "bytes": 1423
+  },
+  "frontend/public/favicon-192x192.png": {
+    "sha256": "a9913623de773310fe4d42a62829b4e973e92d8ffe17abde05af22c61bfccd1d",
+    "bytes": 1530
+  },
+  "frontend/public/favicon-32x32.png": {
+    "sha256": "78d6500107bce9eaf4efcba1936b0e6829204e045b0b7bb12c9aebb2ebfc2521",
+    "bytes": 273
+  },
+  "frontend/public/favicon-48x48.png": {
+    "sha256": "53e35f42ad243180d6b38414997c000efc24986546c9df88af38bb3bfb671947",
+    "bytes": 372
+  },
+  "frontend/public/favicon-512x512.png": {
+    "sha256": "020bb6747a687f86b2fa9681e6d90c9d2adba7a79504804aef19035c0f96ed85",
+    "bytes": 4827
+  },
+  "frontend/public/favicon-64x64.png": {
+    "sha256": "9129923b1b16a4e0e29762769d7556f4564059c0def6eabdc474ca18ac7c00ad",
+    "bytes": 509
+  },
+  "frontend/public/favicon-96x96.png": {
+    "sha256": "be0b79eb13daa0c1a5c92f799ab75b85ccb5444bd9dff6fbc976600bf30e2da6",
+    "bytes": 757
+  },
+  "frontend/public/favicon-dark.svg": {
+    "sha256": "99227fcf8bae3f4ef197766cbe7cbeb3cb261669ae9134179c9e615573536c1a",
+    "bytes": 552
+  },
+  "frontend/public/favicon.ico": {
+    "sha256": "f7b499233a879af68febd16f761fa5a8f1f1cdd40b9df3291944054ae532d49f",
+    "bytes": 184
+  },
+  "frontend/public/favicon.svg": {
+    "sha256": "e597ff4be76ce5ee0aff581a7f5375cef098a195b89ee85f622fd3d6f5cc043f",
+    "bytes": 552
+  },
+  "frontend/public/icons.svg": {
+    "sha256": "b45fa506195cfcdef406ba9f0c77b36ddc1a7c224040926ec70abc2fdea7b93a",
+    "bytes": 5031
+  },
+  "frontend/public/pwa-192x192.png": {
+    "sha256": "a9913623de773310fe4d42a62829b4e973e92d8ffe17abde05af22c61bfccd1d",
+    "bytes": 1530
+  },
+  "frontend/public/pwa-512x512-dark.png": {
+    "sha256": "c7cfa6e32f3e16bc701fb0fc322aa19fd12d355456248bc99c40188e1e1350b0",
+    "bytes": 4863
+  },
+  "frontend/public/pwa-512x512.png": {
+    "sha256": "020bb6747a687f86b2fa9681e6d90c9d2adba7a79504804aef19035c0f96ed85",
+    "bytes": 4827
+  },
+  "frontend/public/sw.js": {
+    "sha256": "667a3e690b875256aed4c5db8026483685b82e032d6727a51430222c85c791e9",
+    "bytes": 695
+  },
+  "frontend/src/App.css": {
+    "sha256": "4ec40f1dc357f1f3402a1658b53b28ee4bcc7b725f309d641b11b22e89645965",
+    "bytes": 5639
+  },
+  "frontend/src/App.jsx": {
+    "sha256": "b8835739c31964771031eb279c6e3e83070dce97e5f43056045b04c16b2ddd04",
+    "bytes": 2350
+  },
+  "frontend/src/animations/variants.js": {
+    "sha256": "1c3052520dfb103e89619c2e0223ff3d0986147cbb75f91f40f2323d5d428a56",
+    "bytes": 748
+  },
+  "frontend/src/assets/hero.png": {
+    "sha256": "881ffbcaafc212e49addad08846a5b82761355fa20624253af3477ba33262c5c",
+    "bytes": 13057
+  },
+  "frontend/src/assets/mlp_24h_results.png": {
+    "sha256": "ac869385bdfd487c0e8a2f3232075988efb5b93ff4470cff831d1a09d704d132",
+    "bytes": 244960
+  },
+  "frontend/src/assets/react.svg": {
+    "sha256": "35ef61ed53b323ae94a16a8ec659b3d0af3880698791133f23b084085ab1c2e5",
+    "bytes": 4126
+  },
+  "frontend/src/assets/trendit-logo.png": {
+    "sha256": "269898da3f0f6981708c028119dcedea2291db8b6d77298cce3b0c5e1571d4ef",
+    "bytes": 157498
+  },
+  "frontend/src/assets/trendit-logo.svg": {
+    "sha256": "6fb9a23e61a2e964512ad4ea6daee6996edb857d8ffbde30f564550a9db2b2f2",
+    "bytes": 1013
+  },
+  "frontend/src/assets/trendit-mark.svg": {
+    "sha256": "09edf49c636f0fa7a872170014b02556668a8cc1d8833056042d4610fb78a8d5",
+    "bytes": 778
+  },
+  "frontend/src/assets/vite.svg": {
+    "sha256": "5be21acd42eb7b896e517f4e0f0f11eb5c5d9e54fbbcebe9453f033008fcca6f",
+    "bytes": 8709
+  },
+  "frontend/src/components/AdvancedCharts.jsx": {
+    "sha256": "a7cc6a82b9d0058f2bbbb8641fd648d0555737ea843edfb8ebd24e93f7f04566",
+    "bytes": 5183
+  },
+  "frontend/src/components/ApiStatusBanner.jsx": {
+    "sha256": "70b3c8d7b319e35962389038c184bda45b20e63c07b984ec7af4d437c2597831",
+    "bytes": 778
+  },
+  "frontend/src/components/ChartIcon.jsx": {
+    "sha256": "c09deb460822307c9f3fec4503c2b966b1b18f4df512716c86cf462ce236379f",
+    "bytes": 617
+  },
+  "frontend/src/components/CompareIcon.jsx": {
+    "sha256": "666c415dd73658a9ae23b09d9c7ddd890e7fb3d5c890e27ebcb941a5077e627c",
+    "bytes": 534
+  },
+  "frontend/src/components/CountUp.jsx": {
+    "sha256": "231331c573b44d8994696614e11540de2718fbff77f46e4409cbc602d6cdbc53",
+    "bytes": 1581
+  },
+  "frontend/src/components/DBIcon.jsx": {
+    "sha256": "dd3d5a91a1018641e50f5854e1387ff23e03ab4e1b141338cde1ab4f60e4e28d",
+    "bytes": 529
+  },
+  "frontend/src/components/DashboardIcon.jsx": {
+    "sha256": "3da1752aa6b501190f79f193765aaf45b3239c2adf2476440889355f8a423e4c",
+    "bytes": 606
+  },
+  "frontend/src/components/DataInterpretIcon.jsx": {
+    "sha256": "84608ef887821c415d16500d79a6ce31dd9266055ecad1bf62074fbd6e8f5f2f",
+    "bytes": 630
+  },
+  "frontend/src/components/DynamicFavicon.jsx": {
+    "sha256": "bead939466b59f139dd1e3fd2b97606f2a81524adbf51c773c417086a3c4d52b",
+    "bytes": 702
+  },
+  "frontend/src/components/EDAIcon.jsx": {
+    "sha256": "7d787e9defb571cfecc88c61ab73453b9b4022f4848201852c206dd27dddfab9",
+    "bytes": 651
+  },
+  "frontend/src/components/EmptyState.jsx": {
+    "sha256": "f9fd2bd5e41fc6c4796554bdf4dc0271a86c893387de2dbaaf8a240ad4b78000",
+    "bytes": 567
+  },
+  "frontend/src/components/ErrorState.jsx": {
+    "sha256": "023cc66c9eab601fdf8e58039311e607967874fb9ce3ec7df7ea4043512ed221",
+    "bytes": 590
+  },
+  "frontend/src/components/ExplainIcon.jsx": {
+    "sha256": "f94913bca64ef10f9d9fd0ae170f71aa0ba200fbec23d3e1ee3cd9f1b73ba07b",
+    "bytes": 617
+  },
+  "frontend/src/components/FeatureIcon.jsx": {
+    "sha256": "7ec90b5a998768a479b5eeb324e15900036a13b6bd2dfb451797e90401148c3e",
+    "bytes": 664
+  },
+  "frontend/src/components/GQLIcon.jsx": {
+    "sha256": "2b4ead95ec8182ab9f42666f23794abe42e6f5d7f7edf2c13b94379abb391098",
+    "bytes": 553
+  },
+  "frontend/src/components/GlobeIcon.jsx": {
+    "sha256": "7d552ef12a9c46e7f9686bda4b40c969294fa0e68da59bce0445a2c8afc9b342",
+    "bytes": 548
+  },
+  "frontend/src/components/HomeIcon.jsx": {
+    "sha256": "6c25fa11245be0bf0d178c0697b48e1aeed72a0f2b3dc9c18eaedc97f8f949c4",
+    "bytes": 419
+  },
+  "frontend/src/components/InsightIcon.jsx": {
+    "sha256": "2125deaeb77c0b4ed3261f39d0674b02c2c82f1153e135c0a32ad97812c8cf23",
+    "bytes": 597
+  },
+  "frontend/src/components/LoadingState.jsx": {
+    "sha256": "453b821cf39443e9595b7fd05a17f5f6322969c5910e5d1015dde4a8881919ad",
+    "bytes": 957
+  },
+  "frontend/src/components/LockIcon.jsx": {
+    "sha256": "a7204ed10c72e5f267a61736aff399e88c1b11f8cc62f0641553c3b284f88a3e",
+    "bytes": 393
+  },
+  "frontend/src/components/ModelDiagnostics.jsx": {
+    "sha256": "5980eb34c0bece5e3cba1a92125d4d98c3b9826558303c60ddd41f0ca5dd02b2",
+    "bytes": 6301
+  },
+  "frontend/src/components/ModelIcon.jsx": {
+    "sha256": "9773b61d8b379c6dd33646bb9dfb7485f335699c0f0ea8f24f72ba1b9561c0be",
+    "bytes": 584
+  },
+  "frontend/src/components/ModelResultIcon.jsx": {
+    "sha256": "8b6f46d15f13a5f7f5b2e0b69952a28c8e08d24f3e94ab614d7807897203d340",
+    "bytes": 619
+  },
+  "frontend/src/components/Navbar.jsx": {
+    "sha256": "0510554b85c45ba4abbe22f10a5c98524719725d6accf4aac4db6f83d5861ebf",
+    "bytes": 3874
+  },
+  "frontend/src/components/ObservedAnalysis.jsx": {
+    "sha256": "7be5ee0112d78f2fc55208356afa89eda10e6ccdc4614791118aaaad4e891799",
+    "bytes": 11616
+  },
+  "frontend/src/components/PredictionIcon.jsx": {
+    "sha256": "05e591eaa567a0c248b8febe808feb4b511352b62480d50945c36908c292e608",
+    "bytes": 658
+  },
+  "frontend/src/components/ProblemIcon.jsx": {
+    "sha256": "a7ea3e5f1b39908b1e4b1424f4276850157a4a1c7515abf1c7dbed2fcc65b332",
+    "bytes": 439
+  },
+  "frontend/src/components/PwaRegister.jsx": {
+    "sha256": "11a038157d755829f3d7aeab22f8242ba9d3d02b901e494c7cc6ea71faa896bc",
+    "bytes": 424
+  },
+  "frontend/src/components/ReactIcon.jsx": {
+    "sha256": "7748dfbf5082cbd712b64b6fa8b3f6ff3eb4594588898b1caa9e70c9ec5d775d",
+    "bytes": 502
+  },
+  "frontend/src/components/RechartsShim.jsx": {
+    "sha256": "d79ea8329fed6e7e148d6002a6a7d2b4b6c429d401e84c19de70b91ab2d1e06d",
+    "bytes": 7816
+  },
+  "frontend/src/components/ReduxIcon.jsx": {
+    "sha256": "2aedd7ffe98b5bb73b5bd27e40ce77ada9a104ac891e24d3f63afb35025d678d",
+    "bytes": 715
+  },
+  "frontend/src/components/ResultBadge.jsx": {
+    "sha256": "19a0edb47f39e9b8bde7e3a1ebff786fb14260c9abc1dec1f047d19b7371f508",
+    "bytes": 458
+  },
+  "frontend/src/components/RouterIcon.jsx": {
+    "sha256": "94cdb345c65cb50aed28d383463f40ba50633372df8cabf29fde1dd00e391d1c",
+    "bytes": 528
+  },
+  "frontend/src/components/ServerIcon.jsx": {
+    "sha256": "b903405019e45974234246ed883ab720835b1221e66f1eaea40ee1e34b0ceb54",
+    "bytes": 528
+  },
+  "frontend/src/components/Skeleton.jsx": {
+    "sha256": "55a3570c850f155e8125e83f180334f8451714cc939fc768bb93ca881c59c622",
+    "bytes": 145
+  },
+  "frontend/src/components/StableCharts.jsx": {
+    "sha256": "26ecccc4280bc50e3cbf7717cedd3c8f68145487787b259dac5b390d7fc8863a",
+    "bytes": 11995
+  },
+  "frontend/src/components/TabSectionLayout.jsx": {
+    "sha256": "c329548239f92ae4221d2a4f35b366c2021d886216ea60a343aa15b737e8d1b3",
+    "bytes": 4527
+  },
+  "frontend/src/components/TrendingIcon.jsx": {
+    "sha256": "f6c7516adcfa84d222afab7dad5010cc4681e23664913c0ac902867f682f0edd",
+    "bytes": 458
+  },
+  "frontend/src/components/VerifiedEvaluation.jsx": {
+    "sha256": "17758a8b3ea35b4493c95d2329ab796c472663c32ed6799ab79e51b5e2818a65",
+    "bytes": 7498
+  },
+  "frontend/src/components/icons/ChartIcon.jsx": {
+    "sha256": "c09deb460822307c9f3fec4503c2b966b1b18f4df512716c86cf462ce236379f",
+    "bytes": 617
+  },
+  "frontend/src/components/icons/CompareIcon.jsx": {
+    "sha256": "666c415dd73658a9ae23b09d9c7ddd890e7fb3d5c890e27ebcb941a5077e627c",
+    "bytes": 534
+  },
+  "frontend/src/components/icons/DBIcon.jsx": {
+    "sha256": "dd3d5a91a1018641e50f5854e1387ff23e03ab4e1b141338cde1ab4f60e4e28d",
+    "bytes": 529
+  },
+  "frontend/src/components/icons/DashboardIcon.jsx": {
+    "sha256": "3da1752aa6b501190f79f193765aaf45b3239c2adf2476440889355f8a423e4c",
+    "bytes": 606
+  },
+  "frontend/src/components/icons/DataInterpretIcon.jsx": {
+    "sha256": "84608ef887821c415d16500d79a6ce31dd9266055ecad1bf62074fbd6e8f5f2f",
+    "bytes": 630
+  },
+  "frontend/src/components/icons/EDAIcon.jsx": {
+    "sha256": "7d787e9defb571cfecc88c61ab73453b9b4022f4848201852c206dd27dddfab9",
+    "bytes": 651
+  },
+  "frontend/src/components/icons/ExplainIcon.jsx": {
+    "sha256": "f94913bca64ef10f9d9fd0ae170f71aa0ba200fbec23d3e1ee3cd9f1b73ba07b",
+    "bytes": 617
+  },
+  "frontend/src/components/icons/FeatureIcon.jsx": {
+    "sha256": "7ec90b5a998768a479b5eeb324e15900036a13b6bd2dfb451797e90401148c3e",
+    "bytes": 664
+  },
+  "frontend/src/components/icons/GQLIcon.jsx": {
+    "sha256": "2b4ead95ec8182ab9f42666f23794abe42e6f5d7f7edf2c13b94379abb391098",
+    "bytes": 553
+  },
+  "frontend/src/components/icons/GlobeIcon.jsx": {
+    "sha256": "7d552ef12a9c46e7f9686bda4b40c969294fa0e68da59bce0445a2c8afc9b342",
+    "bytes": 548
+  },
+  "frontend/src/components/icons/HomeIcon.jsx": {
+    "sha256": "6c25fa11245be0bf0d178c0697b48e1aeed72a0f2b3dc9c18eaedc97f8f949c4",
+    "bytes": 419
+  },
+  "frontend/src/components/icons/InsightIcon.jsx": {
+    "sha256": "2125deaeb77c0b4ed3261f39d0674b02c2c82f1153e135c0a32ad97812c8cf23",
+    "bytes": 597
+  },
+  "frontend/src/components/icons/LockIcon.jsx": {
+    "sha256": "a7204ed10c72e5f267a61736aff399e88c1b11f8cc62f0641553c3b284f88a3e",
+    "bytes": 393
+  },
+  "frontend/src/components/icons/ModelIcon.jsx": {
+    "sha256": "9773b61d8b379c6dd33646bb9dfb7485f335699c0f0ea8f24f72ba1b9561c0be",
+    "bytes": 584
+  },
+  "frontend/src/components/icons/ModelResultIcon.jsx": {
+    "sha256": "8b6f46d15f13a5f7f5b2e0b69952a28c8e08d24f3e94ab614d7807897203d340",
+    "bytes": 619
+  },
+  "frontend/src/components/icons/PredictionIcon.jsx": {
+    "sha256": "05e591eaa567a0c248b8febe808feb4b511352b62480d50945c36908c292e608",
+    "bytes": 658
+  },
+  "frontend/src/components/icons/ProblemIcon.jsx": {
+    "sha256": "a7ea3e5f1b39908b1e4b1424f4276850157a4a1c7515abf1c7dbed2fcc65b332",
+    "bytes": 439
+  },
+  "frontend/src/components/icons/ReactIcon.jsx": {
+    "sha256": "7748dfbf5082cbd712b64b6fa8b3f6ff3eb4594588898b1caa9e70c9ec5d775d",
+    "bytes": 502
+  },
+  "frontend/src/components/icons/ReduxIcon.jsx": {
+    "sha256": "2aedd7ffe98b5bb73b5bd27e40ce77ada9a104ac891e24d3f63afb35025d678d",
+    "bytes": 715
+  },
+  "frontend/src/components/icons/RouterIcon.jsx": {
+    "sha256": "94cdb345c65cb50aed28d383463f40ba50633372df8cabf29fde1dd00e391d1c",
+    "bytes": 528
+  },
+  "frontend/src/components/icons/ServerIcon.jsx": {
+    "sha256": "b903405019e45974234246ed883ab720835b1221e66f1eaea40ee1e34b0ceb54",
+    "bytes": 528
+  },
+  "frontend/src/components/icons/TrendingIcon.jsx": {
+    "sha256": "f6c7516adcfa84d222afab7dad5010cc4681e23664913c0ac902867f682f0edd",
+    "bytes": 458
+  },
+  "frontend/src/components/icons/index.js": {
+    "sha256": "c41ff8c52f48e888c40016b98361fdda63d133ccfb99d51e9daa0fa82473a7c2",
+    "bytes": 729
+  },
+  "frontend/src/components/index.js": {
+    "sha256": "c41ff8c52f48e888c40016b98361fdda63d133ccfb99d51e9daa0fa82473a7c2",
+    "bytes": 729
+  },
+  "frontend/src/components/layout/AnimatedPage.jsx": {
+    "sha256": "8dbf7d9db9e03dbe6576f4c3265422b3b121b4ca7a1614e3dfd0a5f789b8ca6b",
+    "bytes": 385
+  },
+  "frontend/src/components/navigation/MobileNavigation.jsx": {
+    "sha256": "8062fe79a8ea76f9d0fea56ceb9c2ee1c71939fb06909830d246139f0e852421",
+    "bytes": 1872
+  },
+  "frontend/src/constants/deepLearningResults.js": {
+    "sha256": "c0d72f240f03ee7778d217a4e710549a4ab4858a84ec70bf2464318e4633a49e",
+    "bytes": 1537
+  },
+  "frontend/src/constants/landingData.js": {
+    "sha256": "dd47d79c44fc292e7c78efeec24d900bf0f3bd77aac6729d5e4d306c4ebbb33f",
+    "bytes": 2087
+  },
+  "frontend/src/constants/mlDeepLearningData.js": {
+    "sha256": "dc0429a66d3cc1492daae98d9607cb73aa75f9590d0511c58dbb11dd183a6e20",
+    "bytes": 1978
+  },
+  "frontend/src/constants/mlProjectData.js": {
+    "sha256": "8e5c99f84512aee47689fc3bf02b3e46d3dc896239f15944b4df9f6e9077fd06",
+    "bytes": 1541
+  },
+  "frontend/src/constants/modelData.js": {
+    "sha256": "06ec44a372cef3e2c9116ce3731c95a373495daf15f8eb5dc17e29f5b7583134",
+    "bytes": 1840
+  },
+  "frontend/src/constants/navigation.js": {
+    "sha256": "92b1922721266c0de0b01f84a16d04099fa6f574ba450aadbe28e551787ed3cc",
+    "bytes": 1988
+  },
+  "frontend/src/hooks/useApiHealth.js": {
+    "sha256": "e23ce23373f6253a3a4362f7a92f9f28fd8acff15d4ffabda6ccf00ccd875b5b",
+    "bytes": 915
+  },
+  "frontend/src/hooks/useDarkMode.js": {
+    "sha256": "273890aa0be05a4f718c897d2879778c3ec9acb57452ca5a23a795dce4ee4001",
+    "bytes": 749
+  },
+  "frontend/src/hooks/useEDA.js": {
+    "sha256": "d9af00e09e86942673a057576e71f28a3ca8b0e9b58df0eda20abaf1299ca6b9",
+    "bytes": 3144
+  },
+  "frontend/src/hooks/useJsonResource.js": {
+    "sha256": "e8cf624e227456e8748037388dcc823f16c7aa230e56366e19bacc66fe11f56d",
+    "bytes": 1069
+  },
+  "frontend/src/hooks/useVerifiedResource.js": {
+    "sha256": "14e9725ea4058d4def2c1014a4e08e65a37b1cbb33b1731fd278da9fa92d328f",
+    "bytes": 1382
+  },
+  "frontend/src/hooks/useVideoFeed.js": {
+    "sha256": "28044f9798fec215ed80399aa00c008ddaa3d922a83b5cbd408ae5aefa8cb50c",
+    "bytes": 2042
+  },
+  "frontend/src/lib/csv.js": {
+    "sha256": "fb27f57664abfa27a0d7c437037220e8887173da5a80d7dce48ac8e37a8620af",
+    "bytes": 298
+  },
+  "frontend/src/lib/fetchJson.js": {
+    "sha256": "47fc24334623f91b13632ab8f2e8e26e826067b8e20f0f6ad23d08368be25db1",
+    "bytes": 1244
+  },
+  "frontend/src/lib/verifiedApi.js": {
+    "sha256": "f8506976ca38f0f6106bd92a27be09e2956366d4a28ec5591fc85cc93e8a3859",
+    "bytes": 3050
+  },
+  "frontend/src/lib/videoFeed.js": {
+    "sha256": "2a56812ea125f9af14e212f357976b1585fe2abee593eeb9f9c8eb8209c5f8c6",
+    "bytes": 5284
+  },
+  "frontend/src/main.jsx": {
+    "sha256": "7a7a512727c79504dc900fbcc3fc206b72e4cf7700e9f53d71fd6595fa8f4d2f",
+    "bytes": 246
+  },
+  "frontend/src/pages/CampaignPlannerPage.jsx": {
+    "sha256": "0d217808ccabf2803601468777ce622f0ccd5df0db03b56383fc3934617aa95a",
+    "bytes": 10657
+  },
+  "frontend/src/pages/ComparePage.jsx": {
+    "sha256": "17d0e9d85adbae6ec13557b769f0ecc9fc7853abfe418ec7c26787ea702ca09c",
+    "bytes": 176
+  },
+  "frontend/src/pages/DashboardPage.jsx": {
+    "sha256": "c8807cc4903c5b72c0cfd3afb284874f7aaf08c854cdb9efceda341d24d32ebc",
+    "bytes": 7245
+  },
+  "frontend/src/pages/DatasetSplitPage.jsx": {
+    "sha256": "f5c2fc7eb1ed7de35af23fb522c02b5998626ee3b29cff46e3302bc2a7c478f5",
+    "bytes": 181
+  },
+  "frontend/src/pages/EDAPage.jsx": {
+    "sha256": "f9cd81d31d4dfc2317d50d890f7899403e890d6d65371e633f90b999e2db6054",
+    "bytes": 168
+  },
+  "frontend/src/pages/FeaturePage.jsx": {
+    "sha256": "87890782d9f0ccecba44a857fe2c26a7c22d61764e1ac63db377b117f393e681",
+    "bytes": 176
+  },
+  "frontend/src/pages/InsightPage.jsx": {
+    "sha256": "895992ef77f9e9067802bacdf1d3f07d6b18967bebd7cc08b8cea8e144e8b0df",
+    "bytes": 176
+  },
+  "frontend/src/pages/LandingPage.jsx": {
+    "sha256": "b620a7befaa3f09c6c6a35a9b3446b3f9e7abb2065142460202998e70cbc101d",
+    "bytes": 5352
+  },
+  "frontend/src/pages/MLDLPartPages.css": {
+    "sha256": "4edb7c36c8dfb53c9bde9568fd61495d5e450cabb8917568338d8fa819213bd6",
+    "bytes": 8692
+  },
+  "frontend/src/pages/ModelExplainPage.jsx": {
+    "sha256": "42d493a94db4dee2eba5183dc62b3abff58ca5209c5dbc7ba5c97006c868a3a3",
+    "bytes": 131
+  },
+  "frontend/src/pages/ModelInterpretPage.jsx": {
+    "sha256": "154f408c7e04af0d7261c4c674df65fa431f77e6416bd3d5aef1e38c87b14718",
+    "bytes": 182
+  },
+  "frontend/src/pages/ModelPage.jsx": {
+    "sha256": "b112b6676b39b6549e422e39d0414ba2cd9d25bcd82c1c120bb69695987b0dd6",
+    "bytes": 165
+  },
+  "frontend/src/pages/PredictionPage.jsx": {
+    "sha256": "15c3b6f19b32348bb2ab16a425894e169d6896256758ffcfe480472bd4464f91",
+    "bytes": 10041
+  },
+  "frontend/src/pages/ProblemPage.jsx": {
+    "sha256": "c4640e99f970298bb3f2bf93e458870774ff879eee9bf99f29162dae5fc039b5",
+    "bytes": 176
+  },
+  "frontend/src/pages/StrategyPage.jsx": {
+    "sha256": "a2d0501e69204897cdea3cbf64d5fe7037af31864368543aa84f59353416bd3f",
+    "bytes": 178
+  },
+  "frontend/src/pages/SustainPage.jsx": {
+    "sha256": "decdae259f27c1e3dcd3577d1cf51c9e43fa8b66ce294cff13f81b1b67f313ae",
+    "bytes": 7604
+  },
+  "frontend/src/pages/TrendingPage.jsx": {
+    "sha256": "6b6350b6ea2d0416fa215741290a2b7f09d28a89d9c76b3dd777721d7974dac8",
+    "bytes": 11643
+  },
+  "frontend/src/pages/VideoPage.jsx": {
+    "sha256": "621c35ea5eb25a653ca5dca27f47b82ff76fc39f059722618dbfa9a340f9cbf2",
+    "bytes": 17119
+  },
+  "frontend/src/styles/CampaignPlannerPage.css": {
+    "sha256": "520ff0dfabdd60f0ee809807c92be7fed3027d74dd351efc99a80ff2b76750c2",
+    "bytes": 10370
+  },
+  "frontend/src/styles/ChartRenderFix.css": {
+    "sha256": "057293265c84ebc52fe4e6402bce7f4bddb24a56bed7bf833971f01a7d671c11",
+    "bytes": 2475
+  },
+  "frontend/src/styles/DashboardPage.css": {
+    "sha256": "16c411895f092c5c5caee4b6a33aee007bff57ca193da9f66f5519f81dd95df7",
+    "bytes": 10115
+  },
+  "frontend/src/styles/EDAPage.css": {
+    "sha256": "720d1e296036863c8d014efd0af7f36f37fdf0b8c3ac983800ee61b1344aa8ff",
+    "bytes": 11191
+  },
+  "frontend/src/styles/FeaturePage.css": {
+    "sha256": "7e30d5723fe09fe5289dcd5b1759cd81e1c074cf064ad5a779b3f41ff936ff28",
+    "bytes": 10253
+  },
+  "frontend/src/styles/InsightPage.css": {
+    "sha256": "df1ed5bf13109df65e09937574e8396a25eb02c9233b8c1beb814d35a9822a61",
+    "bytes": 6483
+  },
+  "frontend/src/styles/LandingPage.css": {
+    "sha256": "fed6c4c5883d426db46e94d56b993c2302b58d5c79c8eae8fa2e30ca2b080649",
+    "bytes": 42021
+  },
+  "frontend/src/styles/MLDLPartPages.css": {
+    "sha256": "0e5b4a85a9334c8fac8eb0d4c7f101f179a45527cedac5451f3b831247cd1925",
+    "bytes": 21142
+  },
+  "frontend/src/styles/MLStructurePage.css": {
+    "sha256": "9ea4a274f5eea062c2e377c82ff782ad4d307254ae96aa1e7cf6c9003e241b2d",
+    "bytes": 4476
+  },
+  "frontend/src/styles/ModelDiagnostics.css": {
+    "sha256": "6c22f76505f453f9910077e04199532efea2890fcc68a180dfc801f73f386479",
+    "bytes": 313
+  },
+  "frontend/src/styles/ModelPage.css": {
+    "sha256": "b1143b1078edb75c33a821f2508a1f192b8e5a30d03aa2d923083598a42b76f9",
+    "bytes": 2046
+  },
+  "frontend/src/styles/Navbar.css": {
+    "sha256": "94e63edfb937196a7fa76a8bbd0fb8e5c1ab65b82a8da12b483007af79d90bdd",
+    "bytes": 7204
+  },
+  "frontend/src/styles/NavbarApplePatch.css": {
+    "sha256": "77c2942a8262981ca4e6490f719e926ff37f79dd1419c5affff16bb0e3809012",
+    "bytes": 439
+  },
+  "frontend/src/styles/ObservedAnalysis.css": {
+    "sha256": "2baefb87ecba0d76d2ce63a98be84f9ed20bc07c05549e78aba3c10fb598bdfa",
+    "bytes": 961
+  },
+  "frontend/src/styles/PartLayoutApplied.css": {
+    "sha256": "e893de660e5485aef28b8dbe151427fbea060419df9ff11e7b095422b81f7173",
+    "bytes": 7137
+  },
+  "frontend/src/styles/PartLayoutMatch.css": {
+    "sha256": "3fb11f7d4a8e4ffd2b9aab0e7c2d0f44e0ed132123eedb9b8c1a1b608125f692",
+    "bytes": 6769
+  },
+  "frontend/src/styles/PredictionPage.css": {
+    "sha256": "f84445f88432b19704de345ac1446e0e18ce3f75f659fdc6a8d99c3458f2e5a3",
+    "bytes": 5941
+  },
+  "frontend/src/styles/ProblemPage.css": {
+    "sha256": "78c510375ac7275580064ae87c674a80f02735915fb5a62c0aa8e3dee8b0e4b9",
+    "bytes": 7781
+  },
+  "frontend/src/styles/Scenario.css": {
+    "sha256": "576282e71b8eb947eb5d35596ad3a932639ef9786ffab1595268800f7e9bc2c2",
+    "bytes": 2225
+  },
+  "frontend/src/styles/StrategyPage.css": {
+    "sha256": "5373bca0ec132bb95c0128086fe8a191c15e0ed6b84c888dc086b24458bddf23",
+    "bytes": 6829
+  },
+  "frontend/src/styles/SustainPage.css": {
+    "sha256": "7a1b3a2f9d65964943be52018532e513d21277296c1e11bbaf8fc26b4d16e450",
+    "bytes": 7740
+  },
+  "frontend/src/styles/TrendPartPages.css": {
+    "sha256": "245553a7a232b236551df7d39bc6ce02427579fd7bf1b163e508652d9a5e7421",
+    "bytes": 9285
+  },
+  "frontend/src/styles/TrendTypographyFinal.css": {
+    "sha256": "e0271ea65e87f14086d7ff35cc12327d87a6ad3fa60fb862aac6b1dd7a78f61b",
+    "bytes": 1148
+  },
+  "frontend/src/styles/TrendingPage.css": {
+    "sha256": "c1eab963a465b5d63446b1ce569ec83ee2435573e2591db2df5096d71ee2a126",
+    "bytes": 11020
+  },
+  "frontend/src/styles/VerifiedHome.css": {
+    "sha256": "150862c1d4ec9b18f1aa6e90b01f7f7d2675067fbdfdc900985fdf0830da24a8",
+    "bytes": 3944
+  },
+  "frontend/src/styles/VideoPage.css": {
+    "sha256": "a9cb330906d6c5cb9e2c9997cc0cbe8bd1af04c184a5739ce9aff83f1509a945",
+    "bytes": 44396
+  },
+  "frontend/src/styles/advanced-charts.css": {
+    "sha256": "e8ac2257186fe4be4961687c5ca7902cc5b78b9d199e5f22a89ccca47679b7dc",
+    "bytes": 3504
+  },
+  "frontend/src/styles/feedback.css": {
+    "sha256": "bb4a63c49d577b101ce201998fceeaf6cd573d546d353edc09cf19b76b7ac712",
+    "bytes": 2633
+  },
+  "frontend/src/styles/global.css": {
+    "sha256": "39b6dc6fb5e4dad1d48ba53c492a728f7b77372fe5593f9ce0e49ab322316dec",
+    "bytes": 6104
+  },
+  "frontend/src/styles/home-responsive-fix.css": {
+    "sha256": "10f6bf3174ae58b1571ab17982b119d2280b6d8d35b9fa796459c13132aa01d7",
+    "bytes": 4405
+  },
+  "frontend/src/styles/mobile-tabs.css": {
+    "sha256": "0dd35d24ca8a0d640fd9471bdc7172fe764a3dc34978000fc441740d1acf675f",
+    "bytes": 2598
+  },
+  "frontend/src/styles/pwa-favicon.css": {
+    "sha256": "451be30abff1febca0306be6d46c3720a2ff66e69b4c53adb8905afc57ec4955",
+    "bytes": 167
+  },
+  "frontend/src/styles/responsive-final-polish.css": {
+    "sha256": "9b7c79be94a293ee670efcabd5d58e2bcfdfcea6734f84a0d60d0bb4f89d9ebb",
+    "bytes": 7163
+  },
+  "frontend/src/styles/responsive-upgrades.css": {
+    "sha256": "f3243fad3eecca3e9517341539ceb3f60060eca3d4b22c28448b87f6e4feeae5",
+    "bytes": 9561
+  },
+  "frontend/src/styles/stable-charts.css": {
+    "sha256": "83bdd6be236133e2a6e6ca5b40b28c61594115f4faffc8a348158b3f0f69d5cb",
+    "bytes": 3222
+  },
+  "frontend/tests/e2e/analysis-contract.spec.js": {
+    "sha256": "cfa2d79fb5bff87da59b1508c4dbf276dad55175a73789bbce5a8ec2717b083b",
+    "bytes": 4115
+  },
+  "frontend/tests/e2e/campaign-scenario.spec.js": {
+    "sha256": "9967381c328d1e4c1225d07ace8162436daf83e1578b2dd5f33569b355afcb18",
+    "bytes": 6341
+  },
+  "frontend/tests/e2e/home-contract.spec.js": {
+    "sha256": "2768131b5390ddde74f4feaea17dc054c8a4e957e22c826d402f3fb06a7b8676",
+    "bytes": 1764
+  },
+  "frontend/tests/e2e/model-diagnostics.spec.js": {
+    "sha256": "bfb68a577d053dd0ed41303187772f40d264a3ebc88aba2e1237728019b926ef",
+    "bytes": 2704
+  },
+  "frontend/tests/e2e/quality-regression.spec.js": {
+    "sha256": "74d113e17646e96683e1ab863aa795a993a8c09ea1cb3ff06d5c3e53918e675b",
+    "bytes": 19815
+  },
+  "frontend/tests/e2e/verified-t0.spec.js": {
+    "sha256": "ca8933a56af01c1ced36c6ecac082b86cdb94bb4efa8781e601dc6eb0cf7e8fe",
+    "bytes": 14575
+  },
+  "frontend/tests/fixtures/components-entry.jsx": {
+    "sha256": "c9d64b95779616a02770b4a765d69168ec7e61dade7cdb07c014d2f46ca5fcca",
+    "bytes": 206
+  },
+  "frontend/tests/fixtures/components.html": {
+    "sha256": "90a86e3d867a810c9562602a6078e7a3e3b00db0c0c88bd73302e91c435cf61e",
+    "bytes": 212
+  },
+  "frontend/tests/fixtures/components.jsx": {
+    "sha256": "092f5a9733d78f63d0821084196e51a0a1e9f172c5bd480f072a096ad13460b4",
+    "bytes": 659
+  },
+  "frontend/vite.config.js": {
+    "sha256": "013985aec5b7c3bcc941ee83d7babb2298bad65910c5589d1abdc3f22e6965a1",
+    "bytes": 286
+  },
+  "pytest.ini": {
+    "sha256": "2478e3b063cf99013fdfaa4b39d7894a72b198b0914bc978e52be752ce4ee0c8",
+    "bytes": 56
+  }
+}

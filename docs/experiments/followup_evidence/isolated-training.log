@@ -1,0 +1,43 @@
+{"run_id": "t0-v2-ci", "splits": {"train": {"candidate_rows": 24378, "unresolved_label_rows_removed": 184, "seen_video_rows_removed": 0, "rows": 24194, "unique_videos": 12871, "T0_min": "2022-07-01 09:00:00", "T0_max": "2024-07-12 03:00:00", "positive_rate": 0.3646358601306109}, "validation": {"candidate_rows": 5230, "unresolved_label_rows_removed": 196, "seen_video_rows_removed": 54, "rows": 4980, "unique_videos": 2404, "T0_min": "2024-07-12 09:00:00", "T0_max": "2025-01-11 03:00:00", "positive_rate": 0.3821285140562249}, "test": {"candidate_rows": 5225, "unresolved_label_rows_removed": 200, "seen_video_rows_removed": 39, "rows": 4986, "unique_videos": 2311, "T0_min": "2025-01-11 21:00:00", "T0_max": "2025-06-30 15:00:00", "positive_rate": 0.33995186522262333}}}
+dummy: validation_auc=0.5000 (0.02s)
+logistic: validation_auc=0.6204 (0.04s)
+xgboost: validation_auc=0.8207 (0.17s)
+lightgbm: validation_auc=0.8231 (0.20s)
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/backend/artifacts/followup-20261023/isolated-checkout/.venv/lib/python3.10/site-packages/sklearn/neural_network/_multilayer_perceptron.py:781: ConvergenceWarning: Stochastic Optimizer: Maximum iterations (250) reached and the optimization hasn't converged yet.
+  warnings.warn(
+sklearn_mlp: validation_auc=0.7960 (12.04s)
+embedding_mlp epoch=1 validation_auc=0.7639
+embedding_mlp epoch=10 validation_auc=0.8131
+embedding_mlp epoch=20 validation_auc=0.8137
+embedding_mlp epoch=30 validation_auc=0.8190
+embedding_mlp epoch=40 validation_auc=0.8202
+embedding_mlp epoch=50 validation_auc=0.8194
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/backend/artifacts/followup-20261023/isolated-checkout/.venv/lib/python3.10/site-packages/pytorch_tabnet/abstract_model.py:82: UserWarning: Device used : cpu
+  warnings.warn(f"Device used : {self.device}")
+epoch 0  | loss: 0.63755 | validation_auc: 0.71133 |  0:00:01s
+epoch 10 | loss: 0.53243 | validation_auc: 0.79004 |  0:00:12s
+epoch 20 | loss: 0.52172 | validation_auc: 0.78585 |  0:00:24s
+
+Early stopping occurred at epoch 28 with best_epoch = 13 and best_validation_auc = 0.80832
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/backend/artifacts/followup-20261023/isolated-checkout/.venv/lib/python3.10/site-packages/pytorch_tabnet/callbacks.py:172: UserWarning: Best weights from best epoch are automatically used!
+  warnings.warn(wrn_msg)
+Successfully saved model at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/backend/artifacts/followup-20261023/isolated-checkout/backend/artifacts/t0-v2-ci/tabnet.zip
+{
+  "output": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/backend/artifacts/followup-20261023/isolated-checkout/backend/artifacts/t0-v2-ci",
+  "selected_model": "embedding_mlp",
+  "test": {
+    "auc": 0.8127646777794808,
+    "pr_auc": 0.629739649779992,
+    "f1": 0.6652777777777777,
+    "accuracy": 0.7099879663056559,
+    "precision": 0.5474285714285714,
+    "recall": 0.8477876106194691,
+    "confusion_matrix_tn_fp_fn_tp": [
+      2103,
+      1188,
+      258,
+      1437
+    ]
+  },
+  "elapsed_seconds": 68.156
+}

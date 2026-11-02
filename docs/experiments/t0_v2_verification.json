@@ -1,0 +1,65 @@
+{
+  "run_id": "t0-v2-cpu-20261022-audit",
+  "status": "PASS",
+  "environment": "Fresh Python 3.10 virtualenv installed solely from backend/requirements-cpu.lock",
+  "source_hashes_match_report": {
+    "backend/ml/__init__.py": true,
+    "backend/ml/artifact_contract.py": true,
+    "backend/ml/data_contract.py": true,
+    "backend/ml/inference.py": true,
+    "backend/ml/torch_models.py": true,
+    "backend/ml/train_lstm_predictor.py": true,
+    "backend/ml/train_weighted_ensemble.py": true,
+    "backend/ml/train_xgb_models.py": true
+  },
+  "model_serialization_roundtrip": {
+    "dummy": {
+      "rows": 16,
+      "max_absolute_error": 0.0,
+      "status": "PASS"
+    },
+    "logistic": {
+      "rows": 16,
+      "max_absolute_error": 5.551115123125783e-17,
+      "status": "PASS"
+    },
+    "xgboost": {
+      "rows": 16,
+      "max_absolute_error": 2.390213016401077e-08,
+      "status": "PASS"
+    },
+    "lightgbm": {
+      "rows": 16,
+      "max_absolute_error": 5.551115123125783e-17,
+      "status": "PASS"
+    },
+    "sklearn_mlp": {
+      "rows": 16,
+      "max_absolute_error": 8.326672684688674e-17,
+      "status": "PASS"
+    },
+    "weighted_soft_voting": {
+      "rows": 16,
+      "max_absolute_error": 8.326672684688674e-17,
+      "status": "PASS"
+    },
+    "embedding_mlp": {
+      "rows": 16,
+      "max_absolute_error": 5.551115123125783e-17,
+      "status": "PASS"
+    },
+    "tabnet": {
+      "rows": 16,
+      "max_absolute_error": 2.2839355517945137e-08,
+      "status": "PASS"
+    }
+  },
+  "api": {
+    "/healthz": 200,
+    "/predict/t0-verified/status": 200,
+    "POST /predict/t0-verified": 200,
+    "legacy_retired_ensemble_not_loaded": "PASS"
+  },
+  "legacy_router_load_failures": {},
+  "scope": "Actual saved-model inference and in-process FastAPI HTTP requests; no external services or browser UI exercised."
+}

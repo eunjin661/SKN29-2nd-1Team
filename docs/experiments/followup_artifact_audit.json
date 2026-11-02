@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "source_files_hash_verified": 233,
+  "evidence_files_hash_verified": 129,
+  "relative_document_links_verified": 168,
+  "document_copies_verified": true,
+  "git_diff_check": "PASS",
+  "historical_bundles_preserved": true,
+  "publication": "NOT_STARTED"
+}

@@ -1,0 +1,49 @@
+{
+  "mode": "vite preview (production build)",
+  "injectedResponses": false,
+  "routes": [
+    {
+      "route": "/",
+      "heading": "데이터로 읽는\n콘텐츠 성과,\n전략으로 연결하다"
+    },
+    {
+      "route": "/analysis/predict",
+      "heading": "트렌딩 지속성 예측"
+    },
+    {
+      "route": "/analysis/model",
+      "heading": "모델 검증 결과"
+    },
+    {
+      "route": "/sustain",
+      "heading": "지속성 분석"
+    },
+    {
+      "route": "/video",
+      "heading": "트렌딩 영상 관측"
+    },
+    {
+      "route": "/dashboard",
+      "heading": "트렌딩 과거 분석 대시보드"
+    },
+    {
+      "route": "/campaign",
+      "heading": "광고 캠페인 플래너"
+    }
+  ],
+  "pageErrors": [],
+  "failedResponses": [],
+  "prediction": {
+    "run_id": "t0-v2-cpu-20261022-audit",
+    "model": "embedding_mlp",
+    "target": "tdi_v2",
+    "threshold": 0.44,
+    "predictions": [
+      {
+        "probability": 0.4859521985054016,
+        "label": 1
+      }
+    ]
+  },
+  "status": "PASS"
+}

@@ -1,0 +1,822 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_SCOPE",
+  "recorded_at_kst": "2026-10-23T02:28:31.803960+09:00",
+  "approved_scope": "Local implementation, experiments, tests, records and publication preparation, stages 1-4",
+  "publication": "No commit/push/PR/remote CI/deployment performed in this phase",
+  "repository": "eunjin661/SKN29-2nd-1Team",
+  "branch": "improve/trendit-reproducibility",
+  "base_commit": "f06c8175c0a2a6d611e21c9e72a9e0ca9e789a1c",
+  "observed_population": {
+    "events": 34964,
+    "unique_videos": 17884,
+    "categories": 5,
+    "missing_video_ids": 0,
+    "missing_category": 0
+  },
+  "duration": {
+    "n": 34964,
+    "excluded": 0,
+    "unit": "hours",
+    "min": 6.0,
+    "q25": 30.0,
+    "median": 108.0,
+    "mean": 144.1161766388285,
+    "q75": 240.0,
+    "max": 768.0
+  },
+  "tdi_population": {
+    "status": "ready",
+    "run_id": "t0-v2-cpu-20261022-audit",
+    "protocol": "t0-v2-purged-unseen-video",
+    "population": 34160,
+    "excluded": 804,
+    "exclusions": {
+      "invalid_publication_time": 131,
+      "unresolved_label": 580,
+      "seen_video": 93
+    },
+    "positive": 12420,
+    "positive_rate": 0.3635831381733021,
+    "threshold": 0.4,
+    "histogram": [
+      {
+        "lower": 0.0,
+        "upper": 0.1,
+        "count": 10449
+      },
+      {
+        "lower": 0.1,
+        "upper": 0.2,
+        "count": 4678
+      },
+      {
+        "lower": 0.2,
+        "upper": 0.30000000000000004,
+        "count": 3405
+      },
+      {
+        "lower": 0.30000000000000004,
+        "upper": 0.4,
+        "count": 3208
+      },
+      {
+        "lower": 0.4,
+        "upper": 0.5,
+        "count": 3083
+      },
+      {
+        "lower": 0.5,
+        "upper": 0.6000000000000001,
+        "count": 2663
+      },
+      {
+        "lower": 0.6000000000000001,
+        "upper": 0.7000000000000001,
+        "count": 2039
+      },
+      {
+        "lower": 0.7000000000000001,
+        "upper": 0.8,
+        "count": 1688
+      },
+      {
+        "lower": 0.8,
+        "upper": 0.9,
+        "count": 1068
+      },
+      {
+        "lower": 0.9,
+        "upper": 1.0,
+        "count": 1879
+      }
+    ],
+    "splits": {
+      "train": {
+        "candidate_rows": 24378,
+        "unresolved_label_rows_removed": 184,
+        "seen_video_rows_removed": 0,
+        "rows": 24194,
+        "unique_videos": 12871,
+        "T0_min": "2022-07-01 09:00:00",
+        "T0_max": "2024-07-12 03:00:00",
+        "positive_rate": 0.3646358601306109
+      },
+      "validation": {
+        "candidate_rows": 5230,
+        "unresolved_label_rows_removed": 196,
+        "seen_video_rows_removed": 54,
+        "rows": 4980,
+        "unique_videos": 2404,
+        "T0_min": "2024-07-12 09:00:00",
+        "T0_max": "2025-01-11 03:00:00",
+        "positive_rate": 0.3821285140562249
+      },
+      "test": {
+        "candidate_rows": 5225,
+        "unresolved_label_rows_removed": 200,
+        "seen_video_rows_removed": 39,
+        "rows": 4986,
+        "unique_videos": 2311,
+        "T0_min": "2025-01-11 21:00:00",
+        "T0_max": "2025-06-30 15:00:00",
+        "positive_rate": 0.33995186522262333
+      }
+    },
+    "reference": {
+      "name": "tdi_v2",
+      "threshold": 0.4,
+      "category_q95_train_only": {
+        "Education": 369.2999999999997,
+        "Entertainment": 342.0,
+        "Lifestyle": 396.0,
+        "Music": 288.0,
+        "News": 258.0
+      },
+      "unseen_category_q95": 354.0
+    },
+    "scope": "Accepted train, validation and test events; train-only TDI reference; not prediction scores"
+  },
+  "tests": {
+    "backend_primary": {
+      "passed": 107,
+      "warnings": 1
+    },
+    "backend_fresh_install": {
+      "passed": 107,
+      "warnings": 1
+    },
+    "browser_full": {
+      "passed": 49,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "retries": 0
+    },
+    "browser_fresh_basic": {
+      "passed": 47,
+      "failed": 0,
+      "flaky": 0,
+      "skipped": 0,
+      "retries": 0,
+      "two_real_diagnostic_cases_excluded": true
+    },
+    "cases": [
+      {
+        "title": "REAL observations: source, every population and TDI exclusions reconcile",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED population mismatch: a successful HTTP response cannot fabricate a graph",
+        "status": "expected"
+      },
+      {
+        "title": "Unavailable TDI preserves observed aggregates and never inserts legacy distribution",
+        "status": "expected"
+      },
+      {
+        "title": "REAL dashboard filters both year and category without proportional estimates",
+        "status": "expected"
+      },
+      {
+        "title": "Updated analysis routes show observations or input contracts without legacy model claims",
+        "status": "expected"
+      },
+      {
+        "title": "REAL scenario: starts empty, sample fills only, explicit arithmetic and CSV match assumptions",
+        "status": "expected"
+      },
+      {
+        "title": "REAL zero conversions: zero is kept and CPA is unavailable",
+        "status": "expected"
+      },
+      {
+        "title": "Scenario validation blocks blank, zero CPM, out-of-range rates and incomplete allocation",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED scenario failure: no invented result, retry reaches real arithmetic",
+        "status": "expected"
+      },
+      {
+        "title": "Scenario delayed request: duplicate submit is blocked and input editing cancels old result",
+        "status": "expected"
+      },
+      {
+        "title": "Campaign mobile: user assumptions are readable without document overflow or ROI forecast cards",
+        "status": "expected"
+      },
+      {
+        "title": "Campaign dark mode keeps typed assumption inputs readable",
+        "status": "expected"
+      },
+      {
+        "title": "REAL home: observed source and verified classifier replace LIVE demo and unsupported 24h or regression claims",
+        "status": "expected"
+      },
+      {
+        "title": "Home observation failure is explicit and does not fill old snapshot statistics; retry recovers",
+        "status": "expected"
+      },
+      {
+        "title": "REAL diagnostic: five seeds and video bootstrap match API; slider changes validation display only",
+        "status": "expected"
+      },
+      {
+        "title": "Diagnostic unavailable: primary evaluation remains usable and no interval is invented",
+        "status": "expected"
+      },
+      {
+        "title": "REAL diagnostic fixture with wrong baseline is rejected instead of being mixed with current model",
+        "status": "expected"
+      },
+      {
+        "title": "CountUp: decimals, negatives, units and ranges keep their values after live prop changes",
+        "status": "expected"
+      },
+      {
+        "title": "CountUp: duration updates, zero duration and reduced motion finish without stale animation",
+        "status": "expected"
+      },
+      {
+        "title": "Mobile navigation: route changes, Back/Forward, Escape and resize close the menu; theme persists",
+        "status": "expected"
+      },
+      {
+        "title": "Dashboard: timeout and retry load new data; late old data never replaces the retry",
+        "status": "expected"
+      },
+      {
+        "title": "Dashboard: unmount aborts the active request instead of updating the previous page",
+        "status": "expected"
+      },
+      {
+        "title": "EDA: failed response and retry update summary; navigating away aborts a pending retry",
+        "status": "expected"
+      },
+      {
+        "title": "Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text",
+        "status": "expected"
+      },
+      {
+        "title": "Video feed: category change cancels old refresh and its late response cannot replace current selection",
+        "status": "expected"
+      },
+      {
+        "title": "Video feed: one in-flight refresh, automatic refresh resumes afterwards, stable selection stays selected",
+        "status": "expected"
+      },
+      {
+        "title": "Video feed: cached observations stay labelled on network failure and refresh recovers",
+        "status": "expected"
+      },
+      {
+        "title": "Video feed: expired cache is ignored without a crash or fabricated videos",
+        "status": "expected"
+      },
+      {
+        "title": "Video feed: malformed cache is ignored without a crash or fabricated videos",
+        "status": "expected"
+      },
+      {
+        "title": "Video feed: legacy single-category endpoint works when bulk is unavailable; empty feed is not endless loading",
+        "status": "expected"
+      },
+      {
+        "title": "API health: offline banner makes no unsupported claim that every page has stored results",
+        "status": "expected"
+      },
+      {
+        "title": "Modified legacy screens: all public routes render without uncaught browser errors",
+        "status": "expected"
+      },
+      {
+        "title": "REAL observed API: sustain shows actual event durations and no legacy predictions or fabricated model metrics",
+        "status": "expected"
+      },
+      {
+        "title": "Sustain unavailable: no example videos or fallback metrics, retry recovers with observations",
+        "status": "expected"
+      },
+      {
+        "title": "Sustain rejects a legacy fabricated response instead of filling missing observed fields",
+        "status": "expected"
+      },
+      {
+        "title": "REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot",
+        "status": "expected"
+      },
+      {
+        "title": "REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED 503: no result, explicit error, retry reaches real API",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED network: no result, explicit error, retry reaches real API",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED timeout: aborts after 12 seconds, no result, retry succeeds",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED invalid response and 422: no fabricated result and field error shown",
+        "status": "expected"
+      },
+      {
+        "title": "REAL API: evaluation and interpretation match the report, with no legacy score fallback",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED evaluation unavailable: no fallback numbers; retry recovers",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED status unavailable: categories never default; reload and retry recover",
+        "status": "expected"
+      },
+      {
+        "title": "REAL API mobile: submit, readable result, no page overflow, refresh starts empty",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED live feed: only observed stats, no bulk or verified inference from current counters",
+        "status": "expected"
+      },
+      {
+        "title": "REAL API: home, analysis overview and dashboard use the same evaluated run",
+        "status": "expected"
+      },
+      {
+        "title": "INJECTED report failure: home, overview and dashboard never display fallback scores",
+        "status": "expected"
+      }
+    ]
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "audit_all": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "audit_production": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "baseline_ml_sources_unchanged": {
+    "backend/ml/__init__.py": true,
+    "backend/ml/artifact_contract.py": true,
+    "backend/ml/data_contract.py": true,
+    "backend/ml/inference.py": true,
+    "backend/ml/torch_models.py": true,
+    "backend/ml/train_lstm_predictor.py": true,
+    "backend/ml/train_weighted_ensemble.py": true,
+    "backend/ml/train_xgb_models.py": true
+  },
+  "baseline_selected_model": "embedding_mlp",
+  "baseline_threshold": 0.44,
+  "baseline_test": {
+    "auc": 0.8127646777794808,
+    "pr_auc": 0.629739649779992,
+    "f1": 0.6652777777777777,
+    "accuracy": 0.7099879663056559,
+    "precision": 0.5474285714285714,
+    "recall": 0.8477876106194691,
+    "confusion_matrix_tn_fp_fn_tp": [
+      2103,
+      1188,
+      258,
+      1437
+    ]
+  },
+  "diagnostic_run_id": "t0-v2-diagnostics-20261023",
+  "seed_summary": {
+    "auc": {
+      "mean": 0.8129525146349792,
+      "std_sample": 0.0012600564515347387,
+      "min": 0.811355632461464,
+      "max": 0.8145380850070227
+    },
+    "pr_auc": {
+      "mean": 0.6307694162223595,
+      "std_sample": 0.0020778996647622893,
+      "min": 0.6280522634840909,
+      "max": 0.6334113913049434
+    },
+    "f1": {
+      "mean": 0.6669365342434853,
+      "std_sample": 0.0022537493745127847,
+      "min": 0.6645176145521529,
+      "max": 0.6702932828760644
+    },
+    "precision": {
+      "mean": 0.5545214729398478,
+      "std_sample": 0.009151724015940502,
+      "min": 0.5449395770392749,
+      "max": 0.5674668874172185
+    },
+    "recall": {
+      "mean": 0.8370501474926254,
+      "std_sample": 0.016834330394272633,
+      "min": 0.8088495575221238,
+      "max": 0.8513274336283185
+    }
+  },
+  "bootstrap": {
+    "method": "paired video_id cluster percentile bootstrap",
+    "seed": 20261023,
+    "attempted": 2000,
+    "valid": 2000,
+    "skipped_single_class": 0,
+    "confidence": 0.95,
+    "events": 4986,
+    "videos": 2311,
+    "thresholds_fixed_before_resampling": {
+      "logistic": 0.27,
+      "embedding_mlp": 0.44
+    },
+    "intervals": {
+      "logistic": {
+        "auc": {
+          "lower": 0.6089672622840958,
+          "upper": 0.6389316836111051
+        },
+        "pr_auc": {
+          "lower": 0.41597933220301897,
+          "upper": 0.4586057784821067
+        },
+        "f1": {
+          "lower": 0.530282104650081,
+          "upper": 0.5587115993722168
+        },
+        "precision": {
+          "lower": 0.3727496011298734,
+          "upper": 0.3995062213315076
+        },
+        "recall": {
+          "lower": 0.9111219380415095,
+          "upper": 0.9367683196857154
+        }
+      },
+      "embedding_mlp": {
+        "auc": {
+          "lower": 0.8007499773094197,
+          "upper": 0.8237028205270813
+        },
+        "pr_auc": {
+          "lower": 0.6047868982763354,
+          "upper": 0.6543324020965254
+        },
+        "f1": {
+          "lower": 0.6499140616041543,
+          "upper": 0.6802072406688894
+        },
+        "precision": {
+          "lower": 0.5289300584630516,
+          "upper": 0.5653670056468191
+        },
+        "recall": {
+          "lower": 0.8305363837932284,
+          "upper": 0.86609514549839
+        }
+      },
+      "embedding_minus_logistic": {
+        "auc": {
+          "lower": 0.17295249931766254,
+          "upper": 0.20409432323165386
+        },
+        "pr_auc": {
+          "lower": 0.17021039971475785,
+          "upper": 0.2160049286150009
+        },
+        "f1": {
+          "lower": 0.10751145330065676,
+          "upper": 0.13385308451560363
+        },
+        "precision": {
+          "lower": 0.14887535307700525,
+          "upper": 0.17373135837961556
+        },
+        "recall": {
+          "lower": -0.09688926812640718,
+          "upper": -0.05473704893205004
+        }
+      }
+    },
+    "limits": "Conditional uncertainty of this observed holdout; not future-period uncertainty or cross-seed confidence intervals"
+  },
+  "diagnostic_limits": [
+    "The original Test holdout has already been inspected; this is diagnostic reuse, not new external validation",
+    "Five seeds measure training variability with the same split; they are not independent Test datasets",
+    "Video-cluster bootstrap intervals condition on this period and fixed fitted models",
+    "No Test-based seed selection, production model replacement, calibration, causal or business uplift claim"
+  ],
+  "independent_install": {
+    "status": "PASS",
+    "scope": "Fresh local checkout with approved source overlay; own venv and node_modules; shared local Git objects; no remote CI execution",
+    "commands": {
+      "venv": {
+        "exit_code": 0,
+        "seconds": 0.119
+      },
+      "python-sync": {
+        "exit_code": 0,
+        "seconds": 2.216
+      },
+      "backend": {
+        "exit_code": 0,
+        "seconds": 10.694
+      },
+      "training": {
+        "exit_code": 0,
+        "seconds": 72.647
+      },
+      "inference": {
+        "exit_code": 0,
+        "seconds": 3.612
+      },
+      "npm-ci": {
+        "exit_code": 0,
+        "seconds": 5.313
+      },
+      "quality": {
+        "exit_code": 0,
+        "seconds": 5.721
+      },
+      "browser": {
+        "exit_code": 1,
+        "seconds": 95.727
+      }
+    },
+    "first_attempt_browser_exit_code": 1,
+    "correction": "Optional diagnostics unconfigured: assert its 503 separately. Dark input contrast fixed and covered.",
+    "final_quality_and_browser": {
+      "isolated-quality-final": {
+        "exit_code": 0,
+        "seconds": 4.962
+      },
+      "isolated-browser-final": {
+        "exit_code": 0,
+        "seconds": 95.855
+      }
+    },
+    "selected_model_matches": true,
+    "selected_threshold_matches": true,
+    "test_metrics_match_all_models": {
+      "dummy": true,
+      "logistic": true,
+      "xgboost": true,
+      "lightgbm": true,
+      "sklearn_mlp": true,
+      "weighted_soft_voting": true,
+      "embedding_mlp": true,
+      "tabnet": true
+    },
+    "test_score_max_absolute_differences": {
+      "dummy": 0.0,
+      "logistic": 0.0,
+      "xgboost": 0.0,
+      "lightgbm": 0.0,
+      "sklearn_mlp": 0.0,
+      "weighted_soft_voting": 0.0,
+      "embedding_mlp": 0.0,
+      "tabnet": 0.0
+    },
+    "last_source_overlay": "Landing source-contract wording, dark buttons and diagnostic card layout; no training-source changes",
+    "browser_expected": 47
+  },
+  "production_browser": {
+    "mode": "production Vite preview",
+    "realApi": "http://localhost:8000",
+    "injectedData": false,
+    "routes": [
+      {
+        "route": "/",
+        "heading": "첫 관측 정보로\n분류하는\n트렌딩 지속성"
+      },
+      {
+        "route": "/analysis",
+        "heading": "유튜브 트렌딩\n심층 분석"
+      },
+      {
+        "route": "/analysis/eda",
+        "heading": "EDA — 탐색적 데이터 분석"
+      },
+      {
+        "route": "/analysis/feature",
+        "heading": "현재 모델의 입력과 전처리"
+      },
+      {
+        "route": "/analysis/insight",
+        "heading": "관측 데이터 해석"
+      },
+      {
+        "route": "/analysis/problem",
+        "heading": "문제 정의와 평가 표본"
+      },
+      {
+        "route": "/analysis/compare",
+        "heading": "관측 데이터 해석"
+      },
+      {
+        "route": "/analysis/strategy",
+        "heading": "관측 비교와 활용 범위"
+      },
+      {
+        "route": "/analysis/model",
+        "heading": "모델 검증 결과"
+      },
+      {
+        "route": "/analysis/explain",
+        "heading": "모델의 판단 범위와 한계"
+      },
+      {
+        "route": "/analysis/predict",
+        "heading": "트렌딩 지속성 예측"
+      },
+      {
+        "route": "/campaign",
+        "heading": "캠페인 조건 계산기"
+      },
+      {
+        "route": "/dashboard",
+        "heading": "트렌딩 과거 분석 대시보드"
+      },
+      {
+        "route": "/sustain",
+        "heading": "지속성 분석"
+      },
+      {
+        "route": "/video",
+        "heading": "트렌딩 영상 관측"
+      }
+    ],
+    "errors": [],
+    "httpErrors": [],
+    "status": "PASS"
+  },
+  "ci": {
+    "backend-browser.yml": {
+      "yaml_parse": "PASS",
+      "remote_execution": "NOT_RUN",
+      "permissions": {
+        "contents": "read"
+      }
+    },
+    "frontend-quality.yml": {
+      "yaml_parse": "PASS",
+      "remote_execution": "NOT_RUN",
+      "permissions": {
+        "contents": "read"
+      }
+    }
+  },
+  "source_manifest": "followup_evidence/final-source-manifest.json",
+  "evidence_sha256": {
+    "analysis-backend-final.log": "f49e6dc2d12ca6c8fe676cd12f8e2b1612e1951e7f439394289e31ee623fa2f0",
+    "analysis-backend-first.log": "ac31ccdcbe2cc453dfa545c9d6d5d9a306f6c0823172ab50837f57d1a42fe904",
+    "analysis-browser-first-results.json": "f3b975bae2b63a6f5cb312b19bbc2f4c46956f8b7d804c34f49a71de7b215783",
+    "analysis-browser-first.log": "4f7b69b3e144864bcbabd34cb90457c26153a03000176efdfbe12aaf0004c6bb",
+    "analysis-browser-results.json": "b7d844a4ddd186323d043c6e64b1eda99d8fa776e15e56281e52ee8a22d9ca64",
+    "analysis-browser.log": "99ac85d44784ba6cfd8804782a47ae91db44973c8662e280f222b28fabb8dca8",
+    "analysis-check-final.log": "36066f23799c059acb281919d0305c3b18f946e52651b8b9f9d1cacac01d1861",
+    "analysis-check-fixed.log": "4ba3b5752ac380c7027cfefa6e9570d65506745855c71bbd25afcac58bd71590",
+    "analysis-check.log": "741408b148bce054837af89bd121ff2e9300b2d71d4484a6c2129c1b1986e567",
+    "analysis-lint-first.log": "670b64e90020f6b7345e5cf8d83e482fa5c3c9d7510cc6197db53f7612440be7",
+    "analysis-real-response.json": "5d5129471fd075eea90b6cb8349deb18bb48421c427e7dd659742881e9f94bd4",
+    "analysis-real-response.log": "0d85e7b64679c0c869e2f7cb0e8362818c1a1d85210f560f63b8047dc7b86253",
+    "baseline-git-status.log": "b0f3ff9f039c1da0d7ddd444c1fb2c3a5730c897f68e931c1531a8310475bb09",
+    "baseline-source-manifest.json": "5afdc9476dd2524f73091091ef585172b082e8766796758578116f33d8d911b4",
+    "before/backend/api/routes/campaign.py": "501721b96b4a82fa21b149e1f06f1d7db13faaa792624c2adb073df1ae23f50c",
+    "before/backend/api/routes/dashboard.py": "ee0509934993e05465f7e42ccfcf8be376fc1917d0ac30e9172a43693bfc8a7f",
+    "before/backend/api/routes/eda.py": "c82b694dd141865edef7d887ffd3a607e89a90b19afbc92b0beaaf33fd0844d4",
+    "before/backend/api/routes/feature.py": "dec6f062207e526c706150a4b98418882f5dbda422ce842a3c744dacb3d9b330",
+    "before/backend/api/routes/insight.py": "23e66432322c01cda46059fb002a8317c7c604f3fd0b14ed5f6f8dfd6a1e2862",
+    "before/backend/api/routes/problem.py": "e27640717e48de069616ec800af7377e3f6cb2363da8c2ec4475e49b2120236b",
+    "before/backend/api/routes/strategy.py": "f5ccd4cacaedd3e2f7f23d0423e5b214b4dcb1c6933cc3d1ee5052d7378fa5f4",
+    "before/backend/api/services/data_loader.py": "de2c78616c28d822d5a2372514e8a6a2e3d2ebc6203e529837421f0fb3607f5d",
+    "before/backend/tests/test_analysis_aggregates.py": "bacf477f114f9390379617a5dd8a3f6c1bece99b22e546089ff68332f153d9b3",
+    "before/frontend/src/components/ModelDiagnostics.jsx": "cadb81f73f8c5b0a09c0ce360059925e3ceb25255f9212f1a749312c00c3723e",
+    "before/frontend/src/components/VerifiedEvaluation.jsx": "ad042835aa00b5816faa1c30a950006ae7ec37e45eb9048d00215b59198b517b",
+    "before/frontend/src/constants/fallbackData.js": "55bc61b5b69488e0d280915c98a621281b5929efe8c4ca918c9e5684cc45d4e6",
+    "before/frontend/src/constants/navigation.js": "725c99da6a0f008e496bf5cb3b77bd986f064f7a8b8cf00cedc356cf0010b35e",
+    "before/frontend/src/hooks/useEDA.js": "99c0cc89adf159b2bba84742f6adb59dc66e00d62ddc4173a3b1de9a0b59c4fb",
+    "before/frontend/src/pages/CampaignPlannerPage.jsx": "958a3bbf9b7e28684d3311cd8845ffda8286d7c7d32a5d0c88bb8d07b8959aff",
+    "before/frontend/src/pages/ComparePage.jsx": "c2a217b41d754053290bb793eac230854cab12d91db6c3a57716e676cb55c4ab",
+    "before/frontend/src/pages/DashboardPage.jsx": "215fc5ec164d75c585613b5c357b9f4120e92256630f83b2af267b08892ee93e",
+    "before/frontend/src/pages/EDACharts.jsx": "2aadf804fcb95bf1d6b7d65f72178987594ef5a9de371fb53820ebf4e73c78b6",
+    "before/frontend/src/pages/EDAPage.jsx": "bd631f8a929e1077bfc7d2fffcd165a860d9231e1a91021334e77babc0d32f3b",
+    "before/frontend/src/pages/EDAsections.jsx": "a18eb631aa1641cfc4bf42dda66d7de98c54ecb86f2add8c3e04ed7491880aaa",
+    "before/frontend/src/pages/FeaturePage.jsx": "1ac5c0a8c70c0598988f0227a8494bc32ccbf988134be15bd80b9443bc7d11de",
+    "before/frontend/src/pages/InsightPage.jsx": "ca18a0d9e544169f4634430499a1d8fbcb80919995eb4386dce50d2a32555da0",
+    "before/frontend/src/pages/LandingPage.jsx": "5bf0b43e6050916c726f501a0071a567b62242dec5ba31175177dee1ca9e0558",
+    "before/frontend/src/pages/ProblemPage.jsx": "84cde14a8570ec602a61d3ea39db4beb53b145dcc93decbdf6bb799d0a9f2994",
+    "before/frontend/src/pages/StrategyPage.jsx": "e7ee1bb75c90303eecde8d0de7590d1dde33a6d1c8e5b99fbcd95ee30f8b5193",
+    "before/frontend/src/pages/TrendingPage.jsx": "e4a58abbf47d14cd98553234c4ac0fbde7548fe1e7a7dd13fe65e9160e8f65f3",
+    "before/frontend/src/styles/Scenario.css": "8ba1eb05b7641e188a162c5d4fd4da83fb91e62c67425d90b48ff3c910b74c51",
+    "before/frontend/tests/e2e/campaign-scenario.spec.js": "f3eeed98ea4bfe915c2665350a9df75cc501daec0118b9fc51c9b2c37fe3feec",
+    "before/frontend/tests/e2e/quality-regression.spec.js": "dd16ca43bcf660089ac48a2725644fa14945aebf922eb061bbe4838739b6f33a",
+    "before-home-final-browser-results.json": "de6829fd4a984a1ecda138b88a0ef48080ebed83daf0fe8c02fa8707a63a9d13",
+    "before-home-final-browser.log": "3b6bfc6c82e0877b1d664cb7ded1d53b03f2ef20ceb1023493cd3f5e0c466df2",
+    "before-home-final-quality.log": "042110aa3ba36591d6399f3b61640d8693b2e17ac9c3e504b93c642bdf65e2c3",
+    "before-home-isolated-browser-final.log": "4793346abce786adc0e0564e7191a68e5a7b4b494d977eef0b9e87a61dd65698",
+    "before-home-isolated-browser-results.json": "8eca5b981e695adf719a7ea07c0924f14c1f32694629d0e8beab32ea76339b09",
+    "campaign-backend.log": "394e609c1d7c532b50ac630fb85f0e19aea692d32f7ea33313fa174865639134",
+    "campaign-browser-results.json": "e56459875af61ca30b254cdba1bed0ee0f794daf5d61c45e4c0886b580528365",
+    "campaign-browser.log": "3d6797666c07d30f41ec13d780cc3b7b41af5c4bfd6a4c073e2d87a24713f0e7",
+    "campaign-check.log": "0481f44296a9210de3aec0a77884ad20e7e79e25bda0768e48b6ac4f85c1b532",
+    "campaign-desktop.png": "33b7ca5022dc9604d7a4ad4fff49898d726106876ad12831343865e56fe656f6",
+    "campaign-mobile.png": "ba451291eb1e46c93a496e2c770f87e47822b1429cea60551c53531a543cedde",
+    "ci-reproduction-inputs.json": "daaaf389f78b593dfa1085713469f116456dc69b50e960381ccc5d2e151fb8f9",
+    "ci-workflow-validation.json": "8cffbe41554928cee631ca8c81191c3e4cfdaaf2c2f283c2d4a1a80b3daf1d85",
+    "dashboard-mobile.png": "ba51869b9176b8424e498a041f2fc896ae4fbdb715c198d7ca8434e16adc41f6",
+    "dashboard-runtime-diagnosis.log": "8d21b1837329236d81d213c6816f9314b9f22ca808fbb3e554be9ba2240aaaee",
+    "diagnostics/bootstrap.json": "a73a3346d6931b4c3e6cad2e409a08c75c3754533e329abb7f3553f9f35e7bdc",
+    "diagnostics/protocol.json": "9c3bdf739d8c81739ce04d1b58ff26b6ef7d110bfa25eb12136dc7e0483020de",
+    "diagnostics/report.json": "588fc2f1ce6065effa6b6c3186024f8014d0890277c561c3fb3290ec393e411f",
+    "diagnostics/seed-101/result.json": "8e7b7ca64505e668816c961dbeee58dd2bc8a4a959052f0cccb96342f55feac4",
+    "diagnostics/seed-101/test_predictions.csv": "9bef76a28fc7d3a9e009d94ec44ef7132372cb829d84afe6942b0c848041bfa1",
+    "diagnostics/seed-101/validation_predictions.csv": "5a50380a17bb4330cb77a7c6ee825cbe6184bd6a38fee1dba3c29f98dff2a49d",
+    "diagnostics/seed-13/result.json": "e98188bc21e992dc86f1618abdf4cb84f330c33502185da9eadb8a30e9457511",
+    "diagnostics/seed-13/test_predictions.csv": "a3e6ce4a35da91cbe9d94bf981e0e4f22cb917b3ecc12859a9b5a38648e80d3a",
+    "diagnostics/seed-13/validation_predictions.csv": "85328cc94f6ebccf83aeda8bc0d154e2bb09e58aea7f30e93779d5c79b899f38",
+    "diagnostics/seed-29/result.json": "17d32f8b9d15f4bd9fb7bbbf36c14f5d9ad343a9918653763ccc31d180711e01",
+    "diagnostics/seed-29/test_predictions.csv": "b00b8ab23a61b376521030fc19c294074a648dbcbdd34cfb3b940506e3fad0f8",
+    "diagnostics/seed-29/validation_predictions.csv": "5d98b09655043c0087e4e0283e9c7185922ef40f0683c7fed59c55a19ddfc139",
+    "diagnostics/seed-42/result.json": "64532acf81caed87d170d7f1e5b3902503cec8cf0c49a0172117cdb93614f5a7",
+    "diagnostics/seed-42/test_predictions.csv": "95bf51e17ee9b5b77ce5c30e29bb44953567a3c6ebc46c3c91b0a420d87b15a1",
+    "diagnostics/seed-42/validation_predictions.csv": "9922944d7d5741733294dbb03023c33d7fc402ed751e842ae92e99190de710ed",
+    "diagnostics/seed-73/result.json": "1cabcfb02d39651165bf434dde8cdddf1c9f7de3d74f85b21dcfc9a11dd56038",
+    "diagnostics/seed-73/test_predictions.csv": "92403fd5bb361d151ece132930d9eebaeb5ae775ac135592f89d0c4a74f0fcf8",
+    "diagnostics/seed-73/validation_predictions.csv": "54c014f11e3e65eb5e434aaf83d281e062df3e09a515da9b2677e3a50201459a",
+    "diagnostics/validation_threshold_curve.json": "35b3d21130cc31a9136da5fb3558576703dd5eaf4320896afcd7d9889390a352",
+    "diagnostics-api-check.log": "550243cbd86b66656ffd2e68da43595b3ced89da9ee3fd48f59a55dbd344ab69",
+    "diagnostics-api-response.json": "4bb4029010b984b2fbce0ccd56aaef237c0efec687c1bf2141e8055ff1d687fe",
+    "diagnostics-backend.log": "9f80d28036e0687b943321127741328ead26533b036cf76784afa5c88ca3707f",
+    "diagnostics-browser-first-results.json": "e9a5f84845747ee703e20ae6da9e6e18efcbfac865ff4d5c9b5d1f4947d3263b",
+    "diagnostics-browser-first.log": "ff95822d67fb2b3352416b25329bf98a01b469845cfa5ec07fde7a132877a31c",
+    "diagnostics-browser-results.json": "8d0ae9fc3a13a03cf2e83bc8edc1ac9ec831d18acc7bff219e6230618fa3400f",
+    "diagnostics-browser.log": "a0d94081278d7eaa0e8c7d4c271c9a288d1cf3c332c082117fede4fe2dd81964",
+    "diagnostics-check-final.log": "c484b80805d0baa8f315672c585bf9db999e24f37b1538322b91cbc35ce6155a",
+    "diagnostics-check.log": "549be0788143c32df193c9661678de60d489fb5bcd99d236eb68e2418038ba7d",
+    "diagnostics-desktop.png": "c140fa299477c6ca21d9823196800e3d7313e41087f2fa745f8fa6715377812d",
+    "diagnostics-lint-final.log": "670b64e90020f6b7345e5cf8d83e482fa5c3c9d7510cc6197db53f7612440be7",
+    "diagnostics-run.log": "9b5ad4d9717025e3c78bb4c15bbcbc718fa4386a0787195e4dcf4bd4ee5b5c64",
+    "diagnostics-unit.log": "7256316818e0211d1c4dc30d19c5b69dd944b4f7c923e409b47993643d15fb98",
+    "eda-desktop.png": "1b0b5a030b995cb1175ed8038fc787a8cd31d1fd9562d891e9c17e3efc528753",
+    "eda-mobile.png": "b6300ed7cf162bfee3536c7cf6f424aa408cf19436187c2e21e6445414cac343",
+    "evaluation-desktop.png": "e425292368be83d178e21567072391a5a7e7b9ac0f692ef3d2fa7ef4fb11ddcc",
+    "final-audit.json": "4458951ec86018374c891011962d3e60139f50ee7f3f036859dc63b6a9838b81",
+    "final-backend.log": "883baccb1e95fd388ca605f0d0c792a585d70e4422cd4be61089384d43d81c3c",
+    "final-browser-results.json": "e9aaab9130bcf2a272b578fc8c5a71718aeb3fcb42de7ca69d9b59090210c872",
+    "final-browser.log": "5c91ec22f8cc978d2461631f18ec02ff3566bbd5b616b19237b2cf52e4811e98",
+    "final-lint.json": "fbc4043b8baa3e27714d84d85291327e3de8d6201a75d82ff8a7cf55adf81bba",
+    "final-production-audit.json": "4458951ec86018374c891011962d3e60139f50ee7f3f036859dc63b6a9838b81",
+    "final-quality.log": "c05889508ddaac2b0be21529d32a6467e69784b56c5372a83c9fc75310e026cb",
+    "final-source-manifest.json": "5ddcbbc366372f4ea3e280aa58fee648095ebecbf0593f72e8924b809b767951",
+    "final-verification-commands.json": "8025c1eaaf845f7e26ddd83143c4e5cc00ed30f0e08164d84ae89c751c8b13f1",
+    "github-publication-target.json": "4ddedf79d9c81e0c1ae780ba0e2a9330221495dfa240310b7beb6877b57919c3",
+    "home-desktop.png": "7d02fc82a90dce986f3802279a0223a34d78a19bbc0f72aa990a5dd7e3133b9c",
+    "home-mobile.png": "533b7d796cd38e953cff17dfb02b1ea2312ac8c5d2cc3938a065693cfca94732",
+    "isolated-backend.log": "4f6a21a045e2b4ee1adde4277806f2d0e6e15c02c4218a63d8aaaaf9bddfd1c9",
+    "isolated-browser-final.log": "1d61a94dc4ef7ed98f838f54bde1545bb91599b911581ce6c1f75d98d4b043a4",
+    "isolated-browser-results.json": "9ef97b3e2c6934b719300840da9e4889131426f2d23b975054c20351d69ac4de",
+    "isolated-browser.log": "9d7edadbc697b12af6b664fc737e6dd754e796397d4cfd86ce2b3839fed0c0f7",
+    "isolated-clone.log": "139a582593f680196bb2c281d634e11e381e52a3b718094103aa98b828b70bcf",
+    "isolated-first-browser-results.json": "321abe03afd7b712e3394a2e12f9c3bef03309eea9ca3d26360a204c917dd38b",
+    "isolated-first-browser.log": "9d7edadbc697b12af6b664fc737e6dd754e796397d4cfd86ce2b3839fed0c0f7",
+    "isolated-first-reproduction.json": "6902ab94a05f4b2fb865486b4554fa0009efae9e0b6b77e09aec40cf1fb9ffb3",
+    "isolated-inference.log": "c42c64c68b5523a77f833175c3ded12bf283bbee114a17cf95ce2aa3b90fc7cb",
+    "isolated-npm-ci.log": "0f4412d1362a8d67be45a2c85294023de4790d0f340812af5146ba819d853c82",
+    "isolated-python-sync.log": "5648cecf0f857bd00b2ee8f7c68d55e4dc235b1fc3ba6d5c70f3bc5bc2ad2a35",
+    "isolated-quality-final.log": "5561fbacc0b2a8799bb4cbd5cf75482001866a8ed697abde83c4c8e3601f2f8c",
+    "isolated-quality.log": "64d6e5a0fe2c2cd1357c8f7b74c239e32e3449491530e968430c8e21ebf7ca13",
+    "isolated-reproduction.json": "b3f6070c6f34c148cdb394cd313914111d5d66e84f783ea1ad14dcf78d084331",
+    "isolated-training.log": "3c690c1c8029e121e82f7b7cca4ef5e6ecdcdefd2daa11b9a0a6d3c5eb9d2f80",
+    "isolated-venv.log": "01c92cf48e91fbe154ce5e18c3276b18b8013d5bef2bc44a780dd9f8c42337f7",
+    "model-mobile.png": "7045d51f03edc7914a3b581e94bcfc32214b13616255dd44f87c0d7a0328f80c",
+    "production-server.log": "515fbdcfd56769945fa7abcfd195cdaee94fa2ee1ffd9562df277704457576a1",
+    "production-verification.json": "b1345e8bcdb2bab8d2e425e00f46c5d0600e25fb879e79c958a879dbf6979c47",
+    "production-verification.log": "fd6dbeb6e240015ca4b051eb2cb1494c078a2fc145588a2ae0e623738e520722",
+    "publication-inventory.json": "f3bb47a8bc376aa7fc5cae70cd8fab03f635505fd4212e8bfa8b0309a38c9f1d",
+    "reproduce-isolated.py": "ddecb28faa773659d131eca824a8edea16d127eb12f361660ba8d5d9e81e6726",
+    "verify-production.mjs": "39f3b0672d3490c89cd2a5fd2075313fcf6380f8ae7265c7d5809a83daa51f17",
+    "verify-production.py": "165bab74ef2db1165882a6f1161d807fbf79308fdd69e44602442ede18986a6e"
+  }
+}

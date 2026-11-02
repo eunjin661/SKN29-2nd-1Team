@@ -1,0 +1,62 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_SCOPE",
+  "run_id": "t0-v2-cpu-20261022-audit",
+  "regression_tests": {
+    "passed": 38,
+    "failed": 0,
+    "nonblocking_deprecation_warnings": 1
+  },
+  "data_invariants": {
+    "all_features_exact_allowlist": true,
+    "train_validation_video_overlap": 0,
+    "train_test_video_overlap": 0,
+    "validation_test_video_overlap": 0,
+    "train_labels_known_by_validation_start": true,
+    "validation_labels_known_by_test_start": true,
+    "test_labels_confirmed_before_observation_end": true,
+    "assignments_cover_all_source_rows": true,
+    "event_keys_unique": true
+  },
+  "predictions_vs_initial_run_max_absolute_error": {
+    "dummy": 0.0,
+    "logistic": 0.0,
+    "xgboost": 0.0,
+    "lightgbm": 0.0,
+    "sklearn_mlp": 0.0,
+    "weighted_soft_voting": 0.0,
+    "embedding_mlp": 0.0,
+    "tabnet": 0.0
+  },
+  "fixes": [
+    {
+      "problem": "Untrained category returned an ordinary prediction",
+      "before": "HTTP 200",
+      "after": "HTTP 422 before model loading"
+    },
+    {
+      "problem": "Wrong protocol or missing artifacts could advertise readiness",
+      "before": "HTTP 200 for wrong protocol; malformed JSON returned 500",
+      "after": "Shared report/schema/required checksum validation; HTTP 503"
+    },
+    {
+      "problem": "Deleting a retirement marker could restore legacy ensemble loading",
+      "before": "Binary was loadable when metadata/status was absent",
+      "after": "Legacy ensemble binary is never loaded through the legacy route"
+    },
+    {
+      "problem": "Training accepted IDs which the serving API rejected",
+      "before": "Dots/Unicode accepted only by training",
+      "after": "One shared run-ID validator"
+    },
+    {
+      "problem": "Small MLP datasets could have zero training batches",
+      "before": "Fixed 256 batch and drop_last could skip all training rows",
+      "after": "Batch bounded by training size; regression proves actual nonempty training"
+    }
+  ],
+  "scope_limits": [
+    "Browser integration remains planned, not exercised in this re-audit.",
+    "Single-seed temporal holdout; no independent statistical superiority claim.",
+    "sklearn MLP retained its fixed-iteration convergence warning; no settings were tuned on Test."
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "all_features_exact_allowlist": true,
+  "train_validation_video_overlap": 0,
+  "train_test_video_overlap": 0,
+  "validation_test_video_overlap": 0,
+  "train_labels_known_by_validation_start": true,
+  "validation_labels_known_by_test_start": true,
+  "test_labels_confirmed_before_observation_end": true,
+  "assignments_cover_all_source_rows": true,
+  "event_keys_unique": true
+}

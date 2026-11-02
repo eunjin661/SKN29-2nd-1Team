@@ -1,0 +1,612 @@
+{
+  "config": {
+    "argv": [
+      "/home/eunjin/.nvm/versions/node/v24.20.0/bin/node",
+      "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/playwright.config.js",
+    "rootDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e",
+        "snapshotDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:15173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "../backend/artifacts/ui-integration-20261022/browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "verified-t0.spec.js",
+      "file": "verified-t0.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4445,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:12:50.333Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "real-api-response",
+                      "contentType": "application/json",
+                      "body": "ewogICJpbnB1dCI6IHsKICAgICJUMCI6ICIyMDI1LTAyLTAxVDEyOjAwOjAwKzA5OjAwIiwKICAgICJwdWJsaXNoZWRfYXQiOiAiMjAyNS0wMi0wMVQwMDowMDowMCswOTowMCIsCiAgICAiZW50cnlfcmFuayI6IDMwLAogICAgIlQwX3ZpZXciOiAxMDAwMDAsCiAgICAiVDBfY29tbWVudCI6IDI1MCwKICAgICJjYXRlZ29yeV9ncm91cCI6ICJFbnRlcnRhaW5tZW50IgogIH0sCiAgInJlc3BvbnNlIjogewogICAgInJ1bl9pZCI6ICJ0MC12Mi1jcHUtMjAyNjEwMjItYXVkaXQiLAogICAgIm1vZGVsIjogImVtYmVkZGluZ19tbHAiLAogICAgInRhcmdldCI6ICJ0ZGlfdjIiLAogICAgInRocmVzaG9sZCI6IDAuNDQsCiAgICAicHJlZGljdGlvbnMiOiBbCiAgICAgIHsKICAgICAgICAicHJvYmFiaWxpdHkiOiAwLjQ4NTk1MjE5ODUwNTQwMTYsCiAgICAgICAgImxhYmVsIjogMQogICAgICB9CiAgICBdCiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-fcdcf8aac93b78e0ad2a",
+          "file": "verified-t0.spec.js",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1480,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:12:54.851Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-5f759c3176656b15838d",
+          "file": "verified-t0.spec.js",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "INJECTED 503: no result, explicit error, retry reaches real API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1008,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:12:55.651Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-c8f66b0caf8e1d0342d4",
+          "file": "verified-t0.spec.js",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "INJECTED network: no result, explicit error, retry reaches real API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1052,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:12:56.666Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-6d72bcdd604acc46b379",
+          "file": "verified-t0.spec.js",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "INJECTED timeout: aborts after 12 seconds, no result, retry succeeds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1007,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:12:57.725Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-e730425c931c0ebfe2d1",
+          "file": "verified-t0.spec.js",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1109,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:12:58.739Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-0481eaf99d1350116e6e",
+          "file": "verified-t0.spec.js",
+          "line": 102,
+          "column": 1
+        },
+        {
+          "title": "INJECTED invalid response and 422: no fabricated result and field error shown",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 992,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:12:59.854Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-c9fc6321e5482957e386",
+          "file": "verified-t0.spec.js",
+          "line": 125,
+          "column": 1
+        },
+        {
+          "title": "REAL API: evaluation and interpretation match the report, with no legacy score fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1132,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:13:00.852Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "real-evaluation",
+                      "contentType": "application/json",
+                      "body": "ewogICJydW5faWQiOiAidDAtdjItY3B1LTIwMjYxMDIyLWF1ZGl0IiwKICAicHJvdG9jb2wiOiAidDAtdjItcHVyZ2VkLXVuc2Vlbi12aWRlbyIsCiAgInNlbGVjdGVkX21vZGVsIjogImVtYmVkZGluZ19tbHAiLAogICJzZWxlY3RlZF90aHJlc2hvbGQiOiAwLjQ0LAogICJzZWxlY3Rpb25fcnVsZSI6ICJtYXhpbXVtIHZhbGlkYXRpb24gUk9DLUFVQzsgZGV0ZXJtaW5pc3RpYyBhbHBoYWJldGljYWwgdGllIGJyZWFrOyB0ZXN0IG5ldmVyIHNlbGVjdHMgYSBtb2RlbCIsCiAgInRocmVzaG9sZF9ydWxlIjogIm1heGltdW0gdmFsaWRhdGlvbiBGMTsgdGVzdCBuZXZlciBzZWxlY3RzIGEgdGhyZXNob2xkIiwKICAidGFyZ2V0IjogewogICAgIm5hbWUiOiAidGRpX3YyIiwKICAgICJsYWJlbF90aHJlc2hvbGQiOiAwLjQsCiAgICAiY2F0ZWdvcnlfcTk1X3RyYWluX29ubHkiOiB7CiAgICAgICJFZHVjYXRpb24iOiAzNjkuMjk5OTk5OTk5OTk5NywKICAgICAgIkVudGVydGFpbm1lbnQiOiAzNDIsCiAgICAgICJMaWZlc3R5bGUiOiAzOTYsCiAgICAgICJNdXNpYyI6IDI4OCwKICAgICAgIk5ld3MiOiAyNTgKICAgIH0KICB9LAogICJkYXRhIjogewogICAgInNvdXJjZV9yb3dzIjogMzQ5NjQsCiAgICAic3BsaXRzIjogewogICAgICAidHJhaW4iOiB7CiAgICAgICAgInJvd3MiOiAyNDE5NCwKICAgICAgICAidW5pcXVlX3ZpZGVvcyI6IDEyODcxLAogICAgICAgICJwb3NpdGl2ZV9yYXRlIjogMC4zNjQ2MzU4NjAxMzA2MTA5LAogICAgICAgICJUMF9taW4iOiAiMjAyMi0wNy0wMSAwOTowMDowMCIsCiAgICAgICAgIlQwX21heCI6ICIyMDI0LTA3LTEyIDAzOjAwOjAwIgogICAgICB9LAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAicm93cyI6IDQ5ODAsCiAgICAgICAgInVuaXF1ZV92aWRlb3MiOiAyNDA0LAogICAgICAgICJwb3NpdGl2ZV9yYXRlIjogMC4zODIxMjg1MTQwNTYyMjQ5LAogICAgICAgICJUMF9taW4iOiAiMjAyNC0wNy0xMiAwOTowMDowMCIsCiAgICAgICAgIlQwX21heCI6ICIyMDI1LTAxLTExIDAzOjAwOjAwIgogICAgICB9LAogICAgICAidGVzdCI6IHsKICAgICAgICAicm93cyI6IDQ5ODYsCiAgICAgICAgInVuaXF1ZV92aWRlb3MiOiAyMzExLAogICAgICAgICJwb3NpdGl2ZV9yYXRlIjogMC4zMzk5NTE4NjUyMjI2MjMzMywKICAgICAgICAiVDBfbWluIjogIjIwMjUtMDEtMTEgMjE6MDA6MDAiLAogICAgICAgICJUMF9tYXgiOiAiMjAyNS0wNi0zMCAxNTowMDowMCIKICAgICAgfQogICAgfSwKICAgICJmZWF0dXJlX2NvbHVtbnMiOiBbCiAgICAgICJlbnRyeV9yYW5rX2xvZyIsCiAgICAgICJUMF92aWV3X2xvZyIsCiAgICAgICJUMF9lbmdhZ2VtZW50X3JhdGlvX2xvZyIsCiAgICAgICJsYXRlbmN5X3RvX3RyZW5kX2xvZyIsCiAgICAgICJwcmV0cmVuZF92aWV3X3ZlbG9jaXR5X2xvZyIsCiAgICAgICJ3ZWVrZGF5X3NpbiIsCiAgICAgICJ3ZWVrZGF5X2NvcyIsCiAgICAgICJob3VyX3NpbiIsCiAgICAgICJob3VyX2NvcyIsCiAgICAgICJjYXRlZ29yeV9ncm91cCIKICAgIF0sCiAgICAibGFiZWxfY29uZmlybWF0aW9uX2hvdXJzIjogNiwKICAgICJncm91cF9wb2xpY3kiOiAidmlkZW9faWQgZGlzam9pbnQgYWNyb3NzIHRyYWluL3ZhbGlkYXRpb24vdGVzdDsgbGF0ZXIgcmVwZWF0cyBleGNsdWRlZCIsCiAgICAidGltZXpvbmUiOiAiQXNpYS9TZW91bCAoc3RvcmVkIG5haXZlIEtTVCkiCiAgfSwKICAibW9kZWxzIjogWwogICAgewogICAgICAibmFtZSI6ICJkdW1teSIsCiAgICAgICJ0aHJlc2hvbGQiOiAwLjM2LAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAiYXVjIjogMC41LAogICAgICAgICJwcl9hdWMiOiAwLjM4MjEyODUxNDA1NjIyNDksCiAgICAgICAgImYxIjogMC41NTI5NTY1NTk2Mzk2OTIsCiAgICAgICAgImFjY3VyYWN5IjogMC4zODIxMjg1MTQwNTYyMjQ5LAogICAgICAgICJwcmVjaXNpb24iOiAwLjM4MjEyODUxNDA1NjIyNDksCiAgICAgICAgInJlY2FsbCI6IDEsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAwLAogICAgICAgICAgMzA3NywKICAgICAgICAgIDAsCiAgICAgICAgICAxOTAzCiAgICAgICAgXQogICAgICB9LAogICAgICAidGVzdCI6IHsKICAgICAgICAiYXVjIjogMC41LAogICAgICAgICJwcl9hdWMiOiAwLjMzOTk1MTg2NTIyMjYyMzMzLAogICAgICAgICJmMSI6IDAuNTA3NDA5MDcwNDk4NDI4NCwKICAgICAgICAiYWNjdXJhY3kiOiAwLjMzOTk1MTg2NTIyMjYyMzMzLAogICAgICAgICJwcmVjaXNpb24iOiAwLjMzOTk1MTg2NTIyMjYyMzMzLAogICAgICAgICJyZWNhbGwiOiAxLAogICAgICAgICJjb25mdXNpb25fbWF0cml4X3RuX2ZwX2ZuX3RwIjogWwogICAgICAgICAgMCwKICAgICAgICAgIDMyOTEsCiAgICAgICAgICAwLAogICAgICAgICAgMTY5NQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAibG9naXN0aWMiLAogICAgICAidGhyZXNob2xkIjogMC4yNywKICAgICAgInZhbGlkYXRpb24iOiB7CiAgICAgICAgImF1YyI6IDAuNjIwNDEwMzQzNjU2Mjc5OCwKICAgICAgICAicHJfYXVjIjogMC40NjkyNTE1Njg3MjQyMTk3LAogICAgICAgICJmMSI6IDAuNTg0NjQ2NjcwMDU1OTIyNywKICAgICAgICAiYWNjdXJhY3kiOiAwLjUwNzgzMTMyNTMwMTIwNDgsCiAgICAgICAgInByZWNpc2lvbiI6IDAuNDMxNDY1NzMyODY2NDMzMiwKICAgICAgICAicmVjYWxsIjogMC45MDY0NjM0Nzg3MTc4MTQsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICA4MDQsCiAgICAgICAgICAyMjczLAogICAgICAgICAgMTc4LAogICAgICAgICAgMTcyNQogICAgICAgIF0KICAgICAgfSwKICAgICAgInRlc3QiOiB7CiAgICAgICAgImF1YyI6IDAuNjI0Njc4MTkxNzk2ODgyNCwKICAgICAgICAicHJfYXVjIjogMC40MzY0ODM5NDM5NDUzNzc2NSwKICAgICAgICAiZjEiOiAwLjU0NDMxNjk5Njg3MTc0MTQsCiAgICAgICAgImFjY3VyYWN5IjogMC40NzQxMjc1NTcxNjAwNDgxLAogICAgICAgICJwcmVjaXNpb24iOiAwLjM4NTgwOTMxMjYzODU4MDksCiAgICAgICAgInJlY2FsbCI6IDAuOTIzODkzODA1MzA5NzM0NSwKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDc5OCwKICAgICAgICAgIDI0OTMsCiAgICAgICAgICAxMjksCiAgICAgICAgICAxNTY2CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAibmFtZSI6ICJ4Z2Jvb3N0IiwKICAgICAgInRocmVzaG9sZCI6IDAuMzQsCiAgICAgICJ2YWxpZGF0aW9uIjogewogICAgICAgICJhdWMiOiAwLjgyMDY2MTk1MTkyMjAzNzUsCiAgICAgICAgInByX2F1YyI6IDAuNjgzOTQ0NzE5NzI5MDAyMywKICAgICAgICAiZjEiOiAwLjcxMDExOTMxMDY0OTU4MDIsCiAgICAgICAgImFjY3VyYWN5IjogMC43MzY1NDYxODQ3Mzg5NTU4LAogICAgICAgICJwcmVjaXNpb24iOiAwLjYxMjY1NzI2MjY3NjMyNDgsCiAgICAgICAgInJlY2FsbCI6IDAuODQ0NDU2MTIxOTEyNzY5MywKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIwNjEsCiAgICAgICAgICAxMDE2LAogICAgICAgICAgMjk2LAogICAgICAgICAgMTYwNwogICAgICAgIF0KICAgICAgfSwKICAgICAgInRlc3QiOiB7CiAgICAgICAgImF1YyI6IDAuODA4NzkxMzg1MTA0MDk2MywKICAgICAgICAicHJfYXVjIjogMC42MzI1MDIwNjAyODA5NTUsCiAgICAgICAgImYxIjogMC42NjI5NzAxMDYwNzUyMTcsCiAgICAgICAgImFjY3VyYWN5IjogMC43MTk2MTQ5MjE3ODA5ODY3LAogICAgICAgICJwcmVjaXNpb24iOiAwLjU2MDUzODExNjU5MTkyODIsCiAgICAgICAgInJlY2FsbCI6IDAuODExMjA5NDM5NTI4MDIzNiwKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIyMTMsCiAgICAgICAgICAxMDc4LAogICAgICAgICAgMzIwLAogICAgICAgICAgMTM3NQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAibGlnaHRnYm0iLAogICAgICAidGhyZXNob2xkIjogMC4zLAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAiYXVjIjogMC44MjMwNzQ0NTcyOTUxNjI0LAogICAgICAgICJwcl9hdWMiOiAwLjY5NDIxMjQ4MDkwNjYwMjEsCiAgICAgICAgImYxIjogMC43MTI1NzQ4NTAyOTk0MDEyLAogICAgICAgICJhY2N1cmFjeSI6IDAuNzMwMTIwNDgxOTI3NzEwOCwKICAgICAgICAicHJlY2lzaW9uIjogMC42MDA3OTMzNjQ1ODcwODk4LAogICAgICAgICJyZWNhbGwiOiAwLjg3NTQ1OTgwMDMxNTI5MTcsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAxOTcwLAogICAgICAgICAgMTEwNywKICAgICAgICAgIDIzNywKICAgICAgICAgIDE2NjYKICAgICAgICBdCiAgICAgIH0sCiAgICAgICJ0ZXN0IjogewogICAgICAgICJhdWMiOiAwLjgxNDIwNjQzOTQ4MDUxNzYsCiAgICAgICAgInByX2F1YyI6IDAuNjQ0NDM3NzA3MTQ5MTA4OCwKICAgICAgICAiZjEiOiAwLjY2NDQ5NTExNDAwNjUxNDYsCiAgICAgICAgImFjY3VyYWN5IjogMC43MTA3OTAyMTI1OTUyNjY4LAogICAgICAgICJwcmVjaXNpb24iOiAwLjU0ODU5Nzc3MTgwMTc2NzIsCiAgICAgICAgInJlY2FsbCI6IDAuODQyNDc3ODc2MTA2MTk0NywKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIxMTYsCiAgICAgICAgICAxMTc1LAogICAgICAgICAgMjY3LAogICAgICAgICAgMTQyOAogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAic2tsZWFybl9tbHAiLAogICAgICAidGhyZXNob2xkIjogMC4yLAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAiYXVjIjogMC43OTU5NTQ3OTg5NzU1MzI4LAogICAgICAgICJwcl9hdWMiOiAwLjY1NDg2NDMwMTU1NTAzNDksCiAgICAgICAgImYxIjogMC42ODgxNjMyNjUzMDYxMjI1LAogICAgICAgICJhY2N1cmFjeSI6IDAuNjkzMTcyNjkwNzYzMDUyMiwKICAgICAgICAicHJlY2lzaW9uIjogMC41NjI1NjI1NjI1NjI1NjI1LAogICAgICAgICJyZWNhbGwiOiAwLjg4NTk2OTUyMTgwNzY3MjEsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAxNzY2LAogICAgICAgICAgMTMxMSwKICAgICAgICAgIDIxNywKICAgICAgICAgIDE2ODYKICAgICAgICBdCiAgICAgIH0sCiAgICAgICJ0ZXN0IjogewogICAgICAgICJhdWMiOiAwLjc5NzcyNDM3Mzg4NDYxNzgsCiAgICAgICAgInByX2F1YyI6IDAuNjEwNDc3ODQyODYyMTU1MSwKICAgICAgICAiZjEiOiAwLjY0NzM0NzMwMjcxOTU3MiwKICAgICAgICAiYWNjdXJhY3kiOiAwLjY4MjcxMTU5MjQ1ODg4NDksCiAgICAgICAgInByZWNpc2lvbiI6IDAuNTIwMjQzNjQwMjcyMzAzOSwKICAgICAgICAicmVjYWxsIjogMC44NTY2MzcxNjgxNDE1OTMsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAxOTUyLAogICAgICAgICAgMTMzOSwKICAgICAgICAgIDI0MywKICAgICAgICAgIDE0NTIKICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJuYW1lIjogIndlaWdodGVkX3NvZnRfdm90aW5nIiwKICAgICAgInRocmVzaG9sZCI6IDAuMzEsCiAgICAgICJ2YWxpZGF0aW9uIjogewogICAgICAgICJhdWMiOiAwLjgyMjM1Mjc0NjQ4ODc0NzEsCiAgICAgICAgInByX2F1YyI6IDAuNjg5NTc2NjQ1NjY0NTkwMiwKICAgICAgICAiZjEiOiAwLjcxMzgyNDk4Mzg3NDQzNTYsCiAgICAgICAgImFjY3VyYWN5IjogMC43MzI3MzA5MjM2OTQ3NzkxLAogICAgICAgICJwcmVjaXNpb24iOiAwLjYwNDA3NTY5MTQxMTkzNiwKICAgICAgICAicmVjYWxsIjogMC44NzIzMDY4ODM4Njc1Nzc1LAogICAgICAgICJjb25mdXNpb25fbWF0cml4X3RuX2ZwX2ZuX3RwIjogWwogICAgICAgICAgMTk4OSwKICAgICAgICAgIDEwODgsCiAgICAgICAgICAyNDMsCiAgICAgICAgICAxNjYwCiAgICAgICAgXQogICAgICB9LAogICAgICAidGVzdCI6IHsKICAgICAgICAiYXVjIjogMC44MTQyMTg4MDg5NjIzMTcsCiAgICAgICAgInByX2F1YyI6IDAuNjQyNjIyNzI4Mzk5MTk2MiwKICAgICAgICAiZjEiOiAwLjY2NDAxMzExMTY4MzQ0NjUsCiAgICAgICAgImFjY3VyYWN5IjogMC43MTIxOTQxNDM2MDIwODU5LAogICAgICAgICJwcmVjaXNpb24iOiAwLjU1MDQ2NTgzODUwOTMxNjcsCiAgICAgICAgInJlY2FsbCI6IDAuODM2NTc4MTcxMDkxNDQ1NCwKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIxMzMsCiAgICAgICAgICAxMTU4LAogICAgICAgICAgMjc3LAogICAgICAgICAgMTQxOAogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAiZW1iZWRkaW5nX21scCIsCiAgICAgICJ0aHJlc2hvbGQiOiAwLjQ0LAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAiYXVjIjogMC44MjM2ODMzNjg3NjcwNjgzLAogICAgICAgICJwcl9hdWMiOiAwLjY5Mjk2Njg4NzEyNDk5MDcsCiAgICAgICAgImYxIjogMC43MTkyNTc1NDA2MDMyNDgzLAogICAgICAgICJhY2N1cmFjeSI6IDAuNzMyNzMwOTIzNjk0Nzc5MSwKICAgICAgICAicHJlY2lzaW9uIjogMC42MDA3NzUxOTM3OTg0NDk2LAogICAgICAgICJyZWNhbGwiOiAwLjg5NTk1Mzc1NzIyNTQzMzYsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAxOTQ0LAogICAgICAgICAgMTEzMywKICAgICAgICAgIDE5OCwKICAgICAgICAgIDE3MDUKICAgICAgICBdCiAgICAgIH0sCiAgICAgICJ0ZXN0IjogewogICAgICAgICJhdWMiOiAwLjgxMjc2NDY3Nzc3OTQ4MDgsCiAgICAgICAgInByX2F1YyI6IDAuNjI5NzM5NjQ5Nzc5OTkyLAogICAgICAgICJmMSI6IDAuNjY1Mjc3Nzc3Nzc3Nzc3NywKICAgICAgICAiYWNjdXJhY3kiOiAwLjcwOTk4Nzk2NjMwNTY1NTksCiAgICAgICAgInByZWNpc2lvbiI6IDAuNTQ3NDI4NTcxNDI4NTcxNCwKICAgICAgICAicmVjYWxsIjogMC44NDc3ODc2MTA2MTk0NjkxLAogICAgICAgICJjb25mdXNpb25fbWF0cml4X3RuX2ZwX2ZuX3RwIjogWwogICAgICAgICAgMjEwMywKICAgICAgICAgIDExODgsCiAgICAgICAgICAyNTgsCiAgICAgICAgICAxNDM3CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAibmFtZSI6ICJ0YWJuZXQiLAogICAgICAidGhyZXNob2xkIjogMC4zMSwKICAgICAgInZhbGlkYXRpb24iOiB7CiAgICAgICAgImF1YyI6IDAuODA4MzE5NTE4NzU5MjcyMSwKICAgICAgICAicHJfYXVjIjogMC42NjIyMTA1NzY2Njc0MTA2LAogICAgICAgICJmMSI6IDAuNjk0ODUyOTQxMTc2NDcwNiwKICAgICAgICAiYWNjdXJhY3kiOiAwLjczMzMzMzMzMzMzMzMzMzMsCiAgICAgICAgInByZWNpc2lvbiI6IDAuNjE3Mzk0ODU1MDQyODc0NiwKICAgICAgICAicmVjYWxsIjogMC43OTQ1MzQ5NDQ4MjM5NjIxLAogICAgICAgICJjb25mdXNpb25fbWF0cml4X3RuX2ZwX2ZuX3RwIjogWwogICAgICAgICAgMjE0MCwKICAgICAgICAgIDkzNywKICAgICAgICAgIDM5MSwKICAgICAgICAgIDE1MTIKICAgICAgICBdCiAgICAgIH0sCiAgICAgICJ0ZXN0IjogewogICAgICAgICJhdWMiOiAwLjc5NzE1NzE3MDQwMDM2NzgsCiAgICAgICAgInByX2F1YyI6IDAuNjAwMDI1NDYwNTYyNTk4OSwKICAgICAgICAiZjEiOiAwLjY0NjY5MTYzNTQ1NTY4MDQsCiAgICAgICAgImFjY3VyYWN5IjogMC43MTYyMDUzNzUwNTAxNDA0LAogICAgICAgICJwcmVjaXNpb24iOiAwLjU2MDYwNjA2MDYwNjA2MDYsCiAgICAgICAgInJlY2FsbCI6IDAuNzY0MDExNzk5NDEwMDI5NSwKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIyNzYsCiAgICAgICAgICAxMDE1LAogICAgICAgICAgNDAwLAogICAgICAgICAgMTI5NQogICAgICAgIF0KICAgICAgfQogICAgfQogIF0sCiAgImxpbWl0cyI6IFsKICAgICJTaW5nbGUgY2hyb25vbG9naWNhbCBob2xkb3V0IGFuZCBzZWVkOyBubyB1bmNlcnRhaW50eSBpbnRlcnZhbC4iLAogICAgIlVuc2Vlbi12aWRlbyBldmFsdWF0aW9uIGV4Y2x1ZGVzIGxhdGVyIHJlcGVhdHMgb2YgdHJhaW5pbmcvdmFsaWRhdGlvbiB2aWRlb3M7IGl0IGRvZXMgbm90IGVzdGltYXRlIHJldHVybmluZy12aWRlbyBwZXJmb3JtYW5jZS4iLAogICAgIlN0YXJ0cyBmcm9tIGNvbW1pdHRlZCBjbGVhbmVkIGFuYWx5c2lzIGV2ZW50cywgbm90IGEgcmF3IFlvdVR1YmUgY29sbGVjdGlvbiByZWJ1aWxkLiIsCiAgICAidGRpX3YyIHVzZXMgdHJhaW5pbmctb25seSBsYWJlbCByZWZlcmVuY2VzIGFuZCByZWNvbXB1dGVkIFQwIGZlYXR1cmVzLCBzbyBsZWdhY3kgc2NvcmVzIGFyZSBub3QgZGlyZWN0bHkgY29tcGFyYWJsZS4iLAogICAgIk9mZmxpbmUgY2xhc3NpZmljYXRpb24gb25seTsgbm8gbGl2ZS12aWRlbyB0aW1pbmcsIGR1cmF0aW9uIHJlZ3Jlc3Npb24sIDI0aCBwcmVkaWN0aW9uLCBvciBidXNpbmVzcyB1cGxpZnQgdmFsaWRhdGlvbi4iCiAgXSwKICAiZXZhbHVhdGlvbl9zY29wZSI6ICJvZmZsaW5lIHVuc2Vlbi12aWRlbyBjbGFzc2lmaWNhdGlvbiIKfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-c2da9c07a36e388e0c2c",
+          "file": "verified-t0.spec.js",
+          "line": 138,
+          "column": 1
+        },
+        {
+          "title": "INJECTED evaluation unavailable: no fallback numbers; retry recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 921,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:13:01.990Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-4ec8661dc67dd144f4a5",
+          "file": "verified-t0.spec.js",
+          "line": 157,
+          "column": 1
+        },
+        {
+          "title": "INJECTED status unavailable: categories never default; reload and retry recover",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 894,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:13:02.918Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-e8f0ba80190dee247226",
+          "file": "verified-t0.spec.js",
+          "line": 169,
+          "column": 1
+        },
+        {
+          "title": "REAL API mobile: submit, readable result, no page overflow, refresh starts empty",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1915,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:13:03.818Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-12ef8255fd2cfec0cb66",
+          "file": "verified-t0.spec.js",
+          "line": 180,
+          "column": 1
+        },
+        {
+          "title": "INJECTED live feed: only observed stats, no bulk or verified inference from current counters",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 641,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:13:05.739Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-6c33429b8b5d0e63074f",
+          "file": "verified-t0.spec.js",
+          "line": 202,
+          "column": 1
+        },
+        {
+          "title": "REAL API: home, analysis overview and dashboard use the same evaluated run",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1025,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:13:06.385Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-8dd58dd9fb80ee226970",
+          "file": "verified-t0.spec.js",
+          "line": 216,
+          "column": 1
+        },
+        {
+          "title": "INJECTED report failure: home, overview and dashboard never display fallback scores",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1254,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T12:13:07.418Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-77c79594b8ed459218cb",
+          "file": "verified-t0.spec.js",
+          "line": 226,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-22T12:12:48.644Z",
+    "duration": 21108.752,
+    "expected": 14,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

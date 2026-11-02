@@ -1,0 +1,10 @@
+{
+  "frontend/src/pages/LandingPage.jsx": {
+    "base_commit": "f06c8175c0a2a6d611e21c9e72a9e0ca9e789a1c",
+    "sha256": "a20cb058c7295e096840457f6e38cf3586a432f183c6d28b25e8aeaf6883f4c3"
+  },
+  "frontend/src/pages/DashboardPage.jsx": {
+    "base_commit": "f06c8175c0a2a6d611e21c9e72a9e0ca9e789a1c",
+    "sha256": "0e2043f031783b648acf8f431079482807b57bcac46d79a6bb0e8755bdd729a7"
+  }
+}

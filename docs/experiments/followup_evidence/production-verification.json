@@ -1,0 +1,70 @@
+{
+  "mode": "production Vite preview",
+  "realApi": "http://localhost:8000",
+  "injectedData": false,
+  "routes": [
+    {
+      "route": "/",
+      "heading": "첫 관측 정보로\n분류하는\n트렌딩 지속성"
+    },
+    {
+      "route": "/analysis",
+      "heading": "유튜브 트렌딩\n심층 분석"
+    },
+    {
+      "route": "/analysis/eda",
+      "heading": "EDA — 탐색적 데이터 분석"
+    },
+    {
+      "route": "/analysis/feature",
+      "heading": "현재 모델의 입력과 전처리"
+    },
+    {
+      "route": "/analysis/insight",
+      "heading": "관측 데이터 해석"
+    },
+    {
+      "route": "/analysis/problem",
+      "heading": "문제 정의와 평가 표본"
+    },
+    {
+      "route": "/analysis/compare",
+      "heading": "관측 데이터 해석"
+    },
+    {
+      "route": "/analysis/strategy",
+      "heading": "관측 비교와 활용 범위"
+    },
+    {
+      "route": "/analysis/model",
+      "heading": "모델 검증 결과"
+    },
+    {
+      "route": "/analysis/explain",
+      "heading": "모델의 판단 범위와 한계"
+    },
+    {
+      "route": "/analysis/predict",
+      "heading": "트렌딩 지속성 예측"
+    },
+    {
+      "route": "/campaign",
+      "heading": "캠페인 조건 계산기"
+    },
+    {
+      "route": "/dashboard",
+      "heading": "트렌딩 과거 분석 대시보드"
+    },
+    {
+      "route": "/sustain",
+      "heading": "지속성 분석"
+    },
+    {
+      "route": "/video",
+      "heading": "트렌딩 영상 관측"
+    }
+  ],
+  "errors": [],
+  "httpErrors": [],
+  "status": "PASS"
+}

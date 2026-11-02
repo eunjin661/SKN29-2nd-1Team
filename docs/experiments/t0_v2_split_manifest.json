@@ -1,0 +1,78 @@
+{
+  "protocol": "t0-v2-purged-unseen-video",
+  "dataset_sha256": "cb9a13ea1c4d60ffe72046c6c23f9aed3ca846a2409ef5038b2a872eda8d164e",
+  "source_rows": 34964,
+  "invalid_publication_time_rows_removed": 131,
+  "eligible_rows_before_split": 34833,
+  "timezone": "Asia/Seoul (stored naive KST)",
+  "train_boundary": "2024-07-12 09:00:00",
+  "test_boundary": "2025-01-11 15:00:00",
+  "observation_end": "2025-07-01 03:00:00",
+  "label_confirmation_hours": 6,
+  "group_policy": "video_id disjoint across train/validation/test; later repeats excluded",
+  "target": {
+    "name": "tdi_v2",
+    "threshold": 0.4,
+    "category_q95_train_only": {
+      "Education": 369.2999999999997,
+      "Entertainment": 342.0,
+      "Lifestyle": 396.0,
+      "Music": 288.0,
+      "News": 258.0
+    },
+    "unseen_category_q95": 354.0
+  },
+  "feature_columns": [
+    "entry_rank_log",
+    "T0_view_log",
+    "T0_engagement_ratio_log",
+    "latency_to_trend_log",
+    "pretrend_view_velocity_log",
+    "weekday_sin",
+    "weekday_cos",
+    "hour_sin",
+    "hour_cos",
+    "category_group"
+  ],
+  "features_recomputed_from": [
+    "T0",
+    "published_at",
+    "entry_rank",
+    "T0_view",
+    "T0_comment",
+    "category_group"
+  ],
+  "excluded_feature_policy": "All columns outside the allowlist, including duration, other labels, post-T0 growth and historical saturation",
+  "splits": {
+    "train": {
+      "candidate_rows": 24378,
+      "unresolved_label_rows_removed": 184,
+      "seen_video_rows_removed": 0,
+      "rows": 24194,
+      "unique_videos": 12871,
+      "T0_min": "2022-07-01 09:00:00",
+      "T0_max": "2024-07-12 03:00:00",
+      "positive_rate": 0.3646358601306109
+    },
+    "validation": {
+      "candidate_rows": 5230,
+      "unresolved_label_rows_removed": 196,
+      "seen_video_rows_removed": 54,
+      "rows": 4980,
+      "unique_videos": 2404,
+      "T0_min": "2024-07-12 09:00:00",
+      "T0_max": "2025-01-11 03:00:00",
+      "positive_rate": 0.3821285140562249
+    },
+    "test": {
+      "candidate_rows": 5225,
+      "unresolved_label_rows_removed": 200,
+      "seen_video_rows_removed": 39,
+      "rows": 4986,
+      "unique_videos": 2311,
+      "T0_min": "2025-01-11 21:00:00",
+      "T0_max": "2025-06-30 15:00:00",
+      "positive_rate": 0.33995186522262333
+    }
+  }
+}

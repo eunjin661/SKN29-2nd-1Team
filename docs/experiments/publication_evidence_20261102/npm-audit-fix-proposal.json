@@ -1,0 +1,386 @@
+add @keyv/serialize 1.1.1
+add hashery 1.5.1
+add @keyv/bigmap 1.3.1
+add qified 0.10.1
+add hookified 2.2.0
+add @cacheable/utils 2.5.0
+add @cacheable/memory 2.2.0
+add hookified 1.15.1
+add cacheable 2.5.0
+change @eslint/plugin-kit 0.7.1 => 0.7.3
+change @eslint-community/eslint-utils 4.9.1 => 4.10.1
+change @eslint/config-helpers 0.5.5 => 0.7.0
+change zod 4.3.6 => 4.6.7
+change minimatch 10.2.5 => 10.2.6
+change keyv 4.5.4 => 5.6.0
+remove json-buffer 3.0.1
+change eslint 10.2.1 => 10.14.0
+change flat-cache 4.0.1 => 6.1.23
+change flatted 3.4.2 => 3.4.4
+change file-entry-cache 8.0.0 => 11.1.5
+change eslint-plugin-react-refresh 0.5.2 => 0.5.7
+{
+  "add": [
+    {
+      "name": "@keyv/serialize",
+      "version": "1.1.1",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@keyv/serialize"
+    },
+    {
+      "name": "hashery",
+      "version": "1.5.1",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/hashery"
+    },
+    {
+      "name": "@keyv/bigmap",
+      "version": "1.3.1",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@keyv/bigmap"
+    },
+    {
+      "name": "qified",
+      "version": "0.10.1",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/qified"
+    },
+    {
+      "name": "hookified",
+      "version": "2.2.0",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/qified/node_modules/hookified"
+    },
+    {
+      "name": "@cacheable/utils",
+      "version": "2.5.0",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@cacheable/utils"
+    },
+    {
+      "name": "@cacheable/memory",
+      "version": "2.2.0",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@cacheable/memory"
+    },
+    {
+      "name": "hookified",
+      "version": "1.15.1",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/hookified"
+    },
+    {
+      "name": "cacheable",
+      "version": "2.5.0",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/cacheable"
+    }
+  ],
+  "added": 9,
+  "audited": 199,
+  "change": [
+    {
+      "from": {
+        "name": "@eslint/plugin-kit",
+        "version": "0.7.1",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@eslint/plugin-kit"
+      },
+      "to": {
+        "name": "@eslint/plugin-kit",
+        "version": "0.7.3",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@eslint/plugin-kit"
+      }
+    },
+    {
+      "from": {
+        "name": "@eslint-community/eslint-utils",
+        "version": "4.9.1",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@eslint-community/eslint-utils"
+      },
+      "to": {
+        "name": "@eslint-community/eslint-utils",
+        "version": "4.10.1",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@eslint-community/eslint-utils"
+      }
+    },
+    {
+      "from": {
+        "name": "@eslint/config-helpers",
+        "version": "0.5.5",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@eslint/config-helpers"
+      },
+      "to": {
+        "name": "@eslint/config-helpers",
+        "version": "0.7.0",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/@eslint/config-helpers"
+      }
+    },
+    {
+      "from": {
+        "name": "zod",
+        "version": "4.3.6",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/zod"
+      },
+      "to": {
+        "name": "zod",
+        "version": "4.6.7",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/zod"
+      }
+    },
+    {
+      "from": {
+        "name": "minimatch",
+        "version": "10.2.5",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/minimatch"
+      },
+      "to": {
+        "name": "minimatch",
+        "version": "10.2.6",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/minimatch"
+      }
+    },
+    {
+      "from": {
+        "name": "keyv",
+        "version": "4.5.4",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/keyv"
+      },
+      "to": {
+        "name": "keyv",
+        "version": "5.6.0",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/keyv"
+      }
+    },
+    {
+      "from": {
+        "name": "eslint",
+        "version": "10.2.1",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/eslint"
+      },
+      "to": {
+        "name": "eslint",
+        "version": "10.14.0",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/eslint"
+      }
+    },
+    {
+      "from": {
+        "name": "flat-cache",
+        "version": "4.0.1",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/flat-cache"
+      },
+      "to": {
+        "name": "flat-cache",
+        "version": "6.1.23",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/flat-cache"
+      }
+    },
+    {
+      "from": {
+        "name": "flatted",
+        "version": "3.4.2",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/flatted"
+      },
+      "to": {
+        "name": "flatted",
+        "version": "3.4.4",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/flatted"
+      }
+    },
+    {
+      "from": {
+        "name": "file-entry-cache",
+        "version": "8.0.0",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/file-entry-cache"
+      },
+      "to": {
+        "name": "file-entry-cache",
+        "version": "11.1.5",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/file-entry-cache"
+      }
+    },
+    {
+      "from": {
+        "name": "eslint-plugin-react-refresh",
+        "version": "0.5.2",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/eslint-plugin-react-refresh"
+      },
+      "to": {
+        "name": "eslint-plugin-react-refresh",
+        "version": "0.5.7",
+        "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/eslint-plugin-react-refresh"
+      }
+    }
+  ],
+  "changed": 11,
+  "funding": 34,
+  "remove": [
+    {
+      "name": "json-buffer",
+      "version": "3.0.1",
+      "path": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/json-buffer"
+    }
+  ],
+  "removed": 1,
+  "audit": {
+    "auditReportVersion": 2,
+    "vulnerabilities": {
+      "@eslint-community/eslint-utils": {
+        "name": "@eslint-community/eslint-utils",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          "eslint"
+        ],
+        "effects": [
+          "eslint"
+        ],
+        "range": "*",
+        "nodes": [
+          ""
+        ],
+        "fixAvailable": false
+      },
+      "@eslint/config-array": {
+        "name": "@eslint/config-array",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          "minimatch"
+        ],
+        "effects": [
+          "eslint"
+        ],
+        "range": "*",
+        "nodes": [
+          "node_modules/@eslint/config-array"
+        ],
+        "fixAvailable": false
+      },
+      "@eslint/js": {
+        "name": "@eslint/js",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "eslint"
+        ],
+        "effects": [],
+        "range": ">=10.0.1",
+        "nodes": [
+          "node_modules/@eslint/js"
+        ],
+        "fixAvailable": {
+          "name": "@eslint/js",
+          "version": "9.39.5",
+          "isSemVerMajor": true
+        }
+      },
+      "eslint": {
+        "name": "eslint",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "@eslint-community/eslint-utils",
+          "@eslint/config-array",
+          "minimatch"
+        ],
+        "effects": [
+          "@eslint-community/eslint-utils",
+          "@eslint/js",
+          "eslint-plugin-react-refresh"
+        ],
+        "range": "0.7.1 - 2.0.0-rc.1 || >=4.1.0",
+        "nodes": [
+          "",
+          "node_modules/eslint"
+        ],
+        "fixAvailable": false
+      },
+      "eslint-plugin-react-refresh": {
+        "name": "eslint-plugin-react-refresh",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          "eslint"
+        ],
+        "effects": [],
+        "range": "*",
+        "nodes": [
+          ""
+        ],
+        "fixAvailable": false
+      },
+      "minimatch": {
+        "name": "minimatch",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1244012,
+            "name": "minimatch",
+            "dependency": "minimatch",
+            "title": "minimatch has potential denial of service via globparts amplification",
+            "url": "https://github.com/advisories/GHSA-g3hv-75wg-m249",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-405"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<11.0.1"
+          }
+        ],
+        "effects": [
+          "@eslint/config-array",
+          "eslint"
+        ],
+        "range": "<11.0.1",
+        "nodes": [
+          "",
+          "node_modules/minimatch"
+        ],
+        "fixAvailable": false
+      },
+      "zod": {
+        "name": "zod",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1243066,
+            "name": "zod",
+            "dependency": "zod",
+            "title": "Zod can exhaust memory while validating oversized constrained collections",
+            "url": "https://github.com/advisories/GHSA-mrhx-c7xc-m3w5",
+            "severity": "high",
+            "cwe": [
+              "CWE-770"
+            ],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<4.6.6"
+          }
+        ],
+        "effects": [],
+        "range": "<4.6.6",
+        "nodes": [
+          ""
+        ],
+        "fixAvailable": true
+      }
+    },
+    "metadata": {
+      "vulnerabilities": {
+        "info": 0,
+        "low": 0,
+        "moderate": 6,
+        "high": 1,
+        "critical": 0,
+        "total": 7
+      },
+      "dependencies": {
+        "prod": 54,
+        "dev": 144,
+        "optional": 2,
+        "peer": 1,
+        "peerOptional": 0,
+        "total": 198
+      }
+    }
+  }
+}

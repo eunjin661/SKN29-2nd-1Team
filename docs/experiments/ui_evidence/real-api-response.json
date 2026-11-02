@@ -1,0 +1,22 @@
+{
+  "input": {
+    "T0": "2025-02-01T12:00:00+09:00",
+    "published_at": "2025-02-01T00:00:00+09:00",
+    "entry_rank": 30,
+    "T0_view": 100000,
+    "T0_comment": 250,
+    "category_group": "Entertainment"
+  },
+  "response": {
+    "run_id": "t0-v2-cpu-20261022-audit",
+    "model": "embedding_mlp",
+    "target": "tdi_v2",
+    "threshold": 0.44,
+    "predictions": [
+      {
+        "probability": 0.4859521985054016,
+        "label": 1
+      }
+    ]
+  }
+}

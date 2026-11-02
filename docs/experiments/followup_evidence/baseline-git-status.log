@@ -1,0 +1,105 @@
+ M .gitignore
+ M README.md
+D  backend/api/__pycache__/__init__.cpython-310.pyc
+D  backend/api/__pycache__/__init__.cpython-313.pyc
+D  backend/api/__pycache__/main.cpython-310.pyc
+D  backend/api/__pycache__/main.cpython-313.pyc
+D  backend/api/__pycache__/main.cpython-314.pyc
+ M backend/api/main.py
+D  backend/api/routes/__pycache__/__init__.cpython-310.pyc
+D  backend/api/routes/__pycache__/__init__.cpython-313.pyc
+D  backend/api/routes/__pycache__/analysis_common.cpython-310.pyc
+D  backend/api/routes/__pycache__/analysis_common.cpython-313.pyc
+D  backend/api/routes/__pycache__/campaign.cpython-310.pyc
+D  backend/api/routes/__pycache__/campaign.cpython-313.pyc
+D  backend/api/routes/__pycache__/dashboard.cpython-310.pyc
+D  backend/api/routes/__pycache__/dashboard.cpython-313.pyc
+D  backend/api/routes/__pycache__/eda.cpython-310.pyc
+D  backend/api/routes/__pycache__/eda.cpython-313.pyc
+D  backend/api/routes/__pycache__/feature.cpython-310.pyc
+D  backend/api/routes/__pycache__/feature.cpython-313.pyc
+D  backend/api/routes/__pycache__/insight.cpython-310.pyc
+D  backend/api/routes/__pycache__/insight.cpython-313.pyc
+D  backend/api/routes/__pycache__/model.cpython-310.pyc
+D  backend/api/routes/__pycache__/model.cpython-313.pyc
+D  backend/api/routes/__pycache__/predict.cpython-310.pyc
+D  backend/api/routes/__pycache__/predict.cpython-313.pyc
+D  backend/api/routes/__pycache__/predict_lstm.cpython-310.pyc
+D  backend/api/routes/__pycache__/predict_lstm.cpython-313.pyc
+D  backend/api/routes/__pycache__/problem.cpython-310.pyc
+D  backend/api/routes/__pycache__/problem.cpython-313.pyc
+D  backend/api/routes/__pycache__/strategy.cpython-310.pyc
+D  backend/api/routes/__pycache__/strategy.cpython-313.pyc
+D  backend/api/routes/__pycache__/sustain.cpython-310.pyc
+D  backend/api/routes/__pycache__/sustain.cpython-313.pyc
+D  backend/api/routes/__pycache__/video.cpython-310.pyc
+D  backend/api/routes/__pycache__/video.cpython-313.pyc
+D  backend/api/routes/__pycache__/youtube.cpython-310.pyc
+D  backend/api/routes/__pycache__/youtube.cpython-313.pyc
+ M backend/api/routes/predict.py
+ M backend/api/routes/sustain.py
+D  backend/api/services/__pycache__/__init__.cpython-310.pyc
+D  backend/api/services/__pycache__/__init__.cpython-313.pyc
+D  backend/api/services/__pycache__/data_loader.cpython-310.pyc
+D  backend/api/services/__pycache__/data_loader.cpython-313.pyc
+D  backend/api/services/__pycache__/utils.cpython-310.pyc
+ M backend/api/services/data_loader.py
+ M backend/ml/train_weighted_ensemble.py
+ M backend/models/weighted_soft_voting_metadata.json
+ M backend/requirements_ensemble.txt
+D  backend/utils/__pycache__/config.cpython-310.pyc
+D  backend/utils/__pycache__/constants.cpython-310.pyc
+ M frontend/.gitignore
+ M frontend/package-lock.json
+ M frontend/package.json
+ M frontend/src/App.jsx
+ M frontend/src/components/AdvancedCharts.jsx
+ M frontend/src/components/ApiStatusBanner.jsx
+ M frontend/src/components/CountUp.jsx
+ M frontend/src/components/Navbar.jsx
+ M frontend/src/components/ResultBadge.jsx
+ M frontend/src/components/StableCharts.jsx
+ M frontend/src/constants/mlProjectData.js
+ M frontend/src/hooks/useApiHealth.js
+ M frontend/src/hooks/useEDA.js
+ M frontend/src/pages/CampaignPlannerPage.jsx
+ M frontend/src/pages/DashboardPage.jsx
+ M frontend/src/pages/DatasetSplitPage.jsx
+ M frontend/src/pages/EDACharts.jsx
+ M frontend/src/pages/FeaturePage.jsx
+ M frontend/src/pages/InsightPage.jsx
+ M frontend/src/pages/LandingPage.jsx
+ M frontend/src/pages/ModelExplainPage.jsx
+ M frontend/src/pages/ModelInterpretPage.jsx
+ M frontend/src/pages/ModelPage.jsx
+ M frontend/src/pages/PredictionPage.jsx
+ M frontend/src/pages/ProblemPage.jsx
+ M frontend/src/pages/StrategyPage.jsx
+ M frontend/src/pages/SustainPage.jsx
+ M frontend/src/pages/TrendingPage.jsx
+ M frontend/src/pages/VideoPage.jsx
+ M frontend/src/styles/PredictionPage.css
+?? .github/
+?? .vscode/
+?? backend/.env.example
+?? backend/api/routes/t0_verified.py
+?? backend/examples/
+?? backend/ml/__init__.py
+?? backend/ml/artifact_contract.py
+?? backend/ml/data_contract.py
+?? backend/ml/inference.py
+?? backend/ml/torch_models.py
+?? backend/requirements-cpu.lock
+?? backend/tests/
+?? docs/CAREER_EVIDENCE.md
+?? docs/IMPROVEMENT_PLAN.md
+?? docs/NEXT_IMPLEMENTATION_PLAN.md
+?? docs/experiments/
+?? frontend/playwright.config.js
+?? frontend/src/components/VerifiedEvaluation.jsx
+?? frontend/src/hooks/useJsonResource.js
+?? frontend/src/hooks/useVerifiedResource.js
+?? frontend/src/hooks/useVideoFeed.js
+?? frontend/src/lib/
+?? frontend/tests/
+?? pytest.ini

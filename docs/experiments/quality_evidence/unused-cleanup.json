@@ -1,0 +1,87 @@
+[
+  {
+    "file": "frontend/src/components/AdvancedCharts.jsx",
+    "removed_unused_declarations": [
+      "valueLabel"
+    ]
+  },
+  {
+    "file": "frontend/src/components/StableCharts.jsx",
+    "removed_unused_declarations": [
+      "clamp"
+    ]
+  },
+  {
+    "file": "frontend/src/pages/CampaignPlannerPage.jsx",
+    "removed_unused_declarations": [
+      "highRiskCount"
+    ]
+  },
+  {
+    "file": "frontend/src/pages/DatasetSplitPage.jsx",
+    "removed_unused_declarations": [
+      "React",
+      "Line",
+      "LineChart"
+    ]
+  },
+  {
+    "file": "frontend/src/pages/EDACharts.jsx",
+    "removed_unused_declarations": [
+      "H"
+    ]
+  },
+  {
+    "file": "frontend/src/pages/FeaturePage.jsx",
+    "removed_unused_declarations": [
+      "RED",
+      "RED_DARK",
+      "RED_SOFT",
+      "RED_GRID",
+      "BLACK",
+      "tooltipStyle",
+      "EmptySafe",
+      "svgScale"
+    ]
+  },
+  {
+    "file": "frontend/src/pages/InsightPage.jsx",
+    "removed_unused_declarations": [
+      "RED",
+      "RED_GRID",
+      "tooltipStyle",
+      "EmptySafe"
+    ]
+  },
+  {
+    "file": "frontend/src/pages/LandingPage.jsx",
+    "removed_unused_declarations": [
+      "Sparkline",
+      "DataEventPreview",
+      "categories",
+      "insightCards"
+    ]
+  },
+  {
+    "file": "frontend/src/pages/ProblemPage.jsx",
+    "removed_unused_declarations": [
+      "RED",
+      "GRID",
+      "tooltipStyle"
+    ]
+  },
+  {
+    "file": "frontend/src/pages/StrategyPage.jsx",
+    "removed_unused_declarations": [
+      "RED",
+      "GRID",
+      "tooltipStyle"
+    ]
+  },
+  {
+    "file": "frontend/src/pages/SustainPage.jsx",
+    "removed_unused_declarations": [
+      "reentryRatio"
+    ]
+  }
+]

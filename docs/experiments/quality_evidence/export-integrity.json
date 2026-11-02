@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "source_copies_sha256_checked": 218,
+  "relative_links_checked_in_repo_and_export": [
+    "README.md",
+    "docs/CAREER_EVIDENCE.md",
+    "docs/NEXT_IMPLEMENTATION_PLAN.md",
+    "docs/experiments/QUALITY_SECURITY_20261023.md"
+  ],
+  "broken_links": [],
+  "historical_pdf_included": true,
+  "previous_bundle_preserved": true,
+  "git_diff_check_exit_code": 0
+}

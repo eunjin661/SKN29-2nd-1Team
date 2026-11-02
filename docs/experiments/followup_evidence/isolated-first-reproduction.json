@@ -1,0 +1,38 @@
+{
+  "status": "FAIL",
+  "scope": "Fresh local checkout with approved source overlay; own venv and node_modules; shared local Git objects; no remote CI execution",
+  "commands": {
+    "venv": {
+      "exit_code": 0,
+      "seconds": 0.119
+    },
+    "python-sync": {
+      "exit_code": 0,
+      "seconds": 2.216
+    },
+    "backend": {
+      "exit_code": 0,
+      "seconds": 10.694
+    },
+    "training": {
+      "exit_code": 0,
+      "seconds": 72.647
+    },
+    "inference": {
+      "exit_code": 0,
+      "seconds": 3.612
+    },
+    "npm-ci": {
+      "exit_code": 0,
+      "seconds": 5.313
+    },
+    "quality": {
+      "exit_code": 0,
+      "seconds": 5.721
+    },
+    "browser": {
+      "exit_code": 1,
+      "seconds": 95.727
+    }
+  }
+}

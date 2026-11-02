@@ -1,336 +1,156 @@
-<h1 align="center">📈 TrendIt</h1>
+# TrendIt
 
-<p align="center">
-  <b>YouTube KR 트렌딩 데이터를 기반으로 콘텐츠 성과와 지속 가능성을 예측하는 분석 플랫폼</b>
-</p>
+YouTube KR 트렌딩에 진입한 시점의 정보로, 카테고리 기준의 지속형 이벤트를 분류하는 교육용 프로젝트입니다.
 
-<p align="center">
-  트렌딩 진입 시점의 초기 신호, 카테고리 특성, 시간 패턴을 결합해<br/>
-  “이 영상은 짧게 지나갈 트렌드인가, 오래 유지될 트렌드인가?”를 데이터로 판단합니다.
-</p>
+**2026-10-22 개선:** 공개 학습 경로의 미래 정보 누수를 제거하고, 같은 영상이 평가에 재등장하는 문제와 전체 기간 라벨 통계를 정리했습니다. 개인 MLP 실험 원본을 공통 평가 코드로 재구성했습니다.
 
-<p align="center">
-  <img src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" alt="React" />
-  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" />
-  <img src="https://img.shields.io/badge/FastAPI-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python" />
-  <img src="https://img.shields.io/badge/scikit--learn-F7931E?style=for-the-badge&logo=scikitlearn&logoColor=white" alt="scikit-learn" />
-  <img src="https://img.shields.io/badge/PyTorch-EE4C2C?style=for-the-badge&logo=pytorch&logoColor=white" alt="PyTorch" />
-  <img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL" />
-</p>
-
-<p align="center">
-  <a href="#프로젝트-개요">프로젝트 개요</a> ·
-  <a href="#핵심-성과">핵심 성과</a> ·
-  <a href="#분석-파이프라인">분석 파이프라인</a> ·
-  <a href="#모델링">모델링</a> ·
-  <a href="#실행-방법">실행 방법</a>
-</p>
-
-<table>
-  <tr>
-    <td width="33%">
-      <h3>🎬 Content Signal</h3>
-      <p>진입 순위, 초기 조회수, 댓글 반응, 업로드 시간대를 T0 기준으로 해석합니다.</p>
-    </td>
-    <td width="33%">
-      <h3>🧠 Predictive Model</h3>
-      <p>ML 앙상블과 DL 구간 분류를 결합해 성과형 트렌딩과 장기 지속 가능성을 예측합니다.</p>
-    </td>
-    <td width="33%">
-      <h3>🚦 Campaign Insight</h3>
-      <p>카테고리별 지속 패턴을 바탕으로 업로드 타이밍과 캠페인 우선순위를 제안합니다.</p>
-    </td>
-  </tr>
-</table>
-
-## ✨ 프로젝트 개요
-
-YouTube 트렌딩 차트는 알고리즘이 국가별 상위 영상을 짧은 주기로 노출하는 공간입니다. 하지만 트렌딩에 진입한 영상이 모두 같은 성과를 내지는 않습니다. 어떤 영상은 몇 시간 만에 사라지고, 어떤 영상은 며칠 이상 상위권을 유지합니다.
-
-TrendIt은 YouTube KR 트렌딩 데이터의 스냅샷을 이벤트 단위로 재구성하고, 진입 시점에 알 수 있는 정보만으로 트렌딩 성과와 지속 시간을 예측합니다. 분석 결과는 콘텐츠 업로드 타이밍, 카테고리별 캠페인 전략, 장기 지속 후보 선별에 활용할 수 있습니다.
-
-<table>
-  <tr>
-    <td align="center"><b>872,191</b><br/><sub>원본 스냅샷</sub></td>
-    <td align="center"><b>34,964</b><br/><sub>최종 전처리 이벤트</sub></td>
-    <td align="center"><b>2022-2025</b><br/><sub>수집 기간</sub></td>
-    <td align="center"><b>5 groups</b><br/><sub>카테고리 정규화</sub></td>
-  </tr>
-</table>
-
-## 👥 팀원 소개
-
-| 이름 | 담당 영역 |
+| 현재 재현 결과 | 값 |
 |---|---|
-| 이동윤 | DB 구축, 머신러닝 |
-| 성주연 | 데이터 구축, 머신러닝 |
-| 김은진 | 데이터 전처리, 딥러닝 |
-| 한경찬 | 데이터 전처리, 클러스터링 |
-| 양정현 | 프론트엔드, 백엔드 |
+| 선택 모델 | embedding_mlp — Validation ROC-AUC 기준 |
+| 별도 Test | 4,986개 이벤트 / 2,311개 고유 영상 |
+| Test ROC-AUC / PR-AUC | 0.8128 / 0.6297 |
+| Test F1 | 0.6653 — Validation 선택 임계값 0.44 |
+| 실행 환경 | Python 3.10.21 · Linux/WSL · CPU · Seed 42 |
 
-## 🎯 핵심 성과
+[전체 비교 결과](docs/experiments/T0_V2_RESULTS.md) · [기계 판독 보고서](docs/experiments/t0_v2_report.json) · [화면 연결 검증](docs/experiments/UI_INTEGRATION_20261022.md) · [면접용 근거 원장](docs/CAREER_EVIDENCE.md)
 
-| 기준 | 지표 | 결과 | 의미 |
-|---|---|---:|---|
-| 최종 Test (T0) | Classification AUC-ROC | **0.8284** | 성과형 트렌딩 여부 판별 |
-| 최종 Test (T0) | F1-Score | **0.6756** | 최종 일반화 성능 기준의 분류 균형 |
-| 최종 Test (T0) | Regression R² | **0.5322** | 지속 시간 회귀 모델의 설명력 |
-| 최종 Test (T0) | Regression RMSE | **0.9147** | 로그/정규화 스케일 기준 오차 |
-| 구간 분류 | `>48h` AUC / F1 | **0.8708 / 0.8717** | 2일 이상 지속 후보 탐지 |
-| 구간 분류 | `>120h` AUC / F1 | **0.8429 / 0.7456** | 5일 이상 지속 가능성 판단 |
+**2026-10-23 품질 점검:** 전체 코드 검사 35 errors/1 warning → 0/0, npm audit 패키지 경고 10 → 0. 시작 시 분석 자료 로딩 누락과 지속성 화면의 예시 대체를 수정했습니다. [원인·변경·검증 기록](docs/experiments/QUALITY_SECURITY_20261023.md).
 
-> 🧷 **평가 기준 메모**  
-> 모델 메타데이터에는 `F1=0.7681`, `Accuracy=0.8076`이 저장되어 있지만, 학습 결과서의 종합 비교에서는 `F1=0.6756`을 최종 Test 기준으로 명시합니다. README의 핵심 성과 표는 면접 및 리뷰에서 더 보수적인 기준인 **최종 Test 성능**을 우선 사용했습니다.
+**2026-10-23 후속 개선:** 관측 34,964건과 TDI v2 유효 표본 34,160건을 구분해 실제 집계에 연결했습니다. 캠페인은 사용자 조건 계산기로 정리했고, 기존 모델을 보존하며 5시드·영상 단위 재표집 진단을 추가했습니다. [결과·적용 범위](docs/experiments/FOLLOWUP_RESULTS_20261023.md) · [단계별 기록](docs/experiments/FOLLOWUP_WORK_LOG_20261023.md).
 
-## 🔎 핵심 질문
+**2026-11-02 공개 점검:** 개인 저장소 main 직접 반영 절차를 선택했습니다. 공개 전 최신 감사에서 발견한 개발 도구 경고 7건을 해결했고, 새 설치·동일한 검사 파일 113개·브라우저 49개를 재확인했습니다. [반영 상태·수정 근거](docs/experiments/MAIN_PUBLICATION_20261102.md).
 
-| 질문 | 분석 접근 |
+## 문제와 접근
+
+트렌딩에 진입한 영상도 유지 기간과 순위가 다릅니다. 진입 순간의 순위·조회수·댓글·발행 시각으로 지속형 후보를 분류합니다. 현재 평가는 이후 기간의 새로운 영상에 대한 일반화를 대상으로 합니다. 콘텐츠 변경이나 광고 집행의 인과적 효과를 검증하지는 않았습니다.
+
+`tdi_v2 = clip(duration / train_category_q95, 0, 1) * clip(1 - (best_rank - 1) / 200, 0, 1)`
+
+TDI 0.4 이상을 양성으로 정의합니다. 지속 시간과 최고 순위는 **정답을 만드는 값**이며 입력에 포함하지 않습니다.
+
+## 누수를 막는 평가 기준
+
+- 입력은 초기 순위·조회수·댓글·발행 시각·카테고리에서 재계산한 9개 수치 피처와 카테고리 하나로 제한합니다.
+- 최종 지속 시간, 다른 정답 라벨, 24h 증가량, 기존 파생 컬럼과 포화도는 입력에서 제외합니다.
+- T0 순서 약 70% / 85% 시각으로 분할합니다. 같은 시각의 관측은 양쪽에 나누지 않습니다.
+- 같은 `video_id`는 분할 사이에 겹치지 않으며, 경계 시점까지 종료를 확인할 수 없는 이벤트는 제외합니다.
+- TDI 기준 통계, 결측 처리, 스케일링, 카테고리 사전은 Train에서만 학습합니다.
+- 모델 선택과 F1 임계값은 Validation에서 확정하고 Test에 고정합니다.
+
+## 개인 기여와 팀 역할
+
+| 팀원 | 기존 프로젝트 담당 |
 |---|---|
-| 카테고리 그룹별 트렌딩 지속 시간은 유의미하게 다른가? | Kruskal-Wallis, 카테고리별 지속 시간 비교 |
-| 트렌딩 진입 순간의 정보만으로 지속 시간을 예측할 수 있는가? | T0-only 회귀 및 분류 모델 |
-| 기준 이상 오래 지속될 영상을 분류할 수 있는가? | `tdi_label`, Duration Bucket SurvivalNet |
-| 같은 카테고리 안에도 다른 트렌딩 패턴이 존재하는가? | 클러스터링 및 사후 EDA |
+| 김은진 | 공동 데이터 전처리 · 개인 MLP/TabNet 딥러닝 실험 |
+| 이동윤 | DB 구축 · 머신러닝 |
+| 성주연 | 데이터 구축 · 머신러닝 |
+| 한경찬 | 데이터 전처리 · 클러스터링 |
+| 양정현 | 프론트엔드 · 백엔드 |
 
-## 🧭 분석 파이프라인
+개인 실험의 재현 진입점은 [`backend/ml/train_weighted_ensemble.py`](backend/ml/train_weighted_ensemble.py), 원본 MLP 구조는 [`torch_models.py`](backend/ml/torch_models.py)에 있습니다. 이번 보완에서는 공유 학습 경로·검증·명시적 v2 추론 API를 추가했습니다. 원본 파일의 식별 정보는 [출처 기록](docs/experiments/ORIGINAL_EXPERIMENT_PROVENANCE.json)에 남겼습니다.
 
-```mermaid
-flowchart LR
-    A["Raw YouTube KR snapshots<br/>872,191 rows"] --> B["Cleaning<br/>UTC to KST, missing values, outliers"]
-    B --> C["Event split<br/>video_id + event_id"]
-    C --> D["Feature engineering<br/>T0, time, category, saturation"]
-    D --> E["Target engineering<br/>TDI, tdi_label, duration buckets"]
-    E --> F["ML / DL modeling<br/>XGB, LGBM, CatBoost, MLP"]
-    F --> G["TrendIt service<br/>analysis, prediction, campaign insight"]
-```
+## WSL에서 재현
 
-### 데이터 설계 원칙
-
-| 원칙 | 설명 |
-|---|---|
-| 원본 보존 | `trending_snapshots`는 read-only로 유지하고 파생 데이터는 별도 테이블에 저장 |
-| 누수 방지 | T0 이후에만 알 수 있는 값은 T0-only 모델 입력에서 제외 |
-| 모델 분리 | T0-only 모델과 T0+24h 모델을 독립적으로 학습 및 비교 |
-| 타겟 분리 | `TDI`, `tdi_label`, `trending_duration_h`는 예측 대상이며 입력 피처로 사용하지 않음 |
-
-## 🧱 데이터와 타겟
-
-### 데이터셋
-
-| 항목 | 내용 |
-|---|---|
-| 데이터 | Global YouTube Trending Dataset |
-| 범위 | KR 트렌딩, 2022년 7월-2025년 6월 |
-| 수집 방식 | YouTube Data API 기반 하루 4회 스냅샷, 약 6시간 간격 |
-| 저장 포맷 | Parquet |
-| 분석 단위 | `video_id + event_id` 복합키 기반 트렌딩 이벤트 |
-
-### TDI
-
-단순히 오래 지속된 영상이 아니라, 높은 순위 품질을 함께 유지한 영상을 성과형 트렌딩으로 정의했습니다.
-
-```text
-TDI = (trending_duration_h / cat_q95_duration) * (1 - (best_rank - 1) / 200)
-```
-
-| 타겟 | 정의 |
-|---|---|
-| `trending_duration_h` | 트렌딩 진입 시점부터 이탈 시점까지의 지속 시간 |
-| `TDI` | 카테고리별 지속 시간 기준과 최고 순위를 함께 반영한 복합 지수 |
-| `tdi_label` | `TDI >= 0.4`이면 성과형 트렌딩 1, 그 외 0 |
-| Duration Bucket | `>48h`, `>120h`, `>240h` 장기 지속 가능성 |
-
-## 🤖 모델링
-
-### 최종 운영 모델
-
-| 목적 | 선택 모델 | 판단 근거 |
-|---|---|---|
-| 성과형 영상 여부 판단 | Weighted Soft Voting | 최종 Test AUC 0.8284 |
-| 지속 시간 회귀 | ML T0 회귀 모델 | 최종 Test R² 0.5322 |
-| 장기 지속 확률 | Duration Bucket SurvivalNet | `>48h` AUC 0.8708, `>120h` AUC 0.8429 |
-| 딥러닝 교차 검증 | MLP + Embedding | TabNet 대비 AUC, F1, 학습 시간 우수 |
-
-### 최종 모델 메타데이터
-
-| 항목 | 내용 |
-|---|---|
-| 모델명 | Weighted Soft Voting |
-| 구성 | XGBoost + LightGBM + RandomForest (메타데이터 기준) |
-| 실험 후보 | XGBoost, LightGBM, CatBoost, RandomForest, MLP, TabNet |
-| 버전 | v1.0.0 |
-| 저장일 | 2026-05-04 |
-| 입력 피처 | `entry_rank_log`, `T0_view_log`, `T0_engagement_ratio_log`, `latency_to_trend_log`, `pretrend_view_velocity_log`, `weekday_sin`, `weekday_cos`, `hour_sin`, `hour_cos`, `category_group` |
-
-### 주요 피처 인사이트
-
-| 피처 | 해석 |
-|---|---|
-| `entry_rank_log` | 트렌딩 진입 시점의 순위가 높을수록 성과형 트렌딩 가능성이 커짐 |
-| `latency_to_trend_log` | 업로드 후 트렌딩 진입까지의 시간은 초기 확산 속도를 설명 |
-| `T0_view_log` | 진입 시점 조회수는 이후 지속성을 예측하는 강한 초기 신호 |
-| `category_group` | 카테고리별 소비 패턴과 트렌딩 지속 구조 차이를 반영 |
-| `hour_sin`, `hour_cos` | 업로드 시간대와 시청 패턴의 주기성을 반영 |
-
-## 🖥️ 서비스 화면
-
-> 📎 발표 자료: [TrendIt 발표자료 PDF](./docs/assets/trendit-presentation.pdf)
-
-<details open>
-<summary><b>분석 페이지</b></summary>
-<br/>
-<img src="./docs/assets/trendit-analysis.png" alt="TrendIt analysis page" width="100%" />
-</details>
-
-<details>
-<summary><b>전체 랜딩 페이지</b></summary>
-<br/>
-<img src="./docs/assets/trendit-overview.png" alt="TrendIt landing page" width="100%" />
-</details>
-
-<details>
-<summary><b>데이터베이스 ERD</b></summary>
-<br/>
-<img src="./docs/assets/trendit-erd.png" alt="TrendIt database ERD" width="100%" />
-</details>
-
-## 🧩 주요 기능
-
-| 기능 | 설명 |
-|---|---|
-| 트렌딩 분석 | 카테고리, 조회수, 지속 시간, 순위 흐름 기반 EDA 제공 |
-| 영상 분석 | 개별 영상의 초기 반응과 지속 가능성 확인 |
-| 지속성 분석 | T0 신호 기반 트렌딩 지속 시간과 장기 지속 확률 추정 |
-| 캠페인 플래너 | 카테고리별 업로드 요일, 시간대, 전략 인사이트 제공 |
-| 대시보드 | 핵심 지표와 모델 결과를 한 화면에서 탐색 |
-
-## 📁 프로젝트 구조
-
-```text
-backend/
-  api/
-    main.py
-    routes/
-      eda.py
-      feature.py
-      model.py
-      predict.py
-      sustain.py
-      campaign.py
-      dashboard.py
-  data/
-    video_trending_events_T0_model.parquet
-    video_trending_events_24h_model.parquet
-    video_trending_events_analysis.parquet
-  ml/
-    train_weighted_ensemble.py
-    train_xgb_models.py
-    lstm/train_lstm_trend.py
-  models/
-    weighted_soft_voting.joblib
-    xgb_tdi_t0.joblib
-    xgb_duration_t0.joblib
-  preprocessing/
-    clean.py
-    event_split.py
-    features.py
-    saturation.py
-    target.py
-
-frontend/
-  src/
-    pages/
-      LandingPage.jsx
-      TrendingPage.jsx
-      FeaturePage.jsx
-      ModelPage.jsx
-      PredictionPage.jsx
-      CampaignPlannerPage.jsx
-    components/
-    constants/
-    styles/
-```
-
-## 🚀 실행 방법
-
-### 1. Backend
+Ubuntu 24.04, Python 3.10, uv를 기준으로 합니다. 저장소 루트에서 실행합니다.
 
 ```bash
-cd backend
-python -m venv .venv
-source .venv/bin/activate
-pip install -r requirements_ensemble.txt
-uvicorn api.main:app --reload
+# LightGBM의 Linux 실행 라이브러리
+sudo apt-get update
+sudo apt-get install -y libgomp1
+
+uv venv --python 3.10.21 .venv
+uv pip sync --python .venv/bin/python backend/requirements-cpu.lock --index-strategy unsafe-best-match
+
+# 회귀 테스트
+.venv/bin/python -B -m pytest -q
+
+# 같은 계약으로 기본 모델 + 개인 MLP + TabNet 비교
+PYTHONPATH=backend .venv/bin/python -B -m ml.train_weighted_ensemble \
+  --include-deep --include-tabnet --run-id t0-v2-reproduce
 ```
 
-Windows PowerShell에서는 가상환경 활성화 명령만 아래처럼 실행합니다.
+의존성 잠금 파일은 PyPI와 공식 PyTorch CPU 인덱스의 고정 버전을 사용합니다. `--index-strategy`는 두 인덱스에서 잠긴 버전을 찾기 위한 uv 옵션입니다. GPU와 외부 API 키는 필요하지 않습니다. 이미 존재하는 실험 ID는 덮어쓰지 않으며 다른 ID를 사용합니다.
 
-```powershell
-.\.venv\Scripts\Activate.ps1
-```
+필요 데이터는 `backend/data/video_trending_events_analysis.parquet`입니다. 기준 SHA-256은 `cb9a13ea1c4d60ffe72046c6c23f9aed3ca846a2409ef5038b2a872eda8d164e`입니다. 파일이 없거나 다르면 [보고서](docs/experiments/t0_v2_report.json)의 기준 데이터와 대조해야 합니다.
 
-API 문서는 기본 설정 기준 `http://127.0.0.1:8000/docs`에서 확인할 수 있습니다.
-
-### 2. Frontend
+## 저장 모델로 다시 예측
 
 ```bash
-cd frontend
-npm install
-npm run dev
+PYTHONPATH=backend .venv/bin/python -B -m ml.inference \
+  --run-dir backend/artifacts/t0-v2-reproduce \
+  --input backend/examples/t0_request.json
 ```
 
-Vite 개발 서버는 기본 설정 기준 `http://localhost:5173`에서 실행됩니다.
+입력의 `T0_view`와 `T0_comment`는 차트 진입 당시 관측값입니다. 현재 영상의 통계를 과거 T0 값으로 사용하면 이 평가 범위를 벗어납니다. 시간은 KST 또는 명시적 타임존으로 전달합니다. 출력 확률은 경험적으로 교정된 신뢰도 수치가 아닙니다.
 
-### 3. 환경 변수
+## API 실행
 
 ```bash
 cp backend/.env.example backend/.env
+TRENDIT_T0_RUN_ID=t0-v2-reproduce PYTHONPATH=backend \
+  .venv/bin/python -m uvicorn api.main:app --host 127.0.0.1 --port 8000
 ```
 
-데이터베이스 연결 정보, API URL, 모델 및 데이터 경로는 각 환경에 맞게 `.env`에서 설정합니다.
+- Swagger: `http://127.0.0.1:8000/docs`
+- 새 모델 상태: `GET /predict/t0-verified/status`
+- 검증 보고서 기반 성능·표본·선택 기준: `GET /predict/t0-verified/evaluation`
+- 초기 관측 분류: `POST /predict/t0-verified` — `backend/examples/t0_request.json` 형식
+- 실험을 아직 생성하지 않았으면 새 API는 503을 반환합니다. 산출물 SHA-256이 다르면 모델 로딩을 거부합니다.
+- 관측 분석·대시보드·캠페인 참고 자료는 저장된 parquet를 사용합니다. 현재 영상 수집에는 별도 YouTube API 설정이 필요하며 일부 레거시 API는 MySQL을 사용할 수 있습니다. 기존 `/predict/preview`의 휴리스틱 혼합 결과는 위 v2 평가 수치와 연결하지 않습니다.
 
-## 🛠️ 기술 스택
+React 화면은 `frontend`에서 `npm ci --ignore-scripts`, `npm run dev`로 실행합니다. API 주소는 `VITE_API_URL`로 지정하며 기본값은 `http://localhost:8000`입니다. 확인한 Node 버전은 24.20.0이며 의존성은 `frontend/package-lock.json`으로 관리합니다.
 
-| 영역 | 기술 |
-|---|---|
-| Frontend | React, Vite, React Router, Framer Motion |
-| Backend | Python, FastAPI, pandas, NumPy |
-| Machine Learning | scikit-learn, XGBoost, LightGBM, CatBoost, Optuna |
-| Deep Learning | PyTorch, MLP, TabNet, Survival-style bucket classification |
-| Data | MySQL, Parquet |
-| Visualization | Matplotlib |
+- `/analysis/predict`: KST 최초 진입/발행 시각과 진입 당시 순위·조회수·댓글·학습 카테고리 입력 → 실제 T0 v2 분류. 샘플은 입력만 채우고 결과는 요청 성공 후 표시합니다.
+- `/analysis/model`, `/analysis/explain`: 같은 검증 보고서의 지표·입력 정의·혼동행렬·한계 표시. 첫 화면·분석 개요·대시보드도 같은 평가 API를 사용합니다.
+- `/sustain`: 저장된 실제 이벤트의 과거 지속 시간·분포를 집계합니다. 자료가 없으면 503과 재시도를 표시하며 예측 시간·가공 모델 지표를 만들지 않습니다.
+- `/analysis/eda`, `/analysis/feature`, `/analysis/insight`, `/analysis/problem`, `/analysis/compare`, `/analysis/strategy`: 실제 관측 집계·현재 입력/정답 계약·적용 범위를 표시합니다. 중요도·클러스터 유의성·광고 효과를 예시로 채우지 않습니다.
+- `/campaign`: 예산·CPM·CTR·클릭 대비 CVR·카테고리 배분을 직접 입력하는 계산기입니다. 샘플은 입력만 채우며 ROI나 실제 전환율을 예측하지 않습니다.
+- `/dashboard`: 기간·카테고리의 실제 교집합을 집계합니다.
+- `/video`: 현재 관측 통계만 표시합니다. 현재 통계와 화면 순서를 과거 최초 관측으로 바꾸어 추론하지 않습니다.
+- 서버 실패·시간 초과·잘못된 응답에서 예측이나 성능을 임의 기본값으로 대체하지 않습니다. 입력 변경은 진행 중인 요청을 취소합니다.
 
-## 💡 분석 결과 요약
+브라우저 동작 검사에는 재현된 모델 산출물이 필요합니다. `frontend`에서 아래처럼 실행하며, 테스트가 별도 포트의 로컬 API와 화면을 시작하고 종료합니다.
 
-1. 카테고리는 트렌딩 지속성의 핵심 구조 변수입니다.
-2. 진입 시점 순위, 조회수, 댓글 비율, 진입 속도는 T0 시점에서 활용 가능한 강한 예측 신호입니다.
-3. 무작정 피처를 늘리는 것보다 누수 없는 핵심 피처와 시간 정보를 유지하는 편이 일반화 성능에 유리했습니다.
-4. 정확한 지속 시간을 직접 맞히는 회귀에는 한계가 있었지만, 2일 이상 또는 5일 이상 지속 여부는 안정적으로 분류할 수 있었습니다.
-5. 최종 의사결정에는 ML 모델의 성과형 확률과 DL SurvivalNet의 장기 지속 확률을 함께 사용하는 하이브리드 방식이 적합합니다.
+```bash
+npx playwright install --with-deps chromium
+TRENDIT_TEST_RUN_ID=t0-v2-reproduce npm run test:e2e -- --grep-invert 'REAL diagnostic'
+npm run check  # 전체 코드 검사 + audit + 빌드
+```
 
-### 발표 인사이트
+백엔드는 기존·별도 설치 환경에서 **107개씩**, Chromium 전체 브라우저는 **49개**, 별도 설치 기본 모드는 **47개** 검사를 통과했습니다. 전체 ESLint 오류/경고 0, 전체·런타임 npm audit 0, 빌드 통과를 확인했습니다. 같은 WSL 호스트의 별도 checkout·새 venv/node_modules에서 8개 모델을 재학습했고 39,888 Test 점수의 최대 절대차는 0.0입니다. HTTP 테스트 도구의 전환 예정 경고 1개는 남아 있습니다.
 
-| 인사이트 | 핵심 내용 |
-|---|---|
-| 트렌딩 패턴 | 트렌딩 이벤트는 단명형, 고반응형, 장기지속형, 지연형 4가지 유형으로 해석할 수 있습니다. |
-| 카테고리 효과 | 카테고리가 지속 시간을 구조적으로 결정하며, Kruskal-Wallis 검정에서 `p < 0.001`로 유의미한 차이를 확인했습니다. |
-| 카테고리별 차이 | Education은 장기 지속 경향, Entertainment는 단기 확산 경향이 강하게 나타났습니다. |
-| 초기 예측 가능성 | 트렌딩 진입 시점 T0 정보만으로 지속 여부 예측이 가능하며, 발표 기준 AUC 0.76을 달성했습니다. |
-| 24h 반응 효과 | 24시간 반응 데이터를 추가하면 Precision이 51%에서 61%로, PR-AUC가 0.582에서 0.661로 개선되었습니다. |
+## 추가 모델 진단 재현
 
-## 🧪 예상 질문
+기준 선택 모델이 Embedding MLP·시드 42인 실험을 대상으로 합니다. 기존 실험을 보존하고 4개 시드 신규 학습·기존 42 재사용, paired video_id bootstrap 2,000회를 수행합니다.
 
-| 예상 질문 | 답변 |
-|---|---|
-| 왜 TDI를 만들었나요? | 단순 지속 시간은 카테고리별 구조 차이가 있어 불공정하므로, 지속 시간과 최고 순위를 함께 반영한 성과형 지표로 보정했습니다. |
-| 데이터 누수는 어떻게 막았나요? | T0-only 모델에는 T0 이후에 알 수 있는 `view_growth_24h`, `best_rank`, `T_end_*`, `TDI` 등을 입력하지 않았습니다. |
-| 회귀 MAE 목표와 실제 결과 차이는 어떻게 설명하나요? | 트렌딩 지속 시간은 long-tail 분포이고 6시간 스냅샷 간격의 측정 오차가 있어 절대 종료 시점 예측은 어렵습니다. 그래서 회귀와 함께 구간 분류 모델을 보조 의사결정 지표로 제안했습니다. |
-| 왜 최종 성능이 후보 성능보다 낮나요? | 후보 비교 및 Validation 성능보다 최종 Test 성능이 실제 일반화 성능에 가깝습니다. README는 과장된 후보 성능보다 최종 Test 수치를 우선 표기했습니다. |
-| 프로젝트의 실무 활용 포인트는 무엇인가요? | 업로드 직후 1차 성공 가능성, 2일/5일 이상 지속 가능성, 카테고리별 캠페인 타이밍을 함께 판단하는 데 활용할 수 있습니다. |
+```bash
+PYTHONPATH=backend .venv/bin/python -B -m ml.diagnostics \
+  --run-dir backend/artifacts/t0-v2-reproduce \
+  --run-id t0-v2-reproduce-diagnostics
 
-## 📚 참고
+# 두 ID가 같은 기준 실험을 가리켜야 추가 진단 API를 사용할 수 있습니다.
+TRENDIT_T0_RUN_ID=t0-v2-reproduce \
+TRENDIT_T0_DIAGNOSTICS_ID=t0-v2-reproduce-diagnostics PYTHONPATH=backend \
+  .venv/bin/python -m uvicorn api.main:app --host 127.0.0.1 --port 8000
+```
 
-- Data Scope: Global YouTube Trending KR 2022-2025
-- Dataset: Illinois Data Bank IDB-9307654, Ng & Goncalves (2025), CC BY 4.0
-- Presentation: [TrendIt 발표자료 PDF](./docs/assets/trendit-presentation.pdf)
-- Project: SKN 29, Team 1
+`GET /predict/t0-verified/diagnostics`는 실험 ID·자료·파일 해시·표본·숫자를 검증합니다. 진단이 없으면 503과 사용 불가를 표시하고 기준 평가 기능은 계속 사용할 수 있습니다. 중단한 진단은 같은 소스·규칙에 한해 `--resume`으로 재개할 수 있습니다. 현재 진단은 5시드 AUC 평균 0.8130/표본 표준편차 0.0013, 기준 42 AUC 재표집 구간 0.8007~0.8237입니다. 새로운 외부 기간 평가나 5시드 평균의 신뢰구간이 아닙니다.
+
+프론트엔드의 전체 모드는 두 실험을 준비한 뒤 다음처럼 실행합니다.
+
+```bash
+TRENDIT_TEST_RUN_ID=t0-v2-reproduce \
+TRENDIT_TEST_DIAGNOSTICS_ID=t0-v2-reproduce-diagnostics npm run test:e2e
+```
+
+진단을 생성하지 않는 기본 검사 모드는 `TRENDIT_TEST_RUN_ID=t0-v2-reproduce npm run test:e2e -- --grep-invert 'REAL diagnostic'`입니다. 전체 진단을 실제로 읽는 2개 사례를 제외하고 미설정 상태 처리까지 확인합니다.
+
+GitHub Actions는 프론트 품질 관문과 백엔드·CPU 재현·핵심 브라우저 관문을 수행합니다. 현재 상태: 전송 후 원격 자동 검사 확인 예정. 서비스 배포는 별도 범위입니다. [실제 반영·실행 기록](docs/experiments/MAIN_PUBLICATION_20261102.md)을 확인하세요. 5시드 전체 진단은 매 push마다 실행하지 않습니다. [최신 결과와 제한](docs/experiments/FOLLOWUP_RESULTS_20261023.md), [면접 근거](docs/CAREER_EVIDENCE.md), [공개 검토 목록](docs/experiments/PUBLICATION_REVIEW_20261023.md)을 참고하세요.
+
+## 기존 결과와 남은 한계
+
+기존 WeightedSoftVoting 메타데이터는 최종 지속 시간과 파생 라벨이 입력에 들어가 **T0 성능 근거에서 폐기**했습니다. 바이너리는 보존하고 자동 로딩을 차단했습니다. [과거 메타데이터](docs/experiments/legacy_weighted_soft_voting_metadata.json)는 역사 자료입니다.
+
+과거 발표·보고서의 AUC 0.8284와 개인 실험의 AUC 0.7985는 다른 조건의 결과입니다. v2는 라벨과 평가 표본이 달라 우열을 직접 비교하지 않습니다. 발표 자료는 [기존 PDF](docs/assets/trendit-presentation.pdf)에 보존합니다.
+
+기준 모델은 시드 42·한 시간 분할로 선택했습니다. 후속으로 같은 분할의 5시드 변동과 기준 모델의 영상 단위 재표집 구간을 추가했습니다. 다른 기간의 일반화와 개별 점수의 확률 교정은 검증하지 않았습니다. 반복 영상의 미래 이벤트, 원본 수집·정제 전체, 지속 시간 회귀, 24h 업데이트, 기존 데모 UX의 실서비스 효과는 별도 검증이 필요합니다.

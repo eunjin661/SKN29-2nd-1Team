@@ -1,0 +1,81 @@
+{
+  "recorded_at_kst": "2026-11-02T14:16:25.734505+09:00",
+  "repository": "eunjin661/SKN29-2nd-1Team",
+  "target_branch": "main",
+  "authorization": "2026-11-02 user requested direct main push in this conversation",
+  "publication_state": {
+    "phase": "PREPARED",
+    "base_sha": "f06c8175c0a2a6d611e21c9e72a9e0ca9e789a1c",
+    "head_sha": null,
+    "workflow_runs": [],
+    "ci": "PENDING_PUSH"
+  },
+  "local_checks": {
+    "npm-ci": {
+      "exit_code": 0
+    },
+    "quality": {
+      "exit_code": 0
+    },
+    "audit-final": {
+      "exit_code": 0
+    },
+    "dependency-tree": {
+      "exit_code": 0
+    },
+    "lint-file-coverage": {
+      "exit_code": 0,
+      "files": 113,
+      "same_as_20261023": true
+    },
+    "browser": {
+      "exit_code": 0
+    }
+  },
+  "browser_stats": {
+    "startTime": "2026-11-02T05:09:45.200Z",
+    "duration": 95845.114,
+    "expected": 49,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "lint_files": {
+    "exit_code": 0,
+    "files": 113,
+    "same_as_20261023": true
+  },
+  "audit": {
+    "info": 0,
+    "low": 0,
+    "moderate": 0,
+    "high": 0,
+    "critical": 0,
+    "total": 0
+  },
+  "original_20261023_evidence_unchanged": true,
+  "source_manifest": "publication_evidence_20261102/final-source-manifest.json",
+  "evidence_sha256": {
+    "advisory-sources.json": "19ef83bd700a555e2a502d1b7f07744944df35343e4267f79b8f8ddc710af32b",
+    "audit-final.json": "8c025a6ea5cdd6af5c42842f482d094147518961bf480ac766a3a1473fd3ea6f",
+    "browser-results.json": "4a15e2ce42341d485ac05905a33ac3fb0e1217d568c1db015836b90d4a6a5694",
+    "browser.log": "e219c27427929e7c6e9063081061d110f3e862f644b3bada3f94fc884d2ac9b9",
+    "commit-preparation.json": "3cecd5c2493fbe491135eb9df2abc6b7acc8432ff339c4a4c5a5d5cd1a2bd2e1",
+    "dependency-change-summary.json": "211187c6a38b9d0998cb605c0d7290386d935f2b8188b926382bd0c5fcb4737c",
+    "dependency-fix.log": "e35139fa7dec64458e56545c6db5eae33d391e552aabc43e1f9e179202f525e4",
+    "dependency-investigation.json": "eb49e50b39db3856b9bb7927a01022c05d5801ee74a262801e15d0310b4a6d60",
+    "dependency-tree.json": "76672fbaad3e46504a656dc79f1f2ae30ab9588a88426f0ad3e37c83813c22cc",
+    "final-source-manifest.json": "ca2ac0774ea26d28d8b5215ba193bdc81d6c1a574e0444670cda2f790a969bef",
+    "lint-final.json": "fbc4043b8baa3e27714d84d85291327e3de8d6201a75d82ff8a7cf55adf81bba",
+    "npm-audit-fix-proposal-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "npm-audit-fix-proposal.json": "493bffa516c3d9fe2a51fee325da8ae20a3b43fda537341d163d11122b8402ab",
+    "npm-audit-stderr.log": "0c5e2568b4c79c13debcc497cf347b98e7a01e636ae2bed42cf3faa742048c94",
+    "npm-audit.json": "53cc6c46abf0f04ab2d917a0b8e776341c0a6dcdbc8705ba1f8c6bc5add5a548",
+    "npm-ci.log": "2f1396c9cefa3f9441f4d9943bc1cdc17ccb9fc53f12154a954fafddd093527c",
+    "package-lock.before.json": "37a31495086bacbe658c1c865e49c2c6243dbd7a8b50ca5b621b90b06e389509",
+    "package.before.json": "9b00b34a3032c6feb2d602de42512e819b67a6a79247ebdba93c57ddc6fc53ab",
+    "publication-preflight.json": "83b7b02f2191387b262221110abc47786f3203aeb08aaf222ba390fc318eb8be",
+    "quality.log": "e21d49371f91f89a329edd17e73f8f90663338085bbef414fa80e590d084b6e4",
+    "verification-commands.json": "61bba77b47358a1d6102a677a8a48572ade8e1cfe67070e2cfd8dff4440e9a20"
+  }
+}

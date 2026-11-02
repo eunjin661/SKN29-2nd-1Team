@@ -1,0 +1,85 @@
+{
+  "model_type": "WeightedSoftVoting",
+  "description": "XGBoost + LightGBM + MLP soft voting ensemble for long-lived trending prediction",
+  "data_path": "C:\\skn29\\딥러닝\\youtube_kr_trend\\backend\\data\\video_trending_events_T0_model.parquet",
+  "target_source": "tdi_label",
+  "feature_columns": [
+    "category_id",
+    "trending_duration_h",
+    "trending_duration_log",
+    "long_label_global_q75",
+    "long_label_cat_q75",
+    "long_label_48h",
+    "entry_rank_log",
+    "T0_view_log",
+    "T0_comment_log",
+    "T0_engagement_ratio_log",
+    "latency_to_trend_log",
+    "pretrend_view_velocity_log",
+    "published_weekday",
+    "hour_sin",
+    "hour_cos",
+    "saturation_index_30d_mean_prev",
+    "category_group"
+  ],
+  "numeric_columns": [
+    "category_id",
+    "trending_duration_h",
+    "trending_duration_log",
+    "long_label_global_q75",
+    "long_label_cat_q75",
+    "long_label_48h",
+    "entry_rank_log",
+    "T0_view_log",
+    "T0_comment_log",
+    "T0_engagement_ratio_log",
+    "latency_to_trend_log",
+    "pretrend_view_velocity_log",
+    "published_weekday",
+    "hour_sin",
+    "hour_cos",
+    "saturation_index_30d_mean_prev"
+  ],
+  "categorical_columns": [
+    "category_group"
+  ],
+  "numeric_medians": {
+    "category_id": 22.0,
+    "trending_duration_h": 108.0,
+    "trending_duration_log": 4.6913478822291435,
+    "long_label_global_q75": 0.0,
+    "long_label_cat_q75": 0.0,
+    "long_label_48h": 1.0,
+    "entry_rank_log": 3.5553480614894135,
+    "T0_view_log": 13.104728797096538,
+    "T0_comment_log": 6.849066282633458,
+    "T0_engagement_ratio_log": 0.001806932863253558,
+    "latency_to_trend_log": 4.053406805188731,
+    "pretrend_view_velocity_log": 9.156622521525932,
+    "published_weekday": 3.0,
+    "hour_sin": 0.0,
+    "hour_cos": 0.8660254037844387,
+    "saturation_index_30d_mean_prev": 0.47901234567901235
+  },
+  "categorical_modes": {
+    "category_group": "Entertainment"
+  },
+  "estimators": [
+    "XGBoost",
+    "LightGBM",
+    "MLP"
+  ],
+  "weights": {
+    "xgb": 0.4,
+    "lgbm": 0.35,
+    "mlp": 0.25
+  },
+  "metrics": {
+    "accuracy": 0.9973,
+    "auc": 1.0,
+    "f1": 0.9961,
+    "precision": 0.9959,
+    "recall": 0.9963
+  },
+  "threshold": 0.5
+}

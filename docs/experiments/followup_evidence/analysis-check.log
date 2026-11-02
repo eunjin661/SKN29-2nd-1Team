@@ -1,0 +1,14 @@
+
+> frontend@0.0.0 check
+> npm run lint && npm audit --audit-level=low && npm run build
+
+
+> frontend@0.0.0 lint
+> eslint . --max-warnings 0
+
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/quality-regression.spec.js
+  134:9  error  Parsing error: Identifier 'request' has already been declared
+
+✖ 1 problem (1 error, 0 warnings)
+

@@ -1,0 +1,347 @@
+
+> frontend@0.0.0 test:e2e
+> playwright test
+
+[WebServer] INFO:     Started server process [79532]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:18000 (Press CTRL+C to quit)
+
+Running 37 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/analysis-contract.spec.js:6:1 › REAL observations: source, every population and TDI exclusions reconcile (2.8s)
+  ✓   2 [chromium] › tests/e2e/analysis-contract.spec.js:29:1 › INJECTED population mismatch: a successful HTTP response cannot fabricate a graph (886ms)
+  ✓   3 [chromium] › tests/e2e/analysis-contract.spec.js:39:1 › Unavailable TDI preserves observed aggregates and never inserts legacy distribution (838ms)
+  ✘   4 [chromium] › tests/e2e/analysis-contract.spec.js:49:1 › REAL dashboard filters both year and category without proportional estimates (30.1s)
+  ✘   5 [chromium] › tests/e2e/analysis-contract.spec.js:60:1 › Updated analysis routes show observations or input contracts without legacy model claims (957ms)
+  ✓   6 [chromium] › tests/e2e/quality-regression.spec.js:34:1 › CountUp: decimals, negatives, units and ranges keep their values after live prop changes (2.8s)
+  ✓   7 [chromium] › tests/e2e/quality-regression.spec.js:44:1 › CountUp: duration updates, zero duration and reduced motion finish without stale animation (726ms)
+  ✓   8 [chromium] › tests/e2e/quality-regression.spec.js:59:1 › Mobile navigation: route changes, Back/Forward, Escape and resize close the menu; theme persists (2.5s)
+  ✘   9 [chromium] › tests/e2e/quality-regression.spec.js:82:1 › Dashboard: timeout and retry load new data; late old data never replaces the retry (8.5s)
+  ✘  10 [chromium] › tests/e2e/quality-regression.spec.js:100:1 › Dashboard: unmount aborts the active request instead of updating the previous page (8.5s)
+  ✓  11 [chromium] › tests/e2e/quality-regression.spec.js:115:1 › EDA: failed response and retry update summary; navigating away aborts a pending retry (3.1s)
+  ✘  12 [chromium] › tests/e2e/quality-regression.spec.js:140:1 › Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text (8.7s)
+  ✓  13 [chromium] › tests/e2e/quality-regression.spec.js:162:1 › Video feed: category change cancels old refresh and its late response cannot replace current selection (1.6s)
+  ✓  14 [chromium] › tests/e2e/quality-regression.spec.js:190:1 › Video feed: one in-flight refresh, automatic refresh resumes afterwards, stable selection stays selected (1.5s)
+  ✓  15 [chromium] › tests/e2e/quality-regression.spec.js:216:1 › Video feed: cached observations stay labelled on network failure and refresh recovers (3.6s)
+  ✓  16 [chromium] › tests/e2e/quality-regression.spec.js:239:3 › Video feed: expired cache is ignored without a crash or fabricated videos (1.5s)
+  ✓  17 [chromium] › tests/e2e/quality-regression.spec.js:239:3 › Video feed: malformed cache is ignored without a crash or fabricated videos (1.6s)
+  ✓  18 [chromium] › tests/e2e/quality-regression.spec.js:260:1 › Video feed: legacy single-category endpoint works when bulk is unavailable; empty feed is not endless loading (2.1s)
+  ✓  19 [chromium] › tests/e2e/quality-regression.spec.js:274:1 › API health: offline banner makes no unsupported claim that every page has stored results (585ms)
+  ✘  20 [chromium] › tests/e2e/quality-regression.spec.js:282:1 › Modified legacy screens: all public routes render without uncaught browser errors (17.5s)
+  ✓  21 [chromium] › tests/e2e/quality-regression.spec.js:300:1 › REAL observed API: sustain shows actual event durations and no legacy predictions or fabricated model metrics (920ms)
+  ✓  22 [chromium] › tests/e2e/quality-regression.spec.js:316:1 › Sustain unavailable: no example videos or fallback metrics, retry recovers with observations (1.3s)
+  ✓  23 [chromium] › tests/e2e/quality-regression.spec.js:328:1 › Sustain rejects a legacy fabricated response instead of filling missing observed fields (739ms)
+  ✓  24 [chromium] › tests/e2e/verified-t0.spec.js:21:1 › REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot (3.3s)
+  ✓  25 [chromium] › tests/e2e/verified-t0.spec.js:49:1 › REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts (1.7s)
+  ✓  26 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED 503: no result, explicit error, retry reaches real API (1.3s)
+  ✓  27 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED network: no result, explicit error, retry reaches real API (1.3s)
+  ✓  28 [chromium] › tests/e2e/verified-t0.spec.js:86:1 › INJECTED timeout: aborts after 12 seconds, no result, retry succeeds (1.4s)
+  ✓  29 [chromium] › tests/e2e/verified-t0.spec.js:102:1 › INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input (1.8s)
+  ✓  30 [chromium] › tests/e2e/verified-t0.spec.js:125:1 › INJECTED invalid response and 422: no fabricated result and field error shown (1.7s)
+  ✓  31 [chromium] › tests/e2e/verified-t0.spec.js:138:1 › REAL API: evaluation and interpretation match the report, with no legacy score fallback (2.1s)
+  ✓  32 [chromium] › tests/e2e/verified-t0.spec.js:157:1 › INJECTED evaluation unavailable: no fallback numbers; retry recovers (1.2s)
+  ✓  33 [chromium] › tests/e2e/verified-t0.spec.js:169:1 › INJECTED status unavailable: categories never default; reload and retry recover (1.2s)
+  ✓  34 [chromium] › tests/e2e/verified-t0.spec.js:180:1 › REAL API mobile: submit, readable result, no page overflow, refresh starts empty (3.0s)
+  ✓  35 [chromium] › tests/e2e/verified-t0.spec.js:202:1 › INJECTED live feed: only observed stats, no bulk or verified inference from current counters (922ms)
+  ✘  36 [chromium] › tests/e2e/verified-t0.spec.js:216:1 › REAL API: home, analysis overview and dashboard use the same evaluated run (9.7s)
+  ✘  37 [chromium] › tests/e2e/verified-t0.spec.js:226:1 › INJECTED report failure: home, overview and dashboard never display fallback scores (9.9s)
+[WebServer] INFO:     Shutting down
+[WebServer] INFO:     Waiting for application shutdown.
+[WebServer] INFO:     Application shutdown complete.
+[WebServer] INFO:     Finished server process [79532]
+
+
+  1) [chromium] › tests/e2e/analysis-contract.spec.js:49:1 › REAL dashboard filters both year and category without proportional estimates 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for locator('.dashboard-filter').getByRole('button', { name: '2025', exact: true })
+
+
+      50 |   const data = await (await request.get(`${API}/dashboard/summary?year=2025&category=Music`)).json()
+      51 |   await page.goto('/dashboard')
+    > 52 |   await page.locator('.dashboard-filter').getByRole('button', { name: '2025', exact: true }).click()
+         |                                                                                              ^
+      53 |   await expect(page.locator('.dash-kpi-grid')).toBeVisible()
+      54 |   await page.locator('.dashboard-filter').getByRole('button', { name: 'Music', exact: true }).click()
+      55 |   await expect(page.locator('.dash-kpi-grid article').filter({ hasText: '트렌딩 이벤트' })).toContainText(data.kpis.trendEvents.toLocaleString('ko-KR'))
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/analysis-contract.spec.js:52:94
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/analysis-contract-REAL-das-2c709-hout-proportional-estimates-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/analysis-contract-REAL-das-2c709-hout-proportional-estimates-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/analysis-contract-REAL-das-2c709-hout-proportional-estimates-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/analysis-contract-REAL-das-2c709-hout-proportional-estimates-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/analysis-contract.spec.js:60:1 › Updated analysis routes show observations or input contracts without legacy model claims 
+
+    Error: expect(locator).not.toContainText(expected) failed
+
+    Locator: locator('main')
+    Expected substring: not "fallback_safe"
+    Error: strict mode violation: locator('main') resolved to 2 elements:
+        1) <main class="yta-page-transition">…</main> aka getByRole('main').first()
+        2) <main class="yta-app-inner verified-page observed-page">…</main> aka getByText('← 목록으로저장된 관측 · 출처와 표본 확인현재 모델의 입력과 전처리관측 자료와 현재 T0 v2')
+
+    Call log:
+      - Expect "not toContainText" locator('main') with timeout 8000ms
+      - waiting for locator('main')
+
+
+      62 |     await page.goto(`/analysis/${path}`)
+      63 |     await expect(page.getByTestId('observed-events')).toHaveText('34,964')
+    > 64 |     await expect(page.locator('main')).not.toContainText('fallback_safe')
+         |                                            ^
+      65 |     await expect(page.getByText('조회수 예측 92점')).toHaveCount(0)
+      66 |     await expect(page.getByText('ROI INDEX')).toHaveCount(0)
+      67 |   }
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/analysis-contract.spec.js:64:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/analysis-contract-Updated--caf3c-without-legacy-model-claims-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/analysis-contract-Updated--caf3c-without-legacy-model-claims-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/analysis-contract-Updated--caf3c-without-legacy-model-claims-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/analysis-contract-Updated--caf3c-without-legacy-model-claims-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/e2e/quality-regression.spec.js:82:1 › Dashboard: timeout and retry load new data; late old data never replaces the retry 
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0
+    Received:   0
+
+    Call Log:
+    - Timeout 8000ms exceeded while waiting on the predicate
+
+      85 |   await page.route(DASHBOARD, async route => { await new Promise(resolve => held.push(resolve)); await route.fulfill({ json: { ...dashboard, kpis: { ...dashboard.kpis, trendEvents: 999 } } }).catch(() => {}) })
+      86 |   await page.goto('/dashboard')
+    > 87 |   await expect.poll(() => held.length).toBeGreaterThan(0)
+         |                                        ^
+      88 |   await page.clock.fastForward(10500)
+      89 |   await expect(page.getByRole('alert').filter({ hasText: 'API 연결 실패' })).toContainText('응답 시간이 초과되었습니다')
+      90 |   await expect(page.getByRole('button', { name: 'CSV 다운로드' })).toBeDisabled()
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/quality-regression.spec.js:87:40
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/quality-regression-Dashboa-75a08-ta-never-replaces-the-retry-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/quality-regression-Dashboa-75a08-ta-never-replaces-the-retry-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/quality-regression-Dashboa-75a08-ta-never-replaces-the-retry-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/quality-regression-Dashboa-75a08-ta-never-replaces-the-retry-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/e2e/quality-regression.spec.js:100:1 › Dashboard: unmount aborts the active request instead of updating the previous page 
+
+    Error: expect(received).toBeTruthy()
+
+    Received: false
+
+    Call Log:
+    - Timeout 8000ms exceeded while waiting on the predicate
+
+      105 |   await page.route(DASHBOARD, async route => { latest = route.request(); await new Promise(resolve => held.push(resolve)); await route.abort().catch(() => {}) })
+      106 |   await page.goto('/dashboard')
+    > 107 |   await expect.poll(() => Boolean(latest)).toBeTruthy()
+          |                                            ^
+      108 |   const request = latest
+      109 |   await page.getByRole('button', { name: '트렌딩 분석', exact: true }).click()
+      110 |   await expect.poll(() => failed.includes(request)).toBeTruthy()
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/quality-regression.spec.js:107:44
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/quality-regression-Dashboa-624e8--updating-the-previous-page-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/quality-regression-Dashboa-624e8--updating-the-previous-page-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/quality-regression-Dashboa-624e8--updating-the-previous-page-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/quality-regression-Dashboa-624e8--updating-the-previous-page-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/e2e/quality-regression.spec.js:140:1 › Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text 
+
+    Error: expect(locator).toBeEnabled() failed
+
+    Locator: getByRole('button', { name: 'CSV 다운로드' })
+    Expected: enabled
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeEnabled" getByRole('button', { name: 'CSV 다운로드' }) with timeout 8000ms
+      - waiting for getByRole('button', { name: 'CSV 다운로드' })
+
+
+      144 |   })
+      145 |   await page.goto('/dashboard')
+    > 146 |   await expect(page.getByRole('button', { name: 'CSV 다운로드' })).toBeEnabled()
+          |                                                                ^
+      147 |   let downloadPromise = page.waitForEvent('download')
+      148 |   await page.getByRole('button', { name: 'CSV 다운로드' }).click()
+      149 |   let download = await downloadPromise
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/quality-regression.spec.js:146:64
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/quality-regression-Dashboa-feacf-titles-are-exported-as-text-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/quality-regression-Dashboa-feacf-titles-are-exported-as-text-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/quality-regression-Dashboa-feacf-titles-are-exported-as-text-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/quality-regression-Dashboa-feacf-titles-are-exported-as-text-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › tests/e2e/quality-regression.spec.js:282:1 › Modified legacy screens: all public routes render without uncaught browser errors 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByRole('heading', { level: 1 }).first()
+    Expected: visible
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeVisible" getByRole('heading', { level: 1 }).first() with timeout 8000ms
+      - waiting for getByRole('heading', { level: 1 }).first()
+
+
+      291 |   for (const path of ['/', '/analysis', '/analysis/eda', '/analysis/feature', '/analysis/insight', '/analysis/problem', '/analysis/model', '/analysis/compare', '/analysis/explain', '/analysis/predict', '/analysis/strategy', '/video', '/sustain', '/campaign', '/dashboard']) {
+      292 |     await page.goto(path)
+    > 293 |     await expect(page.getByRole('heading', { level: 1 }).first()).toBeVisible()
+          |                                                                   ^
+      294 |     await settlePage(page)
+      295 |     expect(errors, path).toEqual([])
+      296 |   }
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/quality-regression.spec.js:293:67
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/quality-regression-Modifie-6e1d4-out-uncaught-browser-errors-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/quality-regression-Modifie-6e1d4-out-uncaught-browser-errors-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/quality-regression-Modifie-6e1d4-out-uncaught-browser-errors-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/quality-regression-Modifie-6e1d4-out-uncaught-browser-errors-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › tests/e2e/verified-t0.spec.js:216:1 › REAL API: home, analysis overview and dashboard use the same evaluated run 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: locator('[data-testid="dashboard-verified-metrics"]')
+    Expected substring: "0.8128"
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toContainText" locator('[data-testid="dashboard-verified-metrics"]') with timeout 8000ms
+      - waiting for locator('[data-testid="dashboard-verified-metrics"]')
+
+
+      219 |   for (const [path, selector] of [['/', '[data-testid="home-verified-metrics"]'], ['/analysis', '.trending-hero-stats'], ['/dashboard', '[data-testid="dashboard-verified-metrics"]']]) {
+      220 |     await page.goto(path)
+    > 221 |     await expect(page.locator(selector)).toContainText(selected.test.auc.toFixed(4))
+          |                                          ^
+      222 |     await expect(page.locator(selector)).toContainText(body.selected_model)
+      223 |   }
+      224 | })
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/verified-t0.spec.js:221:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verified-t0-REAL-API-home--2f033--use-the-same-evaluated-run-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verified-t0-REAL-API-home--2f033--use-the-same-evaluated-run-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verified-t0-REAL-API-home--2f033--use-the-same-evaluated-run-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/verified-t0-REAL-API-home--2f033--use-the-same-evaluated-run-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium] › tests/e2e/verified-t0.spec.js:226:1 › INJECTED report failure: home, overview and dashboard never display fallback scores 
+
+    Error: expect(locator).toBeAttached() failed
+
+    Locator: locator('[data-testid="dashboard-verified-metrics"]')
+    Expected: attached
+    Timeout: 8000ms
+    Error: element(s) not found
+
+    Call log:
+      - Expect "toBeAttached" locator('[data-testid="dashboard-verified-metrics"]') with timeout 8000ms
+      - waiting for locator('[data-testid="dashboard-verified-metrics"]')
+
+
+      228 |   for (const [path, selector] of [['/', '[data-testid="home-verified-metrics"]'], ['/analysis', '.trending-hero-stats'], ['/dashboard', '[data-testid="dashboard-verified-metrics"]']]) {
+      229 |     await page.goto(path)
+    > 230 |     await expect(page.locator(selector)).toBeAttached()
+          |                                          ^
+      231 |     await expect(page.locator(selector)).not.toContainText('0.827')
+      232 |     await expect(page.locator(selector)).not.toContainText('0.895')
+      233 |     await expect(page.locator(selector)).not.toContainText('0.8128')
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/verified-t0.spec.js:230:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/verified-t0-INJECTED-repor-24dc1-ver-display-fallback-scores-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/verified-t0-INJECTED-repor-24dc1-ver-display-fallback-scores-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/verified-t0-INJECTED-repor-24dc1-ver-display-fallback-scores-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/verified-t0-INJECTED-repor-24dc1-ver-display-fallback-scores-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8 failed
+    [chromium] › tests/e2e/analysis-contract.spec.js:49:1 › REAL dashboard filters both year and category without proportional estimates 
+    [chromium] › tests/e2e/analysis-contract.spec.js:60:1 › Updated analysis routes show observations or input contracts without legacy model claims 
+    [chromium] › tests/e2e/quality-regression.spec.js:82:1 › Dashboard: timeout and retry load new data; late old data never replaces the retry 
+    [chromium] › tests/e2e/quality-regression.spec.js:100:1 › Dashboard: unmount aborts the active request instead of updating the previous page 
+    [chromium] › tests/e2e/quality-regression.spec.js:140:1 › Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text 
+    [chromium] › tests/e2e/quality-regression.spec.js:282:1 › Modified legacy screens: all public routes render without uncaught browser errors 
+    [chromium] › tests/e2e/verified-t0.spec.js:216:1 › REAL API: home, analysis overview and dashboard use the same evaluated run 
+    [chromium] › tests/e2e/verified-t0.spec.js:226:1 › INJECTED report failure: home, overview and dashboard never display fallback scores 
+  29 passed (2.5m)

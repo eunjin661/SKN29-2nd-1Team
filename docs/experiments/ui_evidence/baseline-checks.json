@@ -1,0 +1,10 @@
+{
+  "lint": {
+    "exit_code": 1,
+    "seconds": 4.997
+  },
+  "build": {
+    "exit_code": 0,
+    "seconds": 3.488
+  }
+}

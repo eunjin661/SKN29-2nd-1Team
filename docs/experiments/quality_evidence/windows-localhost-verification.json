@@ -1,0 +1,13 @@
+{
+  "checked_at": "2026-10-23T00:33:49.7292277+09:00",
+  "api_url": "http://localhost:8000",
+  "page_status": 200,
+  "analysis_data": {
+    "status": "ready",
+    "events": 34964,
+    "error": null
+  },
+  "source": "historical_observed_events",
+  "events": 34964,
+  "model_metrics_json": "{}"
+}

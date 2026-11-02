@@ -1,0 +1,16 @@
+{
+  "backend-browser.yml": {
+    "yaml_parse": "PASS",
+    "remote_execution": "NOT_RUN",
+    "permissions": {
+      "contents": "read"
+    }
+  },
+  "frontend-quality.yml": {
+    "yaml_parse": "PASS",
+    "remote_execution": "NOT_RUN",
+    "permissions": {
+      "contents": "read"
+    }
+  }
+}

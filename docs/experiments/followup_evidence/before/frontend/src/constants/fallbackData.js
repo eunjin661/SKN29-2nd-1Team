@@ -1,0 +1,45 @@
+export const FALLBACK = {
+  catDur: [
+    { name:'Education',     median:192, mean:175 },
+    { name:'Lifestyle',     median:192, mean:186 },
+    { name:'Entertainment', median:96,  mean:135 },
+    { name:'Music',         median:78,  mean:118 },
+    { name:'News',          median:66,  mean:101 },
+  ],
+  catCount: { Entertainment:19646, Lifestyle:8497, Music:5241, News:987, Education:593 },
+  yearPct: {
+    2022: { Entertainment:58.0, Lifestyle:21.2, Music:15.1, Education:2.3, News:3.5 },
+    2023: { Entertainment:55.1, Lifestyle:22.2, Music:16.2, Education:2.0, News:4.4 },
+    2024: { Entertainment:58.2, Lifestyle:25.4, Music:13.6, Education:1.3, News:1.5 },
+    2025: { Entertainment:52.6, Lifestyle:30.6, Music:14.8, Education:1.1, News:0.9 },
+  },
+  tdiBins:   [10917,5018,3484,3536,3191,2670,1956,1505,1055,1632],
+  tdiPosPct: 34.5,
+  iqr: [
+    { name:'Lifestyle',     q1:42, med:192, q3:300 },
+    { name:'Education',     q1:30, med:192, q3:288 },
+    { name:'Entertainment', q1:24, med:96,  q3:222 },
+    { name:'Music',         q1:24, med:78,  q3:198 },
+    { name:'News',          q1:18, med:66,  q3:180 },
+  ],
+  weekday:   [4710,4896,5284,5078,5949,4419,4628],
+  rankQ:     { q25:14, med:34, q75:59, mean:52 },
+  growth24h: { count:27234, median:57942, q75:147436 },
+  has24h:    { obs:27234, not_obs:7730 },
+  summary:   { total:34964, categories:5, avgDuration:144, tdiPos:34.5, obs24h:78.0 },
+
+  clusterShare: [
+    { category:'Education',     c0:0.9,  c1:16.8, c2:54.7, c3:27.7 },
+    { category:'Entertainment', c0:3.9,  c1:25.3, c2:44.3, c3:26.5 },
+    { category:'Lifestyle',     c0:3.8,  c1:23.4, c2:52.5, c3:20.3 },
+    { category:'Music',         c0:18.3, c1:22.6, c2:30.2, c3:28.9 },
+    { category:'News',          c0:2.0,  c1:17.1, c2:36.9, c3:44.1 },
+  ],
+  clusterLabels: {
+    0:'C0 Music / High engagement',
+    1:'C1 Fast response',
+    2:'C2 Delayed / Same-day exit',
+    3:'C3 Slow entry / Long duration',
+  },
+  clusterStats: { chi2:1769.2, p:'<0.001', dof:12, cramersV:0.147 },
+}

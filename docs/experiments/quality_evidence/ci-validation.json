@@ -1,0 +1,8 @@
+{
+  "github_execution": "NOT_RUN",
+  "yaml_parser_available": true,
+  "yaml_parse": "PASS",
+  "workflow_content_review": "PASS",
+  "local_npm_check": "PASS",
+  "remote_run_required_after_push": true
+}

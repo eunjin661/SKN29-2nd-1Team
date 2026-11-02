@@ -1,0 +1,62 @@
+
+> frontend@0.0.0 test:e2e
+> playwright test --grep-invert REAL diagnostic
+
+[WebServer] INFO:     Started server process [93901]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:18000 (Press CTRL+C to quit)
+
+Running 45 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/analysis-contract.spec.js:6:1 › REAL observations: source, every population and TDI exclusions reconcile (2.3s)
+  ✓   2 [chromium] › tests/e2e/analysis-contract.spec.js:29:1 › INJECTED population mismatch: a successful HTTP response cannot fabricate a graph (839ms)
+  ✓   3 [chromium] › tests/e2e/analysis-contract.spec.js:39:1 › Unavailable TDI preserves observed aggregates and never inserts legacy distribution (839ms)
+  ✓   4 [chromium] › tests/e2e/analysis-contract.spec.js:49:1 › REAL dashboard filters both year and category without proportional estimates (2.1s)
+  ✓   5 [chromium] › tests/e2e/analysis-contract.spec.js:60:1 › Updated analysis routes show observations or input contracts without legacy model claims (4.6s)
+  ✓   6 [chromium] › tests/e2e/campaign-scenario.spec.js:11:1 › REAL scenario: starts empty, sample fills only, explicit arithmetic and CSV match assumptions (3.0s)
+  ✓   7 [chromium] › tests/e2e/campaign-scenario.spec.js:36:1 › REAL zero conversions: zero is kept and CPA is unavailable (1.3s)
+  ✓   8 [chromium] › tests/e2e/campaign-scenario.spec.js:44:1 › Scenario validation blocks blank, zero CPM, out-of-range rates and incomplete allocation (1.5s)
+  ✓   9 [chromium] › tests/e2e/campaign-scenario.spec.js:62:1 › INJECTED scenario failure: no invented result, retry reaches real arithmetic (1.4s)
+  ✓  10 [chromium] › tests/e2e/campaign-scenario.spec.js:73:1 › Scenario delayed request: duplicate submit is blocked and input editing cancels old result (1.6s)
+  ✓  11 [chromium] › tests/e2e/campaign-scenario.spec.js:90:1 › Campaign mobile: user assumptions are readable without document overflow or ROI forecast cards (1.4s)
+  ✓  12 [chromium] › tests/e2e/campaign-scenario.spec.js:99:1 › Campaign dark mode keeps typed assumption inputs readable (1.5s)
+  ✓  13 [chromium] › tests/e2e/model-diagnostics.spec.js:24:1 › Diagnostic unavailable: primary evaluation remains usable and no interval is invented (813ms)
+  ✓  14 [chromium] › tests/e2e/quality-regression.spec.js:35:1 › CountUp: decimals, negatives, units and ranges keep their values after live prop changes (2.8s)
+  ✓  15 [chromium] › tests/e2e/quality-regression.spec.js:45:1 › CountUp: duration updates, zero duration and reduced motion finish without stale animation (746ms)
+  ✓  16 [chromium] › tests/e2e/quality-regression.spec.js:60:1 › Mobile navigation: route changes, Back/Forward, Escape and resize close the menu; theme persists (4.1s)
+  ✓  17 [chromium] › tests/e2e/quality-regression.spec.js:83:1 › Dashboard: timeout and retry load new data; late old data never replaces the retry (883ms)
+  ✓  18 [chromium] › tests/e2e/quality-regression.spec.js:101:1 › Dashboard: unmount aborts the active request instead of updating the previous page (1.4s)
+  ✓  19 [chromium] › tests/e2e/quality-regression.spec.js:116:1 › EDA: failed response and retry update summary; navigating away aborts a pending retry (3.1s)
+  ✓  20 [chromium] › tests/e2e/quality-regression.spec.js:141:1 › Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text (1.3s)
+  ✓  21 [chromium] › tests/e2e/quality-regression.spec.js:163:1 › Video feed: category change cancels old refresh and its late response cannot replace current selection (1.6s)
+  ✓  22 [chromium] › tests/e2e/quality-regression.spec.js:191:1 › Video feed: one in-flight refresh, automatic refresh resumes afterwards, stable selection stays selected (1.6s)
+  ✓  23 [chromium] › tests/e2e/quality-regression.spec.js:217:1 › Video feed: cached observations stay labelled on network failure and refresh recovers (3.6s)
+  ✓  24 [chromium] › tests/e2e/quality-regression.spec.js:240:3 › Video feed: expired cache is ignored without a crash or fabricated videos (1.5s)
+  ✓  25 [chromium] › tests/e2e/quality-regression.spec.js:240:3 › Video feed: malformed cache is ignored without a crash or fabricated videos (1.5s)
+  ✓  26 [chromium] › tests/e2e/quality-regression.spec.js:261:1 › Video feed: legacy single-category endpoint works when bulk is unavailable; empty feed is not endless loading (2.1s)
+  ✓  27 [chromium] › tests/e2e/quality-regression.spec.js:275:1 › API health: offline banner makes no unsupported claim that every page has stored results (572ms)
+  ✓  28 [chromium] › tests/e2e/quality-regression.spec.js:283:1 › Modified legacy screens: all public routes render without uncaught browser errors (9.3s)
+  ✓  29 [chromium] › tests/e2e/quality-regression.spec.js:306:1 › REAL observed API: sustain shows actual event durations and no legacy predictions or fabricated model metrics (861ms)
+  ✓  30 [chromium] › tests/e2e/quality-regression.spec.js:322:1 › Sustain unavailable: no example videos or fallback metrics, retry recovers with observations (1.2s)
+  ✓  31 [chromium] › tests/e2e/quality-regression.spec.js:334:1 › Sustain rejects a legacy fabricated response instead of filling missing observed fields (767ms)
+  ✓  32 [chromium] › tests/e2e/verified-t0.spec.js:21:1 › REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot (2.8s)
+  ✓  33 [chromium] › tests/e2e/verified-t0.spec.js:49:1 › REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts (1.7s)
+  ✓  34 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED 503: no result, explicit error, retry reaches real API (1.3s)
+  ✓  35 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED network: no result, explicit error, retry reaches real API (1.3s)
+  ✓  36 [chromium] › tests/e2e/verified-t0.spec.js:86:1 › INJECTED timeout: aborts after 12 seconds, no result, retry succeeds (1.3s)
+  ✓  37 [chromium] › tests/e2e/verified-t0.spec.js:102:1 › INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input (1.8s)
+  ✓  38 [chromium] › tests/e2e/verified-t0.spec.js:125:1 › INJECTED invalid response and 422: no fabricated result and field error shown (1.7s)
+  ✓  39 [chromium] › tests/e2e/verified-t0.spec.js:138:1 › REAL API: evaluation and interpretation match the report, with no legacy score fallback (2.0s)
+  ✓  40 [chromium] › tests/e2e/verified-t0.spec.js:157:1 › INJECTED evaluation unavailable: no fallback numbers; retry recovers (1.2s)
+  ✓  41 [chromium] › tests/e2e/verified-t0.spec.js:169:1 › INJECTED status unavailable: categories never default; reload and retry recover (1.2s)
+  ✓  42 [chromium] › tests/e2e/verified-t0.spec.js:180:1 › REAL API mobile: submit, readable result, no page overflow, refresh starts empty (2.6s)
+  ✓  43 [chromium] › tests/e2e/verified-t0.spec.js:202:1 › INJECTED live feed: only observed stats, no bulk or verified inference from current counters (1.0s)
+  ✓  44 [chromium] › tests/e2e/verified-t0.spec.js:216:1 › REAL API: home, analysis overview and dashboard use the same evaluated run (2.1s)
+  ✓  45 [chromium] › tests/e2e/verified-t0.spec.js:226:1 › INJECTED report failure: home, overview and dashboard never display fallback scores (2.2s)
+[WebServer] INFO:     Shutting down
+[WebServer] INFO:     Waiting for application shutdown.
+[WebServer] INFO:     Application shutdown complete.
+[WebServer] INFO:     Finished server process [93901]
+
+  45 passed (1.5m)

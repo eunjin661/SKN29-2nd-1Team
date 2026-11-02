@@ -1,0 +1,191 @@
+
+> frontend@0.0.0 lint
+> eslint .
+
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/components/AdvancedCharts.jsx
+  15:63  error  'valueLabel' is assigned a value but never used  no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/components/CountUp.jsx
+  16:6  warning  React Hook useEffect has missing dependencies: 'duration', 'isNum', and 'raw'. Either include them or remove the dependency array  react-hooks/exhaustive-deps
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/components/Navbar.jsx
+  19:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  17 |
+  18 |   useEffect(() => {
+> 19 |     setMenuOpen(false)
+     |     ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  20 |   }, [location.pathname])
+  21 |
+  22 |   useEffect(() => {  react-hooks/set-state-in-effect
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/components/ResultBadge.jsx
+  3:17  error  Fast refresh only works when a file only exports components. Use a new file to share constants or functions between components  react-refresh/only-export-components
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/components/StableCharts.jsx
+  10:7  error  'clamp' is assigned a value but never used  no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/hooks/useEDA.js
+  140:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  138 |   useEffect(() => {
+  139 |     let cancelled = false
+> 140 |     setLoading(true)
+      |     ^^^^^^^^^^ Avoid calling setState() directly within an effect
+  141 |     fetchEDA()
+  142 |       .then((json) => {
+  143 |         if (!cancelled) {  react-hooks/set-state-in-effect
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/CampaignPlannerPage.jsx
+  144:9  error  'highRiskCount' is assigned a value but never used  no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/DashboardPage.jsx
+  88:21  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  86 |   }, [])
+  87 |
+> 88 |   useEffect(() => { loadDashboard(); loadModelStatus() }, [loadDashboard, loadModelStatus])
+     |                     ^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  89 |
+  90 |   const filteredCategoryStats = useMemo(() => {
+  91 |     const rows = data?.categoryStats || []  react-hooks/set-state-in-effect
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/DatasetSplitPage.jsx
+  1:8   error  'React' is defined but never used      no-unused-vars
+  2:46  error  'Line' is defined but never used       no-unused-vars
+  2:52  error  'LineChart' is defined but never used  no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/EDACharts.jsx
+  191:16  error  'H' is assigned a value but never used  no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/FeaturePage.jsx
+    8:7   error  'RED' is assigned a value but never used           no-unused-vars
+    9:7   error  'RED_DARK' is assigned a value but never used      no-unused-vars
+   10:7   error  'RED_SOFT' is assigned a value but never used      no-unused-vars
+   11:7   error  'RED_GRID' is assigned a value but never used      no-unused-vars
+   12:7   error  'BLACK' is assigned a value but never used         no-unused-vars
+  158:7   error  'tooltipStyle' is assigned a value but never used  no-unused-vars
+  166:10  error  'EmptySafe' is defined but never used              no-unused-vars
+  173:10  error  'svgScale' is defined but never used               no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/InsightPage.jsx
+   7:7   error  'RED' is assigned a value but never used           no-unused-vars
+   8:7   error  'RED_GRID' is assigned a value but never used      no-unused-vars
+  64:7   error  'tooltipStyle' is assigned a value but never used  no-unused-vars
+  72:10  error  'EmptySafe' is defined but never used              no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/LandingPage.jsx
+    7:10  error  'categories' is defined but never used            no-unused-vars
+    7:22  error  'insightCards' is defined but never used          no-unused-vars
+  253:10  error  'Sparkline' is defined but never used             no-unused-vars
+  398:7   error  'METRIC_DATA' is assigned a value but never used  no-unused-vars
+  858:10  error  'DataEventPreview' is defined but never used      no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/ModelPage.jsx
+   36:7  error  'pct' is assigned a value but never used         no-unused-vars
+  214:9  error  'BAR_COLORS' is assigned a value but never used  no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/PredictionPage.jsx
+   10:7  error  'RED' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            no-unused-vars
+   11:7  error  'GRID' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           no-unused-vars
+   58:7  error  'tooltipStyle' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   no-unused-vars
+  303:5  error  Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  301 |
+  302 |   useEffect(() => {
+> 303 |     setApiState("ok")
+      |     ^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  304 |   }, [])
+  305 |
+  306 |   const handlePredict = useCallback(async () => {  react-hooks/set-state-in-effect
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/ProblemPage.jsx
+   7:7  error  'RED' is assigned a value but never used           no-unused-vars
+   8:7  error  'GRID' is assigned a value but never used          no-unused-vars
+  60:7  error  'tooltipStyle' is assigned a value but never used  no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/StrategyPage.jsx
+    7:7  error  'RED' is assigned a value but never used           no-unused-vars
+    8:7  error  'GRID' is assigned a value but never used          no-unused-vars
+  125:7  error  'tooltipStyle' is assigned a value but never used  no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/SustainPage.jsx
+  261:9  error  'reentryRatio' is assigned a value but never used  no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/TrendingPage.jsx
+  124:10  error  'PartTags' is defined but never used  no-unused-vars
+  229:31  error  'idx' is defined but never used       no-unused-vars
+
+/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/src/pages/VideoPage.jsx
+  220:7   error    'isXGBoostPrediction' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  no-unused-vars
+  227:9   error    'growth' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               no-unused-vars
+  589:9   error    'toY' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  no-unused-vars
+  702:21  error    'setSortOrder' is assigned a value but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         no-unused-vars
+  741:14  error    'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             no-unused-vars
+  787:14  error    'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             no-unused-vars
+  860:14  error    'e' is defined but never used                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             no-unused-vars
+  879:5   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  877 |
+  878 |   useEffect(() => {
+> 879 |     setVisibleCount(PAGE_SIZE)
+      |     ^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  880 |   }, [category, sortOrder])
+  881 |
+  882 |   useEffect(() => {                                                                                                                                                      react-hooks/set-state-in-effect
+  899:7   error    Error: Calling setState synchronously within an effect can trigger cascading renders
+
+Effects are intended to synchronize state between React and external systems such as manually updating the DOM, state management libraries, or other platform APIs. In general, the body of an effect should do one or both of the following:
+* Update external systems with the latest state from React.
+* Subscribe for updates from some external system, calling setState in a callback function when external state changes.
+
+Calling setState synchronously within an effect body causes cascading renders that can hurt performance, and is not recommended. (https://react.dev/learn/you-might-not-need-an-effect).
+
+  897 |       // 1) 캐시/메모리 데이터는 즉시 표시해서 첫 화면을 빠르게 띄웁니다.
+  898 |       // 2) 이어서 refresh=true로 최신 YouTube 데이터를 백그라운드에서 바로 동기화합니다.
+> 899 |       loadBulkTrending(false).then((ok) => {
+      |       ^^^^^^^^^^^^^^^^ Avoid calling setState() directly within an effect
+  900 |         if (!ok) fetchCategory(current)
+  901 |         loadBulkTrending(true, true)
+  902 |       })  react-hooks/set-state-in-effect
+  962:6   warning  React Hook useMemo has an unnecessary dependency: 'activeVideos'. Either exclude it or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        react-hooks/exhaustive-deps
+  970:6   warning  React Hook useMemo has unnecessary dependencies: 'sortOrder', 'visibleActiveVideos', and 'visibleCount'. Either exclude them or remove the dependency array                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               react-hooks/exhaustive-deps
+
+✖ 55 problems (52 errors, 3 warnings)
+
+npm notice
+npm notice New major version of npm available! 11.19.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

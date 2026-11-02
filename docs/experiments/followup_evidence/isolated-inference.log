@@ -1,0 +1,12 @@
+{
+  "run_id": "t0-v2-ci",
+  "model": "embedding_mlp",
+  "target": "tdi_v2",
+  "threshold": 0.44,
+  "predictions": [
+    {
+      "probability": 0.4859521985054016,
+      "label": 1
+    }
+  ]
+}

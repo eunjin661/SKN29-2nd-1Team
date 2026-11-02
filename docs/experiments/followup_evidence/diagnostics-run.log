@@ -1,0 +1,31 @@
+embedding_mlp epoch=1 validation_auc=0.7636
+embedding_mlp epoch=10 validation_auc=0.8146
+embedding_mlp epoch=20 validation_auc=0.8183
+embedding_mlp epoch=30 validation_auc=0.8232
+embedding_mlp epoch=40 validation_auc=0.8225
+completed seed 13: val AUC=0.825138, test AUC=0.814538
+embedding_mlp epoch=1 validation_auc=0.7631
+embedding_mlp epoch=10 validation_auc=0.8120
+embedding_mlp epoch=20 validation_auc=0.8194
+embedding_mlp epoch=30 validation_auc=0.8221
+embedding_mlp epoch=40 validation_auc=0.8204
+embedding_mlp epoch=50 validation_auc=0.8210
+embedding_mlp epoch=60 validation_auc=0.8212
+completed seed 29: val AUC=0.824299, test AUC=0.813837
+completed seed 42: val AUC=0.823683, test AUC=0.812765
+embedding_mlp epoch=1 validation_auc=0.7437
+embedding_mlp epoch=10 validation_auc=0.8108
+embedding_mlp epoch=20 validation_auc=0.8216
+embedding_mlp epoch=30 validation_auc=0.8186
+embedding_mlp epoch=40 validation_auc=0.8201
+completed seed 73: val AUC=0.823740, test AUC=0.811356
+embedding_mlp epoch=1 validation_auc=0.7567
+embedding_mlp epoch=10 validation_auc=0.8147
+embedding_mlp epoch=20 validation_auc=0.8223
+embedding_mlp epoch=30 validation_auc=0.8227
+completed seed 101: val AUC=0.824150, test AUC=0.812267
+paired video bootstrap 500/2000
+paired video bootstrap 1000/2000
+paired video bootstrap 1500/2000
+paired video bootstrap 2000/2000
+{"status": "DIAGNOSTICS_COMPLETE", "seed_summary": {"auc": {"mean": 0.8129525146349792, "std_sample": 0.0012600564515347387, "min": 0.811355632461464, "max": 0.8145380850070227}, "pr_auc": {"mean": 0.6307694162223595, "std_sample": 0.0020778996647622893, "min": 0.6280522634840909, "max": 0.6334113913049434}, "f1": {"mean": 0.6669365342434853, "std_sample": 0.0022537493745127847, "min": 0.6645176145521529, "max": 0.6702932828760644}, "precision": {"mean": 0.5545214729398478, "std_sample": 0.009151724015940502, "min": 0.5449395770392749, "max": 0.5674668874172185}, "recall": {"mean": 0.8370501474926254, "std_sample": 0.016834330394272633, "min": 0.8088495575221238, "max": 0.8513274336283185}}, "bootstrap_valid": 2000, "elapsed_seconds": 73.658}

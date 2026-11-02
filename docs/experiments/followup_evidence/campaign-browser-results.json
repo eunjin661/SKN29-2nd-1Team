@@ -1,0 +1,1622 @@
+{
+  "config": {
+    "argv": [
+      "/home/eunjin/.nvm/versions/node/v24.20.0/bin/node",
+      "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/node_modules/.bin/playwright",
+      "test"
+    ],
+    "configFile": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/playwright.config.js",
+    "rootDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "filteredProjects": [
+      {
+        "grep": {},
+        "grepInvert": null,
+        "outputDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "name": "chromium",
+        "testDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e",
+        "snapshotDir": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e",
+        "testIgnore": [],
+        "testMatch": "**/*.@(spec|test).?(c|m)[jt]s?(x)",
+        "timeout": 30000,
+        "use": {
+          "baseURL": "http://127.0.0.1:15173",
+          "trace": "retain-on-failure",
+          "screenshot": "only-on-failure",
+          "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.8078.4 Safari/537.36",
+          "viewport": {
+            "width": 1280,
+            "height": 720
+          },
+          "screen": {
+            "width": 1920,
+            "height": 1080
+          },
+          "deviceScaleFactor": 1,
+          "isMobile": false,
+          "hasTouch": false,
+          "defaultBrowserType": "chromium"
+        },
+        "dependencies": [],
+        "ignoreSnapshots": false,
+        "__projectId": "chromium"
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "/home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/backend/artifacts/followup-20261023/campaign-browser-results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "default",
+    "updateSourceMethod": "patch",
+    "version": "1.64.1",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "analysis-contract.spec.js",
+      "file": "analysis-contract.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REAL observations: source, every population and TDI exclusions reconcile",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2634,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:30:41.739Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5ea2db97516e15e4486f-8bd48c4fdd131eb8a27a",
+          "file": "analysis-contract.spec.js",
+          "line": 6,
+          "column": 1
+        },
+        {
+          "title": "INJECTED population mismatch: a successful HTTP response cannot fabricate a graph",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 809,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:30:44.482Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5ea2db97516e15e4486f-893695ba3954b397e5c9",
+          "file": "analysis-contract.spec.js",
+          "line": 29,
+          "column": 1
+        },
+        {
+          "title": "Unavailable TDI preserves observed aggregates and never inserts legacy distribution",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 825,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:30:45.299Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5ea2db97516e15e4486f-c3a0c413c99c527dbba7",
+          "file": "analysis-contract.spec.js",
+          "line": 39,
+          "column": 1
+        },
+        {
+          "title": "REAL dashboard filters both year and category without proportional estimates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1578,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:30:46.133Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5ea2db97516e15e4486f-39b13962dbfaec979efa",
+          "file": "analysis-contract.spec.js",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "Updated analysis routes show observations or input contracts without legacy model claims",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 5090,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:30:47.719Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "5ea2db97516e15e4486f-971ec32f265f464b5c40",
+          "file": "analysis-contract.spec.js",
+          "line": 60,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "campaign-scenario.spec.js",
+      "file": "campaign-scenario.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REAL scenario: starts empty, sample fills only, explicit arithmetic and CSV match assumptions",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3053,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:30:52.823Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2218b76eda18029c1c2f-4c43231a50bd84b85feb",
+          "file": "campaign-scenario.spec.js",
+          "line": 11,
+          "column": 1
+        },
+        {
+          "title": "REAL zero conversions: zero is kept and CPA is unavailable",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1520,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:30:55.885Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2218b76eda18029c1c2f-5fc8323481ca0a0166ca",
+          "file": "campaign-scenario.spec.js",
+          "line": 36,
+          "column": 1
+        },
+        {
+          "title": "Scenario validation blocks blank, zero CPM, out-of-range rates and incomplete allocation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1771,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:30:57.419Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2218b76eda18029c1c2f-0f8bb01c68aa17b2847a",
+          "file": "campaign-scenario.spec.js",
+          "line": 44,
+          "column": 1
+        },
+        {
+          "title": "INJECTED scenario failure: no invented result, retry reaches real arithmetic",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1552,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:30:59.202Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2218b76eda18029c1c2f-ff8e30f95458f2624ed5",
+          "file": "campaign-scenario.spec.js",
+          "line": 62,
+          "column": 1
+        },
+        {
+          "title": "Scenario delayed request: duplicate submit is blocked and input editing cancels old result",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1562,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:00.762Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2218b76eda18029c1c2f-df3cdea577b3d1ccf6f2",
+          "file": "campaign-scenario.spec.js",
+          "line": 73,
+          "column": 1
+        },
+        {
+          "title": "Campaign mobile: user assumptions are readable without document overflow or ROI forecast cards",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1456,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:02.331Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "2218b76eda18029c1c2f-8b31cbc28b545d1cf368",
+          "file": "campaign-scenario.spec.js",
+          "line": 90,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "quality-regression.spec.js",
+      "file": "quality-regression.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "CountUp: decimals, negatives, units and ranges keep their values after live prop changes",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2832,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:03.803Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-bb47cd85bba1bdf0f650",
+          "file": "quality-regression.spec.js",
+          "line": 34,
+          "column": 1
+        },
+        {
+          "title": "CountUp: duration updates, zero duration and reduced motion finish without stale animation",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 703,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:05.988Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-0443aabf919d432d23ad",
+          "file": "quality-regression.spec.js",
+          "line": 44,
+          "column": 1
+        },
+        {
+          "title": "Mobile navigation: route changes, Back/Forward, Escape and resize close the menu; theme persists",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2092,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:06.697Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-acd912611d3ab92b4760",
+          "file": "quality-regression.spec.js",
+          "line": 59,
+          "column": 1
+        },
+        {
+          "title": "Dashboard: timeout and retry load new data; late old data never replaces the retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1079,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:08.795Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-24d4650aa97846de953d",
+          "file": "quality-regression.spec.js",
+          "line": 82,
+          "column": 1
+        },
+        {
+          "title": "Dashboard: unmount aborts the active request instead of updating the previous page",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1328,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:09.881Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-bcbd4695603d6f0bbdc9",
+          "file": "quality-regression.spec.js",
+          "line": 100,
+          "column": 1
+        },
+        {
+          "title": "EDA: failed response and retry update summary; navigating away aborts a pending retry",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 3001,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:11.216Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-df731ff77c23fb7488c5",
+          "file": "quality-regression.spec.js",
+          "line": 115,
+          "column": 1
+        },
+        {
+          "title": "Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1776,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:14.222Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-70e7b481453eec5e5752",
+          "file": "quality-regression.spec.js",
+          "line": 140,
+          "column": 1
+        },
+        {
+          "title": "Video feed: category change cancels old refresh and its late response cannot replace current selection",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1569,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:16.008Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-67747b5e4be7d842330b",
+          "file": "quality-regression.spec.js",
+          "line": 162,
+          "column": 1
+        },
+        {
+          "title": "Video feed: one in-flight refresh, automatic refresh resumes afterwards, stable selection stays selected",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1570,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:17.584Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-0f3bcd73d72f5548fb47",
+          "file": "quality-regression.spec.js",
+          "line": 190,
+          "column": 1
+        },
+        {
+          "title": "Video feed: cached observations stay labelled on network failure and refresh recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 4947,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:19.161Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-055ea7a1d48b8e260190",
+          "file": "quality-regression.spec.js",
+          "line": 216,
+          "column": 1
+        },
+        {
+          "title": "Video feed: expired cache is ignored without a crash or fabricated videos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1511,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:24.115Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-064631ab146253a69769",
+          "file": "quality-regression.spec.js",
+          "line": 239,
+          "column": 3
+        },
+        {
+          "title": "Video feed: malformed cache is ignored without a crash or fabricated videos",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1472,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:25.632Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-c4606846f649a5279e2c",
+          "file": "quality-regression.spec.js",
+          "line": 239,
+          "column": 3
+        },
+        {
+          "title": "Video feed: legacy single-category endpoint works when bulk is unavailable; empty feed is not endless loading",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2118,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:27.111Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-5e7a77247ca93974897f",
+          "file": "quality-regression.spec.js",
+          "line": 260,
+          "column": 1
+        },
+        {
+          "title": "API health: offline banner makes no unsupported claim that every page has stored results",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 566,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:29.235Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-a24834ddb356f1ab0860",
+          "file": "quality-regression.spec.js",
+          "line": 274,
+          "column": 1
+        },
+        {
+          "title": "Modified legacy screens: all public routes render without uncaught browser errors",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 9175,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:29.806Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-105cccf8f9af0480aa1c",
+          "file": "quality-regression.spec.js",
+          "line": 282,
+          "column": 1
+        },
+        {
+          "title": "REAL observed API: sustain shows actual event durations and no legacy predictions or fabricated model metrics",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 925,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:38.320Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-8310ffcc7ac9ad6f95df",
+          "file": "quality-regression.spec.js",
+          "line": 300,
+          "column": 1
+        },
+        {
+          "title": "Sustain unavailable: no example videos or fallback metrics, retry recovers with observations",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1251,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:39.251Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-21dccafa83dc18354413",
+          "file": "quality-regression.spec.js",
+          "line": 316,
+          "column": 1
+        },
+        {
+          "title": "Sustain rejects a legacy fabricated response instead of filling missing observed fields",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 738,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:40.508Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "c0936eacb455c513c575-6e4f9faf49abeadceea0",
+          "file": "quality-regression.spec.js",
+          "line": 328,
+          "column": 1
+        }
+      ]
+    },
+    {
+      "title": "verified-t0.spec.js",
+      "file": "verified-t0.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2779,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:41.258Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "real-api-response",
+                      "contentType": "application/json",
+                      "body": "ewogICJpbnB1dCI6IHsKICAgICJUMCI6ICIyMDI1LTAyLTAxVDEyOjAwOjAwKzA5OjAwIiwKICAgICJwdWJsaXNoZWRfYXQiOiAiMjAyNS0wMi0wMVQwMDowMDowMCswOTowMCIsCiAgICAiZW50cnlfcmFuayI6IDMwLAogICAgIlQwX3ZpZXciOiAxMDAwMDAsCiAgICAiVDBfY29tbWVudCI6IDI1MCwKICAgICJjYXRlZ29yeV9ncm91cCI6ICJFbnRlcnRhaW5tZW50IgogIH0sCiAgInJlc3BvbnNlIjogewogICAgInJ1bl9pZCI6ICJ0MC12Mi1jcHUtMjAyNjEwMjItYXVkaXQiLAogICAgIm1vZGVsIjogImVtYmVkZGluZ19tbHAiLAogICAgInRhcmdldCI6ICJ0ZGlfdjIiLAogICAgInRocmVzaG9sZCI6IDAuNDQsCiAgICAicHJlZGljdGlvbnMiOiBbCiAgICAgIHsKICAgICAgICAicHJvYmFiaWxpdHkiOiAwLjQ4NTk1MjE5ODUwNTQwMTYsCiAgICAgICAgImxhYmVsIjogMQogICAgICB9CiAgICBdCiAgfQp9"
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-fcdcf8aac93b78e0ad2a",
+          "file": "verified-t0.spec.js",
+          "line": 21,
+          "column": 1
+        },
+        {
+          "title": "REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1692,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:44.043Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-5f759c3176656b15838d",
+          "file": "verified-t0.spec.js",
+          "line": 49,
+          "column": 1
+        },
+        {
+          "title": "INJECTED 503: no result, explicit error, retry reaches real API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1750,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:45.741Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-c8f66b0caf8e1d0342d4",
+          "file": "verified-t0.spec.js",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "INJECTED network: no result, explicit error, retry reaches real API",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1308,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:47.496Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-6d72bcdd604acc46b379",
+          "file": "verified-t0.spec.js",
+          "line": 74,
+          "column": 3
+        },
+        {
+          "title": "INJECTED timeout: aborts after 12 seconds, no result, retry succeeds",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1344,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:48.809Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-e730425c931c0ebfe2d1",
+          "file": "verified-t0.spec.js",
+          "line": 86,
+          "column": 1
+        },
+        {
+          "title": "INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1793,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:50.159Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-0481eaf99d1350116e6e",
+          "file": "verified-t0.spec.js",
+          "line": 102,
+          "column": 1
+        },
+        {
+          "title": "INJECTED invalid response and 422: no fabricated result and field error shown",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1744,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:51.958Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-c9fc6321e5482957e386",
+          "file": "verified-t0.spec.js",
+          "line": 125,
+          "column": 1
+        },
+        {
+          "title": "REAL API: evaluation and interpretation match the report, with no legacy score fallback",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1959,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:53.711Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "real-evaluation",
+                      "contentType": "application/json",
+                      "body": "ewogICJydW5faWQiOiAidDAtdjItY3B1LTIwMjYxMDIyLWF1ZGl0IiwKICAicHJvdG9jb2wiOiAidDAtdjItcHVyZ2VkLXVuc2Vlbi12aWRlbyIsCiAgInNlbGVjdGVkX21vZGVsIjogImVtYmVkZGluZ19tbHAiLAogICJzZWxlY3RlZF90aHJlc2hvbGQiOiAwLjQ0LAogICJzZWxlY3Rpb25fcnVsZSI6ICJtYXhpbXVtIHZhbGlkYXRpb24gUk9DLUFVQzsgZGV0ZXJtaW5pc3RpYyBhbHBoYWJldGljYWwgdGllIGJyZWFrOyB0ZXN0IG5ldmVyIHNlbGVjdHMgYSBtb2RlbCIsCiAgInRocmVzaG9sZF9ydWxlIjogIm1heGltdW0gdmFsaWRhdGlvbiBGMTsgdGVzdCBuZXZlciBzZWxlY3RzIGEgdGhyZXNob2xkIiwKICAidGFyZ2V0IjogewogICAgIm5hbWUiOiAidGRpX3YyIiwKICAgICJsYWJlbF90aHJlc2hvbGQiOiAwLjQsCiAgICAiY2F0ZWdvcnlfcTk1X3RyYWluX29ubHkiOiB7CiAgICAgICJFZHVjYXRpb24iOiAzNjkuMjk5OTk5OTk5OTk5NywKICAgICAgIkVudGVydGFpbm1lbnQiOiAzNDIsCiAgICAgICJMaWZlc3R5bGUiOiAzOTYsCiAgICAgICJNdXNpYyI6IDI4OCwKICAgICAgIk5ld3MiOiAyNTgKICAgIH0KICB9LAogICJkYXRhIjogewogICAgInNvdXJjZV9yb3dzIjogMzQ5NjQsCiAgICAic3BsaXRzIjogewogICAgICAidHJhaW4iOiB7CiAgICAgICAgInJvd3MiOiAyNDE5NCwKICAgICAgICAidW5pcXVlX3ZpZGVvcyI6IDEyODcxLAogICAgICAgICJwb3NpdGl2ZV9yYXRlIjogMC4zNjQ2MzU4NjAxMzA2MTA5LAogICAgICAgICJUMF9taW4iOiAiMjAyMi0wNy0wMSAwOTowMDowMCIsCiAgICAgICAgIlQwX21heCI6ICIyMDI0LTA3LTEyIDAzOjAwOjAwIgogICAgICB9LAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAicm93cyI6IDQ5ODAsCiAgICAgICAgInVuaXF1ZV92aWRlb3MiOiAyNDA0LAogICAgICAgICJwb3NpdGl2ZV9yYXRlIjogMC4zODIxMjg1MTQwNTYyMjQ5LAogICAgICAgICJUMF9taW4iOiAiMjAyNC0wNy0xMiAwOTowMDowMCIsCiAgICAgICAgIlQwX21heCI6ICIyMDI1LTAxLTExIDAzOjAwOjAwIgogICAgICB9LAogICAgICAidGVzdCI6IHsKICAgICAgICAicm93cyI6IDQ5ODYsCiAgICAgICAgInVuaXF1ZV92aWRlb3MiOiAyMzExLAogICAgICAgICJwb3NpdGl2ZV9yYXRlIjogMC4zMzk5NTE4NjUyMjI2MjMzMywKICAgICAgICAiVDBfbWluIjogIjIwMjUtMDEtMTEgMjE6MDA6MDAiLAogICAgICAgICJUMF9tYXgiOiAiMjAyNS0wNi0zMCAxNTowMDowMCIKICAgICAgfQogICAgfSwKICAgICJmZWF0dXJlX2NvbHVtbnMiOiBbCiAgICAgICJlbnRyeV9yYW5rX2xvZyIsCiAgICAgICJUMF92aWV3X2xvZyIsCiAgICAgICJUMF9lbmdhZ2VtZW50X3JhdGlvX2xvZyIsCiAgICAgICJsYXRlbmN5X3RvX3RyZW5kX2xvZyIsCiAgICAgICJwcmV0cmVuZF92aWV3X3ZlbG9jaXR5X2xvZyIsCiAgICAgICJ3ZWVrZGF5X3NpbiIsCiAgICAgICJ3ZWVrZGF5X2NvcyIsCiAgICAgICJob3VyX3NpbiIsCiAgICAgICJob3VyX2NvcyIsCiAgICAgICJjYXRlZ29yeV9ncm91cCIKICAgIF0sCiAgICAibGFiZWxfY29uZmlybWF0aW9uX2hvdXJzIjogNiwKICAgICJncm91cF9wb2xpY3kiOiAidmlkZW9faWQgZGlzam9pbnQgYWNyb3NzIHRyYWluL3ZhbGlkYXRpb24vdGVzdDsgbGF0ZXIgcmVwZWF0cyBleGNsdWRlZCIsCiAgICAidGltZXpvbmUiOiAiQXNpYS9TZW91bCAoc3RvcmVkIG5haXZlIEtTVCkiCiAgfSwKICAibW9kZWxzIjogWwogICAgewogICAgICAibmFtZSI6ICJkdW1teSIsCiAgICAgICJ0aHJlc2hvbGQiOiAwLjM2LAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAiYXVjIjogMC41LAogICAgICAgICJwcl9hdWMiOiAwLjM4MjEyODUxNDA1NjIyNDksCiAgICAgICAgImYxIjogMC41NTI5NTY1NTk2Mzk2OTIsCiAgICAgICAgImFjY3VyYWN5IjogMC4zODIxMjg1MTQwNTYyMjQ5LAogICAgICAgICJwcmVjaXNpb24iOiAwLjM4MjEyODUxNDA1NjIyNDksCiAgICAgICAgInJlY2FsbCI6IDEsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAwLAogICAgICAgICAgMzA3NywKICAgICAgICAgIDAsCiAgICAgICAgICAxOTAzCiAgICAgICAgXQogICAgICB9LAogICAgICAidGVzdCI6IHsKICAgICAgICAiYXVjIjogMC41LAogICAgICAgICJwcl9hdWMiOiAwLjMzOTk1MTg2NTIyMjYyMzMzLAogICAgICAgICJmMSI6IDAuNTA3NDA5MDcwNDk4NDI4NCwKICAgICAgICAiYWNjdXJhY3kiOiAwLjMzOTk1MTg2NTIyMjYyMzMzLAogICAgICAgICJwcmVjaXNpb24iOiAwLjMzOTk1MTg2NTIyMjYyMzMzLAogICAgICAgICJyZWNhbGwiOiAxLAogICAgICAgICJjb25mdXNpb25fbWF0cml4X3RuX2ZwX2ZuX3RwIjogWwogICAgICAgICAgMCwKICAgICAgICAgIDMyOTEsCiAgICAgICAgICAwLAogICAgICAgICAgMTY5NQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAibG9naXN0aWMiLAogICAgICAidGhyZXNob2xkIjogMC4yNywKICAgICAgInZhbGlkYXRpb24iOiB7CiAgICAgICAgImF1YyI6IDAuNjIwNDEwMzQzNjU2Mjc5OCwKICAgICAgICAicHJfYXVjIjogMC40NjkyNTE1Njg3MjQyMTk3LAogICAgICAgICJmMSI6IDAuNTg0NjQ2NjcwMDU1OTIyNywKICAgICAgICAiYWNjdXJhY3kiOiAwLjUwNzgzMTMyNTMwMTIwNDgsCiAgICAgICAgInByZWNpc2lvbiI6IDAuNDMxNDY1NzMyODY2NDMzMiwKICAgICAgICAicmVjYWxsIjogMC45MDY0NjM0Nzg3MTc4MTQsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICA4MDQsCiAgICAgICAgICAyMjczLAogICAgICAgICAgMTc4LAogICAgICAgICAgMTcyNQogICAgICAgIF0KICAgICAgfSwKICAgICAgInRlc3QiOiB7CiAgICAgICAgImF1YyI6IDAuNjI0Njc4MTkxNzk2ODgyNCwKICAgICAgICAicHJfYXVjIjogMC40MzY0ODM5NDM5NDUzNzc2NSwKICAgICAgICAiZjEiOiAwLjU0NDMxNjk5Njg3MTc0MTQsCiAgICAgICAgImFjY3VyYWN5IjogMC40NzQxMjc1NTcxNjAwNDgxLAogICAgICAgICJwcmVjaXNpb24iOiAwLjM4NTgwOTMxMjYzODU4MDksCiAgICAgICAgInJlY2FsbCI6IDAuOTIzODkzODA1MzA5NzM0NSwKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDc5OCwKICAgICAgICAgIDI0OTMsCiAgICAgICAgICAxMjksCiAgICAgICAgICAxNTY2CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAibmFtZSI6ICJ4Z2Jvb3N0IiwKICAgICAgInRocmVzaG9sZCI6IDAuMzQsCiAgICAgICJ2YWxpZGF0aW9uIjogewogICAgICAgICJhdWMiOiAwLjgyMDY2MTk1MTkyMjAzNzUsCiAgICAgICAgInByX2F1YyI6IDAuNjgzOTQ0NzE5NzI5MDAyMywKICAgICAgICAiZjEiOiAwLjcxMDExOTMxMDY0OTU4MDIsCiAgICAgICAgImFjY3VyYWN5IjogMC43MzY1NDYxODQ3Mzg5NTU4LAogICAgICAgICJwcmVjaXNpb24iOiAwLjYxMjY1NzI2MjY3NjMyNDgsCiAgICAgICAgInJlY2FsbCI6IDAuODQ0NDU2MTIxOTEyNzY5MywKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIwNjEsCiAgICAgICAgICAxMDE2LAogICAgICAgICAgMjk2LAogICAgICAgICAgMTYwNwogICAgICAgIF0KICAgICAgfSwKICAgICAgInRlc3QiOiB7CiAgICAgICAgImF1YyI6IDAuODA4NzkxMzg1MTA0MDk2MywKICAgICAgICAicHJfYXVjIjogMC42MzI1MDIwNjAyODA5NTUsCiAgICAgICAgImYxIjogMC42NjI5NzAxMDYwNzUyMTcsCiAgICAgICAgImFjY3VyYWN5IjogMC43MTk2MTQ5MjE3ODA5ODY3LAogICAgICAgICJwcmVjaXNpb24iOiAwLjU2MDUzODExNjU5MTkyODIsCiAgICAgICAgInJlY2FsbCI6IDAuODExMjA5NDM5NTI4MDIzNiwKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIyMTMsCiAgICAgICAgICAxMDc4LAogICAgICAgICAgMzIwLAogICAgICAgICAgMTM3NQogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAibGlnaHRnYm0iLAogICAgICAidGhyZXNob2xkIjogMC4zLAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAiYXVjIjogMC44MjMwNzQ0NTcyOTUxNjI0LAogICAgICAgICJwcl9hdWMiOiAwLjY5NDIxMjQ4MDkwNjYwMjEsCiAgICAgICAgImYxIjogMC43MTI1NzQ4NTAyOTk0MDEyLAogICAgICAgICJhY2N1cmFjeSI6IDAuNzMwMTIwNDgxOTI3NzEwOCwKICAgICAgICAicHJlY2lzaW9uIjogMC42MDA3OTMzNjQ1ODcwODk4LAogICAgICAgICJyZWNhbGwiOiAwLjg3NTQ1OTgwMDMxNTI5MTcsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAxOTcwLAogICAgICAgICAgMTEwNywKICAgICAgICAgIDIzNywKICAgICAgICAgIDE2NjYKICAgICAgICBdCiAgICAgIH0sCiAgICAgICJ0ZXN0IjogewogICAgICAgICJhdWMiOiAwLjgxNDIwNjQzOTQ4MDUxNzYsCiAgICAgICAgInByX2F1YyI6IDAuNjQ0NDM3NzA3MTQ5MTA4OCwKICAgICAgICAiZjEiOiAwLjY2NDQ5NTExNDAwNjUxNDYsCiAgICAgICAgImFjY3VyYWN5IjogMC43MTA3OTAyMTI1OTUyNjY4LAogICAgICAgICJwcmVjaXNpb24iOiAwLjU0ODU5Nzc3MTgwMTc2NzIsCiAgICAgICAgInJlY2FsbCI6IDAuODQyNDc3ODc2MTA2MTk0NywKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIxMTYsCiAgICAgICAgICAxMTc1LAogICAgICAgICAgMjY3LAogICAgICAgICAgMTQyOAogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAic2tsZWFybl9tbHAiLAogICAgICAidGhyZXNob2xkIjogMC4yLAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAiYXVjIjogMC43OTU5NTQ3OTg5NzU1MzI4LAogICAgICAgICJwcl9hdWMiOiAwLjY1NDg2NDMwMTU1NTAzNDksCiAgICAgICAgImYxIjogMC42ODgxNjMyNjUzMDYxMjI1LAogICAgICAgICJhY2N1cmFjeSI6IDAuNjkzMTcyNjkwNzYzMDUyMiwKICAgICAgICAicHJlY2lzaW9uIjogMC41NjI1NjI1NjI1NjI1NjI1LAogICAgICAgICJyZWNhbGwiOiAwLjg4NTk2OTUyMTgwNzY3MjEsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAxNzY2LAogICAgICAgICAgMTMxMSwKICAgICAgICAgIDIxNywKICAgICAgICAgIDE2ODYKICAgICAgICBdCiAgICAgIH0sCiAgICAgICJ0ZXN0IjogewogICAgICAgICJhdWMiOiAwLjc5NzcyNDM3Mzg4NDYxNzgsCiAgICAgICAgInByX2F1YyI6IDAuNjEwNDc3ODQyODYyMTU1MSwKICAgICAgICAiZjEiOiAwLjY0NzM0NzMwMjcxOTU3MiwKICAgICAgICAiYWNjdXJhY3kiOiAwLjY4MjcxMTU5MjQ1ODg4NDksCiAgICAgICAgInByZWNpc2lvbiI6IDAuNTIwMjQzNjQwMjcyMzAzOSwKICAgICAgICAicmVjYWxsIjogMC44NTY2MzcxNjgxNDE1OTMsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAxOTUyLAogICAgICAgICAgMTMzOSwKICAgICAgICAgIDI0MywKICAgICAgICAgIDE0NTIKICAgICAgICBdCiAgICAgIH0KICAgIH0sCiAgICB7CiAgICAgICJuYW1lIjogIndlaWdodGVkX3NvZnRfdm90aW5nIiwKICAgICAgInRocmVzaG9sZCI6IDAuMzEsCiAgICAgICJ2YWxpZGF0aW9uIjogewogICAgICAgICJhdWMiOiAwLjgyMjM1Mjc0NjQ4ODc0NzEsCiAgICAgICAgInByX2F1YyI6IDAuNjg5NTc2NjQ1NjY0NTkwMiwKICAgICAgICAiZjEiOiAwLjcxMzgyNDk4Mzg3NDQzNTYsCiAgICAgICAgImFjY3VyYWN5IjogMC43MzI3MzA5MjM2OTQ3NzkxLAogICAgICAgICJwcmVjaXNpb24iOiAwLjYwNDA3NTY5MTQxMTkzNiwKICAgICAgICAicmVjYWxsIjogMC44NzIzMDY4ODM4Njc1Nzc1LAogICAgICAgICJjb25mdXNpb25fbWF0cml4X3RuX2ZwX2ZuX3RwIjogWwogICAgICAgICAgMTk4OSwKICAgICAgICAgIDEwODgsCiAgICAgICAgICAyNDMsCiAgICAgICAgICAxNjYwCiAgICAgICAgXQogICAgICB9LAogICAgICAidGVzdCI6IHsKICAgICAgICAiYXVjIjogMC44MTQyMTg4MDg5NjIzMTcsCiAgICAgICAgInByX2F1YyI6IDAuNjQyNjIyNzI4Mzk5MTk2MiwKICAgICAgICAiZjEiOiAwLjY2NDAxMzExMTY4MzQ0NjUsCiAgICAgICAgImFjY3VyYWN5IjogMC43MTIxOTQxNDM2MDIwODU5LAogICAgICAgICJwcmVjaXNpb24iOiAwLjU1MDQ2NTgzODUwOTMxNjcsCiAgICAgICAgInJlY2FsbCI6IDAuODM2NTc4MTcxMDkxNDQ1NCwKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIxMzMsCiAgICAgICAgICAxMTU4LAogICAgICAgICAgMjc3LAogICAgICAgICAgMTQxOAogICAgICAgIF0KICAgICAgfQogICAgfSwKICAgIHsKICAgICAgIm5hbWUiOiAiZW1iZWRkaW5nX21scCIsCiAgICAgICJ0aHJlc2hvbGQiOiAwLjQ0LAogICAgICAidmFsaWRhdGlvbiI6IHsKICAgICAgICAiYXVjIjogMC44MjM2ODMzNjg3NjcwNjgzLAogICAgICAgICJwcl9hdWMiOiAwLjY5Mjk2Njg4NzEyNDk5MDcsCiAgICAgICAgImYxIjogMC43MTkyNTc1NDA2MDMyNDgzLAogICAgICAgICJhY2N1cmFjeSI6IDAuNzMyNzMwOTIzNjk0Nzc5MSwKICAgICAgICAicHJlY2lzaW9uIjogMC42MDA3NzUxOTM3OTg0NDk2LAogICAgICAgICJyZWNhbGwiOiAwLjg5NTk1Mzc1NzIyNTQzMzYsCiAgICAgICAgImNvbmZ1c2lvbl9tYXRyaXhfdG5fZnBfZm5fdHAiOiBbCiAgICAgICAgICAxOTQ0LAogICAgICAgICAgMTEzMywKICAgICAgICAgIDE5OCwKICAgICAgICAgIDE3MDUKICAgICAgICBdCiAgICAgIH0sCiAgICAgICJ0ZXN0IjogewogICAgICAgICJhdWMiOiAwLjgxMjc2NDY3Nzc3OTQ4MDgsCiAgICAgICAgInByX2F1YyI6IDAuNjI5NzM5NjQ5Nzc5OTkyLAogICAgICAgICJmMSI6IDAuNjY1Mjc3Nzc3Nzc3Nzc3NywKICAgICAgICAiYWNjdXJhY3kiOiAwLjcwOTk4Nzk2NjMwNTY1NTksCiAgICAgICAgInByZWNpc2lvbiI6IDAuNTQ3NDI4NTcxNDI4NTcxNCwKICAgICAgICAicmVjYWxsIjogMC44NDc3ODc2MTA2MTk0NjkxLAogICAgICAgICJjb25mdXNpb25fbWF0cml4X3RuX2ZwX2ZuX3RwIjogWwogICAgICAgICAgMjEwMywKICAgICAgICAgIDExODgsCiAgICAgICAgICAyNTgsCiAgICAgICAgICAxNDM3CiAgICAgICAgXQogICAgICB9CiAgICB9LAogICAgewogICAgICAibmFtZSI6ICJ0YWJuZXQiLAogICAgICAidGhyZXNob2xkIjogMC4zMSwKICAgICAgInZhbGlkYXRpb24iOiB7CiAgICAgICAgImF1YyI6IDAuODA4MzE5NTE4NzU5MjcyMSwKICAgICAgICAicHJfYXVjIjogMC42NjIyMTA1NzY2Njc0MTA2LAogICAgICAgICJmMSI6IDAuNjk0ODUyOTQxMTc2NDcwNiwKICAgICAgICAiYWNjdXJhY3kiOiAwLjczMzMzMzMzMzMzMzMzMzMsCiAgICAgICAgInByZWNpc2lvbiI6IDAuNjE3Mzk0ODU1MDQyODc0NiwKICAgICAgICAicmVjYWxsIjogMC43OTQ1MzQ5NDQ4MjM5NjIxLAogICAgICAgICJjb25mdXNpb25fbWF0cml4X3RuX2ZwX2ZuX3RwIjogWwogICAgICAgICAgMjE0MCwKICAgICAgICAgIDkzNywKICAgICAgICAgIDM5MSwKICAgICAgICAgIDE1MTIKICAgICAgICBdCiAgICAgIH0sCiAgICAgICJ0ZXN0IjogewogICAgICAgICJhdWMiOiAwLjc5NzE1NzE3MDQwMDM2NzgsCiAgICAgICAgInByX2F1YyI6IDAuNjAwMDI1NDYwNTYyNTk4OSwKICAgICAgICAiZjEiOiAwLjY0NjY5MTYzNTQ1NTY4MDQsCiAgICAgICAgImFjY3VyYWN5IjogMC43MTYyMDUzNzUwNTAxNDA0LAogICAgICAgICJwcmVjaXNpb24iOiAwLjU2MDYwNjA2MDYwNjA2MDYsCiAgICAgICAgInJlY2FsbCI6IDAuNzY0MDExNzk5NDEwMDI5NSwKICAgICAgICAiY29uZnVzaW9uX21hdHJpeF90bl9mcF9mbl90cCI6IFsKICAgICAgICAgIDIyNzYsCiAgICAgICAgICAxMDE1LAogICAgICAgICAgNDAwLAogICAgICAgICAgMTI5NQogICAgICAgIF0KICAgICAgfQogICAgfQogIF0sCiAgImxpbWl0cyI6IFsKICAgICJTaW5nbGUgY2hyb25vbG9naWNhbCBob2xkb3V0IGFuZCBzZWVkOyBubyB1bmNlcnRhaW50eSBpbnRlcnZhbC4iLAogICAgIlVuc2Vlbi12aWRlbyBldmFsdWF0aW9uIGV4Y2x1ZGVzIGxhdGVyIHJlcGVhdHMgb2YgdHJhaW5pbmcvdmFsaWRhdGlvbiB2aWRlb3M7IGl0IGRvZXMgbm90IGVzdGltYXRlIHJldHVybmluZy12aWRlbyBwZXJmb3JtYW5jZS4iLAogICAgIlN0YXJ0cyBmcm9tIGNvbW1pdHRlZCBjbGVhbmVkIGFuYWx5c2lzIGV2ZW50cywgbm90IGEgcmF3IFlvdVR1YmUgY29sbGVjdGlvbiByZWJ1aWxkLiIsCiAgICAidGRpX3YyIHVzZXMgdHJhaW5pbmctb25seSBsYWJlbCByZWZlcmVuY2VzIGFuZCByZWNvbXB1dGVkIFQwIGZlYXR1cmVzLCBzbyBsZWdhY3kgc2NvcmVzIGFyZSBub3QgZGlyZWN0bHkgY29tcGFyYWJsZS4iLAogICAgIk9mZmxpbmUgY2xhc3NpZmljYXRpb24gb25seTsgbm8gbGl2ZS12aWRlbyB0aW1pbmcsIGR1cmF0aW9uIHJlZ3Jlc3Npb24sIDI0aCBwcmVkaWN0aW9uLCBvciBidXNpbmVzcyB1cGxpZnQgdmFsaWRhdGlvbi4iCiAgXSwKICAiZXZhbHVhdGlvbl9zY29wZSI6ICJvZmZsaW5lIHVuc2Vlbi12aWRlbyBjbGFzc2lmaWNhdGlvbiIKfQ=="
+                    }
+                  ]
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-c2da9c07a36e388e0c2c",
+          "file": "verified-t0.spec.js",
+          "line": 138,
+          "column": 1
+        },
+        {
+          "title": "INJECTED evaluation unavailable: no fallback numbers; retry recovers",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1668,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:55.679Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-4ec8661dc67dd144f4a5",
+          "file": "verified-t0.spec.js",
+          "line": 157,
+          "column": 1
+        },
+        {
+          "title": "INJECTED status unavailable: categories never default; reload and retry recover",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1147,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:57.353Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-e8f0ba80190dee247226",
+          "file": "verified-t0.spec.js",
+          "line": 169,
+          "column": 1
+        },
+        {
+          "title": "REAL API mobile: submit, readable result, no page overflow, refresh starts empty",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2549,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:31:58.506Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-12ef8255fd2cfec0cb66",
+          "file": "verified-t0.spec.js",
+          "line": 180,
+          "column": 1
+        },
+        {
+          "title": "INJECTED live feed: only observed stats, no bulk or verified inference from current counters",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 992,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:32:01.061Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-6c33429b8b5d0e63074f",
+          "file": "verified-t0.spec.js",
+          "line": 202,
+          "column": 1
+        },
+        {
+          "title": "REAL API: home, analysis overview and dashboard use the same evaluated run",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 2053,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:32:02.061Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-8dd58dd9fb80ee226970",
+          "file": "verified-t0.spec.js",
+          "line": 216,
+          "column": 1
+        },
+        {
+          "title": "INJECTED report failure: home, overview and dashboard never display fallback scores",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "chromium",
+              "projectName": "chromium",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "passed",
+                  "duration": 1998,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-22T16:32:04.125Z",
+                  "annotations": [],
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "0eb84ef29bc734d5e5eb-77c79594b8ed459218cb",
+          "file": "verified-t0.spec.js",
+          "line": 226,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-22T16:30:40.076Z",
+    "duration": 87816.054,
+    "expected": 43,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

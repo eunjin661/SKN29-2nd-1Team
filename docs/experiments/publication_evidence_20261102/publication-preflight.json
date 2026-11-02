@@ -1,0 +1,8 @@
+{
+  "new_or_modified_files": 371,
+  "sensitive_path_matches": [],
+  "credential_pattern_matches": [],
+  "oversized_files": [],
+  "tracked_data": "backend/data/video_trending_events_analysis.parquet",
+  "diff_check": 0
+}

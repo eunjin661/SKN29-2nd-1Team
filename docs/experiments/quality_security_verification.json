@@ -1,0 +1,439 @@
+{
+  "status": "PASS_WITH_DOCUMENTED_SCOPE",
+  "recorded_at_kst": "2026-10-23T00:39:03.423044+09:00",
+  "branch": "improve/trendit-reproducibility",
+  "base_commit": "f06c8175c0a2a6d611e21c9e72a9e0ca9e789a1c",
+  "publication": "Local uncommitted work; no GitHub push, remote CI or deployment",
+  "baseline": {
+    "lint_errors": 35,
+    "lint_warnings": 1,
+    "lint_rules_including_warning": {
+      "no-unused-vars": 30,
+      "react-hooks/exhaustive-deps": 1,
+      "react-hooks/set-state-in-effect": 4,
+      "react-refresh/only-export-components": 1
+    },
+    "npm_audit": {
+      "info": 0,
+      "low": 1,
+      "moderate": 1,
+      "high": 8,
+      "critical": 0,
+      "total": 10
+    },
+    "browser_passed": 14,
+    "backend_passed": 50
+  },
+  "current": {
+    "lint_errors": 0,
+    "lint_warnings": 0,
+    "npm_audit_all": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "npm_audit_production": {
+      "info": 0,
+      "low": 0,
+      "moderate": 0,
+      "high": 0,
+      "critical": 0,
+      "total": 0
+    },
+    "backend_existing_environment": {
+      "passed": 58,
+      "warnings": 1
+    },
+    "backend_independent_environment": {
+      "passed": 58,
+      "warnings": 1
+    },
+    "browser": {
+      "passed": 32,
+      "failed": 0,
+      "skipped": 0,
+      "flaky": 0,
+      "retries": 0,
+      "engine": "Chromium",
+      "mobile_viewport": [
+        390,
+        844
+      ],
+      "cases": [
+        {
+          "title": "CountUp: decimals, negatives, units and ranges keep their values after live prop changes",
+          "status": "expected"
+        },
+        {
+          "title": "CountUp: duration updates, zero duration and reduced motion finish without stale animation",
+          "status": "expected"
+        },
+        {
+          "title": "Mobile navigation: route changes, Back/Forward, Escape and resize close the menu; theme persists",
+          "status": "expected"
+        },
+        {
+          "title": "Dashboard: timeout and retry load new data; late old data never replaces the retry",
+          "status": "expected"
+        },
+        {
+          "title": "Dashboard: unmount aborts the active request instead of updating the previous page",
+          "status": "expected"
+        },
+        {
+          "title": "EDA: failed response and retry update summary; navigating away aborts a pending retry",
+          "status": "expected"
+        },
+        {
+          "title": "Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text",
+          "status": "expected"
+        },
+        {
+          "title": "Video feed: category change cancels old refresh and its late response cannot replace current selection",
+          "status": "expected"
+        },
+        {
+          "title": "Video feed: one in-flight refresh, automatic refresh resumes afterwards, stable selection stays selected",
+          "status": "expected"
+        },
+        {
+          "title": "Video feed: cached observations stay labelled on network failure and refresh recovers",
+          "status": "expected"
+        },
+        {
+          "title": "Video feed: expired cache is ignored without a crash or fabricated videos",
+          "status": "expected"
+        },
+        {
+          "title": "Video feed: malformed cache is ignored without a crash or fabricated videos",
+          "status": "expected"
+        },
+        {
+          "title": "Video feed: legacy single-category endpoint works when bulk is unavailable; empty feed is not endless loading",
+          "status": "expected"
+        },
+        {
+          "title": "API health: offline banner makes no unsupported claim that every page has stored results",
+          "status": "expected"
+        },
+        {
+          "title": "Modified legacy screens: all public routes render without uncaught browser errors",
+          "status": "expected"
+        },
+        {
+          "title": "REAL observed API: sustain shows actual event durations and no legacy predictions or fabricated model metrics",
+          "status": "expected"
+        },
+        {
+          "title": "Sustain unavailable: no example videos or fallback metrics, retry recovers with observations",
+          "status": "expected"
+        },
+        {
+          "title": "Sustain rejects a legacy fabricated response instead of filling missing observed fields",
+          "status": "expected"
+        },
+        {
+          "title": "REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot",
+          "status": "expected"
+        },
+        {
+          "title": "REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED 503: no result, explicit error, retry reaches real API",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED network: no result, explicit error, retry reaches real API",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED timeout: aborts after 12 seconds, no result, retry succeeds",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED invalid response and 422: no fabricated result and field error shown",
+          "status": "expected"
+        },
+        {
+          "title": "REAL API: evaluation and interpretation match the report, with no legacy score fallback",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED evaluation unavailable: no fallback numbers; retry recovers",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED status unavailable: categories never default; reload and retry recover",
+          "status": "expected"
+        },
+        {
+          "title": "REAL API mobile: submit, readable result, no page overflow, refresh starts empty",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED live feed: only observed stats, no bulk or verified inference from current counters",
+          "status": "expected"
+        },
+        {
+          "title": "REAL API: home, analysis overview and dashboard use the same evaluated run",
+          "status": "expected"
+        },
+        {
+          "title": "INJECTED report failure: home, overview and dashboard never display fallback scores",
+          "status": "expected"
+        }
+      ]
+    }
+  },
+  "packages": [
+    {
+      "package": "@babel/core",
+      "severity": "low",
+      "development_dependency": true,
+      "before": "7.29.0",
+      "after": "7.29.7"
+    },
+    {
+      "package": "baseline-browser-mapping",
+      "severity": "moderate",
+      "development_dependency": true,
+      "before": "2.10.24",
+      "after": "2.11.30"
+    },
+    {
+      "package": "brace-expansion",
+      "severity": "high",
+      "development_dependency": true,
+      "before": "5.0.5",
+      "after": "5.0.12"
+    },
+    {
+      "package": "browserslist",
+      "severity": "high",
+      "development_dependency": true,
+      "before": "4.28.2",
+      "after": "4.29.4"
+    },
+    {
+      "package": "nanoid",
+      "severity": "high",
+      "development_dependency": true,
+      "before": "3.3.11",
+      "after": "3.3.20"
+    },
+    {
+      "package": "postcss",
+      "severity": "high",
+      "development_dependency": true,
+      "before": "8.5.12",
+      "after": "8.5.31"
+    },
+    {
+      "package": "react-router",
+      "severity": "high",
+      "development_dependency": false,
+      "before": "7.14.2",
+      "after": "7.18.4"
+    },
+    {
+      "package": "react-router-dom",
+      "severity": "high",
+      "development_dependency": false,
+      "before": "7.14.2",
+      "after": "7.18.4"
+    },
+    {
+      "package": "source-map-js",
+      "severity": "high",
+      "development_dependency": true,
+      "before": "1.2.1",
+      "after": "1.2.2"
+    },
+    {
+      "package": "vite",
+      "severity": "high",
+      "development_dependency": true,
+      "before": "8.0.10",
+      "after": "8.3.5"
+    }
+  ],
+  "dependency_update": {
+    "force": false,
+    "overrides_added": false,
+    "changed_packages_audit_fix_log": 37,
+    "clean_install": "npm ci --ignore-scripts"
+  },
+  "production_preview": {
+    "mode": "vite preview (production build)",
+    "injectedResponses": false,
+    "routes": [
+      {
+        "route": "/",
+        "heading": "데이터로 읽는\n콘텐츠 성과,\n전략으로 연결하다"
+      },
+      {
+        "route": "/analysis/predict",
+        "heading": "트렌딩 지속성 예측"
+      },
+      {
+        "route": "/analysis/model",
+        "heading": "모델 검증 결과"
+      },
+      {
+        "route": "/sustain",
+        "heading": "지속성 분석"
+      },
+      {
+        "route": "/video",
+        "heading": "트렌딩 영상 관측"
+      },
+      {
+        "route": "/dashboard",
+        "heading": "트렌딩 과거 분석 대시보드"
+      },
+      {
+        "route": "/campaign",
+        "heading": "광고 캠페인 플래너"
+      }
+    ],
+    "pageErrors": [],
+    "failedResponses": [],
+    "prediction": {
+      "run_id": "t0-v2-cpu-20261022-audit",
+      "model": "embedding_mlp",
+      "target": "tdi_v2",
+      "threshold": 0.44,
+      "predictions": [
+        {
+          "probability": 0.4859521985054016,
+          "label": 1
+        }
+      ]
+    },
+    "status": "PASS"
+  },
+  "windows_localhost": {
+    "checked_at": "2026-10-23T00:33:49.7292277+09:00",
+    "api_url": "http://localhost:8000",
+    "page_status": 200,
+    "analysis_data": {
+      "status": "ready",
+      "events": 34964,
+      "error": null
+    },
+    "source": "historical_observed_events",
+    "events": 34964,
+    "model_metrics_json": "{}"
+  },
+  "largest_single_js": {
+    "before_reported_kB": 693.51,
+    "after_reported_kB": 361.03,
+    "after_bytes": 361034,
+    "limit": "Page splitting and page cleanup combined; no LCP or total transfer benchmark"
+  },
+  "ci": {
+    "github_execution": "NOT_RUN",
+    "yaml_parser_available": true,
+    "yaml_parse": "PASS",
+    "workflow_content_review": "PASS",
+    "local_npm_check": "PASS",
+    "remote_run_required_after_push": true
+  },
+  "ml_run_id": "t0-v2-cpu-20261022-audit",
+  "ml_source_hashes_match": {
+    "backend/ml/__init__.py": true,
+    "backend/ml/artifact_contract.py": true,
+    "backend/ml/data_contract.py": true,
+    "backend/ml/inference.py": true,
+    "backend/ml/torch_models.py": true,
+    "backend/ml/train_lstm_predictor.py": true,
+    "backend/ml/train_weighted_ensemble.py": true,
+    "backend/ml/train_xgb_models.py": true
+  },
+  "selected_test_metrics_unchanged": {
+    "auc": 0.8127646777794808,
+    "pr_auc": 0.629739649779992,
+    "f1": 0.6652777777777777,
+    "accuracy": 0.7099879663056559,
+    "precision": 0.5474285714285714,
+    "recall": 0.8477876106194691,
+    "confusion_matrix_tn_fp_fn_tp": [
+      2103,
+      1188,
+      258,
+      1437
+    ]
+  },
+  "source_manifest": "quality_evidence/final-source-manifest.json",
+  "limits": [
+    "No remote CI, deployment or full security penetration test",
+    "No live external YouTube/MySQL QA",
+    "No comprehensive semantic audit of every legacy analysis/campaign value",
+    "Chromium desktop and mobile viewport only",
+    "One HTTP test-tool deprecation warning remains",
+    "Single-seed temporal holdout ML limits unchanged",
+    "Some historical legacy analysis fallbacks remain explicitly labeled"
+  ],
+  "evidence_sha256": {
+    "after-audit-initial.json": "4458951ec86018374c891011962d3e60139f50ee7f3f036859dc63b6a9838b81",
+    "audit-final.json": "4458951ec86018374c891011962d3e60139f50ee7f3f036859dc63b6a9838b81",
+    "audit-fix-proposal.json": "88cf8582f10a84a51e3ee3893779aa66a65b31d70fcf4d63923e07e9d6f68822",
+    "audit-fix.log": "a19da1a82f2d412cf548149aac3b8310a85529e0e54d295355a06e75a5372ad2",
+    "audit-production-final.json": "4458951ec86018374c891011962d3e60139f50ee7f3f036859dc63b6a9838b81",
+    "audit-production.json": "4458951ec86018374c891011962d3e60139f50ee7f3f036859dc63b6a9838b81",
+    "backend-independent-final.log": "1eb0c6f59c81c2a8afe6169ca5f9522e8a2813f1ab0ce21dbd682c338b013939",
+    "backend-second.log": "cfb114001a31ff6adeda42376d3591b89268e75608fefd0f42f121c529248df5",
+    "backend-tests.log": "62c92b8299fb52670ef2b7e8e5ce4313df2c2779c2dd007c81fcf01f86152456",
+    "before-audit.json": "ac13890022fd2577983a5095d82261f4d038fd0c0a4df44f966b1d76338831a2",
+    "before-lint.json": "97f626736d8cf02229f0389646acb83c2ec159560c03326233827a51ae34553f",
+    "browser-expanded-first-results.json": "71b8733a89ed4f64f03e5c18e6a85fab050453f5b53b90b6b8d41d94d865c079",
+    "browser-expanded-first.log": "7fb363a2b820ff946efe9fcc84d3bd8fc4befdb2085dad4331a826fab0c18e82",
+    "browser-final-results.json": "3c9f7db84d0ccc955bdebcd6a730e73507ecca1c80eb5fca649c075539f928d1",
+    "browser-final.log": "632ddf14ee333feae41a5dbd66793bcad708d6bf03880322af53aa53c202d7f9",
+    "browser-first-results.json": "1609cf797847b1fe70243b7a4331cb5c496a26e6c48a463965a55cfdbd0e699e",
+    "browser-first.log": "0d52b9d8488cfb250b33c0775b6ffb9c9f0760a32970e0193660a4a0750be3cb",
+    "browser-second-results.json": "127c99964edef79460d7abda5f432a9a0ff142b263446a83f14f0087d8ea8fcf",
+    "browser-second.log": "77d54665541fd661025f1b403e13dd783fd78c1d05aea3148136350f18ed1bf3",
+    "build-first.log": "9c13c28ae4bf85d4f3e7d242846855feaabb671b40ae4d1b68c3e059711f0ad1",
+    "ci-parser-first.log": "e5eab83323d7a0512a7194fd08719fb665e5b00471cf2f596d7004f95771128f",
+    "ci-validation.json": "f7c842095dd04e5700360f86fb0644b1e40381b4333f3eb721c06bbc118dc6d1",
+    "ci-validation.log": "f7c842095dd04e5700360f86fb0644b1e40381b4333f3eb721c06bbc118dc6d1",
+    "clean-verification.json": "9c02f6c61d4b34a1135c06b77b305776b4735e3c8f6dd5d6b66d3a91c726d604",
+    "dependency-tree-final.json": "73d7f41d05404c2cc07dd3af0df0846fa9a7d9505ecba72eef7dd55086a66e8d",
+    "dependency-tree.json": "73d7f41d05404c2cc07dd3af0df0846fa9a7d9505ecba72eef7dd55086a66e8d",
+    "diff-check-final.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "export-integrity.json": "6fa9290dff17fcaf5dd78d882fc08de2a0df91f52b158ab058abd0f4133b0f74",
+    "file-mode-normalization.json": "aa474e272522062c50b0f33bd864ee33430de8f18ac9df3e1bc2256578839ac4",
+    "final-audit-checks.json": "b808549c44deeb8fafef9e75f206ceb3144a001878a7fb15f794af28f033b00c",
+    "final-source-manifest.json": "113f56f3167dbe04c7c9233b2735385edb306a61d62bd1e378c9124dd6e9e4e3",
+    "git-status-final.json": "0ce16169abbbdf7ff99985604783ef2572374d91ed366253051c0497d366da97",
+    "lint-after-test-fix.log": "670b64e90020f6b7345e5cf8d83e482fa5c3c9d7510cc6197db53f7612440be7",
+    "lint-final.json": "7067e9f76eb312167cfc6272583dcb966298fec2da17e6074190bb2c8636b27f",
+    "lint-first.json": "c11afa39a88bb304f33b0d64f9159f9003714ce6170c7d600738579ef5cbb049",
+    "lint-new-tests.log": "0d4695f4da2780a75fa8d28ae5fabe88093b7de3774417c514e2ecd90774e01f",
+    "lint-second.log": "0d4695f4da2780a75fa8d28ae5fabe88093b7de3774417c514e2ecd90774e01f",
+    "npm-ci.log": "953d7182aa6c3cd3353b742d10d192efdce3e0b21d2010262019b72850f60270",
+    "package-lock.before.json": "18b3a13cdb8cc3dd15e2f913eaadc6c4cce2d3722d00e665e7159a4bdfb27889",
+    "package.before.json": "25467af16e505b939063f09269a5b0ca6261654af754a2163faf6a1cd1fd5cd3",
+    "production-browser.json": "57ca318bdf0785d98f793ff384b1f7ae2ed32e7f8146225d1b015d70811bc124",
+    "production-browser.log": "74bcd1b1db5e2ea168558a13f978d078a6aad61b2223caf47be1c18d481bace2",
+    "production-prediction.png": "8a7ceeb4d257ae9d4cf952f209bac3b700866e9e593c94ff07d62f87d40c8fde",
+    "production-preview-server.log": "515fbdcfd56769945fa7abcfd195cdaee94fa2ee1ffd9562df277704457576a1",
+    "production-sustain.png": "c8eb2db50cb5c3362b79bb335b4c24af5147c3cd3f6bc1158d1dd2722f045bc3",
+    "quality-check-final.log": "e9d126723a5277d2b0db1ca757956b06e508721404010f4f33e2e817e729247e",
+    "quality-check.log": "80b6e98de3fd83c3c182094bb0696a40d316cea85198501ec912012b50abf565",
+    "unused-cleanup.json": "3af576efe25ea21694f9f537042a4bec04d641ee5e45565836c3f00e208d77fd",
+    "verify-production.mjs": "21cf5395656f356ce74fdf7845f20e02cb1c227750bc769c16f2a135016da86b",
+    "verify-production.py": "2a9ab09d94287f9fc9c302e745785df9149caf610412c4e01215664828ad0531",
+    "windows-localhost-verification.json": "403b9b03e0e9e14d0139f98092d78411c48ab1ad40deed5e7464316cdedf8d3a"
+  }
+}

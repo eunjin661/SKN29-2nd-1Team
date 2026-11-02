@@ -1,0 +1,9 @@
+# Captured evidence must retain its original bytes and line endings.
+docs/experiments/followup_evidence/** -text
+docs/experiments/quality_evidence/** -text
+docs/experiments/ui_evidence/** -text
+docs/experiments/publication_evidence_20261102/** -text
+docs/experiments/quality_evidence/windows-localhost-verification.json whitespace=cr-at-eol
+
+# Preserve whitespace emitted by tools in raw logs.
+docs/experiments/**/*.log whitespace=-trailing-space

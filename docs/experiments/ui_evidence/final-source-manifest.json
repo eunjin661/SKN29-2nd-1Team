@@ -1,0 +1,162 @@
+{
+  ".gitignore": {
+    "sha256": "1ca18fb159b2e786a0da965bfdc35991a15e209d6aba60f867e39e060af15018",
+    "bytes": 213
+  },
+  ".vscode/launch.json": {
+    "sha256": "974b1ecc6bc2d251987f598d68a7898bc311d9d9ff3c28bf8b5586884e9a7827",
+    "bytes": 451
+  },
+  ".vscode/settings.json": {
+    "sha256": "e03676670ae49f6670a389ce428412c14f62acaa0aec592f65d2a363981af1c0",
+    "bytes": 257
+  },
+  "README.md": {
+    "sha256": "d9bdb2b853f9c0d890a62128da8417c3e68ca9c36c9ce87dd1115dff31430fda",
+    "bytes": 8437
+  },
+  "backend/.env.example": {
+    "sha256": "f1eb25153b56cab31aefd629c846754c4cc86d37a863e801fb63e88cefc0f30b",
+    "bytes": 279
+  },
+  "backend/api/main.py": {
+    "sha256": "33d1fd67f64b177a01a854543b873efb0cd307a9eb737ded6dccfd0d4c514b37",
+    "bytes": 2509
+  },
+  "backend/api/routes/predict.py": {
+    "sha256": "93bb2f1ead45e6da1ebab48eb1b2b94c99951e68abd7455e409acfa6b1c6c5e7",
+    "bytes": 25751
+  },
+  "backend/api/routes/t0_verified.py": {
+    "sha256": "b0f958cdf6629e668d11772599b44b0defa49118ef911b14d5e1b681bec28023",
+    "bytes": 7039
+  },
+  "backend/examples/t0_request.json": {
+    "sha256": "09c17b947d681fa6e89429ca138597951c47c214b7cfc8ed801a3b06979298a4",
+    "bytes": 186
+  },
+  "backend/ml/__init__.py": {
+    "sha256": "8e4324e0fa16282b98a51dc4f6ebbc018ec24734413cf3a6793b5eca7d163080",
+    "bytes": 52
+  },
+  "backend/ml/artifact_contract.py": {
+    "sha256": "d37e13a057d457f4f85576dd2540949623f984711ad9a9de5879d8e16c34b6be",
+    "bytes": 4161
+  },
+  "backend/ml/data_contract.py": {
+    "sha256": "820f2a7bb9a8de4833d0929a653fae44cd46c5c7b1e97921361739915b721df5",
+    "bytes": 9775
+  },
+  "backend/ml/inference.py": {
+    "sha256": "ac4fc3b252aaaa26e066c285278a90e80034b713692d923df0c792f55689da76",
+    "bytes": 3106
+  },
+  "backend/ml/torch_models.py": {
+    "sha256": "2e403ddd7f5ed340b4518f3fe6f911fb76fb01e106a9e3c2df82b9fc7f9c4789",
+    "bytes": 4764
+  },
+  "backend/ml/train_lstm_predictor.py": {
+    "sha256": "6f59f9fa1b16aa5a2e6d2b1ff686ca5d01ca519e693076d014c6586c47629cfc",
+    "bytes": 4796
+  },
+  "backend/ml/train_weighted_ensemble.py": {
+    "sha256": "7bed9c4984e2511f5a4bad546ff0c9125de74c86b87bba9affbc549ad446ce3d",
+    "bytes": 12235
+  },
+  "backend/ml/train_xgb_models.py": {
+    "sha256": "1c1056d4664a85a54f6f098b446b509ab99f93f88fa063007f91327565bf5911",
+    "bytes": 8318
+  },
+  "backend/requirements-cpu.lock": {
+    "sha256": "8b3b32486f264b0868633d084866b1e5a0f7b7a842f96e9e50acac1140b744df",
+    "bytes": 1232
+  },
+  "backend/tests/conftest.py": {
+    "sha256": "2ad9e71e5ae5d2a41454320a3d620886e6262163791947ab49074e9434275fd3",
+    "bytes": 854
+  },
+  "backend/tests/test_t0_experiment.py": {
+    "sha256": "cfd0567772870927ff9acaff7c35002ae5cff4b8f147962cefc689c5778b3145",
+    "bytes": 6521
+  },
+  "backend/tests/test_verified_api.py": {
+    "sha256": "f58e917a70f9aafdf577dc648e15450fb51ab416395591bf72329c42dab17263",
+    "bytes": 8667
+  },
+  "frontend/.gitignore": {
+    "sha256": "87ac65a32e71cdbaf3daabe54a63709e7ead2966abf8f5080e3a2aa9d24bb7e0",
+    "bytes": 320
+  },
+  "frontend/package-lock.json": {
+    "sha256": "18b3a13cdb8cc3dd15e2f913eaadc6c4cce2d3722d00e665e7159a4bdfb27889",
+    "bytes": 107076
+  },
+  "frontend/package.json": {
+    "sha256": "25467af16e505b939063f09269a5b0ca6261654af754a2163faf6a1cd1fd5cd3",
+    "bytes": 906
+  },
+  "frontend/playwright.config.js": {
+    "sha256": "b9a2f9f0685966e277d92b3de767e3b656ece19ebf919f178cdf53bd72cc760f",
+    "bytes": 1471
+  },
+  "frontend/src/components/VerifiedEvaluation.jsx": {
+    "sha256": "ad042835aa00b5816faa1c30a950006ae7ec37e45eb9048d00215b59198b517b",
+    "bytes": 7395
+  },
+  "frontend/src/constants/mlProjectData.js": {
+    "sha256": "35c9a8fb1e676ca925217b854b20d1d40c9ed950992bab0b313d766c89395a3f",
+    "bytes": 1461
+  },
+  "frontend/src/hooks/useVerifiedResource.js": {
+    "sha256": "14e9725ea4058d4def2c1014a4e08e65a37b1cbb33b1731fd278da9fa92d328f",
+    "bytes": 1382
+  },
+  "frontend/src/lib/verifiedApi.js": {
+    "sha256": "f8506976ca38f0f6106bd92a27be09e2956366d4a28ec5591fc85cc93e8a3859",
+    "bytes": 3050
+  },
+  "frontend/src/pages/DashboardPage.jsx": {
+    "sha256": "4bd49831233cd1045885bf0a35186da41fc311b243ad396052fc5ae79cfed066",
+    "bytes": 11804
+  },
+  "frontend/src/pages/LandingPage.jsx": {
+    "sha256": "f452fbd4936a4726df9534194ecf3996242822877da727b67289d9b3f6e4acd2",
+    "bytes": 42898
+  },
+  "frontend/src/pages/ModelExplainPage.jsx": {
+    "sha256": "42d493a94db4dee2eba5183dc62b3abff58ca5209c5dbc7ba5c97006c868a3a3",
+    "bytes": 131
+  },
+  "frontend/src/pages/ModelInterpretPage.jsx": {
+    "sha256": "154f408c7e04af0d7261c4c674df65fa431f77e6416bd3d5aef1e38c87b14718",
+    "bytes": 182
+  },
+  "frontend/src/pages/ModelPage.jsx": {
+    "sha256": "b112b6676b39b6549e422e39d0414ba2cd9d25bcd82c1c120bb69695987b0dd6",
+    "bytes": 165
+  },
+  "frontend/src/pages/PredictionPage.jsx": {
+    "sha256": "15c3b6f19b32348bb2ab16a425894e169d6896256758ffcfe480472bd4464f91",
+    "bytes": 10041
+  },
+  "frontend/src/pages/TrendingPage.jsx": {
+    "sha256": "e4a58abbf47d14cd98553234c4ac0fbde7548fe1e7a7dd13fe65e9160e8f65f3",
+    "bytes": 12398
+  },
+  "frontend/src/pages/VideoPage.jsx": {
+    "sha256": "7e523f6f74d91ffac08cf788cbdec085713339033c87ceec01dfd8b1c7f46d17",
+    "bytes": 26327
+  },
+  "frontend/src/styles/PredictionPage.css": {
+    "sha256": "f84445f88432b19704de345ac1446e0e18ce3f75f659fdc6a8d99c3458f2e5a3",
+    "bytes": 5941
+  },
+  "frontend/tests/e2e/verified-t0.spec.js": {
+    "sha256": "fb40bfc7701f51dd544a6103d01d85d8a8ffa282d1b8e2967b30ffd2ee87b4a2",
+    "bytes": 14543
+  },
+  "pytest.ini": {
+    "sha256": "2478e3b063cf99013fdfaa4b39d7894a72b198b0914bc978e52be752ce4ee0c8",
+    "bytes": 56
+  }
+}

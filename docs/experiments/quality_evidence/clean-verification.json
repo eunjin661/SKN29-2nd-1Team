@@ -1,0 +1,22 @@
+{
+  "npm-ci": {
+    "exit_code": 0,
+    "seconds": 6.279
+  },
+  "quality-check": {
+    "exit_code": 0,
+    "seconds": 7.928
+  },
+  "browser-expanded-first": {
+    "exit_code": 1,
+    "seconds": 75.202
+  },
+  "lint-after-test-fix": {
+    "exit_code": 0,
+    "seconds": 3.552
+  },
+  "browser-final": {
+    "exit_code": 0,
+    "seconds": 68.153
+  }
+}

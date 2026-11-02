@@ -1,0 +1,130 @@
+
+> frontend@0.0.0 test:e2e
+> playwright test
+
+[WebServer] INFO:     Started server process [67565]
+[WebServer] INFO:     Waiting for application startup.
+[WebServer] INFO:     Application startup complete.
+[WebServer] INFO:     Uvicorn running on http://127.0.0.1:18000 (Press CTRL+C to quit)
+
+Running 32 tests using 1 worker
+
+  ✓   1 [chromium] › tests/e2e/quality-regression.spec.js:33:1 › CountUp: decimals, negatives, units and ranges keep their values after live prop changes (2.9s)
+  ✓   2 [chromium] › tests/e2e/quality-regression.spec.js:43:1 › CountUp: duration updates, zero duration and reduced motion finish without stale animation (779ms)
+  ✓   3 [chromium] › tests/e2e/quality-regression.spec.js:58:1 › Mobile navigation: route changes, Back/Forward, Escape and resize close the menu; theme persists (4.5s)
+  ✓   4 [chromium] › tests/e2e/quality-regression.spec.js:81:1 › Dashboard: timeout and retry load new data; late old data never replaces the retry (1.2s)
+  ✓   5 [chromium] › tests/e2e/quality-regression.spec.js:99:1 › Dashboard: unmount aborts the active request instead of updating the previous page (1.4s)
+  ✓   6 [chromium] › tests/e2e/quality-regression.spec.js:114:1 › EDA: failed response and retry update summary; navigating away aborts a pending retry (4.8s)
+  ✓   7 [chromium] › tests/e2e/quality-regression.spec.js:137:1 › Dashboard CSV: filtered empty list stays empty; external formula-like titles are exported as text (1.8s)
+  ✓   8 [chromium] › tests/e2e/quality-regression.spec.js:156:1 › Video feed: category change cancels old refresh and its late response cannot replace current selection (1.6s)
+  ✓   9 [chromium] › tests/e2e/quality-regression.spec.js:184:1 › Video feed: one in-flight refresh, automatic refresh resumes afterwards, stable selection stays selected (1.6s)
+  ✓  10 [chromium] › tests/e2e/quality-regression.spec.js:210:1 › Video feed: cached observations stay labelled on network failure and refresh recovers (4.9s)
+  ✓  11 [chromium] › tests/e2e/quality-regression.spec.js:233:3 › Video feed: expired cache is ignored without a crash or fabricated videos (1.6s)
+  ✓  12 [chromium] › tests/e2e/quality-regression.spec.js:233:3 › Video feed: malformed cache is ignored without a crash or fabricated videos (1.5s)
+  ✓  13 [chromium] › tests/e2e/quality-regression.spec.js:254:1 › Video feed: legacy single-category endpoint works when bulk is unavailable; empty feed is not endless loading (2.2s)
+  ✓  14 [chromium] › tests/e2e/quality-regression.spec.js:268:1 › API health: offline banner makes no unsupported claim that every page has stored results (574ms)
+  ✓  15 [chromium] › tests/e2e/quality-regression.spec.js:276:1 › Modified legacy screens: all public routes render without uncaught browser errors (9.3s)
+  ✘  16 [chromium] › tests/e2e/quality-regression.spec.js:294:1 › REAL observed API: sustain shows actual event durations and no legacy predictions or fabricated model metrics (600ms)
+  ✘  17 [chromium] › tests/e2e/quality-regression.spec.js:310:1 › Sustain unavailable: no example videos or fallback metrics, retry recovers with observations (1.4s)
+  ✓  18 [chromium] › tests/e2e/quality-regression.spec.js:322:1 › Sustain rejects a legacy fabricated response instead of filling missing observed fields (786ms)
+  ✓  19 [chromium] › tests/e2e/verified-t0.spec.js:21:1 › REAL API: starts empty, sample only fills, prediction exactly matches API and request snapshot (3.7s)
+  ✓  20 [chromium] › tests/e2e/verified-t0.spec.js:49:1 › REAL API: validation rejects missing fields, reversed dates, invalid ranks, negative and fractional counts (2.2s)
+  ✓  21 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED 503: no result, explicit error, retry reaches real API (1.3s)
+  ✓  22 [chromium] › tests/e2e/verified-t0.spec.js:74:3 › INJECTED network: no result, explicit error, retry reaches real API (1.7s)
+  ✓  23 [chromium] › tests/e2e/verified-t0.spec.js:86:1 › INJECTED timeout: aborts after 12 seconds, no result, retry succeeds (1.8s)
+  ✓  24 [chromium] › tests/e2e/verified-t0.spec.js:102:1 › INJECTED delay: duplicate submit sends once; editing cancels; late response never replaces current input (1.8s)
+  ✓  25 [chromium] › tests/e2e/verified-t0.spec.js:125:1 › INJECTED invalid response and 422: no fabricated result and field error shown (1.7s)
+  ✓  26 [chromium] › tests/e2e/verified-t0.spec.js:138:1 › REAL API: evaluation and interpretation match the report, with no legacy score fallback (1.9s)
+  ✓  27 [chromium] › tests/e2e/verified-t0.spec.js:157:1 › INJECTED evaluation unavailable: no fallback numbers; retry recovers (1.2s)
+  ✓  28 [chromium] › tests/e2e/verified-t0.spec.js:169:1 › INJECTED status unavailable: categories never default; reload and retry recover (1.7s)
+  ✓  29 [chromium] › tests/e2e/verified-t0.spec.js:180:1 › REAL API mobile: submit, readable result, no page overflow, refresh starts empty (2.6s)
+  ✓  30 [chromium] › tests/e2e/verified-t0.spec.js:202:1 › INJECTED live feed: only observed stats, no bulk or verified inference from current counters (976ms)
+  ✓  31 [chromium] › tests/e2e/verified-t0.spec.js:216:1 › REAL API: home, analysis overview and dashboard use the same evaluated run (2.0s)
+  ✓  32 [chromium] › tests/e2e/verified-t0.spec.js:226:1 › INJECTED report failure: home, overview and dashboard never display fallback scores (2.0s)
+[WebServer] INFO:     Shutting down
+[WebServer] INFO:     Waiting for application shutdown.
+[WebServer] INFO:     Application shutdown complete.
+[WebServer] INFO:     Finished server process [67565]
+
+
+  1) [chromium] › tests/e2e/quality-regression.spec.js:294:1 › REAL observed API: sustain shows actual event durations and no legacy predictions or fabricated model metrics 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('status')
+    Expected substring: "34,964건"
+    Error: strict mode violation: getByRole('status') resolved to 2 elements:
+        1) <div role="status" aria-live="polite" class="ui-feedback-card ui-feedback-loading">…</div> aka getByText('화면을 불러오는 중선택한 화면을 준비하고 있습니다')
+        2) <div role="status" aria-live="polite" class="ui-spinner-wrap">…</div> aka getByRole('status').filter({ hasText: /^화면을 불러오는 중$/ })
+
+    Call log:
+      - Expect "toContainText" getByRole('status') with timeout 8000ms
+      - waiting for getByRole('status')
+
+
+      302 |   expect(data.videos.every(row => row.score === undefined && row.pred === undefined)).toBeTruthy()
+      303 |   await page.goto('/sustain')
+    > 304 |   await expect(page.getByRole('status')).toContainText('34,964건')
+          |                                          ^
+      305 |   await expect(page.getByRole('columnheader', { name: '관측 지속시간', exact: true })).toBeVisible()
+      306 |   await expect(page.getByRole('columnheader', { name: '예측 확률', exact: true })).toHaveCount(0)
+      307 |   await expect(page.locator('.sustain-video-table tbody tr')).toHaveCount(20)
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/quality-regression.spec.js:304:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/quality-regression-REAL-ob-3f974-or-fabricated-model-metrics-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/quality-regression-REAL-ob-3f974-or-fabricated-model-metrics-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/quality-regression-REAL-ob-3f974-or-fabricated-model-metrics-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/quality-regression-REAL-ob-3f974-or-fabricated-model-metrics-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/e2e/quality-regression.spec.js:310:1 › Sustain unavailable: no example videos or fallback metrics, retry recovers with observations 
+
+    Error: expect(locator).toContainText(expected) failed
+
+    Locator: getByRole('status')
+    Expected substring: "예측값 미표시"
+    Error: strict mode violation: getByRole('status') resolved to 3 elements:
+        1) <div role="status" class="sustain-status ok">관측 데이터 준비 중…</div> aka getByText('관측 데이터 준비 중…')
+        2) <div role="status" aria-live="polite" class="ui-feedback-card ui-feedback-loading">…</div> aka getByText('관측 데이터 로딩 중저장된 분석 자료를 확인하고 있습니다')
+        3) <div role="status" aria-live="polite" class="ui-spinner-wrap">…</div> aka getByRole('status').filter({ hasText: /^관측 데이터 로딩 중$/ })
+
+    Call log:
+      - Expect "toContainText" getByRole('status') with timeout 8000ms
+      - waiting for getByRole('status')
+
+
+      316 |   await page.unroute('**/sustain/summary')
+      317 |   await page.getByRole('button', { name: '다시 시도', exact: true }).click()
+    > 318 |   await expect(page.getByRole('status')).toContainText('예측값 미표시')
+          |                                          ^
+      319 |   await expect(page.locator('.sustain-video-table tbody tr')).toHaveCount(20)
+      320 | })
+      321 |
+        at /home/eunjin/repos/SKNETWORKS-FAMILY-AICAMP/SKN29-2nd-1Team/frontend/tests/e2e/quality-regression.spec.js:318:42
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/quality-regression-Sustain-e8b28--recovers-with-observations-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/quality-regression-Sustain-e8b28--recovers-with-observations-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/quality-regression-Sustain-e8b28--recovers-with-observations-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/quality-regression-Sustain-e8b28--recovers-with-observations-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2 failed
+    [chromium] › tests/e2e/quality-regression.spec.js:294:1 › REAL observed API: sustain shows actual event durations and no legacy predictions or fabricated model metrics 
+    [chromium] › tests/e2e/quality-regression.spec.js:310:1 › Sustain unavailable: no example videos or fallback metrics, retry recovers with observations 
+  30 passed (1.2m)

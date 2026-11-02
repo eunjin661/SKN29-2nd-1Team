@@ -1,0 +1,74 @@
+{
+  "status": "PASS",
+  "scope": "Fresh local checkout with approved source overlay; own venv and node_modules; shared local Git objects; no remote CI execution",
+  "commands": {
+    "venv": {
+      "exit_code": 0,
+      "seconds": 0.119
+    },
+    "python-sync": {
+      "exit_code": 0,
+      "seconds": 2.216
+    },
+    "backend": {
+      "exit_code": 0,
+      "seconds": 10.694
+    },
+    "training": {
+      "exit_code": 0,
+      "seconds": 72.647
+    },
+    "inference": {
+      "exit_code": 0,
+      "seconds": 3.612
+    },
+    "npm-ci": {
+      "exit_code": 0,
+      "seconds": 5.313
+    },
+    "quality": {
+      "exit_code": 0,
+      "seconds": 5.721
+    },
+    "browser": {
+      "exit_code": 1,
+      "seconds": 95.727
+    }
+  },
+  "first_attempt_browser_exit_code": 1,
+  "correction": "Optional diagnostics unconfigured: assert its 503 separately. Dark input contrast fixed and covered.",
+  "final_quality_and_browser": {
+    "isolated-quality-final": {
+      "exit_code": 0,
+      "seconds": 4.962
+    },
+    "isolated-browser-final": {
+      "exit_code": 0,
+      "seconds": 95.855
+    }
+  },
+  "selected_model_matches": true,
+  "selected_threshold_matches": true,
+  "test_metrics_match_all_models": {
+    "dummy": true,
+    "logistic": true,
+    "xgboost": true,
+    "lightgbm": true,
+    "sklearn_mlp": true,
+    "weighted_soft_voting": true,
+    "embedding_mlp": true,
+    "tabnet": true
+  },
+  "test_score_max_absolute_differences": {
+    "dummy": 0.0,
+    "logistic": 0.0,
+    "xgboost": 0.0,
+    "lightgbm": 0.0,
+    "sklearn_mlp": 0.0,
+    "weighted_soft_voting": 0.0,
+    "embedding_mlp": 0.0,
+    "tabnet": 0.0
+  },
+  "last_source_overlay": "Landing source-contract wording, dark buttons and diagnostic card layout; no training-source changes",
+  "browser_expected": 47
+}

@@ -1,0 +1,15 @@
+{
+  "source": "Author-provided previous-laptop backup",
+  "files": [
+    {
+      "name": "mlp_clf_tdi.py",
+      "sha256": "ece69196c511655c4800f371ecba96b5b1d434ed7560b798d861b9781e12f5b4"
+    },
+    {
+      "name": "mlp_vs_tabnet_clf_comparison.ipynb",
+      "sha256": "76b877041c545f00b2666a4b77edad60d41128e120e75da654d1a1e5c767b2e9"
+    }
+  ],
+  "preserved": "Categorical embedding (3), hidden layers (256,128,64), residual projection, dropout 0.3, AdamW and validation early stopping.",
+  "changed": "Shared purged chronological/group split, train-only TDI reference/vocabulary/positive weighting, explicit T0 feature reconstruction, artifact checksums."
+}

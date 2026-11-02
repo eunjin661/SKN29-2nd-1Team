@@ -1,0 +1,90 @@
+{
+  "audit-final": {
+    "exit_code": 0,
+    "seconds": 0.468
+  },
+  "audit-production-final": {
+    "exit_code": 0,
+    "seconds": 0.454
+  },
+  "lint-final": {
+    "exit_code": 0,
+    "seconds": 3.417
+  },
+  "dependency-tree-final": {
+    "exit_code": 0,
+    "seconds": 0.541
+  },
+  "backend-independent-final": {
+    "exit_code": 0,
+    "seconds": 10.62
+  },
+  "diff-check-final": {
+    "exit_code": 0,
+    "seconds": 0.01
+  },
+  "ml_source_sha256": {
+    "backend/ml/__init__.py": {
+      "expected": "8e4324e0fa16282b98a51dc4f6ebbc018ec24734413cf3a6793b5eca7d163080",
+      "actual": "8e4324e0fa16282b98a51dc4f6ebbc018ec24734413cf3a6793b5eca7d163080",
+      "matches": true
+    },
+    "backend/ml/artifact_contract.py": {
+      "expected": "d37e13a057d457f4f85576dd2540949623f984711ad9a9de5879d8e16c34b6be",
+      "actual": "d37e13a057d457f4f85576dd2540949623f984711ad9a9de5879d8e16c34b6be",
+      "matches": true
+    },
+    "backend/ml/data_contract.py": {
+      "expected": "820f2a7bb9a8de4833d0929a653fae44cd46c5c7b1e97921361739915b721df5",
+      "actual": "820f2a7bb9a8de4833d0929a653fae44cd46c5c7b1e97921361739915b721df5",
+      "matches": true
+    },
+    "backend/ml/inference.py": {
+      "expected": "ac4fc3b252aaaa26e066c285278a90e80034b713692d923df0c792f55689da76",
+      "actual": "ac4fc3b252aaaa26e066c285278a90e80034b713692d923df0c792f55689da76",
+      "matches": true
+    },
+    "backend/ml/torch_models.py": {
+      "expected": "2e403ddd7f5ed340b4518f3fe6f911fb76fb01e106a9e3c2df82b9fc7f9c4789",
+      "actual": "2e403ddd7f5ed340b4518f3fe6f911fb76fb01e106a9e3c2df82b9fc7f9c4789",
+      "matches": true
+    },
+    "backend/ml/train_lstm_predictor.py": {
+      "expected": "6f59f9fa1b16aa5a2e6d2b1ff686ca5d01ca519e693076d014c6586c47629cfc",
+      "actual": "6f59f9fa1b16aa5a2e6d2b1ff686ca5d01ca519e693076d014c6586c47629cfc",
+      "matches": true
+    },
+    "backend/ml/train_weighted_ensemble.py": {
+      "expected": "7bed9c4984e2511f5a4bad546ff0c9125de74c86b87bba9affbc549ad446ce3d",
+      "actual": "7bed9c4984e2511f5a4bad546ff0c9125de74c86b87bba9affbc549ad446ce3d",
+      "matches": true
+    },
+    "backend/ml/train_xgb_models.py": {
+      "expected": "1c1056d4664a85a54f6f098b446b509ab99f93f88fa063007f91327565bf5911",
+      "actual": "1c1056d4664a85a54f6f098b446b509ab99f93f88fa063007f91327565bf5911",
+      "matches": true
+    }
+  },
+  "build_javascript_bytes": {
+    "SustainPage-DUyeO4-0.js": 9371,
+    "jsx-runtime-6tnAbN5D.js": 8919,
+    "TrendingPage-BFtjTz6R.js": 182680,
+    "DashboardPage-Wj9eDkrk.js": 25536,
+    "useJsonResource-gLiT3EMW.js": 1033,
+    "CountUp-OehVORVW.js": 1771,
+    "LandingPage-ClvsMlqZ.js": 49593,
+    "csv-qf9lLQbi.js": 1923,
+    "index-DEMgU0aR.js": 361034,
+    "CampaignPlannerPage-CzTQe6Cc.js": 24918,
+    "useVerifiedResource-C3fha24S.js": 3271,
+    "VideoPage-CS-K-h7Q.js": 23018
+  },
+  "diff-check-before-whitespace-cleanup": {
+    "exit_code": 2,
+    "seconds": 0.013
+  },
+  "quality-check-final": {
+    "exit_code": 0,
+    "seconds": 6.904
+  }
+}
