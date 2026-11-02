@@ -1,0 +1,21 @@
+{
+  "head_sha": "17fe5593d8e55a612cbfc87a2db5d9105512e5b5",
+  "workflow_runs": [
+    {
+      "id": 41393132180,
+      "name": "Frontend quality",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/eunjin661/SKN29-2nd-1Team/actions/runs/41393132180",
+      "head_sha": "17fe5593d8e55a612cbfc87a2db5d9105512e5b5"
+    },
+    {
+      "id": 41393132212,
+      "name": "Backend and browser regression",
+      "status": "completed",
+      "conclusion": "success",
+      "html_url": "https://github.com/eunjin661/SKN29-2nd-1Team/actions/runs/41393132212",
+      "head_sha": "17fe5593d8e55a612cbfc87a2db5d9105512e5b5"
+    }
+  ]
+}

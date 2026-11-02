@@ -1,14 +1,48 @@
 {
-  "recorded_at_kst": "2026-11-02T14:16:25.734505+09:00",
+  "recorded_at_kst": "2026-11-02T14:25:12.759234+09:00",
   "repository": "eunjin661/SKN29-2nd-1Team",
   "target_branch": "main",
   "authorization": "2026-11-02 user requested direct main push in this conversation",
   "publication_state": {
-    "phase": "PREPARED",
+    "phase": "PUBLISHED",
     "base_sha": "f06c8175c0a2a6d611e21c9e72a9e0ca9e789a1c",
-    "head_sha": null,
-    "workflow_runs": [],
-    "ci": "PENDING_PUSH"
+    "head_sha": "17fe5593d8e55a612cbfc87a2db5d9105512e5b5",
+    "commits": [
+      {
+        "sha": "8fb4d4e9e863072b43c00df4876a9a8ba8f82517",
+        "subject": "fix: establish leak-free T0 evaluation and observed analysis APIs"
+      },
+      {
+        "sha": "3766585799f337c03f06dd055fb4ca490f9066fe",
+        "subject": "feat: connect TrendIt screens to observed and verified results"
+      },
+      {
+        "sha": "17fe5593d8e55a612cbfc87a2db5d9105512e5b5",
+        "subject": "docs: preserve reproducibility, troubleshooting and career evidence"
+      }
+    ],
+    "workflow_runs": [
+      {
+        "id": 41393132180,
+        "name": "Frontend quality",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/eunjin661/SKN29-2nd-1Team/actions/runs/41393132180",
+        "head_sha": "17fe5593d8e55a612cbfc87a2db5d9105512e5b5"
+      },
+      {
+        "id": 41393132212,
+        "name": "Backend and browser regression",
+        "status": "completed",
+        "conclusion": "success",
+        "html_url": "https://github.com/eunjin661/SKN29-2nd-1Team/actions/runs/41393132212",
+        "head_sha": "17fe5593d8e55a612cbfc87a2db5d9105512e5b5"
+      }
+    ],
+    "ci": "SUCCESS",
+    "remote_backend_tests": 107,
+    "remote_core_browser_tests": 47,
+    "ci_scope": "App/backend/workflows tested at head_sha; the following publication-status commit changes documentation only."
   },
   "local_checks": {
     "npm-ci": {
@@ -60,12 +94,16 @@
     "audit-final.json": "8c025a6ea5cdd6af5c42842f482d094147518961bf480ac766a3a1473fd3ea6f",
     "browser-results.json": "4a15e2ce42341d485ac05905a33ac3fb0e1217d568c1db015836b90d4a6a5694",
     "browser.log": "e219c27427929e7c6e9063081061d110f3e862f644b3bada3f94fc884d2ac9b9",
+    "ci-backend.log": "59f513346873a208318659d05e35bb680699b382f3245bd9d13ad2414daa9552",
+    "ci-frontend.log": "8f062281eb439c41d4334cfa9de832f98ea6188efae91c6649ca26e7b28b85fc",
+    "ci-jobs-final.json": "c00f524c4ab9b626270b84e44ba22ed744cd4747d2ba94cfdedb701506b5d81f",
     "commit-preparation.json": "3cecd5c2493fbe491135eb9df2abc6b7acc8432ff339c4a4c5a5d5cd1a2bd2e1",
     "dependency-change-summary.json": "211187c6a38b9d0998cb605c0d7290386d935f2b8188b926382bd0c5fcb4737c",
     "dependency-fix.log": "e35139fa7dec64458e56545c6db5eae33d391e552aabc43e1f9e179202f525e4",
     "dependency-investigation.json": "eb49e50b39db3856b9bb7927a01022c05d5801ee74a262801e15d0310b4a6d60",
     "dependency-tree.json": "76672fbaad3e46504a656dc79f1f2ae30ab9588a88426f0ad3e37c83813c22cc",
-    "final-source-manifest.json": "ca2ac0774ea26d28d8b5215ba193bdc81d6c1a574e0444670cda2f790a969bef",
+    "final-source-manifest.json": "a7fec6722e42e705a2c5802cfba3fd8d2e7c1d3c3f711428b083d9f111eafbe1",
+    "historical-evidence-integrity.json": "fc086d5b4b0fcb5b0924d66a4f413f07044f3467fc535d7f6e759d6c988b351d",
     "lint-final.json": "fbc4043b8baa3e27714d84d85291327e3de8d6201a75d82ff8a7cf55adf81bba",
     "npm-audit-fix-proposal-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
     "npm-audit-fix-proposal.json": "493bffa516c3d9fe2a51fee325da8ae20a3b43fda537341d163d11122b8402ab",
@@ -75,7 +113,10 @@
     "package-lock.before.json": "37a31495086bacbe658c1c865e49c2c6243dbd7a8b50ca5b621b90b06e389509",
     "package.before.json": "9b00b34a3032c6feb2d602de42512e819b67a6a79247ebdba93c57ddc6fc53ab",
     "publication-preflight.json": "83b7b02f2191387b262221110abc47786f3203aeb08aaf222ba390fc318eb8be",
+    "push.log": "520ca43a45aec43f33ae6bb5f3444e1b51a3a27321da54c08f477a7c381e6a7f",
     "quality.log": "e21d49371f91f89a329edd17e73f8f90663338085bbef414fa80e590d084b6e4",
+    "remote-final.json": "0b3ceb8bddf247d34ff28688710fd48c0890085e32580321e16f495101a25c9d",
+    "remote-initial.json": "4f759d1d4521afa2a2e8a69e3fe22f99e931801c1b084c378e0616c2b76cc3af",
     "verification-commands.json": "61bba77b47358a1d6102a677a8a48572ade8e1cfe67070e2cfd8dff4440e9a20"
   }
 }

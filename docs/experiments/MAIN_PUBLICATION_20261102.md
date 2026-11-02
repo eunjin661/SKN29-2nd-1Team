@@ -1,6 +1,6 @@
 # TrendIt main 직접 반영과 공개 시점 재점검 — 2026-11-02
 
-상태: **main 직접 반영 승인 · 전송 준비 완료**. **전송 후 원격 자동 검사 확인 예정**.
+상태: **main 직접 반영 완료**. **프론트 품질·백엔드/CPU 재현/핵심 브라우저 원격 검사 모두 통과**.
 
 ## 반영 방식과 사용자 결정
 
@@ -27,10 +27,15 @@
 
 ## 반영 커밋
 
-- 전송 전: 커밋 생성 대기
+- [8fb4d4e9](https://github.com/eunjin661/SKN29-2nd-1Team/commit/8fb4d4e9e863072b43c00df4876a9a8ba8f82517) — fix: establish leak-free T0 evaluation and observed analysis APIs
+- [37665857](https://github.com/eunjin661/SKN29-2nd-1Team/commit/3766585799f337c03f06dd055fb4ca490f9066fe) — feat: connect TrendIt screens to observed and verified results
+- [17fe5593](https://github.com/eunjin661/SKN29-2nd-1Team/commit/17fe5593d8e55a612cbfc87a2db5d9105512e5b5) — docs: preserve reproducibility, troubleshooting and career evidence
 
 ## 원격 자동 검사
 
-- 전송 전: 실행 없음
+- [Frontend quality](https://github.com/eunjin661/SKN29-2nd-1Team/actions/runs/41393132180) — completed / success
+- [Backend and browser regression](https://github.com/eunjin661/SKN29-2nd-1Team/actions/runs/41393132212) — completed / success
+
+원격 통과 범위는 백엔드 107개, CPU 모델 비교 재학습, 프론트 품질, 핵심 브라우저 47개다. 5시드 진단 실험을 새로 생성하는 2개 화면 사례는 원격 기본 모드에서 제외하며 로컬 전체 모드의 49개 검사와 구분한다. 원격의 별도 CPU에서 재학습했다는 사실을 10월 로컬 39,888개 점수 일치의 연장 주장으로 사용하지 않는다.
 
 모든 실행 결과는 해당 head SHA에 연결해 확인한다. main 반영은 서비스 배포와 별개이며 외부 YouTube/DB 운영·새 기간 일반화·실기기 전체 검증을 완료했다는 뜻은 아니다. [현재 전송/검사 상태](main_publication_verification_20261102.json), [실행 명령 결과](publication_evidence_20261102/verification-commands.json), [전체 브라우저 결과](publication_evidence_20261102/browser-results.json)를 함께 확인한다.
