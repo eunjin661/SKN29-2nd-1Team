@@ -1,0 +1,675 @@
+{
+  "openapi_paths": [
+    "/",
+    "/api/routes",
+    "/api/status",
+    "/campaign/plan",
+    "/campaign/scenario",
+    "/dashboard/summary",
+    "/eda/summary",
+    "/feature/importance",
+    "/feature/summary",
+    "/healthz",
+    "/insight/summary",
+    "/predict/t0-verified",
+    "/predict/t0-verified/diagnostics",
+    "/predict/t0-verified/evaluation",
+    "/predict/t0-verified/status",
+    "/problem/summary",
+    "/strategy/recommendations",
+    "/strategy/summary",
+    "/sustain/feature-importance",
+    "/sustain/summary",
+    "/sustain/videos",
+    "/youtube/cache/clear",
+    "/youtube/categories",
+    "/youtube/live/bulk",
+    "/youtube/trending"
+  ],
+  "retired_responses": {
+    "GET /model/compare": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/model/compare",
+        "replacement": "/predict/t0-verified/evaluation",
+        "documentation": "/docs"
+      }
+    },
+    "GET /model/final-summary": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/model/final-summary",
+        "replacement": "/predict/t0-verified/evaluation",
+        "documentation": "/docs"
+      }
+    },
+    "GET /model/feature-importance": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/model/feature-importance",
+        "replacement": "/feature/importance",
+        "documentation": "/docs"
+      }
+    },
+    "POST /predict/preview": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/predict/preview",
+        "replacement": "/predict/t0-verified",
+        "documentation": "/docs"
+      }
+    },
+    "POST /predict/video": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/predict/video",
+        "replacement": "/predict/t0-verified",
+        "documentation": "/docs"
+      }
+    },
+    "POST /predict/bulk": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/predict/bulk",
+        "replacement": "/predict/t0-verified",
+        "documentation": "/docs"
+      }
+    },
+    "GET /predict/status": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/predict/status",
+        "replacement": "/predict/t0-verified/status",
+        "documentation": "/docs"
+      }
+    },
+    "POST /predict/reload": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/predict/reload",
+        "replacement": null,
+        "documentation": "/docs"
+      }
+    },
+    "GET /predict/lstm/status": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/predict/lstm/status",
+        "replacement": null,
+        "documentation": "/docs"
+      }
+    },
+    "POST /predict/lstm/preview": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/predict/lstm/preview",
+        "replacement": null,
+        "documentation": "/docs"
+      }
+    },
+    "GET /video/summary": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/video/summary",
+        "replacement": "/youtube/live/bulk",
+        "documentation": "/docs"
+      }
+    },
+    "GET /video/list": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/video/list",
+        "replacement": "/youtube/live/bulk",
+        "documentation": "/docs"
+      }
+    },
+    "GET /video/top": {
+      "http_status": 410,
+      "body": {
+        "ok": false,
+        "status": "RETIRED_LEGACY_API",
+        "message": "구버전 예측·고정 예시 API는 제공을 종료했습니다. 현재 경로의 입력 형식과 관측 범위를 확인하세요.",
+        "path": "/video/top",
+        "replacement": "/youtube/live/bulk",
+        "documentation": "/docs"
+      }
+    }
+  },
+  "current_evaluation": {
+    "run_id": "t0-v2-cpu-20261022-audit",
+    "protocol": "t0-v2-purged-unseen-video",
+    "selected_model": "embedding_mlp",
+    "selected_threshold": 0.44,
+    "selection_rule": "maximum validation ROC-AUC; deterministic alphabetical tie break; test never selects a model",
+    "threshold_rule": "maximum validation F1; test never selects a threshold",
+    "target": {
+      "name": "tdi_v2",
+      "label_threshold": 0.4,
+      "category_q95_train_only": {
+        "Education": 369.2999999999997,
+        "Entertainment": 342.0,
+        "Lifestyle": 396.0,
+        "Music": 288.0,
+        "News": 258.0
+      }
+    },
+    "data": {
+      "source_rows": 34964,
+      "splits": {
+        "train": {
+          "rows": 24194,
+          "unique_videos": 12871,
+          "positive_rate": 0.3646358601306109,
+          "T0_min": "2022-07-01 09:00:00",
+          "T0_max": "2024-07-12 03:00:00"
+        },
+        "validation": {
+          "rows": 4980,
+          "unique_videos": 2404,
+          "positive_rate": 0.3821285140562249,
+          "T0_min": "2024-07-12 09:00:00",
+          "T0_max": "2025-01-11 03:00:00"
+        },
+        "test": {
+          "rows": 4986,
+          "unique_videos": 2311,
+          "positive_rate": 0.33995186522262333,
+          "T0_min": "2025-01-11 21:00:00",
+          "T0_max": "2025-06-30 15:00:00"
+        }
+      },
+      "feature_columns": [
+        "entry_rank_log",
+        "T0_view_log",
+        "T0_engagement_ratio_log",
+        "latency_to_trend_log",
+        "pretrend_view_velocity_log",
+        "weekday_sin",
+        "weekday_cos",
+        "hour_sin",
+        "hour_cos",
+        "category_group"
+      ],
+      "label_confirmation_hours": 6,
+      "group_policy": "video_id disjoint across train/validation/test; later repeats excluded",
+      "timezone": "Asia/Seoul (stored naive KST)"
+    },
+    "models": [
+      {
+        "name": "dummy",
+        "threshold": 0.36,
+        "validation": {
+          "auc": 0.5,
+          "pr_auc": 0.3821285140562249,
+          "f1": 0.552956559639692,
+          "accuracy": 0.3821285140562249,
+          "precision": 0.3821285140562249,
+          "recall": 1.0,
+          "confusion_matrix_tn_fp_fn_tp": [
+            0,
+            3077,
+            0,
+            1903
+          ]
+        },
+        "test": {
+          "auc": 0.5,
+          "pr_auc": 0.33995186522262333,
+          "f1": 0.5074090704984284,
+          "accuracy": 0.33995186522262333,
+          "precision": 0.33995186522262333,
+          "recall": 1.0,
+          "confusion_matrix_tn_fp_fn_tp": [
+            0,
+            3291,
+            0,
+            1695
+          ]
+        }
+      },
+      {
+        "name": "logistic",
+        "threshold": 0.27,
+        "validation": {
+          "auc": 0.6204103436562798,
+          "pr_auc": 0.4692515687242197,
+          "f1": 0.5846466700559227,
+          "accuracy": 0.5078313253012048,
+          "precision": 0.4314657328664332,
+          "recall": 0.906463478717814,
+          "confusion_matrix_tn_fp_fn_tp": [
+            804,
+            2273,
+            178,
+            1725
+          ]
+        },
+        "test": {
+          "auc": 0.6246781917968824,
+          "pr_auc": 0.43648394394537765,
+          "f1": 0.5443169968717414,
+          "accuracy": 0.4741275571600481,
+          "precision": 0.3858093126385809,
+          "recall": 0.9238938053097345,
+          "confusion_matrix_tn_fp_fn_tp": [
+            798,
+            2493,
+            129,
+            1566
+          ]
+        }
+      },
+      {
+        "name": "xgboost",
+        "threshold": 0.34,
+        "validation": {
+          "auc": 0.8206619519220375,
+          "pr_auc": 0.6839447197290023,
+          "f1": 0.7101193106495802,
+          "accuracy": 0.7365461847389558,
+          "precision": 0.6126572626763248,
+          "recall": 0.8444561219127693,
+          "confusion_matrix_tn_fp_fn_tp": [
+            2061,
+            1016,
+            296,
+            1607
+          ]
+        },
+        "test": {
+          "auc": 0.8087913851040963,
+          "pr_auc": 0.632502060280955,
+          "f1": 0.662970106075217,
+          "accuracy": 0.7196149217809867,
+          "precision": 0.5605381165919282,
+          "recall": 0.8112094395280236,
+          "confusion_matrix_tn_fp_fn_tp": [
+            2213,
+            1078,
+            320,
+            1375
+          ]
+        }
+      },
+      {
+        "name": "lightgbm",
+        "threshold": 0.3,
+        "validation": {
+          "auc": 0.8230744572951624,
+          "pr_auc": 0.6942124809066021,
+          "f1": 0.7125748502994012,
+          "accuracy": 0.7301204819277108,
+          "precision": 0.6007933645870898,
+          "recall": 0.8754598003152917,
+          "confusion_matrix_tn_fp_fn_tp": [
+            1970,
+            1107,
+            237,
+            1666
+          ]
+        },
+        "test": {
+          "auc": 0.8142064394805176,
+          "pr_auc": 0.6444377071491088,
+          "f1": 0.6644951140065146,
+          "accuracy": 0.7107902125952668,
+          "precision": 0.5485977718017672,
+          "recall": 0.8424778761061947,
+          "confusion_matrix_tn_fp_fn_tp": [
+            2116,
+            1175,
+            267,
+            1428
+          ]
+        }
+      },
+      {
+        "name": "sklearn_mlp",
+        "threshold": 0.2,
+        "validation": {
+          "auc": 0.7959547989755328,
+          "pr_auc": 0.6548643015550349,
+          "f1": 0.6881632653061225,
+          "accuracy": 0.6931726907630522,
+          "precision": 0.5625625625625625,
+          "recall": 0.8859695218076721,
+          "confusion_matrix_tn_fp_fn_tp": [
+            1766,
+            1311,
+            217,
+            1686
+          ]
+        },
+        "test": {
+          "auc": 0.7977243738846178,
+          "pr_auc": 0.6104778428621551,
+          "f1": 0.647347302719572,
+          "accuracy": 0.6827115924588849,
+          "precision": 0.5202436402723039,
+          "recall": 0.856637168141593,
+          "confusion_matrix_tn_fp_fn_tp": [
+            1952,
+            1339,
+            243,
+            1452
+          ]
+        }
+      },
+      {
+        "name": "weighted_soft_voting",
+        "threshold": 0.31,
+        "validation": {
+          "auc": 0.8223527464887471,
+          "pr_auc": 0.6895766456645902,
+          "f1": 0.7138249838744356,
+          "accuracy": 0.7327309236947791,
+          "precision": 0.604075691411936,
+          "recall": 0.8723068838675775,
+          "confusion_matrix_tn_fp_fn_tp": [
+            1989,
+            1088,
+            243,
+            1660
+          ]
+        },
+        "test": {
+          "auc": 0.814218808962317,
+          "pr_auc": 0.6426227283991962,
+          "f1": 0.6640131116834465,
+          "accuracy": 0.7121941436020859,
+          "precision": 0.5504658385093167,
+          "recall": 0.8365781710914454,
+          "confusion_matrix_tn_fp_fn_tp": [
+            2133,
+            1158,
+            277,
+            1418
+          ]
+        }
+      },
+      {
+        "name": "embedding_mlp",
+        "threshold": 0.44,
+        "validation": {
+          "auc": 0.8236833687670683,
+          "pr_auc": 0.6929668871249907,
+          "f1": 0.7192575406032483,
+          "accuracy": 0.7327309236947791,
+          "precision": 0.6007751937984496,
+          "recall": 0.8959537572254336,
+          "confusion_matrix_tn_fp_fn_tp": [
+            1944,
+            1133,
+            198,
+            1705
+          ]
+        },
+        "test": {
+          "auc": 0.8127646777794808,
+          "pr_auc": 0.629739649779992,
+          "f1": 0.6652777777777777,
+          "accuracy": 0.7099879663056559,
+          "precision": 0.5474285714285714,
+          "recall": 0.8477876106194691,
+          "confusion_matrix_tn_fp_fn_tp": [
+            2103,
+            1188,
+            258,
+            1437
+          ]
+        }
+      },
+      {
+        "name": "tabnet",
+        "threshold": 0.31,
+        "validation": {
+          "auc": 0.8083195187592721,
+          "pr_auc": 0.6622105766674106,
+          "f1": 0.6948529411764706,
+          "accuracy": 0.7333333333333333,
+          "precision": 0.6173948550428746,
+          "recall": 0.7945349448239621,
+          "confusion_matrix_tn_fp_fn_tp": [
+            2140,
+            937,
+            391,
+            1512
+          ]
+        },
+        "test": {
+          "auc": 0.7971571704003678,
+          "pr_auc": 0.6000254605625989,
+          "f1": 0.6466916354556804,
+          "accuracy": 0.7162053750501404,
+          "precision": 0.5606060606060606,
+          "recall": 0.7640117994100295,
+          "confusion_matrix_tn_fp_fn_tp": [
+            2276,
+            1015,
+            400,
+            1295
+          ]
+        }
+      }
+    ],
+    "limits": [
+      "Single chronological holdout and seed; no uncertainty interval.",
+      "Unseen-video evaluation excludes later repeats of training/validation videos; it does not estimate returning-video performance.",
+      "Starts from committed cleaned analysis events, not a raw YouTube collection rebuild.",
+      "tdi_v2 uses training-only label references and recomputed T0 features, so legacy scores are not directly comparable.",
+      "Offline classification only; no live-video timing, duration regression, 24h prediction, or business uplift validation."
+    ],
+    "evaluation_scope": "offline unseen-video classification"
+  },
+  "current_importance": {
+    "status": "not_computed",
+    "items": [],
+    "message": "검증한 모델의 피처 중요도·SHAP은 산출하지 않았습니다."
+  },
+  "status": {
+    "ok": true,
+    "message": "API server is running",
+    "loaded_routers": {
+      "api.routes.retired": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.t0_verified": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.diagnostics": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.eda": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.youtube": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.feature": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.dashboard": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.sustain": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.campaign": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.strategy": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.insight": {
+        "loaded": true,
+        "error": null
+      },
+      "api.routes.problem": {
+        "loaded": true,
+        "error": null
+      }
+    },
+    "retired_endpoints": [
+      {
+        "method": "GET",
+        "path": "/model/compare",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/predict/t0-verified/evaluation"
+      },
+      {
+        "method": "GET",
+        "path": "/model/final-summary",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/predict/t0-verified/evaluation"
+      },
+      {
+        "method": "GET",
+        "path": "/model/feature-importance",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/feature/importance"
+      },
+      {
+        "method": "POST",
+        "path": "/predict/preview",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/predict/t0-verified"
+      },
+      {
+        "method": "POST",
+        "path": "/predict/video",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/predict/t0-verified"
+      },
+      {
+        "method": "POST",
+        "path": "/predict/bulk",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/predict/t0-verified"
+      },
+      {
+        "method": "GET",
+        "path": "/predict/status",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/predict/t0-verified/status"
+      },
+      {
+        "method": "POST",
+        "path": "/predict/reload",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": null
+      },
+      {
+        "method": "GET",
+        "path": "/predict/lstm/status",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": null
+      },
+      {
+        "method": "POST",
+        "path": "/predict/lstm/preview",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": null
+      },
+      {
+        "method": "GET",
+        "path": "/video/summary",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/youtube/live/bulk"
+      },
+      {
+        "method": "GET",
+        "path": "/video/list",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/youtube/live/bulk"
+      },
+      {
+        "method": "GET",
+        "path": "/video/top",
+        "status": "retired",
+        "http_status": 410,
+        "replacement": "/youtube/live/bulk"
+      }
+    ],
+    "analysis_data": {
+      "status": "ready",
+      "events": 34964,
+      "error": null
+    },
+    "important_endpoints": [
+      "/predict/t0-verified",
+      "/predict/t0-verified/status",
+      "/predict/t0-verified/evaluation",
+      "/predict/t0-verified/diagnostics",
+      "/feature/importance",
+      "/eda/summary",
+      "/feature/summary",
+      "/youtube/live/bulk",
+      "/youtube/trending",
+      "/youtube/categories",
+      "/dashboard/summary",
+      "/sustain/summary",
+      "/campaign/plan",
+      "/problem/summary",
+      "/insight/summary",
+      "/strategy/summary"
+    ]
+  }
+}

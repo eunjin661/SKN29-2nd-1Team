@@ -1,5 +1,7 @@
 # TrendIt 개선 계획과 완료 기준
 
+> 이전 계획·실행 당시의 기록입니다. 현재 완료 상태·폐기 API·원격 검사는 [최신 마감 기록](experiments/CLOSURE_RESULTS_20261102.md)을 기준으로 확인하세요. 아래의 대기 문구·검사 개수·PR 계획은 당시 상태로 보존합니다.
+
 기준: 2026-10-22. 작업 브랜치: `improve/trendit-reproducibility`.
 
 | 순서 | 작업 | 완료 기준 |

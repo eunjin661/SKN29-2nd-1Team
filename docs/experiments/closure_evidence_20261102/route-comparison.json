@@ -1,0 +1,23 @@
+{
+  "before_openapi_paths": 38,
+  "after_openapi_paths": 25,
+  "retired": 13,
+  "removed_from_default_schema": [
+    "/model/compare",
+    "/model/feature-importance",
+    "/model/final-summary",
+    "/predict/bulk",
+    "/predict/lstm/preview",
+    "/predict/lstm/status",
+    "/predict/preview",
+    "/predict/reload",
+    "/predict/status",
+    "/predict/video",
+    "/video/list",
+    "/video/summary",
+    "/video/top"
+  ],
+  "all_legacy_responses": 410,
+  "current_evaluation_status": 200,
+  "current_importance_status": 200
+}

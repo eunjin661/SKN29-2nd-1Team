@@ -20,7 +20,7 @@
 | M10 | 같은 설정으로 재학습한 8개 모델 × Test 4,986건 = **39,888개 예측 점수**가 기존 실행과 동일, 최대 절대 오차 0.0 | 같은 환경·시드·분할에서의 재현성. 다른 시드나 다른 장비에서도 동일하다는 검증은 아님 | [재학습 비교](experiments/t0_v2_reaudit.json) |
 | M11 | 저장 후 재로딩한 모델 8종의 각 16건 예측 오차 < 1e-6 | 전체 Test 재학습 비교와 별도로 수행한 직렬화 왕복 검증 | [독립 환경 검증](experiments/t0_v2_verification.json) |
 | M12 | CPU 실험 1회 보고서 경과 시간 71.087초 | WSL·Python 3.10.21·4 threads에서 8개 모델 비교. 추론 지연 시간이나 과거 대비 속도 개선 수치가 아님 | [보고서 elapsed_seconds·runtime·config](experiments/t0_v2_report.json) |
-| M13 | 현재 백엔드 **107개**, 전체 브라우저 **49개**, 별도 설치 기본 모드 **47개** 통과 | 새 venv/node_modules, Chromium·390px 범위. 실제 추가진단 2개는 기본 모드 대상에서 제외 | [최신 검증](experiments/FOLLOWUP_RESULTS_20261023.md) |
+| M13 | 최신 로컬 백엔드 **122개**, 전체 브라우저 **49개** 통과 | 폐기 경로 19개 회귀 사례 포함. 이전 private-loader 4개 검사는 공개 API의 무로딩/410 계약 검사로 교체. 원격 결과는 최신 마감 기록 참조 | [마감 검증](experiments/CLOSURE_RESULTS_20261102.md) |
 | M14 | 후속 단계에서 백엔드 58→107, 브라우저 32→49 | 각각 49개·17개 사례 증가. 테스트 수 자체를 무결함 보증으로 사용하지 않음 | [단계 기록](experiments/FOLLOWUP_WORK_LOG_20261023.md) |
 | M15 | 전체 ESLint **35 errors / 1 warning → 0 / 0**, 새 잠금 파일 설치 후 빌드 통과 | 이전 단계의 지정 파일 검사에서 전체 검사로 범위 확대. 검사 규칙을 끄지 않음 | [최종 코드 검사](experiments/quality_evidence/lint-final.json), [전체 관문](experiments/quality_evidence/quality-check-final.log) |
 | M16 | npm audit 패키지 경고 **10 → 0** | 당시 high 8 / moderate 1 / low 1. 개발 8·런타임 2. 독립 CVE·침해 사건 10건을 뜻하지 않음 | [전후·패키지 버전](experiments/QUALITY_SECURITY_20261023.md) |
@@ -104,11 +104,11 @@
 - 같은 시간 분할의 5시드 변동과 고정 모델의 영상 재표집은 외부 기간 검증·확률 교정·운영 광고 효과를 대체하지 않는다.
 - HTTP 테스트 도구 경고 1개, 재학습의 비선택 sklearn MLP 수렴 안내·TabNet 실행 안내는 원시 로그에 남겼다.
 - 외부 YouTube/DB 운영·실시간 T0 수집·공개 서비스 배포·다른 OS와 실기기 검증은 별도 범위다. 미산출 중요도·클러스터 검정은 예시로 채우지 않는다.
-- 개인 포크의 공개 검토 자료와 자동 검사 설정을 준비했다. push·PR·원격 Actions·배포는 최종 사용자 확인 전이다.
+- 개인 포크 main에 직접 반영하는 방식을 사용한다. PR은 만들지 않으며 최신 push·원격 검사 상태는 [마감 기록](experiments/CLOSURE_RESULTS_20261102.md)에서 확인한다. 서비스 배포는 별도 범위다.
 
 ## 6. 증거를 다시 찾는 방법
 
-1. [최신 품질·보안 검증](experiments/quality_security_verification.json)과 [실제 로그·소스 해시](experiments/quality_evidence/)에서 이번 해결 근거 확인.
+1. 현재 API·문서·원격 결과는 [최신 마감 기록](experiments/CLOSURE_RESULTS_20261102.md)에서 확인한다. 이전 [품질·보안 검증](experiments/quality_security_verification.json)과 [실제 로그·소스 해시](experiments/quality_evidence/)에서 이번 해결 근거 확인.
 2. [모델 수치의 원본 보고서](experiments/t0_v2_report.json)와 [검증 JSON](experiments/ui_integration_verification.json)에서 실행 ID·원시 수치·파일 해시 확인.
 3. [화면 연동 구현 보고서](experiments/UI_INTEGRATION_20261022.md)에서 테스트 재현 절차와 실제 API/오류 주입 구분 확인.
 4. [원시 증거 폴더](experiments/ui_evidence/)에서 로그·실제 응답·화면 캡처·변경 전/후 소스 해시 확인.
@@ -123,3 +123,12 @@
 - PR 없이 개인 저장소 main에 직접 반영하는 방식을 사용자 요청에 따라 선택했다. 커밋과 원격 검사 결과를 남겨 추적 가능하게 한다.
 
 [직접 반영·트러블슈팅·원격 결과](experiments/MAIN_PUBLICATION_20261102.md)를 최신 공개 상태의 기준으로 사용한다.
+
+## 8. 2026-11-02 구버전 API 마감
+
+- 주요 화면 검증 이후에도 API 문서에는 과거 고정 수치가 남는 사각지대를 확인했다. 구버전 13개 주소를 HTTP 410으로 폐기하고 기본 OpenAPI 경로를 38→25개로 정리했다.
+- 과거 모듈 네 개는 원본 바이트·출처 해시와 함께 실행 경로 밖에 보관했다. 새 서버는 이 모듈을 import하지 않고 예측·중요도·샘플 결과를 만들지 않는다.
+- 기존 107개에서 private-loader 검사 4개를 제거하고 공개 계약 검사 19개로 대체해 백엔드 122개가 됐다. 전체 브라우저 49개 통과. 숫자 증가 자체를 품질 성과로 과장하지 않는다.
+- 모델 학습·입력·추론 소스 8개와 기준 성능은 유지했다. 새 모델 성능 개선이나 광고 효과로 설명하지 않는다.
+
+[마감 결과와 재현 근거](experiments/CLOSURE_RESULTS_20261102.md) · [다음 우선순위](NEXT_PRIORITIES_20261102.md).

@@ -29,29 +29,6 @@ def test_initial_observation_validation_precedes_inference(monkeypatch):
     assert client().post("/predict/t0-verified", json=record).status_code == 422
 
 
-@pytest.mark.parametrize("metadata_status", ["RETIRED_TARGET_LEAKAGE", None, "missing"])
-def test_retired_ensemble_binary_is_never_loaded(tmp_path, monkeypatch, metadata_status):
-    from api.routes import predict as legacy
-    metadata = tmp_path / "weighted_soft_voting_metadata.json"
-    metadata.write_text(json.dumps({"status": metadata_status} if metadata_status else {}))
-    binary = tmp_path / "weighted_soft_voting.joblib"
-    binary.write_bytes(b"must never load")
-    monkeypatch.setattr(legacy, "_first_existing", lambda *names: metadata if names[0] == metadata.name and metadata_status != "missing" else binary if names[0] == binary.name else None)
-    calls = []
-    monkeypatch.setattr(legacy, "_load_model_file", lambda path: calls.append(path))
-    monkeypatch.setattr(legacy, "_CACHE", dict(legacy._CACHE, loaded=False))
-    legacy._load_models(force=True)
-    assert binary not in calls
-    assert legacy._CACHE["ensemble"] is None
-
-
-def test_missing_legacy_metrics_are_not_fabricated(monkeypatch):
-    from api.routes import predict as legacy
-    monkeypatch.setattr(legacy, "_load_models", lambda: None)
-    monkeypatch.setattr(legacy, "_CACHE", dict(legacy._CACHE, meta={}, ensemble_meta={}))
-    assert legacy.predict_status()["metadata"] == {}
-
-
 @pytest.mark.parametrize("damage", ["wrong_protocol", "corrupt_json", "missing_model", "empty_hashes", "wrong_threshold", "missing_category_reference", "wrong_run_id"])
 def test_invalid_experiment_never_advertises_ready(saved_run, monkeypatch, damage):
     directory, report = saved_run

@@ -1,0 +1,14 @@
+{
+  "retired-api": {
+    "exit_code": 0
+  },
+  "backend": {
+    "exit_code": 0
+  },
+  "frontend-quality": {
+    "exit_code": 0
+  },
+  "browser": {
+    "exit_code": 0
+  }
+}

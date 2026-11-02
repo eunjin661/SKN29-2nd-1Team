@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "relative_links": 98,
+  "source_files": 232,
+  "historical_evidence": [
+    {
+      "record": "followup_verification.json",
+      "verified_files": 129
+    },
+    {
+      "record": "quality_security_verification.json",
+      "verified_files": 51
+    },
+    {
+      "record": "ui_integration_verification.json",
+      "verified_files": 24
+    },
+    {
+      "record": "main_publication_verification_20261102.json",
+      "verified_files": 28
+    }
+  ],
+  "front_end_sources_and_dependencies_unchanged": true,
+  "changed_or_new_paths": 47,
+  "active_api_contains_no_legacy_fixed_metric_or_rule_baseline": true
+}

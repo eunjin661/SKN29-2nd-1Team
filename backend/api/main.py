@@ -9,6 +9,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from api.services import data_loader
+from api.routes.retired import retired_endpoints
 
 
 @asynccontextmanager
@@ -77,13 +78,13 @@ def safe_include(module_path: str, attr: str = "router"):
         LOADED_ROUTERS[module_path] = {"loaded": False, "error": repr(e)}
 
 
-# 프론트에서 호출하는 주요 라우터 전체 등록
+# Current contracts plus explicit HTTP 410 tombstones; archived modules are never imported.
 for module_path in [
+    "api.routes.retired",
     "api.routes.t0_verified",
     "api.routes.diagnostics",
     "api.routes.eda",
     "api.routes.youtube",
-    "api.routes.video",
     "api.routes.feature",
     "api.routes.dashboard",
     "api.routes.sustain",
@@ -91,9 +92,6 @@ for module_path in [
     "api.routes.strategy",
     "api.routes.insight",
     "api.routes.problem",
-    "api.routes.predict",
-    "api.routes.predict_lstm",
-    "api.routes.model",
 ]:
     safe_include(module_path)
 
@@ -104,22 +102,25 @@ def api_status():
         "ok": True,
         "message": "API server is running",
         "loaded_routers": LOADED_ROUTERS,
+        "retired_endpoints": retired_endpoints(),
         "analysis_data": getattr(app.state, "analysis_data", {"status": "not_started"}),
         "important_endpoints": [
+            "/predict/t0-verified",
+            "/predict/t0-verified/status",
+            "/predict/t0-verified/evaluation",
+            "/predict/t0-verified/diagnostics",
+            "/feature/importance",
             "/eda/summary",
             "/feature/summary",
             "/youtube/live/bulk",
             "/youtube/trending",
             "/youtube/categories",
-            "/video/list",
-            "/video/summary",
             "/dashboard/summary",
             "/sustain/summary",
             "/campaign/plan",
             "/problem/summary",
             "/insight/summary",
             "/strategy/summary",
-            "/predict/status",
         ],
     }
 

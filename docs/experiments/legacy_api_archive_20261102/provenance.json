@@ -1,0 +1,26 @@
+{
+  "base_commit": "7b9dbcda11f884d24fa2f38b8146435cf452fb12",
+  "archive_only": true,
+  "files": {
+    "model.py": {
+      "original_path": "backend/api/routes/model.py",
+      "sha256": "f9acedaa2bbbcd82f080fd0cc97dd113cff90c481f6d8ec672ff2c07b7ba17df",
+      "git_blob_sha256": "f9acedaa2bbbcd82f080fd0cc97dd113cff90c481f6d8ec672ff2c07b7ba17df"
+    },
+    "predict.py": {
+      "original_path": "backend/api/routes/predict.py",
+      "sha256": "93bb2f1ead45e6da1ebab48eb1b2b94c99951e68abd7455e409acfa6b1c6c5e7",
+      "git_blob_sha256": "93bb2f1ead45e6da1ebab48eb1b2b94c99951e68abd7455e409acfa6b1c6c5e7"
+    },
+    "predict_lstm.py": {
+      "original_path": "backend/api/routes/predict_lstm.py",
+      "sha256": "9e4aa8ae61193e11f4377d94725f491f96e5ace3e54949837945a352198be3c1",
+      "git_blob_sha256": "9e4aa8ae61193e11f4377d94725f491f96e5ace3e54949837945a352198be3c1"
+    },
+    "video.py": {
+      "original_path": "backend/api/routes/video.py",
+      "sha256": "1703dfe5db4aec642818a6c37738f5ec143a6f6c43fa6823413ae71dc5735eb5",
+      "git_blob_sha256": "1703dfe5db4aec642818a6c37738f5ec143a6f6c43fa6823413ae71dc5735eb5"
+    }
+  }
+}

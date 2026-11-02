@@ -1,5 +1,7 @@
 > 2026-11-02 사용자 결정: PR 절차를 main 직접 반영으로 변경했다. [최신 반영 상태](MAIN_PUBLICATION_20261102.md)를 따른다. 아래는 10월 23일 당시의 공개 준비 기록이다.
 
+> 이전 계획·실행 당시의 기록입니다. 현재 완료 상태·폐기 API·원격 검사는 [최신 마감 기록](CLOSURE_RESULTS_20261102.md)을 기준으로 확인하세요. 아래의 대기 문구·검사 개수·PR 계획은 당시 상태로 보존합니다.
+
 # GitHub 공개 전 검토 목록
 
 대상: [eunjin661/SKN29-2nd-1Team](https://github.com/eunjin661/SKN29-2nd-1Team), base `main`, head `improve/trendit-reproducibility`. 연결 사용자 eunjin661·push 권한·기본 브랜치의 SHA가 로컬 기준 f06c8175c0a2a6d611e21c9e72a9e0ca9e789a1c와 같음을 읽기 확인했다. 개인 포크에 PR을 준비하며 팀 원본 저장소는 수정하지 않는다.

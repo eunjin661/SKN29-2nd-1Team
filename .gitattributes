@@ -7,3 +7,7 @@ docs/experiments/quality_evidence/windows-localhost-verification.json whitespace
 
 # Preserve whitespace emitted by tools in raw logs.
 docs/experiments/**/*.log whitespace=-trailing-space
+
+# Historical API sources retain captured bytes.
+docs/experiments/legacy_api_archive_20261102/** -text whitespace=-trailing-space,cr-at-eol
+docs/experiments/closure_evidence_20261102/** -text whitespace=-trailing-space,cr-at-eol

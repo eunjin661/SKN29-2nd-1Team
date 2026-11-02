@@ -1,0 +1,16 @@
+{
+  "base_commit": "7b9dbcda11f884d24fa2f38b8146435cf452fb12",
+  "scope": "Retire unused legacy model/prediction/fixed-video endpoints and unify current documentation. No model changes, calibration, new training or deployment.",
+  "retired_routes_expected": 13,
+  "regressions": "410 without output/model access, hidden legacy schemas, current status/validation unchanged, full backend and browser flows",
+  "baseline_ml_source_sha256": {
+    "backend/ml/__init__.py": "8e4324e0fa16282b98a51dc4f6ebbc018ec24734413cf3a6793b5eca7d163080",
+    "backend/ml/artifact_contract.py": "d37e13a057d457f4f85576dd2540949623f984711ad9a9de5879d8e16c34b6be",
+    "backend/ml/data_contract.py": "820f2a7bb9a8de4833d0929a653fae44cd46c5c7b1e97921361739915b721df5",
+    "backend/ml/inference.py": "ac4fc3b252aaaa26e066c285278a90e80034b713692d923df0c792f55689da76",
+    "backend/ml/torch_models.py": "2e403ddd7f5ed340b4518f3fe6f911fb76fb01e106a9e3c2df82b9fc7f9c4789",
+    "backend/ml/train_lstm_predictor.py": "6f59f9fa1b16aa5a2e6d2b1ff686ca5d01ca519e693076d014c6586c47629cfc",
+    "backend/ml/train_weighted_ensemble.py": "7bed9c4984e2511f5a4bad546ff0c9125de74c86b87bba9affbc549ad446ce3d",
+    "backend/ml/train_xgb_models.py": "1c1056d4664a85a54f6f098b446b509ab99f93f88fa063007f91327565bf5911"
+  }
+}

@@ -20,6 +20,8 @@ YouTube KR 트렌딩에 진입한 시점의 정보로, 카테고리 기준의 �
 
 **2026-11-02 공개 점검:** 개인 저장소 main 직접 반영 절차를 선택했습니다. 공개 전 최신 감사에서 발견한 개발 도구 경고 7건을 해결했고, 새 설치·동일한 검사 파일 113개·브라우저 49개를 재확인했습니다. [반영 상태·수정 근거](docs/experiments/MAIN_PUBLICATION_20261102.md).
 
+**2026-11-02 마감 정리:** 구버전 예측·모델·고정 샘플 영상 13개 API는 HTTP 410으로 폐기 안내만 반환하고 기본 API 문서에서 제외했습니다. 백엔드 122개·전체 브라우저 49개를 확인했습니다. [최신 마감 결과](docs/experiments/CLOSURE_RESULTS_20261102.md) · [다음 우선순위](docs/NEXT_PRIORITIES_20261102.md).
+
 ## 문제와 접근
 
 트렌딩에 진입한 영상도 유지 기간과 순위가 다릅니다. 진입 순간의 순위·조회수·댓글·발행 시각으로 지속형 후보를 분류합니다. 현재 평가는 이후 기간의 새로운 영상에 대한 일반화를 대상으로 합니다. 콘텐츠 변경이나 광고 집행의 인과적 효과를 검증하지는 않았습니다.
@@ -96,7 +98,7 @@ TRENDIT_T0_RUN_ID=t0-v2-reproduce PYTHONPATH=backend \
 - 검증 보고서 기반 성능·표본·선택 기준: `GET /predict/t0-verified/evaluation`
 - 초기 관측 분류: `POST /predict/t0-verified` — `backend/examples/t0_request.json` 형식
 - 실험을 아직 생성하지 않았으면 새 API는 503을 반환합니다. 산출물 SHA-256이 다르면 모델 로딩을 거부합니다.
-- 관측 분석·대시보드·캠페인 참고 자료는 저장된 parquet를 사용합니다. 현재 영상 수집에는 별도 YouTube API 설정이 필요하며 일부 레거시 API는 MySQL을 사용할 수 있습니다. 기존 `/predict/preview`의 휴리스틱 혼합 결과는 위 v2 평가 수치와 연결하지 않습니다.
+- 관측 분석·대시보드·캠페인 참고 자료는 저장된 parquet를 사용합니다. 현재 영상 수집에는 별도 YouTube API 설정이 필요합니다. 구버전 `/model/*`, `/predict/preview`, `/predict/video`, `/predict/bulk`, `/predict/status`, `/predict/reload`, `/predict/lstm/*`, `/video/*`의 기존 13개 주소는 HTTP 410과 현재 경로 안내만 반환합니다. `/video` 화면은 실제 YouTube 관측 경로를 사용합니다. 과거 구현은 [별도 기록](docs/experiments/legacy_api_archive_20261102/README.md)으로 보존합니다.
 
 React 화면은 `frontend`에서 `npm ci --ignore-scripts`, `npm run dev`로 실행합니다. API 주소는 `VITE_API_URL`로 지정하며 기본값은 `http://localhost:8000`입니다. 확인한 Node 버전은 24.20.0이며 의존성은 `frontend/package-lock.json`으로 관리합니다.
 
@@ -117,7 +119,7 @@ TRENDIT_TEST_RUN_ID=t0-v2-reproduce npm run test:e2e -- --grep-invert 'REAL diag
 npm run check  # 전체 코드 검사 + audit + 빌드
 ```
 
-백엔드는 기존·별도 설치 환경에서 **107개씩**, Chromium 전체 브라우저는 **49개**, 별도 설치 기본 모드는 **47개** 검사를 통과했습니다. 전체 ESLint 오류/경고 0, 전체·런타임 npm audit 0, 빌드 통과를 확인했습니다. 같은 WSL 호스트의 별도 checkout·새 venv/node_modules에서 8개 모델을 재학습했고 39,888 Test 점수의 최대 절대차는 0.0입니다. HTTP 테스트 도구의 전환 예정 경고 1개는 남아 있습니다.
+최신 로컬 백엔드는 **122개**, Chromium 전체 브라우저는 **49개** 검사를 통과했습니다. 이전 별도 설치의 백엔드 107개·기본 브라우저 47개 기록은 날짜별 보고서에 보존하며 최신 원격 결과는 [마감 기록](docs/experiments/CLOSURE_RESULTS_20261102.md)에 연결합니다. 전체 ESLint 오류/경고 0, 전체·런타임 npm audit 0, 빌드 통과를 확인했습니다. 같은 WSL 호스트의 별도 checkout·새 venv/node_modules에서 8개 모델을 재학습했고 39,888 Test 점수의 최대 절대차는 0.0입니다. HTTP 테스트 도구의 전환 예정 경고 1개는 남아 있습니다.
 
 ## 추가 모델 진단 재현
 
@@ -145,7 +147,7 @@ TRENDIT_TEST_DIAGNOSTICS_ID=t0-v2-reproduce-diagnostics npm run test:e2e
 
 진단을 생성하지 않는 기본 검사 모드는 `TRENDIT_TEST_RUN_ID=t0-v2-reproduce npm run test:e2e -- --grep-invert 'REAL diagnostic'`입니다. 전체 진단을 실제로 읽는 2개 사례를 제외하고 미설정 상태 처리까지 확인합니다.
 
-GitHub Actions는 프론트 품질 관문과 백엔드·CPU 재현·핵심 브라우저 관문을 수행합니다. 현재 상태: 프론트 품질·백엔드/CPU 재현/핵심 브라우저 원격 검사 모두 통과. 서비스 배포는 별도 범위입니다. [실제 반영·실행 기록](docs/experiments/MAIN_PUBLICATION_20261102.md)을 확인하세요. 5시드 전체 진단은 매 push마다 실행하지 않습니다. [최신 결과와 제한](docs/experiments/FOLLOWUP_RESULTS_20261023.md), [면접 근거](docs/CAREER_EVIDENCE.md), [공개 검토 목록](docs/experiments/PUBLICATION_REVIEW_20261023.md)을 참고하세요.
+GitHub Actions는 백엔드·CPU 재현·프론트 품질·핵심 브라우저 관문을 수행합니다. 현재 마감 상태: **로컬 검증 완료·main 반영 준비**. 원격 완료 결과는 해당 코드 커밋과 연결해 [최신 마감 기록](docs/experiments/CLOSURE_RESULTS_20261102.md)에 보존합니다. 5시드 전체 진단과 서비스 배포는 별도 범위입니다.
 
 ## 기존 결과와 남은 한계
 
@@ -154,3 +156,5 @@ GitHub Actions는 프론트 품질 관문과 백엔드·CPU 재현·핵심 브�
 과거 발표·보고서의 AUC 0.8284와 개인 실험의 AUC 0.7985는 다른 조건의 결과입니다. v2는 라벨과 평가 표본이 달라 우열을 직접 비교하지 않습니다. 발표 자료는 [기존 PDF](docs/assets/trendit-presentation.pdf)에 보존합니다.
 
 기준 모델은 시드 42·한 시간 분할로 선택했습니다. 후속으로 같은 분할의 5시드 변동과 기준 모델의 영상 단위 재표집 구간을 추가했습니다. 다른 기간의 일반화와 개별 점수의 확률 교정은 검증하지 않았습니다. 반복 영상의 미래 이벤트, 원본 수집·정제 전체, 지속 시간 회귀, 24h 업데이트, 기존 데모 UX의 실서비스 효과는 별도 검증이 필요합니다.
+
+현재 마감 상태와 이후 작업 판단은 [마감 결과](docs/experiments/CLOSURE_RESULTS_20261102.md)·[우선순위](docs/NEXT_PRIORITIES_20261102.md)를 기준으로 확인하세요. 과거 실험 결과는 당시 조건을 설명하는 기록입니다.
