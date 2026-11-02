@@ -142,20 +142,12 @@ def _load_models(force: bool = False) -> None:
             _CACHE["meta"] = json.loads(meta_path.read_text(encoding="utf-8"))
             _CACHE["model_paths"]["metadata"] = str(meta_path)
 
-        # WeightedSoftVoting 파일은 상태 표시용으로만 로드합니다.
-        # 현재 프로젝트에서는 입력 feature mismatch로 확률이 0에 고정되는 경우가 있어 XGBoost를 우선 사용합니다.
+        # Legacy ensemble binaries are historical artifacts only. Removing or
+        # losing their retirement marker must never make them loadable again.
         ensemble_meta_path = _first_existing("weighted_soft_voting_metadata.json")
-        ensemble_path = _first_existing("weighted_soft_voting.joblib", "weighted_soft_voting.pkl", "weighted_soft_voting.pickle")
         if ensemble_meta_path:
             _CACHE["ensemble_meta"] = json.loads(ensemble_meta_path.read_text(encoding="utf-8"))
             _CACHE["model_paths"]["ensemble_metadata"] = str(ensemble_meta_path)
-        if ensemble_path:
-            try:
-                _CACHE["ensemble"] = _load_model_file(ensemble_path)
-                _CACHE["model_paths"]["ensemble"] = str(ensemble_path)
-            except Exception as exc:
-                _CACHE["ensemble"] = None
-                _CACHE["load_error"] = f"ensemble load failed: {exc}"
 
         duration_path = _first_existing(
             "xgb_duration_t0.pkl", "xgb_duration_t0.pickle", "xgb_duration_t0.joblib",
@@ -660,19 +652,8 @@ def predict_status() -> Dict[str, Any]:
         "view24_model": _CACHE.get("view24") is not None,
         "model_paths": _CACHE.get("model_paths", {}),
         "load_error": _CACHE.get("load_error"),
-        "metadata": {
-            **meta,
-            "metrics": {
-                **(meta.get("metrics") or {}),
-                "tdi_t0": {
-                    "auc":      tdi_metrics.get("auc",      0.854),
-                    "f1":       tdi_metrics.get("f1",       0.669),
-                    "accuracy": tdi_metrics.get("accuracy", 0.779),
-                    "recall":   tdi_metrics.get("recall",   0.866),
-                    "rows":     tdi_metrics.get("rows",     34964),
-                },
-            },
-        },
+        "metadata": meta,
+        "legacy_evaluation_status": "UNVERIFIED_LEGACY_PROTOCOL",
         "ensemble_metadata": ens_meta,
         "prediction_cache_size": len(_PRED_CACHE),
     }

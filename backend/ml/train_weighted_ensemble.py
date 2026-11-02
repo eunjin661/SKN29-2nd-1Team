@@ -1,287 +1,191 @@
-"""
-WeightedSoftVoting 최종 모델 학습 스크립트
-────────────────────────────────────
-XGBoost + LightGBM + MLP를 Soft Voting으로 결합해
-트렌딩 지속성(long-lived) 확률을 예측하는 최종 모델을 저장합니다.
+"""Run the shared leakage-controlled T0 experiment from any working directory.
 
-실행 위치:
-  cd backend
-  python ml/train_weighted_ensemble.py
-
-저장 결과:
-  backend/models/weighted_soft_voting.joblib
-  backend/models/weighted_soft_voting_metadata.json
+python -m ml.train_weighted_ensemble --include-deep --include-tabnet
+Historical binaries/metadata are never overwritten. Output lives in artifacts/.
 """
 from __future__ import annotations
 
+import argparse
+import importlib.metadata
 import json
-import math
-import warnings
+import platform
+import subprocess
+import sys
+import time
+from datetime import datetime, timezone
 from pathlib import Path
-from typing import Iterable
 
 import joblib
 import numpy as np
-import pandas as pd
-from sklearn.compose import ColumnTransformer
-from sklearn.ensemble import GradientBoostingClassifier, HistGradientBoostingClassifier, VotingClassifier
-from sklearn.impute import SimpleImputer
-from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score, roc_auc_score
-from sklearn.model_selection import train_test_split
+from sklearn.dummy import DummyClassifier
+from sklearn.linear_model import LogisticRegression
+from sklearn.metrics import accuracy_score, average_precision_score, confusion_matrix, f1_score, precision_score, recall_score, roc_auc_score
 from sklearn.neural_network import MLPClassifier
 from sklearn.pipeline import Pipeline
-from sklearn.preprocessing import OneHotEncoder, StandardScaler
+from threadpoolctl import threadpool_limits
 
-warnings.filterwarnings("ignore")
+from .data_contract import FEATURES, PROTOCOL_VERSION, make_preprocessor, prepare_data, sha256_file
+from .artifact_contract import validate_run_id
 
-ROOT = Path(__file__).resolve().parents[1]
-DATA_DIR = ROOT / "data"
-MODELS_DIR = ROOT / "models"
-MODELS_DIR.mkdir(parents=True, exist_ok=True)
-
-DATA_CANDIDATES = [
-    DATA_DIR / "video_trending_events_T0_model.parquet",
-    DATA_DIR / "video_trending_events_24h_model.parquet",
-    DATA_DIR / "video_trending_events_analysis.parquet",
-]
-
-TARGET_CANDIDATES = [
-    "is_long_lived",
-    "long_lived",
-    "tdi_label",
-    "target",
-    "label",
-    "is_sustained",
-]
-
-ID_OR_LEAKAGE_KEYWORDS = [
-    "video_id", "event_id", "channel_id", "title", "description", "thumbnail",
-    "url", "publishedat", "published_at", "start_time", "end_time",
-]
-
-# 지속성 예측에서 타깃 누수 가능성이 큰 컬럼은 기본 제외합니다.
-LEAKAGE_EXACT = {
-    "duration_h", "duration_hour", "duration_hours", "duration", "stay_hours",
-    "target_duration_h", "final_duration_h", "is_long_lived", "long_lived",
-    "tdi_label", "target", "label", "is_sustained",
-}
+BACKEND = Path(__file__).resolve().parents[1]
+REPO = BACKEND.parent
+ENSEMBLE_WEIGHTS = {"xgboost": .4, "lightgbm": .35, "sklearn_mlp": .25}
 
 
-def _find_data_path() -> Path:
-    for path in DATA_CANDIDATES:
-        if path.exists():
-            return path
-    raise FileNotFoundError(
-        "학습용 parquet 파일을 찾지 못했습니다. backend/data 안에 "
-        "video_trending_events_T0_model.parquet 또는 analysis parquet이 필요합니다."
-    )
-
-
-def _safe_auc(y_true: Iterable[int], y_proba: Iterable[float]) -> float:
-    try:
-        return float(roc_auc_score(y_true, y_proba))
-    except Exception:
-        return 0.0
-
-
-def _make_target(df: pd.DataFrame) -> tuple[pd.Series, str]:
-    for col in TARGET_CANDIDATES:
-        if col in df.columns:
-            y = df[col].fillna(0).astype(int)
-            if y.nunique() >= 2:
-                return y, col
-
-    duration_cols = [
-        "duration_h", "duration_hour", "duration_hours", "duration",
-        "stay_hours", "target_duration_h", "final_duration_h",
-    ]
-    for col in duration_cols:
-        if col in df.columns:
-            s = pd.to_numeric(df[col], errors="coerce")
-            # 중앙값 기준보다 포트폴리오 설명이 쉬운 72h 기준을 우선 사용합니다.
-            threshold = 72.0 if s.max(skipna=True) > 72 else float(s.median(skipna=True))
-            y = (s >= threshold).fillna(False).astype(int)
-            if y.nunique() >= 2:
-                return y, f"{col} >= {threshold:.1f}h"
-
-    raise ValueError("long-lived 타깃을 만들 수 없습니다. target 또는 duration 계열 컬럼이 필요합니다.")
-
-
-def _select_columns(df: pd.DataFrame, target_source: str) -> tuple[list[str], list[str]]:
-    exclude = set()
-    for c in df.columns:
-        c_lower = c.lower()
-        if c_lower in LEAKAGE_EXACT:
-            exclude.add(c)
-        if any(k in c_lower for k in ID_OR_LEAKAGE_KEYWORDS):
-            exclude.add(c)
-    # target_source가 "col >= ..." 형태일 수 있으므로 앞 컬럼명만 추가 제외
-    exclude.add(target_source.split()[0])
-
-    usable = [c for c in df.columns if c not in exclude]
-    numeric_cols = []
-    categorical_cols = []
-
-    for c in usable:
-        if pd.api.types.is_numeric_dtype(df[c]):
-            # 거의 모두 결측이면 제외
-            if df[c].notna().mean() >= 0.2:
-                numeric_cols.append(c)
-        else:
-            nunique = df[c].nunique(dropna=True)
-            if 1 < nunique <= 40:
-                categorical_cols.append(c)
-
-    # 프론트/예측 API에서 자주 쓰는 컬럼이 있으면 우선 포함되도록 보장
-    preferred_cats = ["category_group", "category", "category_name"]
-    for c in preferred_cats:
-        if c in df.columns and c not in categorical_cols and c not in exclude:
-            categorical_cols.append(c)
-
-    if not numeric_cols and not categorical_cols:
-        raise ValueError("학습에 사용할 수 있는 피처가 없습니다.")
-    return numeric_cols, categorical_cols
-
-
-def _get_xgb():
-    try:
-        from xgboost import XGBClassifier
-        return XGBClassifier(
-            n_estimators=250,
-            max_depth=4,
-            learning_rate=0.045,
-            subsample=0.9,
-            colsample_bytree=0.9,
-            eval_metric="logloss",
-            random_state=42,
-            n_jobs=-1,
-        ), "XGBoost"
-    except Exception:
-        return HistGradientBoostingClassifier(max_iter=220, learning_rate=0.055, random_state=42), "HistGradientBoosting(XGB fallback)"
-
-
-def _get_lgbm():
-    try:
-        from lightgbm import LGBMClassifier
-        return LGBMClassifier(
-            n_estimators=280,
-            learning_rate=0.04,
-            num_leaves=31,
-            subsample=0.9,
-            colsample_bytree=0.9,
-            random_state=42,
-            n_jobs=-1,
-            verbose=-1,
-        ), "LightGBM"
-    except Exception:
-        return GradientBoostingClassifier(n_estimators=180, learning_rate=0.045, random_state=42), "GradientBoosting(LGBM fallback)"
-
-
-def train() -> dict:
-    data_path = _find_data_path()
-    df = pd.read_parquet(data_path)
-    df = df.replace([np.inf, -np.inf], np.nan)
-
-    y, target_source = _make_target(df)
-    numeric_cols, categorical_cols = _select_columns(df, target_source)
-    X = df[numeric_cols + categorical_cols].copy()
-
-    # 샘플이 너무 크면 학습 시간을 줄이되 stratify는 유지합니다.
-    if len(X) > 120_000:
-        sample_idx = y.groupby(y).sample(frac=min(1, 120_000 / len(X)), random_state=42).index
-        X = X.loc[sample_idx]
-        y = y.loc[sample_idx]
-
-    X_train, X_test, y_train, y_test = train_test_split(
-        X, y, test_size=0.2, random_state=42, stratify=y
-    )
-
-    numeric_pipe = Pipeline([
-        ("imputer", SimpleImputer(strategy="median")),
-        ("scaler", StandardScaler()),
-    ])
-    categorical_pipe = Pipeline([
-        ("imputer", SimpleImputer(strategy="most_frequent")),
-        ("onehot", OneHotEncoder(handle_unknown="ignore")),
-    ])
-    preprocessor = ColumnTransformer([
-        ("num", numeric_pipe, numeric_cols),
-        ("cat", categorical_pipe, categorical_cols),
-    ])
-
-    xgb_model, xgb_name = _get_xgb()
-    lgbm_model, lgbm_name = _get_lgbm()
-    mlp_model = MLPClassifier(
-        hidden_layer_sizes=(96, 48),
-        activation="relu",
-        alpha=0.0005,
-        learning_rate_init=0.001,
-        max_iter=350,
-        random_state=42,
-        early_stopping=True,
-    )
-
-    ensemble = VotingClassifier(
-        estimators=[
-            ("xgb", xgb_model),
-            ("lgbm", lgbm_model),
-            ("mlp", mlp_model),
-        ],
-        voting="soft",
-        weights=[0.4, 0.35, 0.25],
-        n_jobs=1,
-        flatten_transform=True,
-    )
-
-    pipeline = Pipeline([
-        ("preprocess", preprocessor),
-        ("ensemble", ensemble),
-    ])
-
-    pipeline.fit(X_train, y_train)
-    proba = pipeline.predict_proba(X_test)[:, 1]
-    pred = (proba >= 0.5).astype(int)
-
-    metrics = {
-        "accuracy": round(float(accuracy_score(y_test, pred)), 4),
-        "auc": round(_safe_auc(y_test, proba), 4),
-        "f1": round(float(f1_score(y_test, pred, zero_division=0)), 4),
-        "precision": round(float(precision_score(y_test, pred, zero_division=0)), 4),
-        "recall": round(float(recall_score(y_test, pred, zero_division=0)), 4),
+def metrics(y, probabilities, threshold=.5):
+    if len(np.unique(y)) != 2 or not np.isfinite(probabilities).all():
+        raise ValueError("Metrics require both classes and finite probabilities")
+    pred = (np.asarray(probabilities) >= threshold).astype(int)
+    return {
+        "auc": float(roc_auc_score(y, probabilities)), "pr_auc": float(average_precision_score(y, probabilities)),
+        "f1": float(f1_score(y, pred, zero_division=0)), "accuracy": float(accuracy_score(y, pred)),
+        "precision": float(precision_score(y, pred, zero_division=0)), "recall": float(recall_score(y, pred, zero_division=0)),
+        "confusion_matrix_tn_fp_fn_tp": confusion_matrix(y, pred, labels=[0, 1]).ravel().tolist(),
     }
 
-    model_path = MODELS_DIR / "weighted_soft_voting.joblib"
-    metadata_path = MODELS_DIR / "weighted_soft_voting_metadata.json"
-    joblib.dump(pipeline, model_path)
 
-    medians = {c: float(pd.to_numeric(df[c], errors="coerce").median()) for c in numeric_cols}
-    modes = {}
-    for c in categorical_cols:
-        mode = df[c].dropna().astype(str).mode()
-        modes[c] = str(mode.iloc[0]) if len(mode) else "Unknown"
+def choose_threshold(y, probabilities):
+    candidates = np.round(np.arange(.05, .951, .01), 2)
+    return float(max(candidates, key=lambda threshold: (f1_score(y, probabilities >= threshold, zero_division=0), -abs(threshold - .5))))
 
-    metadata = {
-        "model_type": "WeightedSoftVoting",
-        "description": "XGBoost + LightGBM + MLP soft voting ensemble for long-lived trending prediction",
-        "data_path": str(data_path),
-        "target_source": target_source,
-        "feature_columns": numeric_cols + categorical_cols,
-        "numeric_columns": numeric_cols,
-        "categorical_columns": categorical_cols,
-        "numeric_medians": medians,
-        "categorical_modes": modes,
-        "estimators": [xgb_name, lgbm_name, "MLP"],
-        "weights": {"xgb": 0.4, "lgbm": 0.35, "mlp": 0.25},
-        "metrics": metrics,
-        "threshold": 0.5,
+
+def sklearn_estimators(seed, threads):
+    # No fallback to a different library/model when a dependency is missing.
+    from xgboost import XGBClassifier
+    from lightgbm import LGBMClassifier
+    return {
+        "dummy": DummyClassifier(strategy="prior"),
+        "logistic": LogisticRegression(max_iter=1500, random_state=seed),
+        "xgboost": XGBClassifier(n_estimators=250, max_depth=4, learning_rate=.045, subsample=.9, colsample_bytree=.9, tree_method="hist", eval_metric="logloss", random_state=seed, n_jobs=threads),
+        "lightgbm": LGBMClassifier(n_estimators=280, learning_rate=.04, num_leaves=31, subsample=.9, colsample_bytree=.9, random_state=seed, n_jobs=threads, verbosity=-1, deterministic=True, force_col_wise=True),
+        # Explicit shared validation is reserved for model/threshold selection.
+        # Disabling sklearn's random early-stop holdout keeps temporal semantics.
+        "sklearn_mlp": MLPClassifier(hidden_layer_sizes=(96, 48), alpha=.0005, learning_rate_init=.001, max_iter=250, early_stopping=False, random_state=seed),
     }
-    metadata_path.write_text(json.dumps(metadata, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    print("Saved:", model_path)
-    print("Saved:", metadata_path)
-    print(json.dumps(metadata, ensure_ascii=False, indent=2))
-    return metadata
+
+def run(args):
+    if args.include_tabnet and not args.include_deep:
+        raise ValueError("--include-tabnet requires --include-deep")
+    if args.epochs < 1 or args.tabnet_epochs < 1 or args.threads < 1:
+        raise ValueError("Epochs and threads must be positive")
+    data_path = args.data.resolve()
+    data = prepare_data(data_path)
+    estimators = sklearn_estimators(args.seed, args.threads)
+    if args.include_deep:
+        import torch
+    if args.include_tabnet:
+        from pytorch_tabnet.tab_model import TabNetClassifier
+    run_id = args.run_id or datetime.now(timezone.utc).strftime("t0-v2-%Y%m%dT%H%M%SZ")
+    validate_run_id(run_id)
+    output = args.output_root.resolve() / run_id
+    output.mkdir(parents=True, exist_ok=False)
+    started = time.perf_counter()
+    source_hashes = {str(path.relative_to(REPO)): sha256_file(path) for path in sorted((BACKEND / "ml").glob("*.py"))}
+    head = subprocess.run(["git", "-C", str(REPO), "rev-parse", "HEAD"], capture_output=True, text=True, check=True).stdout.strip()
+    data.assignments.to_csv(output / "split_assignments.csv", index=False)
+    (output / "split_manifest.json").write_text(json.dumps(data.manifest, ensure_ascii=False, indent=2) + "\n")
+    print(json.dumps({"run_id": run_id, "splits": data.manifest["splits"]}, ensure_ascii=False), flush=True)
+    pipelines, validation, durations = {}, {}, {}
+    with threadpool_limits(limits=args.threads):
+        for name, estimator in estimators.items():
+            tick = time.perf_counter()
+            pipeline = Pipeline([("features", make_preprocessor()), ("classifier", estimator)])
+            pipeline.fit(data.features["train"], data.targets["train"])
+            validation[name] = pipeline.predict_proba(data.features["validation"])[:, 1]
+            durations[name] = time.perf_counter() - tick
+            pipelines[name] = pipeline
+            print(f"{name}: validation_auc={roc_auc_score(data.targets['validation'], validation[name]):.4f} ({durations[name]:.2f}s)", flush=True)
+    validation["weighted_soft_voting"] = sum(validation[name] * weight for name, weight in ENSEMBLE_WEIGHTS.items())
+    durations["weighted_soft_voting"] = sum(durations[name] for name in ENSEMBLE_WEIGHTS)
+    joblib.dump({"pipelines": pipelines, "weights": ENSEMBLE_WEIGHTS}, output / "sklearn_models.joblib")
+    deep_model = deep_state = tabnet = tab_preprocessor = None
+    if args.include_deep:
+        import torch
+        from .torch_models import probabilities, train_embedding
+        tick = time.perf_counter()
+        deep_model, deep_state = train_embedding(data.features, data.targets, seed=args.seed, epochs=args.epochs, threads=args.threads)
+        validation["embedding_mlp"] = probabilities(deep_model, data.features["validation"], deep_state)
+        durations["embedding_mlp"] = time.perf_counter() - tick
+        torch.save(deep_model.state_dict(), output / "embedding_mlp.pt")
+        joblib.dump(deep_state, output / "embedding_preprocessor.joblib")
+    if args.include_tabnet:
+        import torch
+        from pytorch_tabnet.tab_model import TabNetClassifier
+        tick = time.perf_counter()
+        tab_preprocessor = make_preprocessor()
+        tab_train = tab_preprocessor.fit_transform(data.features["train"]).astype("float32")
+        tab_val = tab_preprocessor.transform(data.features["validation"]).astype("float32")
+        tabnet = TabNetClassifier(n_d=16, n_a=16, n_steps=5, gamma=1.5, lambda_sparse=.0001, seed=args.seed, verbose=10, device_name="cpu", optimizer_fn=torch.optim.Adam, optimizer_params={"lr": .02})
+        tabnet.fit(tab_train, data.targets["train"], eval_set=[(tab_val, data.targets["validation"])], eval_name=["validation"], eval_metric=["auc"], max_epochs=args.tabnet_epochs, patience=15, batch_size=256, virtual_batch_size=128, num_workers=0, drop_last=False)
+        validation["tabnet"] = tabnet.predict_proba(tab_val)[:, 1]
+        durations["tabnet"] = time.perf_counter() - tick
+        tabnet.save_model(str(output / "tabnet"))
+        joblib.dump(tab_preprocessor, output / "tabnet_preprocessor.joblib")
+    # Freeze model choice and thresholds BEFORE any test predictions are made.
+    selected = max(sorted(validation), key=lambda name: roc_auc_score(data.targets["validation"], validation[name]))
+    thresholds = {name: choose_threshold(data.targets["validation"], proba) for name, proba in validation.items()}
+    test = {name: pipeline.predict_proba(data.features["test"])[:, 1] for name, pipeline in pipelines.items()}
+    test["weighted_soft_voting"] = sum(test[name] * weight for name, weight in ENSEMBLE_WEIGHTS.items())
+    if deep_model is not None:
+        from .torch_models import probabilities
+        test["embedding_mlp"] = probabilities(deep_model, data.features["test"], deep_state)
+    if tabnet is not None:
+        test["tabnet"] = tabnet.predict_proba(tab_preprocessor.transform(data.features["test"]).astype("float32"))[:, 1]
+    results = {}
+    for name in validation:
+        results[name] = {
+            "fit_and_validation_seconds": round(durations[name], 3), "threshold_validation_f1": thresholds[name],
+            "validation": metrics(data.targets["validation"], validation[name], thresholds[name]),
+            "test": metrics(data.targets["test"], test[name], thresholds[name]),
+            "test_threshold_0_5": metrics(data.targets["test"], test[name], .5),
+        }
+    predictions = data.frames["test"][["video_id", "event_id", "category_group"]].copy()
+    predictions["target_v2"] = data.targets["test"]
+    for name, proba in test.items():
+        predictions[name] = proba
+    predictions.to_csv(output / "test_predictions.csv", index=False)
+    # Report per-category sample counts; undefined category AUC stays null.
+    subgroup = {}
+    for category in sorted(predictions.category_group.unique()):
+        mask = predictions.category_group.to_numpy() == category
+        actual = data.targets["test"][mask]
+        subgroup[category] = {"rows": int(mask.sum()), "positives": int(actual.sum()), "auc": float(roc_auc_score(actual, test[selected][mask])) if len(np.unique(actual)) == 2 else None}
+    versions = {}
+    for package in ["numpy", "pandas", "scikit-learn", "xgboost", "lightgbm", "torch", "pytorch-tabnet", "pyarrow"]:
+        try:
+            versions[package] = importlib.metadata.version(package)
+        except importlib.metadata.PackageNotFoundError:
+            versions[package] = None
+    report = {
+        "run_id": run_id, "status": "OFFLINE_EVALUATION_COMPLETE", "protocol": PROTOCOL_VERSION,
+        "created_at_utc": datetime.now(timezone.utc).isoformat(), "base_commit": head, "source_sha256": source_hashes,
+        "data": data.manifest, "config": {"seed": args.seed, "threads": args.threads, "mlp_max_epochs": args.epochs, "tabnet_max_epochs": args.tabnet_epochs, "ensemble_weights": ENSEMBLE_WEIGHTS},
+        "runtime": {"python": platform.python_version(), "platform": platform.platform(), "device": "cpu", "packages": versions},
+        "selected_model": selected, "selection_rule": "maximum validation ROC-AUC; deterministic alphabetical tie break; test never selects a model",
+        "selected_threshold": thresholds[selected], "results": results, "selected_test_by_category": subgroup,
+        "elapsed_seconds": round(time.perf_counter() - started, 3),
+        "limits": ["Single chronological holdout and seed; no uncertainty interval.", "Unseen-video evaluation excludes later repeats of training/validation videos; it does not estimate returning-video performance.", "Starts from committed cleaned analysis events, not a raw YouTube collection rebuild.", "tdi_v2 uses training-only label references and recomputed T0 features, so legacy scores are not directly comparable.", "Offline classification only; no live-video timing, duration regression, 24h prediction, or business uplift validation."],
+    }
+    report["artifact_sha256"] = {p.name: sha256_file(p) for p in sorted(output.iterdir()) if p.is_file()}
+    (output / "report.json").write_text(json.dumps(report, ensure_ascii=False, indent=2, allow_nan=False) + "\n")
+    print(json.dumps({"output": str(output), "selected_model": selected, "test": results[selected]["test"], "elapsed_seconds": report["elapsed_seconds"]}, ensure_ascii=False, indent=2), flush=True)
+    return report
+
+
+def main():
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--data", type=Path, default=BACKEND / "data/video_trending_events_analysis.parquet")
+    parser.add_argument("--output-root", type=Path, default=BACKEND / "artifacts")
+    parser.add_argument("--run-id")
+    parser.add_argument("--seed", type=int, default=42)
+    parser.add_argument("--threads", type=int, default=4)
+    parser.add_argument("--epochs", type=int, default=80)
+    parser.add_argument("--tabnet-epochs", type=int, default=100)
+    parser.add_argument("--include-deep", action="store_true")
+    parser.add_argument("--include-tabnet", action="store_true")
+    return run(parser.parse_args())
 
 
 if __name__ == "__main__":
-    train()
+    main()

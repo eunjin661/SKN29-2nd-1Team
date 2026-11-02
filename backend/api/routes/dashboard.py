@@ -1,74 +1,47 @@
-from fastapi import APIRouter, Query
+"""Filtered observed aggregates; no proportional estimates or strategy scores."""
+import pandas as pd
+from fastapi import APIRouter, HTTPException, Query
+
+from api.services import data_loader
+from api.services.observed_analysis import numeric, finite, stats
 
 router = APIRouter(prefix="/dashboard", tags=["dashboard"])
 
 
-FALLBACK = {
-    "meta": {
-        "source": "api",
-        "message": "Dashboard API fallback-safe response",
-        "updatedAt": "runtime",
-    },
-    "filters": {
-        "years": ["ALL", "2022", "2023", "2024", "2025"],
-        "categories": ["ALL", "Entertainment", "Music", "Lifestyle", "Sports", "Gaming"],
-    },
-    "kpis": {
-        "rawSnapshots": 872191,
-        "trendEvents": 34964,
-        "medianDuration": 108,
-        "categories": 5,
-    },
-    "byYear": {
-        "ALL": {"rawSnapshots": 872191, "trendEvents": 34964, "medianDuration": 108},
-        "2022": {"rawSnapshots": 165420, "trendEvents": 6200, "medianDuration": 96},
-        "2023": {"rawSnapshots": 238190, "trendEvents": 9100, "medianDuration": 104},
-        "2024": {"rawSnapshots": 278650, "trendEvents": 11200, "medianDuration": 112},
-        "2025": {"rawSnapshots": 189931, "trendEvents": 8464, "medianDuration": 108},
-    },
-    "categoryStats": [
-        {"category": "Entertainment", "events": 9800, "medianDuration": 122, "strategyScore": 86, "risk": "LOW"},
-        {"category": "Music", "events": 8200, "medianDuration": 138, "strategyScore": 84, "risk": "LOW"},
-        {"category": "Lifestyle", "events": 6900, "medianDuration": 114, "strategyScore": 78, "risk": "MID"},
-        {"category": "Sports", "events": 5200, "medianDuration": 82, "strategyScore": 66, "risk": "MID"},
-        {"category": "Gaming", "events": 4864, "medianDuration": 74, "strategyScore": 61, "risk": "HIGH"},
-    ],
-    "trendFlow": [
-        {"label": "2022", "value": 6200},
-        {"label": "2023", "value": 9100},
-        {"label": "2024", "value": 11200},
-        {"label": "2025", "value": 8464},
-    ],
-    "durationDistribution": [
-        {"label": "0~24h", "value": 6400},
-        {"label": "24~72h", "value": 12900},
-        {"label": "72~168h", "value": 9800},
-        {"label": "168h+", "value": 5864},
-    ],
-    "topVideos": [
-        {"title": "Long-lived music trend", "category": "Music", "duration": 192, "score": 0.86},
-        {"title": "Entertainment viral clip", "category": "Entertainment", "duration": 168, "score": 0.82},
-        {"title": "Lifestyle review", "category": "Lifestyle", "duration": 132, "score": 0.76},
-        {"title": "Sports highlight", "category": "Sports", "duration": 84, "score": 0.64},
-        {"title": "Gaming short burst", "category": "Gaming", "duration": 72, "score": 0.58},
-    ],
-}
+def dashboard_summary(frame, year="ALL", category="ALL"):
+    if {"T0", "video_id", "category_group"} - set(frame.columns):
+        raise HTTPException(503, "관측 자료의 필수 컬럼을 확인할 수 없습니다.")
+    t0 = pd.to_datetime(frame.T0, errors="coerce")
+    names = frame.category_group.fillna("Unknown").astype(str)
+    mask = pd.Series(True, index=frame.index)
+    if year != "ALL": mask &= t0.dt.year.eq(int(year))
+    if category != "ALL": mask &= names.eq(category)
+    selected = frame.loc[mask]
+    selected_names = names.loc[mask]
+    duration = numeric(selected, "trending_duration_h")
+    valid = finite(duration)
+    snapshots = numeric(selected, "n_snapshots")
+    snapshot_valid = finite(snapshots) & (snapshots % 1 == 0)
+    categories = [{"category": name, "events": int((selected_names == name).sum()),
+                   "medianDuration": stats(duration.loc[selected_names == name])["median"]} for name in sorted(selected_names.unique())]
+    flow = t0.loc[mask].dt.year.value_counts().sort_index()
+    rows = []
+    for index in duration.loc[valid].sort_values(ascending=False).head(20).index:
+        row = selected.loc[index]
+        event = pd.to_numeric(row.get("event_id"), errors="coerce")
+        event_id = int(event) if pd.notna(event) and float(event).is_integer() else None
+        rows.append({"title": str(row.get("title", "제목 없음")), "category": selected_names.loc[index], "duration": float(duration.loc[index]), "video_id": str(row.video_id), "event_id": event_id})
+    buckets = [("0–24h", (duration < 24) & valid), ("24–72h", duration.ge(24) & duration.lt(72) & valid),
+               ("72–168h", duration.ge(72) & duration.lt(168) & valid), ("168h 이상", duration.ge(168) & valid)]
+    return {"schema": "observed-dashboard-v1", "meta": {"source": "historical_observed_events", "selectedYear": year, "selectedCategory": category, "dataset_sha256": frame.attrs.get("source_sha256"),
+             "scope": "Actual rows matching both filters; event snapshot sum is not the original raw collection total"},
+            "filters": {"years": ["ALL", *[str(int(value)) for value in sorted(t0.dropna().dt.year.unique())]], "categories": ["ALL", *sorted(names.unique())]},
+            "kpis": {"eventSnapshots": int(snapshots.loc[snapshot_valid].sum()) if snapshot_valid.any() else None, "snapshotExcluded": int((~snapshot_valid).sum()), "trendEvents": len(selected),
+                     "medianDuration": stats(duration)["median"], "categories": len(categories), "durationN": int(valid.sum()), "durationExcluded": int((~valid).sum())},
+            "categoryStats": categories, "trendFlow": [{"label": str(int(value)), "value": int(count)} for value, count in flow.items()],
+            "durationDistribution": [{"label": label, "value": int(mask.sum())} for label, mask in buckets], "topVideos": rows}
 
 
 @router.get("/summary")
-def get_dashboard_summary(
-    year: str = Query("ALL"),
-    category: str = Query("ALL"),
-):
-    """
-    운영 대시보드용 요약 API.
-    실제 집계 모듈이 없어도 프론트가 깨지지 않도록 fallback-safe 응답을 반환합니다.
-    """
-    data = dict(FALLBACK)
-    data["meta"] = {
-        **FALLBACK["meta"],
-        "selectedYear": year,
-        "selectedCategory": category,
-    }
-
-    return data
+def get_dashboard_summary(year: str = Query("ALL", pattern="^(ALL|[0-9]{4})$"), category: str = Query("ALL", min_length=1, max_length=100)):
+    return dashboard_summary(data_loader.get_df(), year, category)

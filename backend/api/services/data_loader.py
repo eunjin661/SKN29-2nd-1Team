@@ -9,6 +9,7 @@ from pathlib import Path
 
 import pandas as pd
 from fastapi import HTTPException
+from ml.data_contract import sha256_file
 
 BASE_DIR = Path(__file__).resolve().parents[2]  # backend/
 DATA_DIR = BASE_DIR / "data"
@@ -36,9 +37,11 @@ def _parse_datetime_col(df: pd.DataFrame) -> pd.DataFrame:
 def preload_all() -> None:
     """lifespan 핸들러에서 호출 — 서버 시작 시 전체 데이터 미리 로드"""
     global _df, _t0_df, _h24_df
+    _df = _t0_df = _h24_df = None
 
     if ANALYSIS_PATH.exists():
         _df = _parse_datetime_col(pd.read_parquet(ANALYSIS_PATH))
+        _df.attrs["source_sha256"] = sha256_file(ANALYSIS_PATH)
 
     if T0_MODEL_PATH.exists():
         _t0_df = pd.read_parquet(T0_MODEL_PATH)
