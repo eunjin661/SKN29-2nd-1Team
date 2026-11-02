@@ -1,160 +1,29 @@
-import { useState, useEffect, useCallback } from 'react'
+import useJsonResource from './useJsonResource'
 
-export const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
+export const API = (import.meta.env.VITE_API_URL || 'http://localhost:8000').replace(/\/$/, '')
+const count = value => Number.isSafeInteger(value) && value >= 0
+const total = (rows, key) => rows.reduce((sum, row) => sum + row[key], 0)
 
-const DEFAULT_API_EDA = {
-  ok: true,
-  raw_snapshots: 872191,
-  trend_events: 34964,
-  unique_videos: 17884,
-  median_duration_h: 108,
-  category_groups: 5,
-  period: '2022-2025',
-  category_summary: [
-    { category: 'Education', events: 7200, median_duration_h: 192 },
-    { category: 'Lifestyle', events: 6900, median_duration_h: 192 },
-    { category: 'Entertainment', events: 9800, median_duration_h: 96 },
-    { category: 'Music', events: 8200, median_duration_h: 78 },
-    { category: 'News', events: 2864, median_duration_h: 66 },
-  ],
-  clusterShare: [
-    { category: 'Education', c0: 0.9, c1: 16.8, c2: 54.7, c3: 27.7 },
-    { category: 'Entertainment', c0: 3.9, c1: 25.3, c2: 44.3, c3: 26.5 },
-    { category: 'Lifestyle', c0: 3.8, c1: 23.4, c2: 52.5, c3: 20.3 },
-    { category: 'Music', c0: 18.3, c1: 22.6, c2: 30.2, c3: 28.9 },
-    { category: 'News', c0: 2.0, c1: 17.1, c2: 36.9, c3: 44.1 },
-  ],
-  clusterLabels: {
-    0: 'C0 Music / High engagement',
-    1: 'C1 Fast response',
-    2: 'C2 Delayed / Same-day exit',
-    3: 'C3 Slow entry / Long duration',
-  },
-  clusterStats: { chi2: 1769.2, p: '<0.001', dof: 12, cramersV: 0.147 },
+export function validateAnalysis(data) {
+  const invalid = () => { throw new Error('관측 자료의 표본 수와 집계 응답을 확인할 수 없습니다.') }
+  if (data?.schema !== 'observed-analysis-v1' || data.source !== 'historical_observed_events' || !count(data.population?.events) || !data.population.events || !count(data.population.unique_videos) || data.population.unique_videos > data.population.events) invalid()
+  const n = data.population.events
+  if (!Array.isArray(data.category_summary) || !data.category_summary.length || data.category_summary.some(row => typeof row.category !== 'string' || !count(row.events) || !count(row.duration_n) || !count(row.duration_excluded) || row.duration_n + row.duration_excluded !== row.events) || total(data.category_summary, 'events') !== n) invalid()
+  if (data.population.categories !== data.category_summary.length) invalid()
+  for (const group of [data.duration, data.annual, data.weekday, data.rank]) if (!count(group?.n) || !count(group.excluded) || group.n + group.excluded !== n) invalid()
+  if (!Array.isArray(data.annual.rows) || data.annual.rows.some(row => !count(row.events) || !Array.isArray(row.categories) || row.categories.some(cat => !count(cat.events)) || total(row.categories, 'events') !== row.events) || total(data.annual.rows, 'events') !== data.annual.n) invalid()
+  if (!Array.isArray(data.weekday.rows) || data.weekday.rows.length !== 7 || data.weekday.rows.some(row => !count(row.events)) || total(data.weekday.rows, 'events') !== data.weekday.n) invalid()
+  if (!Array.isArray(data.rank.histogram) || data.rank.histogram.some(row => !count(row.count)) || total(data.rank.histogram, 'count') !== data.rank.n) invalid()
+  const observed = data.observed_24h
+  if (!observed || [observed.observed, observed.not_observed, observed.missing].some(value => !count(value)) || observed.observed + observed.not_observed + observed.missing !== n) invalid()
+  if (!data.provenance || !Array.isArray(data.features?.numeric) || !Array.isArray(data.features?.categorical)) invalid()
+  if (data.tdi?.status === 'ready') {
+    const tdi = data.tdi
+    if (!count(tdi.population) || !tdi.population || !count(tdi.excluded) || tdi.population + tdi.excluded !== n || !count(tdi.positive) || tdi.positive > tdi.population || !Array.isArray(tdi.histogram) || tdi.histogram.length !== 10 || tdi.histogram.some(row => !count(row.count) || !Number.isFinite(row.lower) || !Number.isFinite(row.upper)) || total(tdi.histogram, 'count') !== tdi.population || !Number.isFinite(tdi.positive_rate) || Math.abs(tdi.positive_rate - tdi.positive / tdi.population) > 1e-9) invalid()
+  } else if (data.tdi?.status !== 'unavailable') invalid()
+  return data
 }
 
-async function fetchEDA() {
-  const controller = new AbortController()
-  const timeoutId = setTimeout(() => controller.abort(), 2500)
-  try {
-    const res = await fetch(`${API}/eda/summary`, { signal: controller.signal })
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    return res.json()
-  } finally {
-    clearTimeout(timeoutId)
-  }
-}
-
-function toNumber(value, fallback = 0) {
-  const n = Number(value)
-  return Number.isFinite(n) ? n : fallback
-}
-
-function mergeCategorySummary(apiRows = []) {
-  const originalOrder = ['Education', 'Lifestyle', 'Entertainment', 'Music', 'News']
-  const defaults = {
-    Education: { events: 7200, median: 192, mean: 174 },
-    Lifestyle: { events: 6900, median: 192, mean: 176 },
-    Entertainment: { events: 9800, median: 96, mean: 123 },
-    Music: { events: 8200, median: 78, mean: 97 },
-    News: { events: 2864, median: 66, mean: 80 },
-  }
-
-  const fromApi = Object.fromEntries((apiRows || []).map((x) => {
-    const name = x.category || x.name
-    return [name, {
-      events: toNumber(x.events, defaults[name]?.events || 0),
-      median: toNumber(x.median_duration_h ?? x.medianDuration ?? x.median, defaults[name]?.median || 0),
-      mean: toNumber(x.mean_duration_h ?? x.meanDuration ?? x.mean, NaN),
-    }]
-  }))
-
-  return originalOrder.map((name) => {
-    const row = { ...defaults[name], ...(fromApi[name] || {}) }
-    const mean = Number.isFinite(row.mean) ? row.mean : Math.round(row.median * 1.18)
-    return { name, events: row.events, median: row.median, mean }
-  })
-}
-
-function normalizeBackendEDA(raw) {
-  const apiData = { ...DEFAULT_API_EDA, ...(raw || {}) }
-  const catDur = mergeCategorySummary(apiData.category_summary || [])
-  const totalEvents = toNumber(apiData.trend_events ?? apiData.summary?.trendEvents, catDur.reduce((s, x) => s + x.events, 0))
-  const categoryCount = toNumber(apiData.category_groups ?? apiData.summary?.categories, 5)
-  const avgDuration = Math.round(catDur.reduce((s, x) => s + x.median, 0) / Math.max(catDur.length, 1))
-  const tdiPos = 34.5
-
-  // EDACharts.jsx가 기대하는 구조: yearPct[2022].Entertainment 형태.
-  const yearPct = {
-    2022: { Entertainment: 58.0, Lifestyle: 21.2, Music: 15.1, News: 3.0, Education: 2.7 },
-    2023: { Entertainment: 55.0, Lifestyle: 22.5, Music: 16.0, News: 4.0, Education: 2.5 },
-    2024: { Entertainment: 58.3, Lifestyle: 25.5, Music: 13.2, News: 1.8, Education: 1.2 },
-    2025: { Entertainment: 52.6, Lifestyle: 30.6, Music: 14.8, News: 0.9, Education: 1.1 },
-  }
-
-  return {
-    catDur,
-    catCount: catDur.map((x) => ({ name: x.name, value: x.events })),
-    yearPct,
-    // EDACharts.jsx가 숫자 배열을 기대하므로 객체 배열이 아니라 숫자 배열로 제공.
-    tdiBins: [10910, 7170, 4830, 6640, 5420, 3470, 2590, 1760, 1230, 944],
-    tdiPosPct: tdiPos,
-    iqr: [
-      { name: 'Education', q1: 30, med: 192, q3: 300 },
-      { name: 'Lifestyle', q1: 42, med: 192, q3: 300 },
-      { name: 'Entertainment', q1: 24, med: 96, q3: 180 },
-      { name: 'Music', q1: 18, med: 78, q3: 156 },
-      { name: 'News', q1: 18, med: 66, q3: 180 },
-    ],
-    weekday: [5180, 5250, 5220, 5160, 5890, 4310, 3954],
-    rankQ: { q1: 18, med: 43, q3: 91, mean: 63 },
-    has24h: { obs: Math.round(totalEvents * 0.78), not_obs: Math.round(totalEvents * 0.22) },
-    summary: {
-      total: totalEvents,
-      categories: categoryCount,
-      avgDuration,
-      tdiPos,
-      obs24h: 78.0,
-      period: apiData.period || apiData.summary?.period || '2022-2025',
-    },
-    clusterShare: apiData.clusterShare || DEFAULT_API_EDA.clusterShare,
-    clusterLabels: apiData.clusterLabels || DEFAULT_API_EDA.clusterLabels,
-    clusterStats: apiData.clusterStats || DEFAULT_API_EDA.clusterStats,
-  }
-}
-
-export function useEDA() {
-  const [data, setData] = useState(() => normalizeBackendEDA(DEFAULT_API_EDA))
-  const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
-  const [tick, setTick] = useState(0)
-
-  const retry = useCallback(() => {
-    setError(null)
-    setLoading(true)
-    setTick((t) => t + 1)
-  }, [])
-
-  useEffect(() => {
-    let cancelled = false
-    setLoading(true)
-    fetchEDA()
-      .then((json) => {
-        if (!cancelled) {
-          setData(normalizeBackendEDA(json))
-          setError(null)
-          setLoading(false)
-        }
-      })
-      .catch((err) => {
-        if (!cancelled) {
-          setData(normalizeBackendEDA(DEFAULT_API_EDA))
-          setError(err?.message || 'API error')
-          setLoading(false)
-        }
-      })
-    return () => { cancelled = true }
-  }, [tick])
-
-  return { data, loading, error, retry }
+export function useEDA(endpoint = 'eda') {
+  return useJsonResource(`${API}/${endpoint}/summary`, { timeoutMs: 12000, normalize: validateAnalysis })
 }

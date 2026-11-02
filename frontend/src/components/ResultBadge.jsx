@@ -1,6 +1,6 @@
 import '../styles/feedback.css'
 
-export function getProbabilityTone(value) {
+function getProbabilityTone(value) {
   const n = Number(value || 0)
   if (n >= 75) return 'high'
   if (n >= 45) return 'medium'

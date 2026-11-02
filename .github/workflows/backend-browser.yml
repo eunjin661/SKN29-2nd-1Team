@@ -1,0 +1,72 @@
+name: Backend and browser regression
+
+on:
+  push:
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - 'pytest.ini'
+      - '.github/workflows/backend-browser.yml'
+  pull_request:
+    paths:
+      - 'backend/**'
+      - 'frontend/**'
+      - 'pytest.ini'
+      - '.github/workflows/backend-browser.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: backend-browser-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    env:
+      PYTHONPATH: backend
+      OMP_NUM_THREADS: '4'
+      OPENBLAS_NUM_THREADS: '4'
+      MKL_NUM_THREADS: '4'
+      DB_HOST: '127.0.0.1'
+      DB_PORT: '1'
+      DB_USER: offline
+      DB_PASSWORD: offline
+      DB_NAME: offline
+      DB_DATABASE: offline
+      YOUTUBE_API_KEY: ''
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # v7
+        with:
+          python-version: '3.10.21'
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24.20.0'
+          cache: npm
+          cache-dependency-path: frontend/package-lock.json
+      - run: python -m pip install uv==0.12.10
+      - run: uv venv --python 3.10 .venv
+      - run: uv pip sync --python .venv/bin/python backend/requirements-cpu.lock --index-strategy unsafe-best-match
+      - run: .venv/bin/python -B -m pytest -q
+      - name: Reproduce the fixed CPU model comparison
+        run: .venv/bin/python -B -m ml.train_weighted_ensemble --include-deep --include-tabnet --run-id t0-v2-ci
+      - run: npm ci --ignore-scripts
+        working-directory: frontend
+      - run: npm run check
+        working-directory: frontend
+      - run: npx playwright install --with-deps chromium
+        working-directory: frontend
+      - name: Core browser flows against the reproduced API
+        # Full five-seed diagnostics are a separate explicit offline job.
+        run: npm run test:e2e -- --grep-invert 'REAL diagnostic'
+        working-directory: frontend
+        env:
+          TRENDIT_TEST_RUN_ID: t0-v2-ci
+          TRENDIT_TEST_DIAGNOSTICS_ID: ''
+          TRENDIT_BROWSER_REPORT: ../backend/artifacts/browser-ci-results.json

@@ -1,0 +1,13 @@
+.observed-page { padding-bottom: 4rem; }
+.observed-source code { display: block; overflow-wrap: anywhere; margin: .8rem 0; font-size: .8rem; }
+.observed-source .verified-button { margin-top: 1rem; }
+.observed-bars { display: grid; gap: .7rem; margin: 1.2rem 0; }
+.observed-bar { display: grid; grid-template-columns: minmax(75px, 135px) minmax(30px, 1fr) minmax(65px, auto); align-items: center; gap: .7rem; font-size: .85rem; }
+.observed-bar > div { height: 12px; background: var(--border, #eee); border-radius: 8px; overflow: hidden; }
+.observed-bar i { display: block; height: 100%; border-radius: inherit; background: #f01532; }
+.observed-bar strong { text-align: right; font-variant-numeric: tabular-nums; }
+.observed-page .verified-panel { min-width: 0; }
+@media (max-width: 600px) {
+  .observed-bar { grid-template-columns: 82px minmax(20px, 1fr) auto; gap: .4rem; font-size: .72rem; }
+  .observed-page .verified-header h1 { overflow-wrap: anywhere; }
+}

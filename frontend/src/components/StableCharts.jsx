@@ -7,7 +7,7 @@ const fmt = (v, suffix = '') => {
   return `${n.toLocaleString('ko-KR')}${suffix}`
 }
 const num = (v, d = 0) => Number.isFinite(Number(v)) ? Number(v) : d
-const clamp = (v, min = 0, max = 100) => Math.max(min, Math.min(max, num(v)))
+
 const safeRows = (rows) => Array.isArray(rows) ? rows.filter(Boolean) : []
 const axisTicks = (max, steps = 4) => Array.from({ length: steps + 1 }, (_, i) => Math.round((max / steps) * i))
 

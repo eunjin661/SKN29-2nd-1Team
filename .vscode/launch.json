@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "TrendIt T0 v2 API",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "uvicorn",
+      "args": ["api.main:app", "--host", "127.0.0.1", "--port", "8000"],
+      "cwd": "${workspaceFolder}/backend",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/backend",
+        "TRENDIT_T0_RUN_ID": "t0-v2-cpu-20261022-audit"
+      },
+      "justMyCode": true
+    }
+  ]
+}

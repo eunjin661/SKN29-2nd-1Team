@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react'
+import { fetchJson } from '../lib/fetchJson'
 
 const API = import.meta.env.VITE_API_URL || 'http://localhost:8000'
 
@@ -6,17 +7,19 @@ export function useApiHealth(intervalMs = 30000) {
   const [apiOnline, setApiOnline] = useState(true)
 
   useEffect(() => {
-    let cancelled = false
+    let active
 
     const check = async () => {
+      active?.abort()
+      const controller = new AbortController()
+      active = controller
       try {
-        const controller = new AbortController()
-        const timeoutId = setTimeout(() => controller.abort(), 3000)
-        const res = await fetch(`${API}/healthz`, { signal: controller.signal })
-        clearTimeout(timeoutId)
-        if (!cancelled) setApiOnline(res.ok)
+        await fetchJson(`${API}/healthz`, { signal: controller.signal, timeoutMs: 3000 })
+        if (!controller.signal.aborted) setApiOnline(true)
       } catch {
-        if (!cancelled) setApiOnline(false)
+        if (!controller.signal.aborted) setApiOnline(false)
+      } finally {
+        if (active === controller) active = null
       }
     }
 
@@ -24,8 +27,8 @@ export function useApiHealth(intervalMs = 30000) {
     const id = setInterval(check, intervalMs)
 
     return () => {
-      cancelled = true
       clearInterval(id)
+      active?.abort()
     }
   }, [intervalMs])
 

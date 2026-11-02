@@ -2,8 +2,7 @@
 import { useNavigate, useParams, Routes, Route } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { fadeUp, fadeUpStagger } from '../animations/variants'
-import { FALLBACK } from '../constants/fallbackData'
-import { makeEDASections } from './EDAsections'
+import useVerifiedResource from '../hooks/useVerifiedResource'
 import '../styles/TrendingPage.css'
 import FeaturePage    from './FeaturePage'
 import InsightPage    from './InsightPage'
@@ -24,23 +23,23 @@ const PARTS = [
   {
     num: 1, slug: 'eda',
     title: 'EDA',
-    desc: '34,964 이벤트 탐색 — 카테고리 분포, 수명, 피처 상관',
+    desc: '실제 관측의 카테고리·기간·지속 시간·TDI v2 표본 확인',
     Icon: EDAIcon,
     Component: EDAPage,
-    tags: ['DISTRIBUTION', 'DURATION', 'CORRELATION'],
+    tags: ['OBSERVED', 'DURATION', 'POPULATION'],
   },
   {
     num: 2, slug: 'feature',
     title: 'Feature Engineering',
-    desc: '로그 변환 · 파생 변수 생성 · 인코딩 · Before/After 비교 시각화',
+    desc: '현재 T0 v2의 수치 입력 9개와 카테고리, Train 전처리',
     Icon: FeatureIcon,
     Component: FeaturePage,
-    tags: ['LOG1P', 'DERIVED', 'ENCODING', 'T0', '24H'],
+    tags: ['LOG1P', 'TRAIN', 'ENCODING', 'T0'],
   },
   {
     num: 3, slug: 'insight',
     title: '데이터 해석',
-    desc: '변수 간 관계 분석 — Scatter, Heatmap, 트렌드 패턴 설명',
+    desc: '실제 관측의 카테고리 분포·지속 시간 비교와 해석 범위',
     Icon: DataInterpretIcon,
     Component: InsightPage,
     tags: ['RELATION', 'CATEGORY', 'TIME', 'REACTION'],
@@ -48,50 +47,50 @@ const PARTS = [
   {
     num: 4, slug: 'problem',
     title: '문제 정의',
-    desc: '분류: 트렌딩 유지 여부 · 회귀: 지속 시간 예측',
+    desc: 'TDI v2 정답·시점·영상 중복 통제와 실제 평가 표본',
     Icon: ProblemIcon,
     Component: ProblemPage,
-    tags: ['CLASSIFY', 'REGRESSION', 'TARGET', 'T0'],
+    tags: ['CLASSIFY', 'SPLIT', 'TARGET', 'T0'],
   },
   {
     num: 5, slug: 'model',
     title: '모델 결과 시각화',
-    desc: '분류 모델 성능 + 딥러닝 24h 지속 시간 예측 결과 비교',
+    desc: 'T0 v2 보고서 기반 8개 모델의 Validation·Test 성능 비교',
     Icon: ModelResultIcon,
     Component: ModelPage,
-    tags: ['AUC', 'F1', 'CM', 'MLP', '24H'],
+    tags: ['VALIDATION', 'TEST', 'T0', 'V2'],
   },
   {
     num: 6, slug: 'compare',
     title: '카테고리 비교',
-    desc: '카테고리별 데이터 분포와 예측 난이도, 지속시간 차이를 비교',
+    desc: '관측 이벤트 수와 유효 지속 시간의 중앙값·평균 비교',
     Icon: CompareIcon,
     Component: ComparePage,
-    tags: ['CATEGORY', 'DURATION', 'RMSE', '24H'],
+    tags: ['CATEGORY', 'DURATION', 'OBSERVED'],
   },
   {
     num: 7, slug: 'explain',
     title: '모델 해석',
-    desc: 'Feature Importance와 주요 변수 영향, 예측 신뢰도 해석',
+    desc: 'T0 입력의 의미, 혼동행렬과 현재 모델의 검증 한계',
     Icon: ExplainIcon,
     Component: ModelInterpretPage,
-    tags: ['IMPORTANCE', 'SHAP', 'CONFIDENCE'],
+    tags: ['INPUT', 'LIMITS', 'CONFUSION MATRIX'],
   },
   {
     num: 8, slug: 'predict',
     title: '예측 시스템',
-    desc: '사용자 입력 기반 트렌딩 지속성 예측 결과 제공',
+    desc: '실제 최초 관측값으로 검증된 T0 분류 모델 실행',
     Icon: PredictionIcon,
     Component: PredictionPage,
-    tags: ['PREDICT', 'T0', '24H', 'SERVICE'],
+    tags: ['PREDICT', 'T0', 'VERIFIED'],
   },
   {
     num: 9, slug: 'strategy',
     title: '인사이트 & 전략',
-    desc: '업로드 요일, 초기 조회수, 카테고리별 전략 도출',
+    desc: '관측 비교의 적용 범위와 사용자 가정 기반 계산 안내',
     Icon: InsightIcon,
     Component: StrategyPage,
-    tags: ['STRATEGY', 'TIMING', 'ROI', 'ACTION'],
+    tags: ['OBSERVED', 'SCOPE', 'ASSUMPTIONS'],
   },
 ]
 
@@ -120,34 +119,18 @@ function ComingSoonPage({ part, onBack }) {
   )
 }
 
-/* 태그 */
-function PartTags({ part }) {
-  if (part.num === 1) {
-    return (
-      <div className="part-eda-tags">
-        {makeEDASections(FALLBACK).map(s => (
-          <span key={s.id} className="part-eda-tag">{s.tag}</span>
-        ))}
-      </div>
-    )
-  }
-  if (!part.tags?.length) return null
-  return (
-    <div className="part-eda-tags">
-      {part.tags.map(tag => <span key={tag} className="part-eda-tag">{tag}</span>)}
-    </div>
-  )
-}
-
 /* 목록 화면 */
 function PartList() {
   const navigate = useNavigate()
 
+  const evaluation = useVerifiedResource('/evaluation')
+  const report = evaluation.data
+  const selected = report?.models.find(row => row.name === report.selected_model)
   const HERO_STATS = [
-    { val:'34.9', unit:'K', label:'분석 이벤트', change:'2022–2025', red:false },
-    { val:'0.827', unit:'', label:'AUC-ROC', change:'WeightedVoting', red:true },
-    { val:'86', unit:'%', label:'Recall', change:'고지속 탐지율', red:true },
-    { val:'144', unit:'h', label:'평균 지속', change:'중앙값 108h', red:false },
+    { val: report ? report.data.source_rows.toLocaleString('ko-KR') : '—', unit:'', label:'분석 이벤트', change:'검증 보고서 기준', red:false },
+    { val: selected ? selected.test.auc.toFixed(4) : '—', unit:'', label:'Test AUC', change:report?.selected_model || '보고서 확인 필요', red:true },
+    { val: selected ? (selected.test.recall * 100).toFixed(1) : '—', unit:'%', label:'Test Recall', change:'미등장 영상 평가', red:true },
+    { val: report ? report.data.splits.test.rows.toLocaleString('ko-KR') : '—', unit:'', label:'Test 이벤트', change:'시간 분할 · 영상 중복 통제', red:false },
   ]
 
   return (
@@ -171,7 +154,7 @@ function PartList() {
             </motion.h1>
             <motion.p className="trending-hero-sub" variants={fadeUp}>
               34,964개 트렌딩 이벤트를 기반으로 EDA부터 예측 모델까지<br/>
-              9개 파트로 구성된 완전한 데이터 분석 파이프라인입니다.
+              초기 분석 기록과 새롭게 검증한 T0 v2 결과를 확인할 수 있습니다.
             </motion.p>
             <motion.div className="trending-hero-btns" variants={fadeUp}>
               <button className="trending-hero-btn-primary" onClick={() => {
@@ -217,16 +200,16 @@ function PartList() {
           <div className="parts-section-head">
             <div>
               <div className="parts-section-title">분석 파트</div>
-              <div className="parts-section-sub">순서대로 또는 원하는 파트를 선택하세요</div>
+              <div className="parts-section-sub">현재 검증 결과: 모델 결과 · 모델 해석 · 예측 시스템. 나머지 파트는 초기 분석 기록입니다.</div>
             </div>
-            <div className="parts-count-badge">{PARTS.filter(p=>!p.comingSoon).length}개 완성 · {PARTS.filter(p=>p.comingSoon).length}개 준비중</div>
+            <div className="parts-count-badge">T0 v2 연결 · 3개 파트</div>
           </div>
 
           <motion.div
             className="parts-grid-new"
             variants={fadeUpStagger} initial="hidden" animate="show"
           >
-            {PARTS.map((part, idx) => (
+            {PARTS.map((part) => (
               <motion.div
                 key={part.num}
                 className={`part-card-new ${part.comingSoon ? 'coming' : ''}`}
@@ -251,14 +234,9 @@ function PartList() {
 
                 {/* 태그 */}
                 <div className="pcn-tags">
-                  {part.num === 1
-                    ? makeEDASections(FALLBACK).map(s => (
-                        <span key={s.id} className="pcn-tag">{s.tag}</span>
-                      ))
-                    : part.tags?.map(tag => (
+                  {part.tags?.map(tag => (
                         <span key={tag} className="pcn-tag">{tag}</span>
-                      ))
-                  }
+                      ))}
                   {part.comingSoon && <span className="pcn-coming-tag">준비중</span>}
                 </div>
 
@@ -296,7 +274,9 @@ function PartView({ slug }) {
 
   const Comp = part.Component
   if (!Comp) return <div className="yta-app-wrap"><ComingSoonPage part={{ ...part, comingSoon: true }} onBack={onBack}/></div>
-  return <div className="yta-app-wrap"><Comp onBack={onBack}/></div>
+  return <div className="yta-app-wrap">
+    <Comp onBack={onBack}/>
+  </div>
 }
 
 /* 메인 라우터 */

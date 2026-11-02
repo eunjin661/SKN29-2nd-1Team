@@ -4,11 +4,10 @@ import trenditMark from '../assets/trendit-mark.svg'
 import MobileNavigation from './navigation/MobileNavigation'
 import { NAV_ITEMS, isActiveRoute } from '../constants/navigation'
 
-export default function Navbar({ darkMode, setDarkMode }) {
+function NavigationBar({ darkMode, setDarkMode, pathname }) {
   const navigate = useNavigate()
-  const location = useLocation()
   const [menuOpen, setMenuOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
+  const [scrolled, setScrolled] = useState(() => Math.max(window.scrollY, document.body.scrollTop) > 14)
 
   const moveTo = (path) => {
     navigate(path)
@@ -16,14 +15,9 @@ export default function Navbar({ darkMode, setDarkMode }) {
   }
 
   useEffect(() => {
-    setMenuOpen(false)
-  }, [location.pathname])
-
-  useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 14)
-    onScroll()
-    window.addEventListener('scroll', onScroll, { passive: true })
-    return () => window.removeEventListener('scroll', onScroll)
+    const onScroll = () => setScrolled(Math.max(window.scrollY, document.body.scrollTop) > 14)
+    window.addEventListener('scroll', onScroll, { passive: true, capture: true })
+    return () => window.removeEventListener('scroll', onScroll, true)
   }, [])
 
   useEffect(() => {
@@ -57,7 +51,7 @@ export default function Navbar({ darkMode, setDarkMode }) {
             <button
               key={item.id}
               type="button"
-              className={`yta-nav-btn ${isActiveRoute(location.pathname, item) ? 'active' : ''}`}
+              className={`yta-nav-btn ${isActiveRoute(pathname, item) ? 'active' : ''}`}
               onClick={() => moveTo(item.path)}
             >
               {item.label}
@@ -94,8 +88,14 @@ export default function Navbar({ darkMode, setDarkMode }) {
         open={menuOpen}
         onClose={() => setMenuOpen(false)}
         onNavigate={moveTo}
-        pathname={location.pathname}
+        pathname={pathname}
       />
     </nav>
   )
+}
+
+export default function Navbar(props) {
+  const location = useLocation()
+  // A navigation creates a fresh menu state, including browser Back/Forward.
+  return <NavigationBar key={location.key} {...props} pathname={location.pathname} />
 }

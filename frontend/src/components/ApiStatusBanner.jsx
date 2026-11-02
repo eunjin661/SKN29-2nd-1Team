@@ -18,7 +18,7 @@ export default function ApiStatusBanner() {
         <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
         <line x1="12" y1="16" x2="12.01" y2="16"/>
       </svg>
-      API 서버에 연결할 수 없습니다 — 저장된 데이터로 표시 중 (오프라인 모드)
+      API 연결 상태를 확인할 수 없습니다. 각 화면의 오류 안내와 데이터 출처를 확인하세요.
     </div>
   )
 }

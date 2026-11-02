@@ -9,13 +9,13 @@ export const NAV_ITEMS = [
 
 export const ANALYSIS_MENU_ITEMS = [
   { id: 'analysis-overview', label: '분석 전체', path: '/analysis', desc: '9개 분석 파트 목록' },
-  { id: 'eda', label: 'EDA', path: '/analysis/eda', desc: '분포·상관·수명 탐색' },
+  { id: 'eda', label: 'EDA', path: '/analysis/eda', desc: '자료 출처·분포·표본 수' },
   { id: 'feature', label: 'Feature Engineering', path: '/analysis/feature', desc: '파생 변수와 전처리' },
-  { id: 'insight', label: '데이터 해석', path: '/analysis/insight', desc: '변수 관계와 패턴' },
-  { id: 'problem', label: '문제 정의', path: '/analysis/problem', desc: '분류/회귀 목표 정의' },
+  { id: 'insight', label: '데이터 해석', path: '/analysis/insight', desc: '관측 분포와 지속 시간 비교' },
+  { id: 'problem', label: '문제 정의', path: '/analysis/problem', desc: 'TDI v2 분류·시간 분할·표본' },
   { id: 'model', label: '모델 결과', path: '/analysis/model', desc: '성능 지표와 결과 비교' },
-  { id: 'predict', label: '예측 시스템', path: '/analysis/predict', desc: '입력 기반 지속성 예측' },
-  { id: 'strategy', label: '인사이트 & 전략', path: '/analysis/strategy', desc: '실행 전략 제안' },
+  { id: 'predict', label: '예측 시스템', path: '/analysis/predict', desc: '최초 관측값으로 T0 분류' },
+  { id: 'strategy', label: '인사이트 & 전략', path: '/analysis/strategy', desc: '관측 비교와 활용 범위' },
 ]
 
 export const QUICK_MENU_GROUPS = [

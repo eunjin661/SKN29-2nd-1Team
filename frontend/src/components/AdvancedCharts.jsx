@@ -12,7 +12,7 @@ function axisLabels(max, steps = 4) {
   return Array.from({ length: steps + 1 }, (_, i) => Math.round((max / steps) * i))
 }
 
-export function TrendLineChart({ data = [], title = '트렌드 흐름', valueLabel = '건수' }) {
+export function TrendLineChart({ data = [], title = '트렌드 흐름' }) {
   if (!data.length) return <Empty title="차트 데이터 없음" message="선택한 조건에 맞는 트렌드 흐름 데이터가 없습니다." />
 
   const W = 720, H = 300, L = 58, R = 28, T = 34, B = 48
